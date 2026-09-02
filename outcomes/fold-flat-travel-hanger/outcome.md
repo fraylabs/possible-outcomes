@@ -14,7 +14,7 @@ assembly-interference check.
 - Editable parametric Python source
 - Detailed deployed and folded STEP assemblies
 - Closed deployed and folded check envelopes
-- Four reviewed preview images
+- Burr-native snapshots of both detailed poses and two reviewed check views
 - Local generation and Burr viewing instructions
 
 ## Verified digital behavior
@@ -23,6 +23,8 @@ assembly-interference check.
 - Both detailed and check STEP files pass CAD structural validation.
 - Burr checks all three component pairs in each collision-envelope pose and
   reports no solid-volume interference.
+- Burr exports non-empty PNG snapshots of both detailed poses from the active
+  Solid-mode viewport.
 - The pin-to-bore radial clearance is 0.4 mm and the hub-to-arm axial clearance
   is 0.6 mm in the authored source.
 
