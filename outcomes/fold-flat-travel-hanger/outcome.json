@@ -48,99 +48,93 @@
     },
     {
       "type": "source",
-      "src": "artifacts/project/models/hanger_common.py",
+      "src": "artifacts/source/hanger_common.py",
       "label": "Shared parametric hanger source",
       "format": "Python"
     },
     {
       "type": "cad",
-      "src": "artifacts/project/models/assemblies/hanger_deployed.step",
+      "src": "artifacts/cad/hanger_deployed.step",
       "label": "Deployed assembly",
       "format": "STEP"
     },
     {
       "type": "cad",
-      "src": "artifacts/project/models/assemblies/hanger_folded.step",
+      "src": "artifacts/cad/hanger_folded.step",
       "label": "Folded assembly",
       "format": "STEP"
     },
     {
       "type": "cad",
-      "src": "artifacts/project/models/assemblies/hanger_exploded.step",
+      "src": "artifacts/cad/hanger_exploded.step",
       "label": "Exploded assembly",
       "format": "STEP"
     },
     {
       "type": "cad",
-      "src": "artifacts/project/models/assemblies/lock_engaged.step",
+      "src": "artifacts/cad/lock_engaged.step",
       "label": "Positive lock engaged detail",
       "format": "STEP"
     },
     {
       "type": "cad",
-      "src": "artifacts/project/models/assemblies/lock_released.step",
+      "src": "artifacts/cad/lock_released.step",
       "label": "Positive lock released detail",
       "format": "STEP"
     },
     {
       "type": "document",
-      "src": "artifacts/project/docs/CAD_BRIEF.md",
+      "src": "artifacts/docs/CAD_BRIEF.md",
       "label": "CAD and mechanism brief",
       "format": "Markdown"
     },
     {
       "type": "document",
-      "src": "artifacts/project/docs/BOM.md",
+      "src": "artifacts/docs/BOM.md",
       "label": "Bill of materials",
       "format": "Markdown"
     },
     {
       "type": "document",
-      "src": "artifacts/project/docs/ASSEMBLY.md",
+      "src": "artifacts/docs/ASSEMBLY.md",
       "label": "Assembly and operation guide",
       "format": "Markdown"
     },
     {
       "type": "document",
-      "src": "artifacts/project/docs/LIMITS_AND_TEST_PLAN.md",
+      "src": "artifacts/docs/LIMITS_AND_TEST_PLAN.md",
       "label": "Limits and physical test plan",
       "format": "Markdown"
     },
     {
       "type": "document",
-      "src": "artifacts/project/RUN_REPORT.md",
+      "src": "artifacts/docs/RUN_REPORT.md",
       "label": "Cleanroom and independent review report",
       "format": "Markdown"
     },
     {
       "type": "data",
-      "src": "artifacts/project/validation/geometry_validation_final_summary.json",
+      "src": "artifacts/validation/geometry_validation_final_summary.json",
       "label": "Exact geometry validation summary",
       "format": "JSON"
     },
     {
       "type": "data",
-      "src": "artifacts/project/validation/cad_provider_validate_summary.json",
+      "src": "artifacts/validation/cad_provider_validate_summary.json",
       "label": "CAD provider validation summary",
       "format": "JSON"
     },
     {
       "type": "data",
-      "src": "artifacts/project/validation/burr_checks_deployed.json",
+      "src": "artifacts/validation/burr_checks_deployed.json",
       "label": "Burr deployed interference result",
       "format": "JSON"
     },
     {
       "type": "data",
-      "src": "artifacts/project/validation/burr_checks_folded.json",
+      "src": "artifacts/validation/burr_checks_folded.json",
       "label": "Burr folded interference result",
       "format": "JSON"
-    },
-    {
-      "type": "image",
-      "src": "media/burr-deployed.png",
-      "label": "Burr deployed motion endpoint",
-      "format": "PNG"
     },
     {
       "type": "image",
@@ -150,20 +144,8 @@
     },
     {
       "type": "image",
-      "src": "media/burr-xray.png",
-      "label": "Burr deployed X-ray view",
-      "format": "PNG"
-    },
-    {
-      "type": "image",
       "src": "media/burr-checks-deployed.png",
       "label": "Burr deployed failed check evidence",
-      "format": "PNG"
-    },
-    {
-      "type": "image",
-      "src": "media/burr-checks-folded.png",
-      "label": "Burr folded failed check evidence",
       "format": "PNG"
     }
   ],
@@ -202,22 +184,22 @@
       "caption": "Download the authoritative STEP states or the complete archive and inspect the motion locally with Burr.",
       "downloads": [
         {
-          "src": "artifacts/project/models/assemblies/hanger_deployed.step",
+          "src": "artifacts/cad/hanger_deployed.step",
           "format": "step",
           "label": "Download deployed assembly"
         },
         {
-          "src": "artifacts/project/models/assemblies/hanger_folded.step",
+          "src": "artifacts/cad/hanger_folded.step",
           "format": "step",
           "label": "Download folded assembly"
         },
         {
-          "src": "artifacts/project/models/assemblies/hanger_exploded.step",
+          "src": "artifacts/cad/hanger_exploded.step",
           "format": "step",
           "label": "Download exploded assembly"
         },
         {
-          "src": "artifacts/project/models/assemblies/lock_engaged.step",
+          "src": "artifacts/cad/lock_engaged.step",
           "format": "step",
           "label": "Download lock detail"
         }

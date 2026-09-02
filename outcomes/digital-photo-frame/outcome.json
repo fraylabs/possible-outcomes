@@ -78,141 +78,141 @@
     },
     {
       "type": "source",
-      "src": "artifacts/project/models/cad/source/photo_frame_parts.py",
+      "src": "artifacts/source/photo_frame_parts.py",
       "label": "Shared parametric enclosure source",
       "format": "Python"
     },
     {
       "type": "source",
-      "src": "artifacts/project/tools/generate_electronics.py",
+      "src": "artifacts/source/generate_electronics.py",
       "label": "KiCad project generator",
       "format": "Python"
     },
     {
       "type": "source",
-      "src": "artifacts/project/models/kicad/source/photo_frame.kicad_pro",
+      "src": "artifacts/kicad/photo_frame.kicad_pro",
       "label": "KiCad project",
       "format": "KiCad"
     },
     {
       "type": "source",
-      "src": "artifacts/project/models/kicad/source/photo_frame.kicad_sch",
+      "src": "artifacts/kicad/photo_frame.kicad_sch",
       "label": "KiCad schematic source",
       "format": "KiCad schematic"
     },
     {
       "type": "source",
-      "src": "artifacts/project/models/kicad/source/photo_frame.kicad_pcb",
+      "src": "artifacts/kicad/photo_frame.kicad_pcb",
       "label": "Four-layer PCB source requiring repair",
       "format": "KiCad PCB"
     },
     {
       "type": "cad",
-      "src": "artifacts/project/models/assembly/exports/product_stand_deployed.step",
+      "src": "artifacts/cad/product_stand_deployed.step",
       "label": "Deployed product assembly",
       "format": "STEP"
     },
     {
       "type": "cad",
-      "src": "artifacts/project/models/assembly/exports/product_stand_folded.step",
+      "src": "artifacts/cad/product_stand_folded.step",
       "label": "Folded product assembly",
       "format": "STEP"
     },
     {
       "type": "cad",
-      "src": "artifacts/project/models/assembly/exports/product_rear_cover_open_exploded.step",
+      "src": "artifacts/cad/product_rear_cover_open_exploded.step",
       "label": "Rear-cover-open exploded assembly",
       "format": "STEP"
     },
     {
       "type": "document",
-      "src": "artifacts/project/models/kicad/exports/photo_frame_schematic.pdf",
+      "src": "artifacts/kicad/photo_frame_schematic.pdf",
       "label": "Generated schematic",
       "format": "PDF"
     },
     {
       "type": "data",
-      "src": "artifacts/project/models/kicad/exports/photo_frame_bom.csv",
+      "src": "artifacts/kicad/photo_frame_bom.csv",
       "label": "Grouped electronics BOM",
       "format": "CSV"
     },
     {
       "type": "document",
-      "src": "artifacts/project/docs/INTERFACE_CONTROL.md",
+      "src": "artifacts/docs/INTERFACE_CONTROL.md",
       "label": "Mechanical and electrical interface control",
       "format": "Markdown"
     },
     {
       "type": "document",
-      "src": "artifacts/project/docs/POWER_AND_INTERFACES.md",
+      "src": "artifacts/docs/CAD_BRIEF.md",
+      "label": "Mechanical CAD brief",
+      "format": "Markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/MECHANICAL_BOM_AND_ASSEMBLY.md",
+      "label": "Mechanical BOM and assembly notes",
+      "format": "Markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/POWER_AND_INTERFACES.md",
       "label": "Power and interface analysis",
       "format": "Markdown"
     },
     {
       "type": "document",
-      "src": "artifacts/project/docs/FIRMWARE_PINMAP_AND_BRINGUP.md",
+      "src": "artifacts/docs/FIRMWARE_PINMAP_AND_BRINGUP.md",
       "label": "Firmware pin map and staged bring-up plan",
       "format": "Markdown"
     },
     {
       "type": "document",
-      "src": "artifacts/project/docs/SELECTED_PARTS_AND_SOURCES.md",
+      "src": "artifacts/docs/SELECTED_PARTS_AND_SOURCES.md",
       "label": "Exact selected parts and official sources",
       "format": "Markdown"
     },
     {
       "type": "document",
-      "src": "artifacts/project/RUN_REPORT.md",
+      "src": "artifacts/docs/RUN_REPORT.md",
       "label": "Cleanroom and independent review report",
       "format": "Markdown"
     },
     {
       "type": "data",
-      "src": "artifacts/project/validation/erc.rpt",
+      "src": "artifacts/validation/erc.rpt",
       "label": "KiCad ERC report",
       "format": "KiCad report"
     },
     {
       "type": "data",
-      "src": "artifacts/project/validation/drc.rpt",
+      "src": "artifacts/validation/drc.rpt",
       "label": "Failed KiCad DRC and parity report",
       "format": "KiCad report"
     },
     {
       "type": "data",
-      "src": "artifacts/project/validation/cad_validation.jsonl",
+      "src": "artifacts/validation/cad_validation.jsonl",
       "label": "Final CAD validation receipts",
       "format": "JSONL"
     },
     {
       "type": "data",
-      "src": "artifacts/project/validation/burr_checks_deployed.json",
+      "src": "artifacts/validation/burr_checks_deployed.json",
       "label": "Burr deployed interference result",
       "format": "JSON"
     },
     {
       "type": "data",
-      "src": "artifacts/project/validation/burr_checks_folded.json",
+      "src": "artifacts/validation/burr_checks_folded.json",
       "label": "Burr folded interference result",
       "format": "JSON"
     },
     {
       "type": "data",
-      "src": "artifacts/project/validation/burr_checks_exploded.json",
+      "src": "artifacts/validation/burr_checks_exploded.json",
       "label": "Burr exploded interference result",
       "format": "JSON"
-    },
-    {
-      "type": "image",
-      "src": "media/burr-xray.png",
-      "label": "Burr deployed X-ray evidence",
-      "format": "PNG"
-    },
-    {
-      "type": "image",
-      "src": "media/burr-motion.png",
-      "label": "Burr folded motion endpoint",
-      "format": "PNG"
     },
     {
       "type": "image",
@@ -256,17 +256,17 @@
       "caption": "Download the three authoritative mechanical states or the full project archive with both CAD and KiCad source.",
       "downloads": [
         {
-          "src": "artifacts/project/models/assembly/exports/product_stand_deployed.step",
+          "src": "artifacts/cad/product_stand_deployed.step",
           "format": "step",
           "label": "Download deployed assembly"
         },
         {
-          "src": "artifacts/project/models/assembly/exports/product_stand_folded.step",
+          "src": "artifacts/cad/product_stand_folded.step",
           "format": "step",
           "label": "Download folded assembly"
         },
         {
-          "src": "artifacts/project/models/assembly/exports/product_rear_cover_open_exploded.step",
+          "src": "artifacts/cad/product_rear_cover_open_exploded.step",
           "format": "step",
           "label": "Download exploded assembly"
         }

@@ -1,3 +1,0 @@
-(sym_lib_table
-  (lib (name "PhotoFrame")(type "KiCad")(uri "${KIPRJMOD}/PhotoFrame.kicad_sym")(options "")(descr "Cleanroom project symbols"))
-)
