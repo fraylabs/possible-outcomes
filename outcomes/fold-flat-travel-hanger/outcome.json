@@ -5,7 +5,7 @@
     "about": "outcome.md",
     "prompt": "prompt.md"
   },
-  "authoredAt": "2026-09-02T14:44:17+08:00",
+  "authoredAt": "2026-09-02T22:07:40+08:00",
   "author": {
     "name": "Fray Labs",
     "url": "https://github.com/fraylabs"
@@ -36,70 +36,124 @@
   "artifacts": [
     {
       "type": "source",
-      "src": "artifacts/hanger.py",
-      "label": "Shared parametric hanger source",
+      "src": "artifacts/source/travel_hanger.py",
+      "label": "Parametric hanger source",
       "format": "Python"
     },
     {
       "type": "source",
-      "src": ".burr/config.toml",
-      "label": "Burr fold and deploy motion configuration",
-      "format": "TOML"
+      "src": "artifacts/source/travel_hanger_collision.py",
+      "label": "Conservative collision-envelope source",
+      "format": "Python"
+    },
+    {
+      "type": "source",
+      "src": "artifacts/source/travel_hanger_deployed.step.py",
+      "label": "Deployed STEP entry point",
+      "format": "Python"
+    },
+    {
+      "type": "source",
+      "src": "artifacts/source/travel_hanger_folded.step.py",
+      "label": "Folded STEP entry point",
+      "format": "Python"
+    },
+    {
+      "type": "source",
+      "src": "artifacts/source/travel_hanger_deployed_collision.step.py",
+      "label": "Deployed collision-envelope entry point",
+      "format": "Python"
+    },
+    {
+      "type": "source",
+      "src": "artifacts/source/travel_hanger_folded_collision.step.py",
+      "label": "Folded collision-envelope entry point",
+      "format": "Python"
     },
     {
       "type": "cad",
-      "src": "artifacts/hanger-deployed.step",
+      "src": "artifacts/cad/travel_hanger_deployed.step",
       "label": "Detailed deployed assembly",
       "format": "STEP"
     },
     {
       "type": "cad",
-      "src": "artifacts/hanger-folded.step",
+      "src": "artifacts/cad/travel_hanger_folded.step",
       "label": "Detailed folded assembly",
       "format": "STEP"
     },
     {
       "type": "cad",
-      "src": "artifacts/hanger-deployed-check.step",
+      "src": "artifacts/cad/travel_hanger_deployed_collision.step",
       "label": "Deployed collision envelope",
       "format": "STEP"
     },
     {
       "type": "cad",
-      "src": "artifacts/hanger-folded-check.step",
+      "src": "artifacts/cad/travel_hanger_folded_collision.step",
       "label": "Folded collision envelope",
       "format": "STEP"
     },
     {
       "type": "document",
-      "src": "artifacts/README.md",
-      "label": "Generation and verification notes",
+      "src": "artifacts/docs/README.md",
+      "label": "Cleanroom run notes",
       "format": "Markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/CAD_BRIEF.md",
+      "label": "Interpreted CAD brief",
+      "format": "Markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/VALIDATION_REPORT.md",
+      "label": "Complete validation report",
+      "format": "Markdown"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/docs/SHA256SUMS",
+      "label": "Primary artifact hashes",
+      "format": "SHA-256"
+    },
+    {
+      "type": "image",
+      "src": "media/deployed-burr-incomplete.png",
+      "label": "Detailed deployed Burr result",
+      "format": "PNG"
+    },
+    {
+      "type": "image",
+      "src": "media/folded-burr-incomplete.png",
+      "label": "Detailed folded Burr result",
+      "format": "PNG"
     }
   ],
   "preview": {
-    "description": "A parametric adult clothes hanger with deployed and folded poses, plus honest closed envelopes for Burr's current interference check.",
+    "description": "A genuine one-shot Burr result: a colorful nine-part travel hanger with deployed and folded poses, source, STEP exports, and honestly scoped check evidence.",
     "images": [
       {
         "src": "media/deployed.png",
-        "alt": "Top view of the deployed fold-flat travel hanger with an orange hook hub and two blue arms",
-        "caption": "Burr-native Solid snapshot of the deployed pose, approximately 467 mm wide",
+        "alt": "Isometric view of a deployed colorful fold-flat travel hanger with articulated pink and turquoise arms",
+        "caption": "The cleanroom agent's final deployed CAD snapshot, 428 mm wide",
         "cover": true
       },
       {
         "src": "media/folded.png",
-        "alt": "Isometric view of the folded travel hanger with both arms lying nearly parallel",
-        "caption": "Burr-native Solid snapshot of the folded pose, approximately 109 mm wide"
+        "alt": "Isometric view of the same travel hanger folded into a narrow layered bundle",
+        "caption": "The cleanroom agent's final folded CAD snapshot, 76 mm wide"
       },
       {
-        "src": "media/deployed-check.png",
-        "alt": "Top view of the three closed collision envelopes in the deployed pose",
-        "caption": "Burr-native deployed check view: all three component pairs pass"
+        "src": "media/deployed-burr-pass.png",
+        "alt": "Burr showing the deployed five-component collision envelope with a passing check",
+        "caption": "Native Burr evidence: all 10 conservative envelope pairs pass in the deployed pose"
       },
       {
-        "src": "media/folded-check.png",
-        "alt": "Isometric view of the three closed collision envelopes in the folded pose",
-        "caption": "Burr-native folded check view: all three component pairs pass"
+        "src": "media/folded-burr-pass.png",
+        "alt": "Burr showing the folded five-component collision envelope with a passing check",
+        "caption": "Native Burr evidence: all 10 conservative envelope pairs pass in the folded pose"
       }
     ],
     "cad": {
@@ -107,12 +161,12 @@
       "caption": "Download either detailed STEP pose for local inspection in Burr.",
       "downloads": [
         {
-          "src": "artifacts/hanger-deployed.step",
+          "src": "artifacts/cad/travel_hanger_deployed.step",
           "format": "step",
           "label": "Download deployed STEP assembly"
         },
         {
-          "src": "artifacts/hanger-folded.step",
+          "src": "artifacts/cad/travel_hanger_folded.step",
           "format": "step",
           "label": "Download folded STEP assembly"
         }

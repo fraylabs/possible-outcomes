@@ -1,0 +1,20 @@
+{
+  "displayToHousing": {
+    "command": "python skills/cad/scripts/inspect measure digital_photo_frame.step.py --from '#o1.3.f10' --to '#o1.4.f10' --axis z",
+    "ok": true,
+    "from": {"selector": "o1.3.f10", "coordinate": -0.4},
+    "to": {"selector": "o1.4.f10", "coordinate": -4.2},
+    "signedDistance": -3.8000000000000003,
+    "absoluteDistance": 3.8000000000000003,
+    "relation": "parallel"
+  },
+  "glassToDisplay": {
+    "command": "python skills/cad/scripts/inspect measure digital_photo_frame.step.py --from '#o1.2.f9' --to '#o1.3.f10' --axis z",
+    "ok": true,
+    "from": {"selector": "o1.2.f9", "coordinate": 1.0, "faceSize": [218.0, 134.0, 0.0]},
+    "to": {"selector": "o1.3.f10", "coordinate": -0.4},
+    "signedDistance": -1.4,
+    "absoluteDistance": 1.4,
+    "relation": "opposed"
+  }
+}

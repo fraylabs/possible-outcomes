@@ -1,41 +1,24 @@
 # Fold-Flat Travel Hanger
 
-A parametric three-part clothes hanger that opens to a familiar 467 mm adult
-hanger profile and folds to approximately 109 mm wide for travel.
+This is the untouched final result of a cleanroom, one-shot Burr experiment. An isolated Codex agent received only the literal prompt in `prompt.md`, the Burr skill, its routed CAD provider, and an empty workspace. No design from an earlier hanger attempt was supplied, and the parent agent did not steer or edit the geometry.
 
-The outcome includes a fixed hook-and-hinge hub, two rotating arms, printable
-pin-to-bore clearance, deployed-position stops, and two named poses generated
-from one editable build123d source. Detailed STEP assemblies are provided for
-viewing, alongside deliberately simple collision envelopes for Burr's current
-assembly-interference check.
+The result is a parametric nine-component travel hanger with deployed and folded STEP assemblies. It uses paired articulated arms, pivot pins, a central hub and hook, and slotted geometry that packs the links into a narrow folded form.
 
-## What is included
+## What the run produced
 
-- Editable parametric Python source
-- Detailed deployed and folded STEP assemblies
-- Closed deployed and folded check envelopes
-- A Burr project configuration with named fold/deploy playback
-- Burr-native snapshots of both detailed poses and both check envelopes
-- Local generation and Burr viewing instructions
+- A 428 × 198.99 × 18.8 mm deployed assembly.
+- A 76 × 223.99 × 18.8 mm folded assembly.
+- Six reusable Python source files covering the detailed models and conservative collision envelopes.
+- Four STEP exports with labeled components and preserved color.
+- CAD snapshots, native Burr screenshots, a validation report, and SHA-256 receipts.
 
-## Verified digital behavior
+## What is actually verified
 
-- Both detailed assemblies contain three labelled component occurrences.
-- Both detailed and check STEP files pass CAD structural validation.
-- Burr matches the same three rigid components across both detailed poses and
-  exposes a named Fold hanger player with a 1.2 second transition.
-- Burr checks all three component pairs in each collision-envelope pose and
-  reports no solid-volume interference.
-- Burr exports non-empty PNG snapshots of both detailed poses from the active
-  Solid-mode viewport.
-- The pin-to-bore radial clearance is 0.4 mm and the hub-to-arm axial clearance
-  is 0.6 mm in the authored source.
+- Both detailed STEP assemblies contain nine labeled, valid, positive-volume BREP components.
+- Independent BREP checks found no positive-volume intersection across all 36 component pairs in either detailed pose.
+- Burr's current tessellation path reports the detailed deployed and folded checks as failures while also classifying all nine meshes as open. Those detailed Burr collision results are therefore preserved as incomplete evidence, not presented as proof.
+- The run also generated conservative five-component collision envelopes. Burr checked all 10 pairs in each pose and passed both envelope models.
 
-The detailed STEP files omit optional surface parameter curves so Burr's Look
-viewer can reconstruct every face from its 3D edge geometry. Their component
-meshes are still not closed enough for Burr's current interference check, so
-the separate check envelopes remain explicitly limited to the hub body and
-load-bearing arm spans; they are not presented as exact geometry.
+## Limits
 
-This is a digitally inspected concept, not proof of physical load capacity,
-fatigue life, print quality, hinge durability, garment retention, or safe use.
+This is a concept model, not a manufacturing release. The conservative envelopes exclude pins, bores, motion sweeps, tolerances, fastener retention, material strength, fatigue, load testing, and manufacturability. The two poses are separate exports; the cleanroom run did not add a Burr motion configuration.
