@@ -1,0 +1,17 @@
+{
+  "command": "python skills/cad/scripts/snapshot --job snapshot-job.json --json",
+  "ok": true,
+  "mode": "view",
+  "displayMode": "solid",
+  "projection": "orthographic",
+  "meshCount": 6,
+  "warnings": [],
+  "reviewed": true,
+  "outputs": [
+    {"path": "../../media/iso.png", "camera": "iso", "width": 1800, "height": 1200},
+    {"path": "../../media/rear.png", "camera": "iso-opposite", "width": 1800, "height": 1200},
+    {"path": "../../media/front.png", "camera": "top", "width": 1800, "height": 1200},
+    {"path": "../../media/side.png", "camera": "right", "width": 1800, "height": 1200}
+  ],
+  "visualResult": "The final packet shows the requested photo-frame silhouette, layered bezel and display, cyan accent, rear housing, and the repaired hinge-connected easel stand. No further visual defect was identified."
+}

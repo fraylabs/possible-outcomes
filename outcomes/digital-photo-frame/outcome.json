@@ -1,0 +1,134 @@
+{
+  "schemaVersion": 4,
+  "slug": "digital-photo-frame",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-02T22:07:40+08:00",
+  "author": {
+    "name": "Fray Labs",
+    "url": "https://github.com/fraylabs"
+  },
+  "models": [
+    {
+      "provider": "OpenAI",
+      "model": "GPT-5.6",
+      "role": "execution",
+      "agent": "Codex"
+    }
+  ],
+  "requirements": [],
+  "primary": {
+    "kind": "skill",
+    "repository": "fraylabs/burr",
+    "lastReviewedCommit": "3a1b8ebf17e178b28c6d65f67ad04fc97f009a55",
+    "directory": "skills/burr"
+  },
+  "secondary": [
+    {
+      "kind": "skill",
+      "repository": "earthtojake/text-to-cad",
+      "lastReviewedCommit": "fc4f7069fb31c131a55f1ecd334b505f031f486b",
+      "directory": "skills/cad"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "source",
+      "src": "artifacts/source/digital_photo_frame.step.py",
+      "label": "Parametric digital photo frame source",
+      "format": "Python"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/cad/digital_photo_frame.step",
+      "label": "Six-component frame assembly",
+      "format": "STEP"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/README.md",
+      "label": "Cleanroom run notes",
+      "format": "Markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/CAD_BRIEF.md",
+      "label": "Interpreted CAD brief",
+      "format": "Markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/BURR_CHECK.md",
+      "label": "Native Burr check evidence",
+      "format": "Markdown"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/validation/generation.json",
+      "label": "Generation receipt",
+      "format": "JSON"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/validation/geometry.json",
+      "label": "Geometry validation receipt",
+      "format": "JSON"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/validation/measurements.json",
+      "label": "Measurement receipt",
+      "format": "JSON"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/validation/snapshot.json",
+      "label": "Snapshot validation receipt",
+      "format": "JSON"
+    }
+  ],
+  "preview": {
+    "description": "A genuine one-shot Burr result: a sleek six-part tabletop photo frame with a recessed display stack, accent rail, kickstand, source, STEP, and scoped validation evidence.",
+    "images": [
+      {
+        "src": "media/iso.png",
+        "alt": "Isometric view of a dark digital photo frame with blue glass, cyan accent rail, and rear kickstand",
+        "caption": "The cleanroom agent's final isometric CAD snapshot",
+        "cover": true
+      },
+      {
+        "src": "media/front.png",
+        "alt": "Front orthographic view of the digital photo frame and recessed screen",
+        "caption": "Front view of the bezel, glass, display, and accent rail"
+      },
+      {
+        "src": "media/side.png",
+        "alt": "Side orthographic view showing the photo frame housing and angled rear kickstand",
+        "caption": "Side view showing the 88.636 mm stand depth"
+      },
+      {
+        "src": "media/burr-model-loaded.png",
+        "alt": "Burr browser viewer displaying the six-part digital photo frame model",
+        "caption": "Native Burr evidence: all six STEP geometries loaded"
+      },
+      {
+        "src": "media/burr-check-incomplete.png",
+        "alt": "Burr check panel showing an incomplete result for the photo frame",
+        "caption": "Native Burr evidence: no collision findings, but all six tessellated meshes are open"
+      }
+    ],
+    "cad": {
+      "poster": "media/iso.png",
+      "caption": "Download the six-component STEP assembly for local inspection in Burr.",
+      "downloads": [
+        {
+          "src": "artifacts/cad/digital_photo_frame.step",
+          "format": "step",
+          "label": "Download digital photo frame STEP assembly"
+        }
+      ]
+    }
+  }
+}

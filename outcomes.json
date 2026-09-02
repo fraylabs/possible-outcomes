@@ -5,7 +5,9 @@
     "url": "https://github.com/fraylabs/possible-outcomes"
   },
   "outcomes": [
+    { "slug": "digital-photo-frame", "url": "./outcomes/digital-photo-frame/outcome.json" },
     { "slug": "functional-hardware-prototype", "url": "./outcomes/functional-hardware-prototype/outcome.json" },
+    { "slug": "fold-flat-travel-hanger", "url": "./outcomes/fold-flat-travel-hanger/outcome.json" },
     { "slug": "html-css-animated-product-launch-film", "url": "./outcomes/html-css-animated-product-launch-film/outcome.json" },
     { "slug": "microduck-learned-happy-shuffle", "url": "./outcomes/microduck-learned-happy-shuffle/outcome.json" },
     { "slug": "original-strudel-soundtrack", "url": "./outcomes/original-strudel-soundtrack/outcome.json" },

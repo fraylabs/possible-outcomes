@@ -1,0 +1,176 @@
+{
+  "schemaVersion": 4,
+  "slug": "fold-flat-travel-hanger",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-02T22:07:40+08:00",
+  "author": {
+    "name": "Fray Labs",
+    "url": "https://github.com/fraylabs"
+  },
+  "models": [
+    {
+      "provider": "OpenAI",
+      "model": "GPT-5.6",
+      "role": "execution",
+      "agent": "Codex"
+    }
+  ],
+  "requirements": [],
+  "primary": {
+    "kind": "skill",
+    "repository": "fraylabs/burr",
+    "lastReviewedCommit": "3a1b8ebf17e178b28c6d65f67ad04fc97f009a55",
+    "directory": "skills/burr"
+  },
+  "secondary": [
+    {
+      "kind": "skill",
+      "repository": "earthtojake/text-to-cad",
+      "lastReviewedCommit": "fc4f7069fb31c131a55f1ecd334b505f031f486b",
+      "directory": "skills/cad"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "source",
+      "src": "artifacts/source/travel_hanger.py",
+      "label": "Parametric hanger source",
+      "format": "Python"
+    },
+    {
+      "type": "source",
+      "src": "artifacts/source/travel_hanger_collision.py",
+      "label": "Conservative collision-envelope source",
+      "format": "Python"
+    },
+    {
+      "type": "source",
+      "src": "artifacts/source/travel_hanger_deployed.step.py",
+      "label": "Deployed STEP entry point",
+      "format": "Python"
+    },
+    {
+      "type": "source",
+      "src": "artifacts/source/travel_hanger_folded.step.py",
+      "label": "Folded STEP entry point",
+      "format": "Python"
+    },
+    {
+      "type": "source",
+      "src": "artifacts/source/travel_hanger_deployed_collision.step.py",
+      "label": "Deployed collision-envelope entry point",
+      "format": "Python"
+    },
+    {
+      "type": "source",
+      "src": "artifacts/source/travel_hanger_folded_collision.step.py",
+      "label": "Folded collision-envelope entry point",
+      "format": "Python"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/cad/travel_hanger_deployed.step",
+      "label": "Detailed deployed assembly",
+      "format": "STEP"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/cad/travel_hanger_folded.step",
+      "label": "Detailed folded assembly",
+      "format": "STEP"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/cad/travel_hanger_deployed_collision.step",
+      "label": "Deployed collision envelope",
+      "format": "STEP"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/cad/travel_hanger_folded_collision.step",
+      "label": "Folded collision envelope",
+      "format": "STEP"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/README.md",
+      "label": "Cleanroom run notes",
+      "format": "Markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/CAD_BRIEF.md",
+      "label": "Interpreted CAD brief",
+      "format": "Markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/VALIDATION_REPORT.md",
+      "label": "Complete validation report",
+      "format": "Markdown"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/docs/SHA256SUMS",
+      "label": "Primary artifact hashes",
+      "format": "SHA-256"
+    },
+    {
+      "type": "image",
+      "src": "media/deployed-burr-incomplete.png",
+      "label": "Detailed deployed Burr result",
+      "format": "PNG"
+    },
+    {
+      "type": "image",
+      "src": "media/folded-burr-incomplete.png",
+      "label": "Detailed folded Burr result",
+      "format": "PNG"
+    }
+  ],
+  "preview": {
+    "description": "A genuine one-shot Burr result: a colorful nine-part travel hanger with deployed and folded poses, source, STEP exports, and honestly scoped check evidence.",
+    "images": [
+      {
+        "src": "media/deployed.png",
+        "alt": "Isometric view of a deployed colorful fold-flat travel hanger with articulated pink and turquoise arms",
+        "caption": "The cleanroom agent's final deployed CAD snapshot, 428 mm wide",
+        "cover": true
+      },
+      {
+        "src": "media/folded.png",
+        "alt": "Isometric view of the same travel hanger folded into a narrow layered bundle",
+        "caption": "The cleanroom agent's final folded CAD snapshot, 76 mm wide"
+      },
+      {
+        "src": "media/deployed-burr-pass.png",
+        "alt": "Burr showing the deployed five-component collision envelope with a passing check",
+        "caption": "Native Burr evidence: all 10 conservative envelope pairs pass in the deployed pose"
+      },
+      {
+        "src": "media/folded-burr-pass.png",
+        "alt": "Burr showing the folded five-component collision envelope with a passing check",
+        "caption": "Native Burr evidence: all 10 conservative envelope pairs pass in the folded pose"
+      }
+    ],
+    "cad": {
+      "poster": "media/deployed.png",
+      "caption": "Download either detailed STEP pose for local inspection in Burr.",
+      "downloads": [
+        {
+          "src": "artifacts/cad/travel_hanger_deployed.step",
+          "format": "step",
+          "label": "Download deployed STEP assembly"
+        },
+        {
+          "src": "artifacts/cad/travel_hanger_folded.step",
+          "format": "step",
+          "label": "Download folded STEP assembly"
+        }
+      ]
+    }
+  }
+}
