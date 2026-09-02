@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "slug": "split-vibrotactile-headrest-cad-package",
   "files": {
     "about": "outcome.md",
@@ -19,18 +19,21 @@
     }
   ],
   "requirements": [],
-  "skills": [
+  "primary": {
+    "kind": "skill",
+    "repository": "earthtojake/text-to-cad",
+    "lastReviewedCommit": "fdbb4b4fb62d95ae298cfe9a46fdc7092bdaf423",
+    "directory": "skills/cad"
+  },
+  "secondary": [
     {
-      "repository": "earthtojake/text-to-cad",
-      "lastReviewedCommit": "fdbb4b4fb62d95ae298cfe9a46fdc7092bdaf423",
-      "directory": "skills/cad"
-    },
-    {
+      "kind": "skill",
       "repository": "earthtojake/text-to-cad",
       "lastReviewedCommit": "fdbb4b4fb62d95ae298cfe9a46fdc7092bdaf423",
       "directory": "skills/step-parts"
     },
     {
+      "kind": "skill",
       "repository": "earthtojake/text-to-cad",
       "lastReviewedCommit": "fdbb4b4fb62d95ae298cfe9a46fdc7092bdaf423",
       "directory": "skills/cad-viewer"

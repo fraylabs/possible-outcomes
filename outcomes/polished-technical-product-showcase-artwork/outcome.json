@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 4,
+  "slug": "polished-technical-product-showcase-artwork",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-08-24T15:15:39+08:00",
+  "author": {
+    "name": "Fray Labs",
+    "url": "https://github.com/fraylabs"
+  },
+  "models": [
+    {
+      "provider": "OpenAI",
+      "model": "GPT-5.6",
+      "role": "execution",
+      "agent": "Codex"
+    }
+  ],
+  "requirements": [
+    "Codex with built-in image generation available"
+  ],
+  "primary": {
+    "kind": "skill",
+    "repository": "openai/skills",
+    "lastReviewedCommit": "49f948faa9258a0c61caceaf225e179651397431",
+    "directory": "skills/.system/imagegen"
+  },
+  "artifacts": [
+    {
+      "type": "image",
+      "src": "media/technical-product-showcase-artwork.png",
+      "label": "Full-resolution technical product showcase artwork",
+      "format": "PNG"
+    }
+  ],
+  "preview": {
+    "description": "Original editorial artwork that explains mechanical CAD linting through one fictional machined component and a precise orange inspection plane.",
+    "images": [
+      {
+        "src": "media/technical-product-showcase-artwork.png",
+        "alt": "A polished machined metal housing suspended over an ivory technical grid while an orange translucent inspection plane crosses the component",
+        "caption": "Burr showcase artwork: a fictional component used to visualize automated mechanical design review",
+        "cover": true
+      }
+    ]
+  }
+}

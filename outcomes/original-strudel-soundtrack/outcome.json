@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "slug": "original-strudel-soundtrack",
   "files": {
     "about": "outcome.md",
@@ -19,41 +19,49 @@
     }
   ],
   "requirements": [],
-  "products": [
-    "uzu/strudel"
-  ],
-  "skills": [
+  "primary": {
+    "kind": "product",
+    "id": "uzu/strudel"
+  },
+  "secondary": [
     {
+      "kind": "skill",
       "repository": "vanities/toaster-strudel",
       "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
       "directory": "skills/skills/strudel-compose"
     },
     {
+      "kind": "skill",
       "repository": "vanities/toaster-strudel",
       "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
       "directory": "skills/skills/strudel-emotion"
     },
     {
+      "kind": "skill",
       "repository": "vanities/toaster-strudel",
       "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
       "directory": "skills/skills/strudel-arrangement"
     },
     {
+      "kind": "skill",
       "repository": "vanities/toaster-strudel",
       "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
       "directory": "skills/skills/strudel-melody"
     },
     {
+      "kind": "skill",
       "repository": "vanities/toaster-strudel",
       "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
       "directory": "skills/skills/strudel-sound-design"
     },
     {
+      "kind": "skill",
       "repository": "vanities/toaster-strudel",
       "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
       "directory": "skills/skills/strudel-mixing"
     },
     {
+      "kind": "skill",
       "repository": "vanities/toaster-strudel",
       "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
       "directory": "skills/skills/strudel-test"

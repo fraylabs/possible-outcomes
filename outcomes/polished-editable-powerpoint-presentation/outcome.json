@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "slug": "polished-editable-powerpoint-presentation",
   "files": {
     "about": "outcome.md",
@@ -19,13 +19,12 @@
     }
   ],
   "requirements": [],
-  "skills": [
-    {
-      "repository": "MiniMax-AI/skills",
-      "lastReviewedCommit": "60aaae52bb2af8162732751a4332f62a5fef518b",
-      "directory": "skills/pptx-generator"
-    }
-  ],
+  "primary": {
+    "kind": "skill",
+    "repository": "MiniMax-AI/skills",
+    "lastReviewedCommit": "60aaae52bb2af8162732751a4332f62a5fef518b",
+    "directory": "skills/pptx-generator"
+  },
   "preview": {
     "description": "A restrained, fully editable investment-committee deck for an illustrative three-building community solar feasibility decision.",
     "images": [

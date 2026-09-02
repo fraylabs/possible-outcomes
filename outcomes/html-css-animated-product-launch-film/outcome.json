@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "slug": "html-css-animated-product-launch-film",
   "files": {
     "about": "outcome.md",
@@ -19,27 +19,35 @@
     }
   ],
   "requirements": [],
-  "products": [
-    "heygen/hyperframes",
-    "uzu/strudel"
-  ],
-  "skills": [
+  "primary": {
+    "kind": "product",
+    "id": "heygen/hyperframes"
+  },
+  "secondary": [
     {
+      "kind": "product",
+      "id": "uzu/strudel"
+    },
+    {
+      "kind": "skill",
       "repository": "heygen-com/hyperframes",
       "lastReviewedCommit": "b08cefea631b2c13697b6cb31075bf5a9b7c738d",
       "directory": "skills/hyperframes"
     },
     {
+      "kind": "skill",
       "repository": "coreyhaines31/marketingskills",
       "lastReviewedCommit": "67264763cb107d61749f418d081c56e5bcbc0209",
       "directory": "skills/copywriting"
     },
     {
+      "kind": "skill",
       "repository": "andreaskonopka/humanizer",
       "lastReviewedCommit": "862609a2caf3cadb63b9bef78576e6f5a1ed4e19",
       "directory": "skills/humanizer"
     },
     {
+      "kind": "skill",
       "repository": "vanities/toaster-strudel",
       "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
       "directory": "skills/skills/strudel-compose"
