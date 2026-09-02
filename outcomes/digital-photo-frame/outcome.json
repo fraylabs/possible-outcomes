@@ -5,7 +5,7 @@
     "about": "outcome.md",
     "prompt": "prompt.md"
   },
-  "authoredAt": "2026-09-02T22:07:40+08:00",
+  "authoredAt": "2026-09-03T02:12:48+08:00",
   "author": {
     "name": "Fray Labs",
     "url": "https://github.com/fraylabs"
@@ -31,102 +31,250 @@
       "repository": "earthtojake/text-to-cad",
       "lastReviewedCommit": "fc4f7069fb31c131a55f1ecd334b505f031f486b",
       "directory": "skills/cad"
+    },
+    {
+      "kind": "skill",
+      "repository": "American-Embedded/kistack",
+      "lastReviewedCommit": "c5a25d1d0af7ae811666cab41d7952f41e310575",
+      "directory": "skills/schematic"
+    },
+    {
+      "kind": "skill",
+      "repository": "American-Embedded/kistack",
+      "lastReviewedCommit": "c5a25d1d0af7ae811666cab41d7952f41e310575",
+      "directory": "skills/pcb"
+    },
+    {
+      "kind": "skill",
+      "repository": "American-Embedded/kistack",
+      "lastReviewedCommit": "c5a25d1d0af7ae811666cab41d7952f41e310575",
+      "directory": "skills/bom"
+    },
+    {
+      "kind": "skill",
+      "repository": "American-Embedded/kistack",
+      "lastReviewedCommit": "c5a25d1d0af7ae811666cab41d7952f41e310575",
+      "directory": "skills/export"
+    },
+    {
+      "kind": "skill",
+      "repository": "American-Embedded/kistack",
+      "lastReviewedCommit": "c5a25d1d0af7ae811666cab41d7952f41e310575",
+      "directory": "skills/firmware"
     }
   ],
   "artifacts": [
     {
+      "type": "archive",
+      "src": "artifacts/digital-photo-frame-burr-project.zip",
+      "label": "Complete portable Burr, CAD, and KiCad project",
+      "format": "ZIP"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/SHA256SUMS.txt",
+      "label": "Prompt and primary artifact hashes",
+      "format": "SHA-256"
+    },
+    {
       "type": "source",
-      "src": "artifacts/source/digital_photo_frame.step.py",
-      "label": "Parametric digital photo frame source",
+      "src": "artifacts/source/photo_frame_parts.py",
+      "label": "Shared parametric enclosure source",
       "format": "Python"
     },
     {
+      "type": "source",
+      "src": "artifacts/source/generate_electronics.py",
+      "label": "KiCad project generator",
+      "format": "Python"
+    },
+    {
+      "type": "source",
+      "src": "artifacts/kicad/photo_frame.kicad_pro",
+      "label": "KiCad project",
+      "format": "KiCad"
+    },
+    {
+      "type": "source",
+      "src": "artifacts/kicad/photo_frame.kicad_sch",
+      "label": "KiCad schematic source",
+      "format": "KiCad schematic"
+    },
+    {
+      "type": "source",
+      "src": "artifacts/kicad/photo_frame.kicad_pcb",
+      "label": "Four-layer PCB source requiring repair",
+      "format": "KiCad PCB"
+    },
+    {
       "type": "cad",
-      "src": "artifacts/cad/digital_photo_frame.step",
-      "label": "Six-component frame assembly",
+      "src": "artifacts/cad/product_stand_deployed.step",
+      "label": "Deployed product assembly",
+      "format": "STEP"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/cad/product_stand_folded.step",
+      "label": "Folded product assembly",
+      "format": "STEP"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/cad/product_rear_cover_open_exploded.step",
+      "label": "Rear-cover-open exploded assembly",
       "format": "STEP"
     },
     {
       "type": "document",
-      "src": "artifacts/docs/README.md",
-      "label": "Cleanroom run notes",
+      "src": "artifacts/kicad/photo_frame_schematic.pdf",
+      "label": "Generated schematic",
+      "format": "PDF"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/kicad/photo_frame_bom.csv",
+      "label": "Grouped electronics BOM",
+      "format": "CSV"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/INTERFACE_CONTROL.md",
+      "label": "Mechanical and electrical interface control",
       "format": "Markdown"
     },
     {
       "type": "document",
       "src": "artifacts/docs/CAD_BRIEF.md",
-      "label": "Interpreted CAD brief",
+      "label": "Mechanical CAD brief",
       "format": "Markdown"
     },
     {
       "type": "document",
-      "src": "artifacts/docs/BURR_CHECK.md",
-      "label": "Native Burr check evidence",
+      "src": "artifacts/docs/MECHANICAL_BOM_AND_ASSEMBLY.md",
+      "label": "Mechanical BOM and assembly notes",
+      "format": "Markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/POWER_AND_INTERFACES.md",
+      "label": "Power and interface analysis",
+      "format": "Markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/FIRMWARE_PINMAP_AND_BRINGUP.md",
+      "label": "Firmware pin map and staged bring-up plan",
+      "format": "Markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/SELECTED_PARTS_AND_SOURCES.md",
+      "label": "Exact selected parts and official sources",
+      "format": "Markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/RUN_REPORT.md",
+      "label": "Cleanroom and independent review report",
+      "format": "Markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/docs/PUBLICATION_REVIEW.md",
+      "label": "Publication review and known source blockers",
       "format": "Markdown"
     },
     {
       "type": "data",
-      "src": "artifacts/validation/generation.json",
-      "label": "Generation receipt",
+      "src": "artifacts/validation/erc.rpt",
+      "label": "KiCad ERC report",
+      "format": "KiCad report"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/validation/drc.rpt",
+      "label": "Failed KiCad DRC and parity report",
+      "format": "KiCad report"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/validation/cad_validation.jsonl",
+      "label": "Final CAD validation receipts",
+      "format": "JSONL"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/validation/burr_checks_deployed.json",
+      "label": "Burr deployed interference result",
       "format": "JSON"
     },
     {
       "type": "data",
-      "src": "artifacts/validation/geometry.json",
-      "label": "Geometry validation receipt",
+      "src": "artifacts/validation/burr_checks_folded.json",
+      "label": "Burr folded interference result",
       "format": "JSON"
     },
     {
       "type": "data",
-      "src": "artifacts/validation/measurements.json",
-      "label": "Measurement receipt",
+      "src": "artifacts/validation/burr_checks_exploded.json",
+      "label": "Burr exploded interference result",
       "format": "JSON"
     },
     {
-      "type": "data",
-      "src": "artifacts/validation/snapshot.json",
-      "label": "Snapshot validation receipt",
-      "format": "JSON"
+      "type": "image",
+      "src": "media/burr-checks.png",
+      "label": "Burr integrated failed check evidence",
+      "format": "PNG"
     }
   ],
   "preview": {
-    "description": "A genuine one-shot Burr result: a sleek six-part tabletop photo frame with a recessed display stack, accent rail, kickstand, source, STEP, and scoped validation evidence.",
+    "description": "A one-shot seven-inch digital photo-frame pre-build combining enclosure CAD, folding motion, exact-part KiCad sources, interface control, and candid failed DRC/Burr evidence.",
     "images": [
       {
-        "src": "media/iso.png",
-        "alt": "Isometric view of a dark digital photo frame with blue glass, cyan accent rail, and rear kickstand",
-        "caption": "The cleanroom agent's final isometric CAD snapshot",
+        "src": "media/xray.png",
+        "alt": "Transparent isometric CAD view of a digital photo frame showing its display, conservative PCB envelope, service cover, enclosure, and folding stand",
+        "caption": "Integrated X-ray view of the mechanical stack and explicitly unverified populated-PCB envelope",
         "cover": true
       },
       {
-        "src": "media/front.png",
-        "alt": "Front orthographic view of the digital photo frame and recessed screen",
-        "caption": "Front view of the bezel, glass, display, and accent rail"
+        "src": "media/deployed.png",
+        "alt": "Isometric rear CAD view of the photo frame with its folding easel stand deployed",
+        "caption": "Deployed tabletop configuration"
       },
       {
-        "src": "media/side.png",
-        "alt": "Side orthographic view showing the photo frame housing and angled rear kickstand",
-        "caption": "Side view showing the 88.636 mm stand depth"
+        "src": "media/exploded.png",
+        "alt": "Exploded isometric CAD view of the photo-frame bezel, display, PCB envelope, rear chassis, cover, and stand",
+        "caption": "Rear-cover-open exploded service view"
       },
       {
-        "src": "media/burr-model-loaded.png",
-        "alt": "Burr browser viewer displaying the six-part digital photo frame model",
-        "caption": "Native Burr evidence: all six STEP geometries loaded"
+        "src": "media/schematic.png",
+        "alt": "Rendered KiCad schematic for the ESP32-S3 digital photo frame controller, display, power, storage, controls, and ambient-light sensor",
+        "caption": "ERC-clean exact-part schematic; the corresponding PCB still fails DRC and parity"
       },
       {
-        "src": "media/burr-check-incomplete.png",
-        "alt": "Burr check panel showing an incomplete result for the photo frame",
-        "caption": "Native Burr evidence: no collision findings, but all six tessellated meshes are open"
+        "src": "media/burr-checks.png",
+        "alt": "Burr displaying the integrated photo-frame assembly together with its failed interference-check panel",
+        "caption": "Native Burr evidence: the integrated check remains failed/incomplete and is preserved rather than hidden"
       }
     ],
     "cad": {
-      "poster": "media/iso.png",
-      "caption": "Download the six-component STEP assembly for local inspection in Burr.",
+      "poster": "media/xray.png",
+      "caption": "Download the three authoritative mechanical states or the full project archive with both CAD and KiCad source.",
       "downloads": [
         {
-          "src": "artifacts/cad/digital_photo_frame.step",
+          "src": "artifacts/cad/product_stand_deployed.step",
           "format": "step",
-          "label": "Download digital photo frame STEP assembly"
+          "label": "Download deployed assembly"
+        },
+        {
+          "src": "artifacts/cad/product_stand_folded.step",
+          "format": "step",
+          "label": "Download folded assembly"
+        },
+        {
+          "src": "artifacts/cad/product_rear_cover_open_exploded.step",
+          "format": "step",
+          "label": "Download exploded assembly"
         }
       ]
     }

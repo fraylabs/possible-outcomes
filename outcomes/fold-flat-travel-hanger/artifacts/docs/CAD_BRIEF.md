@@ -1,14 +1,18 @@
-# CAD brief: fold-flat travel hanger
+# CAD brief
 
-- Model: a labeled mechanical assembly shown in deployed and folded poses.
-- Task type: new conceptual assembly.
-- Units: millimeters.
-- Coordinate convention: hanger silhouette lies in XY; X is shoulder width, Y is vertical, and +Z is through-thickness. The hub center is the assembly origin.
-- Deployed envelope target: about 430 mm wide, 200 mm tall, and under 20 mm thick.
-- Folded envelope target: under 80 mm wide and about 230 mm tall, with the arm links layered through thickness.
-- Functional features: rigid hook-and-hub body; two inner shoulder links; two outer shoulder links; four Z-axis hinge pins; clearance bores at every hinge; strap loops near both tips; lightening slots; distinct colors and labels for visual inspection.
-- Positioning/mating: all hinge centers are named source parameters. Links occupy three Z layers with 0.5 mm gaps. Pins share the hinge axes and use 0.4 mm radial clearance.
-- Authoritative source: `travel_hanger.py`, with pose entry generators `travel_hanger_deployed.step.py` and `travel_hanger_folded.step.py`.
-- Primary outputs: `travel_hanger_deployed.step` and `travel_hanger_folded.step`.
-- Validation targets: closed positive-volume solids; nine labeled components per pose; deployed and folded bounding boxes; occurrence frames; visual packet for each pose; Burr assembly-interference outcome for each STEP.
-- Assumptions: conceptual glass-filled nylon links with metal hinge pins; no structural, fatigue, tolerance-stack, motion-envelope, or manufacturability claim. The small modeled gaps are for unambiguous assembly inspection, not a production fit specification.
+- Model: symmetric fold-flat travel clothes hanger; five printed parts plus purchased shoulder screws, locknuts and compression springs.
+- Task type: new fit-critical mechanical assembly with five static fold poses, exploded assembly and lock details.
+- Units and axes: millimetres; X shoulder width, Y front/back thickness, Z vertical.
+- Deployed target: 430–450 mm shoulder width; modeled nominal 442 mm.
+- Folded target: at most approximately 230 × 90 × 30 mm.
+- Load path: each thick shoulder beam has an 8 × 6 mm heel bearing on a rigid dual-ear lock bar. The bar presents 6 mm positive blocking engagement per side; it is spring-biased engaged and moves 7.5 mm axially under deliberate thumb action.
+- Hook: 42 mm circular rod pocket, 40 mm modeled throat, folding on a captured M5 shoulder screw in a front-layer clevis.
+- Parts: `center_yoke`, `left_shoulder_arm`, `right_shoulder_arm`, `folding_hook`, `dual_positive_lock_bar`.
+- Purchased hardware: two M5 arm shoulder screws, one shorter M5 hook shoulder screw, three low-profile prevailing-torque locknuts, two small compression springs.
+- Clearances: 5.0 mm pin in 5.6 mm bore (0.30 mm radial); arm axial clearance 1.0 mm each side; hook axial clearance 0.5 mm each side; released lock clearance 1.0 mm.
+- Joints/datums: named left/right arm revolute axes, hook revolute axis and lock linear-release axis in `models/hanger_common.py`.
+- Finger protection: both arm roots remain between 4 mm cheek plates; the thumb pad is recessed in an 8 mm-high guide slot; final arm movement occurs behind the cheek faces.
+- Strap notches: shallow 9 mm-diameter transverse top grooves near both tips, leaving more than 12 mm of local beam depth.
+- Manufacturing assumption: FDM PETG/PA-class prototype with layer direction selected to keep shoulder bending in the XY layer plane; rounded long edges are modeled where OCC permits. This is not a material or strength validation.
+- Authoritative paths: `models/hanger_common.py`, individual `models/parts/*.step.py`, and pose `models/assemblies/*.step.py` generators.
+- Validation targets: closed positive-volume occurrences; part build-area envelopes; deployed/folded envelopes; hook pocket/throat; pin and axial clearances; blocking-face engagement/contact; release clearance; component identity; pairwise positive-volume intersection for five poses; Burr motion and Burr interference outcomes.
