@@ -28,4 +28,6 @@ Burr's integrated checks also remain failed/incomplete: six deployed pairs, seve
 
 This project does not claim working display operation, correct routing, fabrication readiness, connector engagement, power integrity, radio performance, EMC, thermal or electrical safety, manufacturability, fit, stand stability, durability, or production readiness. The next design pass must repair routing, planes, keepouts, footprint parity, exact component 3D coverage, board/enclosure integration, and Burr findings before fabrication outputs are considered.
 
-The project archive can be opened with `burr .`; the electronics sources can be inspected with KiCad 10.0.6 or a compatible release.
+Publication review identified additional source-level blockers: the stand barrel has no hinge-pin bore and is offset from the chassis hinge axis; the stated display mounting-hole pattern exceeds the stated display envelope; the USB-C sink does not detect or limit itself to the source-advertised current; schematic-to-PCB footprint parity is not fail-closed; and the electronics generator contains host-specific KiCad and Python paths. These defects are preserved rather than silently repaired so the outcome remains an authentic one-shot result; see `artifacts/docs/PUBLICATION_REVIEW.md`.
+
+Extract the project archive, change into the extracted project root, and run `burr .`. The electronics sources can be inspected with KiCad 10.0.6 or a compatible release.

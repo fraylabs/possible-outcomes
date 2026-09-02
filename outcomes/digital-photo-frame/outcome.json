@@ -179,6 +179,12 @@
       "format": "Markdown"
     },
     {
+      "type": "document",
+      "src": "artifacts/docs/PUBLICATION_REVIEW.md",
+      "label": "Publication review and known source blockers",
+      "format": "Markdown"
+    },
+    {
       "type": "data",
       "src": "artifacts/validation/erc.rpt",
       "label": "KiCad ERC report",

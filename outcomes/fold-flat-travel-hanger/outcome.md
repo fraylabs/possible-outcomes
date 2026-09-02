@@ -28,4 +28,6 @@ Burr's own interference result is **not clean**. It reports four deployed findin
 
 No hanger was fabricated or physically tested. The geometry does not prove a 3 kg rating, stiffness, fatigue life, creep resistance, spring behavior, pin retention, dimensional accuracy, pinch safety, garment safety, or production readiness. The supplied test plan requires progressive symmetric and asymmetric loading, folding cycles, release-force tests, drops, warm-creep exposure, process coupons, and edge/snag review before use.
 
-The project archive can be opened with `burr .`. Its sources and validation receipts remain editable and inspectable.
+Publication review also found that the generated assembly guide tells the builder to fit two compression springs over guide pegs, but the generated lock-bar source contains no guide pegs. The spring-loaded return and folded-retention assembly therefore cannot be built as documented. This source-level defect is preserved rather than silently repaired so the outcome remains an authentic one-shot result; see `artifacts/docs/PUBLICATION_REVIEW.md`.
+
+Extract the project archive, change into the extracted project root, and run `burr .`. Its sources and validation receipts remain editable and inspectable.

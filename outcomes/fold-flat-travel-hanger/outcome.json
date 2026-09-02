@@ -113,6 +113,12 @@
       "format": "Markdown"
     },
     {
+      "type": "document",
+      "src": "artifacts/docs/PUBLICATION_REVIEW.md",
+      "label": "Publication review and known source defect",
+      "format": "Markdown"
+    },
+    {
       "type": "data",
       "src": "artifacts/validation/geometry_validation_final_summary.json",
       "label": "Exact geometry validation summary",
