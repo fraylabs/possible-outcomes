@@ -1,0 +1,24 @@
+{
+  "exit_zero": 16,
+  "failure_count_total": 0,
+  "occurrence_counts": {
+    "models/assemblies/hanger_deployed.step.py": 11,
+    "models/assemblies/hanger_exploded.step.py": 11,
+    "models/assemblies/hanger_fold_25.step.py": 11,
+    "models/assemblies/hanger_fold_50.step.py": 11,
+    "models/assemblies/hanger_fold_75.step.py": 11,
+    "models/assemblies/hanger_folded.step.py": 11,
+    "models/assemblies/lock_engaged.step.py": 8,
+    "models/assemblies/lock_released.step.py": 8,
+    "models/parts/center_yoke.step.py": 1,
+    "models/parts/dual_positive_lock_bar.step.py": 1,
+    "models/parts/folding_hook.step.py": 1,
+    "models/parts/left_shoulder_arm.step.py": 1,
+    "models/parts/m5_arm_shoulder_screw.step.py": 1,
+    "models/parts/m5_hook_shoulder_screw.step.py": 1,
+    "models/parts/m5_low_profile_locknut.step.py": 1,
+    "models/parts/right_shoulder_arm.step.py": 1
+  },
+  "provider_ok": 16,
+  "targets": 16
+}

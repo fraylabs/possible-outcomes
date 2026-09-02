@@ -1,0 +1,13 @@
+schema_version = "burr.project.v1"
+
+[project]
+models = ["models/cad/parts", "models/assembly/exports"]
+
+[[motions]]
+id = "fold"
+label = "Fold easel stand"
+from = "models/assembly/exports/product_stand_deployed.step"
+from_label = "Deployed"
+to = "models/assembly/exports/product_stand_folded.step"
+to_label = "Folded"
+duration_ms = 1200

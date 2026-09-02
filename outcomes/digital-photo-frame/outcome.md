@@ -1,23 +1,31 @@
-# Halo Digital Photo Frame
+# Seven-Inch Digital Photo Frame Pre-Build
 
-This is the untouched final result of a cleanroom, one-shot Burr experiment. A second isolated Codex agent received only the literal prompt in `prompt.md`, the Burr skill, its routed CAD provider, and an empty workspace. It did not see the hanger run, and the parent agent did not steer or edit the design.
+This one-shot cleanroom result combines a parametric enclosure, folding easel stand, exact-part KiCad schematic and four-layer PCB source, shared mechanical/electrical interfaces, and a named Burr motion in one inspectable project. It is published as an incomplete, repair-required digital pre-build because the PCB does not pass DRC/parity and the populated board could not truthfully be integrated.
 
-The result is a parametric six-component tabletop photo frame with a dark housing, raised bezel, recessed glass and display stack, cyan accent rail, and angled rear kickstand.
+An isolated Codex agent received only the exact prompt in `prompt.md`, the Burr skill, its routed CAD provider, the referenced KiStack skills, and an empty workspace. It did not see the hanger run, and the parent agent did not steer it after execution began.
 
 ## What the run produced
 
-- A 274 × 186 × 88.636 mm assembled STEP model.
-- Six labeled, closed, valid, positive-volume components.
-- A 1.4 mm glass-to-display gap and 3.8 mm display-to-housing gap.
-- Parametric Python source, CAD snapshots, native Burr screenshots, and machine-readable validation receipts.
+- A 216 × 138 mm seven-inch frame enclosure with front bezel, rear chassis, removable service cover, ventilation, connector openings, and folding stand.
+- Deployed, folded, and rear-cover-open exploded STEP assemblies.
+- Four printable STL parts and editable parametric Python source.
+- KiCad project, schematic, four-layer PCB source, grouped BOM, schematic PDF/SVG, and an interface-control document.
+- Exact selections for the display, ESP32-S3 module, 3.3 V buck, USB-C receptacle, microSD socket, ambient-light sensor, and protection parts.
+- A portable Burr project with a 1.2-second `Fold easel stand` motion.
 
 ## What is actually verified
 
-- The CAD provider validated the full assembly and all six component solids.
-- An independent BREP check reproduced a valid six-part assembly and found no positive-volume intersections across all 15 component pairs.
-- Burr 0.31.0 loaded all six geometries. Its native check found no collision pairs, but classified all six tessellated component meshes as open, so the result is correctly recorded as `Incomplete` rather than `Pass`.
-- The agent encountered an earlier bezel/glass collision and repaired it in the authoritative source before producing this final result.
+- All nine final mechanical CAD targets passed topology, closure, and positive-volume validation.
+- Burr loaded an eight-instance integrated assembly and generated a 61-frame rigid fold motion.
+- KiCad ERC exits 0 with zero errors and zero warnings.
+- The generated schematic PDF and grouped BOM are present and inspectable.
 
-## Limits
+The electronics are **not fabrication-ready**. The saved KiCad DRC receipt exits 5 with 742 violations and 295 schematic-parity issues. Independent reruns reproduced the same failure and 295 parity issues, while the DRC violation count varied from 740 to 784 after zone refill. No populated PCB STEP, PCB renders, Gerbers, or drill files were generated after that failed gate. The CAD assembly therefore contains an explicitly named conservative PCB envelope rather than an invented populated board.
 
-This is an enclosure concept, not a working electronic product. It does not include a PCB, display connector, controls, power input, thermal analysis, fasteners, manufacturing tolerances, or electrical validation.
+Burr's integrated checks also remain failed/incomplete: six deployed pairs, seven folded pairs, and three exploded pairs, all with an open-component-mesh caveat.
+
+## Repair-required boundary
+
+This project does not claim working display operation, correct routing, fabrication readiness, connector engagement, power integrity, radio performance, EMC, thermal or electrical safety, manufacturability, fit, stand stability, durability, or production readiness. The next design pass must repair routing, planes, keepouts, footprint parity, exact component 3D coverage, board/enclosure integration, and Burr findings before fabrication outputs are considered.
+
+The project archive can be opened with `burr .`; the electronics sources can be inspected with KiCad 10.0.6 or a compatible release.

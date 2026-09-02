@@ -1,0 +1,242 @@
+{
+  "overall_pass": true,
+  "requirements": {
+    "all_five_poses_interference_free": {
+      "pass": true
+    },
+    "all_printable_parts_fit": {
+      "pass": true
+    },
+    "axial_clearances": {
+      "arm_each_side_mm": 1.0,
+      "hook_each_side_mm": 0.5,
+      "pass": true
+    },
+    "deployed_width": {
+      "pass": true,
+      "target_mm": [
+        430.0,
+        450.0
+      ],
+      "value_mm": 442.0
+    },
+    "endpoint_component_identity": {
+      "pass": true
+    },
+    "folded_envelope": {
+      "pass": true,
+      "target_mm": [
+        230.0,
+        90.0,
+        30.0
+      ],
+      "value_mm_sorted": [
+        222.884518,
+        88.0,
+        30.0
+      ]
+    },
+    "hook_rod_pocket": {
+      "diameter_mm": 42.0,
+      "diametral_clearance_mm": 4.0,
+      "pass": true,
+      "rod_max_mm": 38.0
+    },
+    "hook_throat": {
+      "clearance_mm": 2.0,
+      "opening_mm": 40.0,
+      "pass": true,
+      "rod_max_mm": 38.0
+    },
+    "pin_to_bore": {
+      "bore_diameter_mm": 5.6,
+      "diametral_clearance_mm": 0.5999999999999996,
+      "pass": true,
+      "pin_diameter_mm": 5.0,
+      "radial_clearance_mm": 0.2999999999999998
+    },
+    "positive_lock_face": {
+      "contact_area_each_side_mm2": 36.0,
+      "engagement_mm": 6.0,
+      "hard_stop_face_delta_z_mm": 0.0,
+      "minimum_mm": 3.0,
+      "pass": true
+    },
+    "release_control": {
+      "axial_travel_mm": 7.5,
+      "blocking_face_clearance_mm": 1.0,
+      "pass": true
+    }
+  },
+  "exported_step_poses": {
+    "deployed": {
+      "component_count": 11,
+      "bounds_mm": {
+        "max": [
+          221.0,
+          19.0,
+          105.0
+        ],
+        "min": [
+          -221.0,
+          -11.0,
+          -38.0
+        ],
+        "size": [
+          442.0,
+          30.0,
+          143.0
+        ]
+      },
+      "geometry": {
+        "all_closed": true,
+        "all_positive_volume": true,
+        "reasons": [],
+        "solid_count": 11,
+        "valid_topology": true
+      },
+      "interference": {
+        "bbox_candidate_pairs": 17,
+        "checked_pairs": 55,
+        "pass": true,
+        "positive_volume_findings": []
+      }
+    },
+    "fold_25": {
+      "component_count": 11,
+      "bounds_mm": {
+        "max": [
+          198.841461,
+          19.0,
+          81.819805
+        ],
+        "min": [
+          -198.841461,
+          -11.0,
+          -100.538324
+        ],
+        "size": [
+          397.682923,
+          30.0,
+          182.358129
+        ]
+      },
+      "geometry": {
+        "all_closed": true,
+        "all_positive_volume": true,
+        "reasons": [],
+        "solid_count": 11,
+        "valid_topology": true
+      },
+      "interference": {
+        "bbox_candidate_pairs": 17,
+        "checked_pairs": 55,
+        "pass": true,
+        "positive_volume_findings": []
+      }
+    },
+    "fold_50": {
+      "component_count": 11,
+      "bounds_mm": {
+        "max": [
+          156.184792,
+          19.0,
+          40.0
+        ],
+        "min": [
+          -156.184792,
+          -11.0,
+          -151.356149
+        ],
+        "size": [
+          312.369584,
+          30.0,
+          191.356149
+        ]
+      },
+      "geometry": {
+        "all_closed": true,
+        "all_positive_volume": true,
+        "reasons": [],
+        "solid_count": 11,
+        "valid_topology": true
+      },
+      "interference": {
+        "bbox_candidate_pairs": 19,
+        "checked_pairs": 55,
+        "pass": true,
+        "positive_volume_findings": []
+      }
+    },
+    "fold_75": {
+      "component_count": 11,
+      "bounds_mm": {
+        "max": [
+          98.432699,
+          19.0,
+          28.5
+        ],
+        "min": [
+          -98.432699,
+          -11.0,
+          -184.017112
+        ],
+        "size": [
+          196.865397,
+          30.0,
+          212.517112
+        ]
+      },
+      "geometry": {
+        "all_closed": true,
+        "all_positive_volume": true,
+        "reasons": [],
+        "solid_count": 11,
+        "valid_topology": true
+      },
+      "interference": {
+        "bbox_candidate_pairs": 19,
+        "checked_pairs": 55,
+        "pass": true,
+        "positive_volume_findings": []
+      }
+    },
+    "folded": {
+      "component_count": 11,
+      "bounds_mm": {
+        "max": [
+          44.0,
+          19.0,
+          28.5
+        ],
+        "min": [
+          -44.0,
+          -11.0,
+          -194.384518
+        ],
+        "size": [
+          88.0,
+          30.0,
+          222.884518
+        ]
+      },
+      "geometry": {
+        "all_closed": true,
+        "all_positive_volume": true,
+        "reasons": [],
+        "solid_count": 11,
+        "valid_topology": true
+      },
+      "interference": {
+        "bbox_candidate_pairs": 19,
+        "checked_pairs": 55,
+        "pass": true,
+        "positive_volume_findings": []
+      }
+    }
+  },
+  "exported_step_endpoint_identity": {
+    "same_names": true,
+    "pass": true
+  }
+}

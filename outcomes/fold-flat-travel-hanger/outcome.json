@@ -5,7 +5,7 @@
     "about": "outcome.md",
     "prompt": "prompt.md"
   },
-  "authoredAt": "2026-09-02T22:07:40+08:00",
+  "authoredAt": "2026-09-03T02:12:48+08:00",
   "author": {
     "name": "Fray Labs",
     "url": "https://github.com/fraylabs"
@@ -35,140 +35,191 @@
   ],
   "artifacts": [
     {
-      "type": "source",
-      "src": "artifacts/source/travel_hanger.py",
-      "label": "Parametric hanger source",
-      "format": "Python"
+      "type": "archive",
+      "src": "artifacts/fold-flat-travel-hanger-burr-project.zip",
+      "label": "Complete portable Burr project",
+      "format": "ZIP"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/SHA256SUMS.txt",
+      "label": "Prompt and primary artifact hashes",
+      "format": "SHA-256"
     },
     {
       "type": "source",
-      "src": "artifacts/source/travel_hanger_collision.py",
-      "label": "Conservative collision-envelope source",
-      "format": "Python"
-    },
-    {
-      "type": "source",
-      "src": "artifacts/source/travel_hanger_deployed.step.py",
-      "label": "Deployed STEP entry point",
-      "format": "Python"
-    },
-    {
-      "type": "source",
-      "src": "artifacts/source/travel_hanger_folded.step.py",
-      "label": "Folded STEP entry point",
-      "format": "Python"
-    },
-    {
-      "type": "source",
-      "src": "artifacts/source/travel_hanger_deployed_collision.step.py",
-      "label": "Deployed collision-envelope entry point",
-      "format": "Python"
-    },
-    {
-      "type": "source",
-      "src": "artifacts/source/travel_hanger_folded_collision.step.py",
-      "label": "Folded collision-envelope entry point",
+      "src": "artifacts/project/models/hanger_common.py",
+      "label": "Shared parametric hanger source",
       "format": "Python"
     },
     {
       "type": "cad",
-      "src": "artifacts/cad/travel_hanger_deployed.step",
-      "label": "Detailed deployed assembly",
+      "src": "artifacts/project/models/assemblies/hanger_deployed.step",
+      "label": "Deployed assembly",
       "format": "STEP"
     },
     {
       "type": "cad",
-      "src": "artifacts/cad/travel_hanger_folded.step",
-      "label": "Detailed folded assembly",
+      "src": "artifacts/project/models/assemblies/hanger_folded.step",
+      "label": "Folded assembly",
       "format": "STEP"
     },
     {
       "type": "cad",
-      "src": "artifacts/cad/travel_hanger_deployed_collision.step",
-      "label": "Deployed collision envelope",
+      "src": "artifacts/project/models/assemblies/hanger_exploded.step",
+      "label": "Exploded assembly",
       "format": "STEP"
     },
     {
       "type": "cad",
-      "src": "artifacts/cad/travel_hanger_folded_collision.step",
-      "label": "Folded collision envelope",
+      "src": "artifacts/project/models/assemblies/lock_engaged.step",
+      "label": "Positive lock engaged detail",
+      "format": "STEP"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/project/models/assemblies/lock_released.step",
+      "label": "Positive lock released detail",
       "format": "STEP"
     },
     {
       "type": "document",
-      "src": "artifacts/docs/README.md",
-      "label": "Cleanroom run notes",
+      "src": "artifacts/project/docs/CAD_BRIEF.md",
+      "label": "CAD and mechanism brief",
       "format": "Markdown"
     },
     {
       "type": "document",
-      "src": "artifacts/docs/CAD_BRIEF.md",
-      "label": "Interpreted CAD brief",
+      "src": "artifacts/project/docs/BOM.md",
+      "label": "Bill of materials",
       "format": "Markdown"
     },
     {
       "type": "document",
-      "src": "artifacts/docs/VALIDATION_REPORT.md",
-      "label": "Complete validation report",
+      "src": "artifacts/project/docs/ASSEMBLY.md",
+      "label": "Assembly and operation guide",
+      "format": "Markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/project/docs/LIMITS_AND_TEST_PLAN.md",
+      "label": "Limits and physical test plan",
+      "format": "Markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/project/RUN_REPORT.md",
+      "label": "Cleanroom and independent review report",
       "format": "Markdown"
     },
     {
       "type": "data",
-      "src": "artifacts/docs/SHA256SUMS",
-      "label": "Primary artifact hashes",
-      "format": "SHA-256"
+      "src": "artifacts/project/validation/geometry_validation_final_summary.json",
+      "label": "Exact geometry validation summary",
+      "format": "JSON"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/project/validation/cad_provider_validate_summary.json",
+      "label": "CAD provider validation summary",
+      "format": "JSON"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/project/validation/burr_checks_deployed.json",
+      "label": "Burr deployed interference result",
+      "format": "JSON"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/project/validation/burr_checks_folded.json",
+      "label": "Burr folded interference result",
+      "format": "JSON"
     },
     {
       "type": "image",
-      "src": "media/deployed-burr-incomplete.png",
-      "label": "Detailed deployed Burr result",
+      "src": "media/burr-deployed.png",
+      "label": "Burr deployed motion endpoint",
       "format": "PNG"
     },
     {
       "type": "image",
-      "src": "media/folded-burr-incomplete.png",
-      "label": "Detailed folded Burr result",
+      "src": "media/burr-folded.png",
+      "label": "Burr folded motion endpoint",
+      "format": "PNG"
+    },
+    {
+      "type": "image",
+      "src": "media/burr-xray.png",
+      "label": "Burr deployed X-ray view",
+      "format": "PNG"
+    },
+    {
+      "type": "image",
+      "src": "media/burr-checks-deployed.png",
+      "label": "Burr deployed failed check evidence",
+      "format": "PNG"
+    },
+    {
+      "type": "image",
+      "src": "media/burr-checks-folded.png",
+      "label": "Burr folded failed check evidence",
       "format": "PNG"
     }
   ],
   "preview": {
-    "description": "A genuine one-shot Burr result: a colorful nine-part travel hanger with deployed and folded poses, source, STEP exports, and honestly scoped check evidence.",
+    "description": "A one-shot positive-locking fold-flat hanger with editable parametric source, five-pose geometry evidence, printable exports, and a named Burr fold motion—published honestly as repair-required.",
     "images": [
       {
         "src": "media/deployed.png",
-        "alt": "Isometric view of a deployed colorful fold-flat travel hanger with articulated pink and turquoise arms",
-        "caption": "The cleanroom agent's final deployed CAD snapshot, 428 mm wide",
+        "alt": "Isometric CAD view of the deployed blue fold-flat hanger with central black yoke, silver hook, and orange lock bar",
+        "caption": "Deployed pose: 442 mm shoulder width with the linked positive lock engaged",
         "cover": true
       },
       {
         "src": "media/folded.png",
-        "alt": "Isometric view of the same travel hanger folded into a narrow layered bundle",
-        "caption": "The cleanroom agent's final folded CAD snapshot, 76 mm wide"
+        "alt": "Isometric CAD view of the same hanger folded into a narrow vertical bundle",
+        "caption": "Folded envelope: 222.885 × 88 × 30 mm"
       },
       {
-        "src": "media/deployed-burr-pass.png",
-        "alt": "Burr showing the deployed five-component collision envelope with a passing check",
-        "caption": "Native Burr evidence: all 10 conservative envelope pairs pass in the deployed pose"
+        "src": "media/lock-engaged.png",
+        "alt": "Close CAD view of the orange linked lock bar supporting both blue shoulder-arm heels",
+        "caption": "Lock engaged: each arm heel has 6 mm of modeled bearing overlap"
       },
       {
-        "src": "media/folded-burr-pass.png",
-        "alt": "Burr showing the folded five-component collision envelope with a passing check",
-        "caption": "Native Burr evidence: all 10 conservative envelope pairs pass in the folded pose"
+        "src": "media/lock-released.png",
+        "alt": "Close CAD view of the orange linked lock bar translated away from the shoulder-arm heels",
+        "caption": "Lock released after 7.5 mm of linked-bar travel"
+      },
+      {
+        "src": "media/burr-folded.png",
+        "alt": "Burr displaying the hanger at the completed folded endpoint of its motion",
+        "caption": "Native Burr evidence after the named 1.6-second fold motion reached its endpoint"
       }
     ],
     "cad": {
       "poster": "media/deployed.png",
-      "caption": "Download either detailed STEP pose for local inspection in Burr.",
+      "caption": "Download the authoritative STEP states or the complete archive and inspect the motion locally with Burr.",
       "downloads": [
         {
-          "src": "artifacts/cad/travel_hanger_deployed.step",
+          "src": "artifacts/project/models/assemblies/hanger_deployed.step",
           "format": "step",
-          "label": "Download deployed STEP assembly"
+          "label": "Download deployed assembly"
         },
         {
-          "src": "artifacts/cad/travel_hanger_folded.step",
+          "src": "artifacts/project/models/assemblies/hanger_folded.step",
           "format": "step",
-          "label": "Download folded STEP assembly"
+          "label": "Download folded assembly"
+        },
+        {
+          "src": "artifacts/project/models/assemblies/hanger_exploded.step",
+          "format": "step",
+          "label": "Download exploded assembly"
+        },
+        {
+          "src": "artifacts/project/models/assemblies/lock_engaged.step",
+          "format": "step",
+          "label": "Download lock detail"
         }
       ]
     }
