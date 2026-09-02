@@ -1,0 +1,13 @@
+schema_version = "burr.project.v1"
+
+[project]
+models = ["artifacts"]
+
+[[motions]]
+id = "fold"
+label = "Fold hanger"
+from = "artifacts/hanger-deployed.step"
+from_label = "Deployed"
+to = "artifacts/hanger-folded.step"
+to_label = "Folded"
+duration_ms = 1200

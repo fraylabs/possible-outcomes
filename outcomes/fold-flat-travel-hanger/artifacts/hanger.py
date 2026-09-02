@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from math import cos, radians, sin
+from pathlib import Path
 
 from build123d import (
     Align,
@@ -17,6 +18,7 @@ from build123d import (
     Mode,
     Plane,
     Polygon,
+    export_step,
     extrude,
 )
 
@@ -48,8 +50,8 @@ AXIAL_CLEARANCE = ARM_BOTTOM_Z - HUB_THICKNESS / 2.0
 
 # The check models use intentionally simple closed solids. They cover the hub
 # body and the load-bearing span of each arm, but omit the hook, pins, bores,
-# and stops whose curved STEP faces are not yet tessellated reliably by Burr's
-# viewer dependency.
+# and stops that keep the detailed tessellated components from forming the
+# closed meshes required by Burr's current interference check.
 CHECK_ARM_START = 10.0
 CHECK_ARM_WIDTH = 14.0
 
@@ -61,6 +63,22 @@ FOLDED_LEFT_ANGLE = -95.0
 STOP_RADIUS = 1.5
 STOP_LOCAL_X = 12.0
 STOP_LOCAL_Y = ARM_ROOT_HALF_WIDTH + STOP_RADIUS
+
+
+def export_burr_step(shape: object, path: Path) -> None:
+    """Write STEP that Look can tessellate without PCurve face loss."""
+
+    export_step(
+        shape,
+        path,
+        timestamp="2026-01-01T00:00:00",
+        write_pcurves=False,
+    )
+    contents = path.read_text(encoding="utf-8")
+    path.write_text(
+        "".join(f"{line.rstrip()}\n" for line in contents.splitlines()),
+        encoding="utf-8",
+    )
 
 
 def _linear_channel(hex_color: str) -> Color:

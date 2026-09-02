@@ -7,9 +7,7 @@
 
 from pathlib import Path
 
-from build123d import export_step
-
-from hanger import make_hanger
+from hanger import export_burr_step, make_hanger
 
 
 def gen_step():
@@ -17,4 +15,4 @@ def gen_step():
 
 
 if __name__ == "__main__":
-    export_step(gen_step(), Path(__file__).with_suffix(""), timestamp="2026-01-01T00:00:00")
+    export_burr_step(gen_step(), Path(__file__).with_suffix(""))

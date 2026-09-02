@@ -24,9 +24,11 @@ for local viewing and assembly-interference checks.
   They cover the hub body and the load-bearing span of both arms. They do not
   prove hook, pin, bore, stop, clearance, strength, or manufacturability.
 
-The split is explicit because Burr's viewer dependency currently drops two
-curved faces from the detailed STEP files. Those display models therefore
-report `incomplete`; the check envelopes are not presented as exact geometry.
+The exporters set `write_pcurves=False` as a compatibility workaround for a
+[current Look import problem](https://github.com/stefangolas/look/issues/1), so
+the detailed models render every face. They still report `incomplete` for the
+interference check because their tessellated component meshes are not closed.
+The check envelopes are not presented as exact geometry.
 
 ## Generate
 
@@ -39,12 +41,14 @@ uv run hanger-deployed-check.step.py
 uv run hanger-folded-check.step.py
 ```
 
-Then open this folder in Burr:
+Then open this outcome folder in Burr:
 
 ```bash
+cd ..
 burr .
 ```
 
-Select the two full-detail files to inspect the mechanism. Select each
-`*-check.step` file to run Burr's supported component-pair check; it should
-complete without reporting solid-volume interference in either pose.
+Select either full-detail pose and use the **Fold hanger** player to play or
+scrub the named rigid motion. Select each `*-check.step` file to run Burr's
+supported component-pair check; it should complete without reporting
+solid-volume interference in either pose.

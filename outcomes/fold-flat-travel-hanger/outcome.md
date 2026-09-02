@@ -14,6 +14,7 @@ assembly-interference check.
 - Editable parametric Python source
 - Detailed deployed and folded STEP assemblies
 - Closed deployed and folded check envelopes
+- A Burr project configuration with named fold/deploy playback
 - Burr-native snapshots of both detailed poses and both check envelopes
 - Local generation and Burr viewing instructions
 
@@ -21,6 +22,8 @@ assembly-interference check.
 
 - Both detailed assemblies contain three labelled component occurrences.
 - Both detailed and check STEP files pass CAD structural validation.
+- Burr matches the same three rigid components across both detailed poses and
+  exposes a named Fold hanger player with a 1.2 second transition.
 - Burr checks all three component pairs in each collision-envelope pose and
   reports no solid-volume interference.
 - Burr exports non-empty PNG snapshots of both detailed poses from the active
@@ -28,9 +31,10 @@ assembly-interference check.
 - The pin-to-bore radial clearance is 0.4 mm and the hub-to-arm axial clearance
   is 0.6 mm in the authored source.
 
-The current Burr viewer dependency drops two curved faces from the detailed
-STEP assemblies, so those models correctly report an incomplete interference
-check. The closed check envelopes are explicitly limited to the hub body and
+The detailed STEP files omit optional surface parameter curves so Burr's Look
+viewer can reconstruct every face from its 3D edge geometry. Their component
+meshes are still not closed enough for Burr's current interference check, so
+the separate check envelopes remain explicitly limited to the hub body and
 load-bearing arm spans; they are not presented as exact geometry.
 
 This is a digitally inspected concept, not proof of physical load capacity,

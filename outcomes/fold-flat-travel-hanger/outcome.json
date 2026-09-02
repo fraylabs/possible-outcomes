@@ -41,6 +41,12 @@
       "format": "Python"
     },
     {
+      "type": "source",
+      "src": ".burr/config.toml",
+      "label": "Burr fold and deploy motion configuration",
+      "format": "TOML"
+    },
+    {
       "type": "cad",
       "src": "artifacts/hanger-deployed.step",
       "label": "Detailed deployed assembly",
