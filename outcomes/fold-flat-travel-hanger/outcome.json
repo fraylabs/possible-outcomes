@@ -1,0 +1,116 @@
+{
+  "schemaVersion": 4,
+  "slug": "fold-flat-travel-hanger",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-02T14:44:17+08:00",
+  "author": {
+    "name": "Fray Labs",
+    "url": "https://github.com/fraylabs"
+  },
+  "models": [
+    {
+      "provider": "OpenAI",
+      "model": "GPT-5.6",
+      "role": "execution",
+      "agent": "Codex"
+    }
+  ],
+  "requirements": [],
+  "primary": {
+    "kind": "skill",
+    "repository": "fraylabs/burr",
+    "lastReviewedCommit": "3a1b8ebf17e178b28c6d65f67ad04fc97f009a55",
+    "directory": "skills/burr"
+  },
+  "secondary": [
+    {
+      "kind": "skill",
+      "repository": "earthtojake/text-to-cad",
+      "lastReviewedCommit": "fc4f7069fb31c131a55f1ecd334b505f031f486b",
+      "directory": "skills/cad"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "source",
+      "src": "artifacts/hanger.py",
+      "label": "Shared parametric hanger source",
+      "format": "Python"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/hanger-deployed.step",
+      "label": "Detailed deployed assembly",
+      "format": "STEP"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/hanger-folded.step",
+      "label": "Detailed folded assembly",
+      "format": "STEP"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/hanger-deployed-check.step",
+      "label": "Deployed collision envelope",
+      "format": "STEP"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/hanger-folded-check.step",
+      "label": "Folded collision envelope",
+      "format": "STEP"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/README.md",
+      "label": "Generation and verification notes",
+      "format": "Markdown"
+    }
+  ],
+  "preview": {
+    "description": "A parametric adult clothes hanger with deployed and folded poses, plus honest closed envelopes for Burr's current interference check.",
+    "images": [
+      {
+        "src": "media/deployed.png",
+        "alt": "Top view of the deployed fold-flat travel hanger with an orange hook hub and two blue arms",
+        "caption": "Detailed deployed pose, approximately 467 mm wide",
+        "cover": true
+      },
+      {
+        "src": "media/folded.png",
+        "alt": "Isometric view of the folded travel hanger with both arms lying nearly parallel",
+        "caption": "Detailed folded pose, approximately 109 mm wide"
+      },
+      {
+        "src": "media/deployed-check.png",
+        "alt": "Top view of the three closed collision envelopes in the deployed pose",
+        "caption": "Deployed check envelopes: all three Burr component pairs pass"
+      },
+      {
+        "src": "media/folded-check.png",
+        "alt": "Isometric view of the three closed collision envelopes in the folded pose",
+        "caption": "Folded check envelopes: all three Burr component pairs pass"
+      }
+    ],
+    "cad": {
+      "poster": "media/deployed.png",
+      "caption": "Download either detailed STEP pose for local inspection in Burr.",
+      "downloads": [
+        {
+          "src": "artifacts/hanger-deployed.step",
+          "format": "step",
+          "label": "Download deployed STEP assembly"
+        },
+        {
+          "src": "artifacts/hanger-folded.step",
+          "format": "step",
+          "label": "Download folded STEP assembly"
+        }
+      ]
+    }
+  }
+}
