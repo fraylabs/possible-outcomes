@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 4,
+  "slug": "microduck-learned-happy-shuffle",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-02T10:02:03+08:00",
+  "author": {
+    "name": "Fray Labs",
+    "url": "https://github.com/fraylabs"
+  },
+  "models": [
+    {
+      "provider": "OpenAI",
+      "model": "GPT-5.6",
+      "role": "execution",
+      "agent": "Codex"
+    }
+  ],
+  "requirements": [
+    "A checkout of pollen-robotics/microduck_rl",
+    "A Hugging Face account with enough Jobs credit for CUDA training",
+    "An NVIDIA CUDA training job; Apple Silicon can run the local tests but not the official training path"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "pollen-robotics/microduck"
+  },
+  "secondary": [
+    {
+      "kind": "product",
+      "id": "huggingface/jobs"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "data",
+      "src": "artifacts/metrics.json",
+      "label": "Evaluation metrics",
+      "format": "JSON"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/run-report.md",
+      "label": "Training and evaluation report",
+      "format": "Markdown"
+    }
+  ],
+  "preview": {
+    "description": "A reinforcement-learned MicroDuck policy performing a stable alternating step-and-sway in simulation after one direct execution prompt.",
+    "video": {
+      "src": "media/happy-shuffle-preview.mp4",
+      "poster": "media/happy-shuffle-poster.jpg",
+      "caption": "Two consecutive eight-second phrases from the final simulated policy. Physical-hardware transfer has not been tested."
+    }
+  }
+}
