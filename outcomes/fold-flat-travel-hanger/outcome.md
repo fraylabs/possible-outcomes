@@ -14,7 +14,7 @@ assembly-interference check.
 - Editable parametric Python source
 - Detailed deployed and folded STEP assemblies
 - Closed deployed and folded check envelopes
-- Burr-native snapshots of both detailed poses and two reviewed check views
+- Burr-native snapshots of both detailed poses and both check envelopes
 - Local generation and Burr viewing instructions
 
 ## Verified digital behavior

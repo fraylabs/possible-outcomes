@@ -88,12 +88,12 @@
       {
         "src": "media/deployed-check.png",
         "alt": "Top view of the three closed collision envelopes in the deployed pose",
-        "caption": "Deployed check envelopes: all three Burr component pairs pass"
+        "caption": "Burr-native deployed check view: all three component pairs pass"
       },
       {
         "src": "media/folded-check.png",
         "alt": "Isometric view of the three closed collision envelopes in the folded pose",
-        "caption": "Folded check envelopes: all three Burr component pairs pass"
+        "caption": "Burr-native folded check view: all three component pairs pass"
       }
     ],
     "cad": {
