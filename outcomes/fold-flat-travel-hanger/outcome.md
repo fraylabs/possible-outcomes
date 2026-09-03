@@ -30,4 +30,4 @@ No hanger was fabricated or physically tested. The geometry does not prove a 3 k
 
 Publication review also found that the generated assembly guide tells the builder to fit two compression springs over guide pegs, but the generated lock-bar source contains no guide pegs. The spring-loaded return and folded-retention assembly therefore cannot be built as documented. This source-level defect is preserved rather than silently repaired so the outcome remains an authentic one-shot result; see `artifacts/docs/PUBLICATION_REVIEW.md`.
 
-Extract the project archive, change into the extracted project root, and run `burr .`. Its sources and validation receipts remain editable and inspectable.
+Extract the project archive, change into the extracted project root, and run `burr .`. Its sources and validation receipts remain editable and inspectable. The downloadable archive's motion configuration was migrated after the cleanroom run to Burr 0.34's single-source joint format; its CAD, original report, and validation receipts remain unchanged.
