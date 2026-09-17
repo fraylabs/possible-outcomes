@@ -12,12 +12,14 @@ The root [`outcomes.json`](./outcomes.json) is the machine-readable publisher in
 
 ## Use with Possible
 
-These source-owned publishing commands require `@fraylabs/possible@0.2.0`. The release is currently being prepared; the repository itself is already a valid Possible source.
+Use CLI 0.3.1 or newer for the current primary Product/Skill manifests:
 
 ```shell
-npx @fraylabs/possible@0.2.0 add fraylabs/possible-outcomes
-npx @fraylabs/possible@0.2.0 use fraylabs/possible-outcomes@<slug>
+npx @fraylabs/possible@0.3.1 add fraylabs/possible-outcomes
+npx @fraylabs/possible@0.3.1 use fraylabs/possible-outcomes@digital-photo-frame
 ```
+
+The `use` command prints the reusable prompt. Review it before giving it to an agent.
 
 ## License
 
