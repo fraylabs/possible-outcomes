@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 4,
+  "slug": "glass-and-gold-mosaic-film",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-22T20:59:18Z",
+  "author": {
+    "name": "Chris Riley",
+    "url": "https://x.com/LCSlates"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Opus 5.5 (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "WebGL2-capable browser",
+    "User interaction to enable synthesized browser audio"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "other",
+      "src": "https://x.com/LCSlates/status/2102503027340988559",
+      "label": "Original demo and discussion on X"
+    },
+    {
+      "type": "document",
+      "src": "https://x.com/LCSlates/status/2102503028859211905",
+      "label": "Creator’s original prompt"
+    },
+    {
+      "type": "document",
+      "src": "https://x.com/LCSlates/status/2102503030469833168",
+      "label": "Creator’s posted agent readout"
+    }
+  ],
+  "preview": {
+    "description": "Chris Riley’s 80-second WebGL2 mosaic-film demo; a glass-and-gold wall animates into fish, birds and a day/night tile transformation.",
+    "video": {
+      "src": "https://video.twimg.com/amplify_video/2102502315185803264/vid/avc1/1080x1080/sAv8kDNKSV7KmtgO.mp4?tag=29",
+      "poster": "https://pbs.twimg.com/amplify_video_thumb/2102502315185803264/img/NvXg95Ah07VHzpL2.jpg",
+      "caption": "Original demonstration by Chris Riley (@LCSlates), who reports using Opus 5.5. Video hosted by X."
+    }
+  }
+}

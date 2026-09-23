@@ -5,6 +5,7 @@
     "url": "https://github.com/fraylabs/possible-outcomes"
   },
   "outcomes": [
+    { "slug": "glass-and-gold-mosaic-film", "url": "./outcomes/glass-and-gold-mosaic-film/outcome.json" },
     { "slug": "digital-photo-frame", "url": "./outcomes/digital-photo-frame/outcome.json" },
     { "slug": "functional-hardware-prototype", "url": "./outcomes/functional-hardware-prototype/outcome.json" },
     { "slug": "fold-flat-travel-hanger", "url": "./outcomes/fold-flat-travel-hanger/outcome.json" },
