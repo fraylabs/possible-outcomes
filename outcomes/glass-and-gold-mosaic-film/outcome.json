@@ -45,9 +45,9 @@
   "preview": {
     "description": "Chris Riley’s 80-second WebGL2 mosaic-film demo; a glass-and-gold wall animates into fish, birds and a day/night tile transformation.",
     "video": {
-      "src": "https://video.twimg.com/amplify_video/2102502315185803264/vid/avc1/720x720/DyY5IToZbgjRmd8V.mp4?tag=29",
-      "poster": "https://pbs.twimg.com/amplify_video_thumb/2102502315185803264/img/NvXg95Ah07VHzpL2.jpg",
-      "caption": "Original demonstration by Chris Riley (@LCSlates), who reports using Opus 5.5. Video hosted by X."
+      "src": "media/mosaic-film.mp4",
+      "poster": "media/mosaic-poster.jpg",
+      "caption": "Original demonstration by Chris Riley (@LCSlates), who reports using Opus 5.5. Playback copy; original post linked below."
     }
   }
 }

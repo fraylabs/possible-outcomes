@@ -14,4 +14,4 @@ The copyable prompt is a Fray-authored adaptation of the publicly described idea
 
 ## Available evidence
 
-The preview links to the original X-hosted video. No downloadable HTML implementation was provided in the linked posts; this entry does not claim source-code availability, a verified one-shot result or independent technical validation. Original media remains attributed to its creator and is not relicensed by this repository.
+The preview is a playback copy of the original X video, with unchanged video and audio streams and MP4 metadata moved to the beginning for streaming. No downloadable HTML implementation was provided in the linked posts; this entry does not claim source-code availability, a verified one-shot result or independent technical validation. Original media remains attributed to its creator and is excluded from this repository’s MIT license; see media/NOTICE.md.
