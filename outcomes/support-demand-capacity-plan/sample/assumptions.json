@@ -1,8 +1,0 @@
-{
-  "week_start": "2026-09-28",
-  "week_end_exclusive": "2026-10-05",
-  "people": 3,
-  "productive_hours_per_person": 20,
-  "stress_new_volume_multiplier": 1.5,
-  "stress_handling_minutes_multiplier": 1.1
-}

@@ -1,3 +1,0 @@
-scenario,known_new_minutes,known_backlog_minutes,known_total_minutes,capacity_minutes,known_utilization_percent,known_gap_minutes,status
-base,2640,240,2880,3600,80.0,-720,incomplete: missing handling time for specialist
-stress,4356.00,264.0,4620.00,3600,128.3,1020.00,incomplete: missing handling time for specialist

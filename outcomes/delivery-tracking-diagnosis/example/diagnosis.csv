@@ -1,9 +1,0 @@
-shipment_id,delivery_late,tracking_stale,reason
-A,yes,yes,open; lateness and tracking freshness are independent
-B,yes,no,open; lateness and tracking freshness are independent
-C,no,yes,open; lateness and tracking freshness are independent
-D,no,no,open; lateness and tracking freshness are independent
-E,yes,not_applicable,delivered; lateness compares delivery with promise
-F,unknown,unknown,missing timestamps; do not infer status
-G,no,no,open; lateness and tracking freshness are independent
-H,unknown,unknown,conflicting records; reconcile source

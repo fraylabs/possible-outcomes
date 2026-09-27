@@ -21,10 +21,6 @@ npx @fraylabs/possible@0.3.1 use fraylabs/possible-outcomes@digital-photo-frame
 
 The `use` command prints the reusable prompt. Review it before giving it to an agent.
 
-## New collection
-
-[Five useful workday prompts](WORKDAY-PROMPTS.md): data checks, decision documents and interactive process training, with sample inputs, worked artifacts and explicit model-testing limits.
-
 ## License
 
 Code and text are available under the MIT License. Referenced third-party Products and Skills retain their respective ownership and licenses.
