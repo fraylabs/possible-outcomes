@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 4,
+  "slug": "rube-goldberg-machine",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-22T23:42:26+00:00",
+  "author": {
+    "name": "leo",
+    "url": "https://x.com/leogao25"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Opus 5.5 (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code or another coding agent; browser with Three.js CDN access."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "other",
+      "src": "https://x.com/leogao25/status/2102544078927741369",
+      "label": "Original creator demo"
+    },
+    {
+      "type": "document",
+      "src": "https://x.com/leogao25/status/2102544081863717153",
+      "label": "Creator’s posted prompt"
+    }
+  ],
+  "preview": {
+    "description": "A marble rolls through a wooden contraption, setting off dominoes, a seesaw, a pulley, a bell and a rising flag.",
+    "video": {
+      "src": "media/demo.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Creator comparison: Opus 5.5 LEFT; GPT-6 Astra RIGHT. Costs/timings shown are the creator’s report."
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 4,
+  "slug": "neon-fluid-simulation",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-23T01:08:00+00:00",
+  "author": {
+    "name": "theailoser",
+    "url": "https://x.com/theailoser"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Opus 5.5 (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "WebGL-capable browser; coding agent able to write a standalone HTML file."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "other",
+      "src": "https://x.com/theailoser/status/2102565611473661963",
+      "label": "Original creator demo"
+    },
+    {
+      "type": "document",
+      "src": "https://x.com/theailoser/status/2102565612874596411",
+      "label": "Creator’s posted prompt"
+    }
+  ],
+  "preview": {
+    "description": "Drag glowing color through a swirling fluid simulation, with neon trails, turbulent curls and adjustable viscosity.",
+    "video": {
+      "src": "media/demo.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Original demo by theailoser; creator reports Opus 5.5."
+    }
+  }
+}

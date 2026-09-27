@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 4,
+  "slug": "sunset-pirate-ship",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-22T23:01:19+00:00",
+  "author": {
+    "name": "Vib3Coded",
+    "url": "https://x.com/vib3coded"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Opus 5.5 (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Coding agent with file and browser tools; WebGL-capable browser; any chosen assets must permit reuse."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "other",
+      "src": "https://x.com/vib3coded/status/2102533729746882985",
+      "label": "Original creator demo"
+    },
+    {
+      "type": "document",
+      "src": "https://x.com/vib3coded/status/2102534606121746589",
+      "label": "Creator’s posted prompt"
+    }
+  ],
+  "preview": {
+    "description": "Circle a detailed pirate ship sailing through a sunset ocean, with moving sails, warm lanterns and a foamy wake.",
+    "video": {
+      "src": "media/demo.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Creator comparison: GPT-6 Astra LEFT; Opus 5.5 RIGHT."
+    }
+  }
+}

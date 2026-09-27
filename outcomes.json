@@ -5,6 +5,11 @@
     "url": "https://github.com/fraylabs/possible-outcomes"
   },
   "outcomes": [
+    { "slug": "neon-fluid-simulation", "url": "./outcomes/neon-fluid-simulation/outcome.json" },
+    { "slug": "rube-goldberg-machine", "url": "./outcomes/rube-goldberg-machine/outcome.json" },
+    { "slug": "sunset-pirate-ship", "url": "./outcomes/sunset-pirate-ship/outcome.json" },
+    { "slug": "kinetic-motion-design-reel", "url": "./outcomes/kinetic-motion-design-reel/outcome.json" },
+    { "slug": "navigable-3d-pagoda", "url": "./outcomes/navigable-3d-pagoda/outcome.json" },
     { "slug": "glass-and-gold-mosaic-film", "url": "./outcomes/glass-and-gold-mosaic-film/outcome.json" },
     { "slug": "digital-photo-frame", "url": "./outcomes/digital-photo-frame/outcome.json" },
     { "slug": "functional-hardware-prototype", "url": "./outcomes/functional-hardware-prototype/outcome.json" },

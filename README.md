@@ -21,6 +21,10 @@ npx @fraylabs/possible@0.3.1 use fraylabs/possible-outcomes@digital-photo-frame
 
 The `use` command prints the reusable prompt. Review it before giving it to an agent.
 
+## Opus 5.5 demos
+
+[See five creator demos and copy their prompts](OPUS-DEMOS.md): neon fluid, a Rube Goldberg machine, a sunset pirate ship, motion design and an explorable pagoda. Each links the original creator and records creator-reported model provenance.
+
 ## License
 
-Code and text are available under the MIT License. Referenced third-party Products and Skills retain their respective ownership and licenses.
+Fray-authored code and text are available under the MIT License. Curated creator prompts and demo media retain their original ownership and are excluded from that grant; see linked sources and each media/NOTICE.md. Referenced third-party Products and Skills retain their respective ownership and licenses.

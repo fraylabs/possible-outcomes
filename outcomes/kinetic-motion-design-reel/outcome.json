@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 4,
+  "slug": "kinetic-motion-design-reel",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-26T13:58:18+00:00",
+  "author": {
+    "name": "Tasher",
+    "url": "https://x.com/Dannnnnok"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Opus 5.5 (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Assistant with Python execution, video rendering and file export."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "other",
+      "src": "https://x.com/Dannnnnok/status/2103846630088716687",
+      "label": "Original creator demo"
+    },
+    {
+      "type": "document",
+      "src": "https://x.com/Dannnnnok/status/2103847239885939019",
+      "label": "Creator’s posted prompt"
+    }
+  ],
+  "preview": {
+    "description": "A punchy motion-design reel with a field of 3D cubes, morphing typography and musical bounces, generated in Python.",
+    "video": {
+      "src": "media/demo.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Original reel by Tasher; creator reports Opus 5.5, Python visuals and generated music."
+    }
+  }
+}

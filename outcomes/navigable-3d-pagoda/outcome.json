@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 4,
+  "slug": "navigable-3d-pagoda",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-25T13:54:04+00:00",
+  "author": {
+    "name": "Build Fast with AI",
+    "url": "https://x.com/BuildFastWithAI"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Opus 5.5 (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Coding assistant able to create and run a 3D browser scene; WebGL-capable browser."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "other",
+      "src": "https://x.com/BuildFastWithAI/status/2103483174957597035",
+      "label": "Original demo and prompt"
+    }
+  ],
+  "preview": {
+    "description": "Walk through a detailed pagoda environment generated from a short creative-coding prompt.",
+    "video": {
+      "src": "media/demo.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Original demo by Build Fast with AI; creator reports Opus 5.5."
+    }
+  }
+}
