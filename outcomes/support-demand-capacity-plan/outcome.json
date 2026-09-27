@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 4,
+  "slug": "support-demand-capacity-plan",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-27T00:00:00Z",
+  "author": {
+    "name": "Fray Labs",
+    "url": "https://github.com/fraylabs/possible-outcomes"
+  },
+  "models": [
+    {
+      "provider": "OpenAI",
+      "model": "GPT-6 Astra",
+      "role": "authorship"
+    },
+    {
+      "provider": "OpenAI",
+      "model": "GPT-6 Astra",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude with file upload and code execution, or another assistant with equivalent tools",
+    "Python 3.10+ to reproduce the included synthetic example; no third-party packages"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "inputs": [
+    {
+      "type": "data",
+      "src": "sample/queue-demand.csv",
+      "label": "Synthetic queue demand"
+    },
+    {
+      "type": "data",
+      "src": "sample/assumptions.json",
+      "label": "Week and scenario assumptions"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "data",
+      "src": "example/scenarios.csv",
+      "label": "Worked capacity scenarios"
+    },
+    {
+      "type": "data",
+      "src": "example/queue-breakdown.csv",
+      "label": "Queue-level workload calculations"
+    },
+    {
+      "type": "document",
+      "src": "example/capacity-brief.md",
+      "label": "Example planning brief"
+    },
+    {
+      "type": "source",
+      "src": "analyze.py",
+      "label": "Reproduce and check calculations"
+    }
+  ],
+  "preview": {
+    "description": "Compare weekly support workload with productive capacity while preserving missing estimates and scenario assumptions."
+  }
+}

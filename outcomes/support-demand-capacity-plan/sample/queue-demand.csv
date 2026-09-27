@@ -1,0 +1,5 @@
+queue,new_tickets,backlog_tickets,minutes_per_ticket
+email,100,20,12
+chat,80,0,18
+specialist,10,2,
+email,100,20,12

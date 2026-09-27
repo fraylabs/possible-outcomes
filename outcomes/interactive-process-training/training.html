@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Equipment returns · Practice desk</title>
+<style>
+:root{font-family:system-ui,sans-serif;color:#142b37;background:#edf3f4;line-height:1.55}*{box-sizing:border-box}body{margin:0}main{max-width:940px;margin:auto;padding:clamp(18px,4vw,44px)}h1{font-size:clamp(2rem,5vw,3rem);line-height:1.15;margin:.3em 0}h2{line-height:1.25}p{max-width:70ch}.eyebrow{font-size:.8rem;font-weight:750;letter-spacing:.12em;text-transform:uppercase;color:#315562}.notice{border-left:4px solid #176d64;padding:12px 16px;background:#dcece8}.scenarios{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0 18px}button{font:inherit;cursor:pointer;padding:12px 16px;border:1px solid #52717d;border-radius:10px;color:#183843;background:white;text-align:left}button:hover{background:#e2eeee}button:focus-visible,summary:focus-visible{outline:3px solid #a14410;outline-offset:4px}button[aria-pressed=true]{background:#174f58;color:white}.card{background:white;padding:clamp(20px,4vw,32px);border-radius:18px;box-shadow:0 6px 28px #173d4510}.choices{display:grid;gap:12px}.choices button{width:100%}.progress{color:#315562;font-size:.9rem}.feedback{margin:18px 0 0;padding:14px;background:#fff2dd;border-radius:8px}.feedback:empty{display:none}.success{background:#e0f2e9;border-left:4px solid #176d64;padding:16px}#restart{margin-top:20px}details{margin-top:24px;padding:20px;border:1px solid #b7cbcf;border-radius:12px}summary{font-weight:700;cursor:pointer}li{margin:.7em 0}footer{font-size:.9rem;margin-top:25px;color:#315562}h2:focus{outline:none}
+</style>
+<main>
+<header><p class="eyebrow">Practice desk · Fictional process v1</p><h1>A good return starts with a check.</h1><p>Practice three office equipment returns. Choose what to check, then decide how to record the result using the supplied rules.</p><p class="notice">Practice only — no records updated. Nothing is sent or saved.</p></header>
+<nav class="scenarios" aria-label="Choose a practice scenario" id="picker"></nav>
+<section class="card" aria-label="Current scenario"><div id="stage"></div><p id="feedback" class="feedback" role="status" aria-live="polite" aria-atomic="true"></p><button id="restart" type="button">Restart this scenario</button></section>
+<details open><summary>Approved source rules · R1–R5</summary><ul>
+<li><strong>R1 — Check first.</strong> Inspect the item and check for a receipt or matching loan record before choosing a return status. Drop-off alone does not complete a return.</li>
+<li><strong>R2 — Normal return.</strong> An undamaged item with a receipt or matching record: record item ID and condition, then mark complete.</li>
+<li><strong>R3 — Missing record.</strong> No receipt and no matching record: record item ID and condition, mark pending and ask the desk lead to locate the record. Do not mark complete.</li>
+<li><strong>R4 — Damage.</strong> Visible damage: record item ID and damage, mark pending review and refer to the desk lead. R4 takes priority over R2 and R3. Do not assess fees or promise refunds.</li>
+<li><strong>R5 — Simulation.</strong> No actual records, messages, learner names or stored progress.</li>
+</ul></details>
+<footer>Synthetic equipment-return SOP · 27 September 2026. This exercise is not a certification or an operational policy.</footer>
+</main>
+<script>
+'use strict';
+const scenarios = [
+ {name:'Normal return',item:'Monitor EQ-014',facts:'Receipt present. Casing and screen undamaged.',answer:'complete',rule:'R2',result:'EQ-014 · undamaged · return complete.'},
+ {name:'Missing receipt',item:'Keyboard EQ-022',facts:'No receipt. Loan lookup has no matching record. Item undamaged.',answer:'pending',rule:'R3',result:'EQ-022 · undamaged · pending. Desk lead to locate the loan record; referral simulated.'},
+ {name:'Damaged return',item:'Headset EQ-031',facts:'Receipt present. Ear cup visibly cracked.',answer:'review',rule:'R4',result:'EQ-031 · cracked ear cup · pending review. Refer to desk lead; referral simulated. No fee assessed.'}
+];
+const checkChoices = [
+ ['check','Inspect the item and check the receipt or loan record.'],
+ ['finish','Mark the return complete because the item was dropped off.'],
+ ['fee','Decide a fee before inspecting the item.']
+];
+const dispositionChoices = [
+ ['complete','Record item ID and condition; mark the return complete.'],
+ ['pending','Record item ID and condition; mark pending and ask the lead to locate the loan record.'],
+ ['review','Record item ID and damage; mark pending review and refer to the desk lead.']
+];
+function assess(index,step,choice){
+ const s=scenarios[index];
+ if(step===0)return choice==='check'?{next:1,ok:true,text:'R1: inspection and record checking come first.'}:{next:0,ok:false,text:'R1 requires inspection and a receipt or record check before a status decision. R4 does not authorize fees. Try again.'};
+ if(step===1)return choice===s.answer?{next:2,ok:true,text:s.rule+': this disposition follows the supplied evidence.'}:{next:1,ok:false,text:s.rule+': '+(index===0?'The item is undamaged and has a receipt, so complete the return after recording its ID and condition.':index===1?'There is no receipt or matching record. Keep the return pending and refer the record lookup to the lead.':'Visible damage takes priority even when there is a receipt. Keep the return pending review and refer it to the lead.')+' Try again.'};
+ return {next:step,ok:false,text:'This scenario is complete. Restart to practice again.'};
+}
+let current=0,step=0;
+const stage=document.getElementById('stage'),feedback=document.getElementById('feedback'),picker=document.getElementById('picker');
+function textNode(tag,text,className){const el=document.createElement(tag);el.textContent=text;if(className)el.className=className;return el;}
+function render(moveFocus){
+ stage.replaceChildren();feedback.textContent='';
+ [...picker.children].forEach((b,i)=>b.setAttribute('aria-pressed',String(i===current)));
+ const s=scenarios[current];stage.append(textNode('p','Scenario '+(current+1)+' of 3 · '+(step===2?'Complete':'Step '+(step+1)+' of 2'),'progress'));
+ const heading=textNode('h2',s.name);heading.tabIndex=-1;stage.append(heading,textNode('p','An item has been dropped at the desk: '+s.item+'.'));
+ if(step>0)stage.append(textNode('p','Evidence after checking: '+s.facts));
+ if(step===2){stage.append(textNode('p','Simulated result — '+s.result,'success'),textNode('p','Supported by '+s.rule+'; checked first under R1. Choose another scenario or restart.'));}
+ else{
+ stage.append(textNode('p',step===0?'What should you do first?':'Which disposition follows the evidence?'));
+ const choices=document.createElement('div');choices.className='choices';
+ (step===0?checkChoices:dispositionChoices).forEach(([key,label])=>{const button=textNode('button',label);button.type='button';button.addEventListener('click',()=>{const verdict=assess(current,step,key);if(verdict.ok){step=verdict.next;render(true);}feedback.textContent=verdict.text;});choices.append(button);});stage.append(choices);
+ }
+ if(moveFocus)heading.focus();
+}
+scenarios.forEach((s,i)=>{const b=textNode('button',(i+1)+'. '+s.name);b.type='button';b.addEventListener('click',()=>{current=i;step=0;render(true);});picker.append(b);});
+document.getElementById('restart').addEventListener('click',()=>{step=0;render(true);});render(false);
+</script>
+</html>

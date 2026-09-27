@@ -1,0 +1,125 @@
+{
+  "asOf": "2026-09-25",
+  "pilotStarted": false,
+  "decisions": [
+    {
+      "id": "pilot-cap",
+      "value": 8,
+      "administratorExcluded": true,
+      "decisionMaker": "Maya",
+      "sources": [
+        "M01",
+        "F01"
+      ],
+      "supersededIds": [
+        "M01",
+        "M03"
+      ],
+      "supersessionScope": "five-person cap only"
+    },
+    {
+      "id": "scope-exclusions",
+      "status": "accepted",
+      "customerAccountsAllowed": false,
+      "publicAnnouncementAllowed": false,
+      "decisionMaker": "Maya",
+      "sources": [
+        "M01",
+        "F01"
+      ]
+    },
+    {
+      "id": "existing-logs",
+      "decisionMaker": "Maya",
+      "sources": [
+        "M10",
+        "F04"
+      ]
+    },
+    {
+      "id": "all-staff-launch",
+      "status": "rejected",
+      "proposedDate": "2026-09-28",
+      "proposalBy": "Leo",
+      "decisionMaker": "Maya",
+      "sources": [
+        "M02",
+        "M03",
+        "F01"
+      ]
+    }
+  ],
+  "commitments": [
+    {
+      "owner": "Priya",
+      "deliverable": "eight-person participant list",
+      "dueDate": "2026-09-29",
+      "dueTime": null,
+      "status": "open",
+      "sources": [
+        "M04",
+        "F02"
+      ],
+      "supersededIds": [
+        "M04"
+      ],
+      "supersessionScope": "five-person count and September 25 deadline only"
+    },
+    {
+      "owner": "Leo",
+      "deliverable": "access-review findings",
+      "dueDate": null,
+      "status": "open",
+      "sources": [
+        "M05",
+        "F03"
+      ],
+      "supersededIds": [
+        "M05"
+      ],
+      "supersessionScope": "September 25 deadline only"
+    }
+  ],
+  "unacceptedRequests": [
+    {
+      "item": "launch email",
+      "owner": null,
+      "dueDate": null,
+      "sources": [
+        "M06",
+        "M07",
+        "F04"
+      ]
+    },
+    {
+      "item": "feedback form",
+      "owner": null,
+      "dueDate": null,
+      "sources": [
+        "M08",
+        "M09",
+        "F04"
+      ]
+    }
+  ],
+  "unresolved": [
+    {
+      "item": "expansion threshold and decision authority",
+      "owner": null,
+      "sources": [
+        "M11",
+        "M12",
+        "F04"
+      ]
+    },
+    {
+      "item": "access confirmation authority",
+      "owner": null,
+      "sources": [
+        "M04",
+        "F02",
+        "F03"
+      ]
+    }
+  ]
+}

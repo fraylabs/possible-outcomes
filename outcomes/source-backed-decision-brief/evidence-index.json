@@ -1,0 +1,320 @@
+{
+  "recommendedOption": "B",
+  "decisionApproved": false,
+  "gates": {
+    "A": {
+      "dataBoundary": "PASS",
+      "rollback": "FAIL",
+      "spend": "PASS"
+    },
+    "B": {
+      "dataBoundary": "PASS",
+      "rollback": "PASS",
+      "spend": "PASS"
+    }
+  },
+  "claims": [
+    {
+      "id": "A-cost",
+      "sources": [
+        "F1.1"
+      ],
+      "kind": "direct",
+      "value": 450,
+      "unit": "USD/month"
+    },
+    {
+      "id": "B-cost",
+      "sources": [
+        "F1.1"
+      ],
+      "kind": "direct",
+      "value": 180,
+      "unit": "USD/month"
+    },
+    {
+      "id": "disruption-difference",
+      "sources": [
+        "M1.3",
+        "U1.1"
+      ],
+      "kind": "calculated",
+      "expression": "48 - 12",
+      "value": 36,
+      "unit": "estimated staff-hours"
+    },
+    {
+      "id": "coverage-difference",
+      "sources": [
+        "M1.1"
+      ],
+      "kind": "calculated",
+      "expression": "60 - 12",
+      "value": 48,
+      "unit": "staff"
+    },
+    {
+      "id": "recommendation",
+      "sources": [
+        "C1.1",
+        "C1.2",
+        "F1.1",
+        "T1.1",
+        "T1.2",
+        "T1.3",
+        "U1.1"
+      ],
+      "kind": "inferred"
+    }
+  ],
+  "asOf": "2026-09-27",
+  "evidenceLedger": [
+    {
+      "id": "gates",
+      "scope": "Both options",
+      "statement": "Data remains in existing workspace; demonstrated rollback within 15 minutes; approved incremental spend at most $500/month.",
+      "status": "current",
+      "evidenceType": "decision criteria",
+      "sources": [
+        "C1.1"
+      ],
+      "sourceDates": {
+        "C1.1": "2026-09-25"
+      }
+    },
+    {
+      "id": "preferences",
+      "scope": "Eligible options only",
+      "statement": "Prefer fewer first-week staff-hours of disruption, then broader first-week coverage. No numerical weights.",
+      "status": "current",
+      "evidenceType": "decision criteria",
+      "sources": [
+        "C1.2"
+      ],
+      "sourceDates": {
+        "C1.2": "2026-09-25"
+      }
+    },
+    {
+      "id": "approval",
+      "scope": "Both rollout options",
+      "statement": "Neither rollout is approved; Maya is requesting a recommendation.",
+      "status": "current",
+      "evidenceType": "authorization boundary",
+      "sources": [
+        "C1.3"
+      ],
+      "sourceDates": {
+        "C1.3": "2026-09-25"
+      }
+    },
+    {
+      "id": "coverage",
+      "scope": "First week",
+      "statement": "A covers 60 staff; B covers 12.",
+      "status": "current",
+      "evidenceType": "planned scope",
+      "sources": [
+        "M1.1"
+      ],
+      "sourceDates": {
+        "M1.1": "2026-09-21"
+      }
+    },
+    {
+      "id": "data-boundary",
+      "scope": "Documented plans and intended rehearsal configurations",
+      "statement": "Both retain customer data in the existing workspace; rehearsal observed no customer-data export.",
+      "status": "current",
+      "evidenceType": "plan and rehearsal record",
+      "sources": [
+        "M1.1",
+        "T1.3"
+      ],
+      "sourceDates": {
+        "M1.1": "2026-09-21",
+        "T1.3": "2026-09-26"
+      }
+    },
+    {
+      "id": "old-A-cost",
+      "scope": "A monthly incremental spend only",
+      "statement": "Initial $600 estimate replaced by $450 quote and conditional approval.",
+      "status": "superseded",
+      "evidenceType": "estimate",
+      "sources": [
+        "M1.2",
+        "F1.1"
+      ],
+      "sourceDates": {
+        "M1.2": "2026-09-21",
+        "F1.1": "2026-09-24"
+      },
+      "replacedBy": "current-A-cost"
+    },
+    {
+      "id": "current-A-cost",
+      "scope": "A monthly incremental spend",
+      "statement": "Revised quote and conditional Finance approval: $450/month, if Maya selects A; no purchase made.",
+      "status": "current",
+      "evidenceType": "quote and conditional approval",
+      "sources": [
+        "F1.1"
+      ],
+      "sourceDates": {
+        "F1.1": "2026-09-24"
+      }
+    },
+    {
+      "id": "current-B-cost",
+      "scope": "B monthly incremental spend",
+      "statement": "Unchanged $180/month with conditional Finance approval if Maya selects B; no purchase made.",
+      "status": "current",
+      "evidenceType": "estimate and conditional approval",
+      "sources": [
+        "M1.2",
+        "F1.1"
+      ],
+      "sourceDates": {
+        "M1.2": "2026-09-21",
+        "F1.1": "2026-09-24"
+      }
+    },
+    {
+      "id": "quote-inclusions",
+      "scope": "Quoted software fees for either option",
+      "statement": "Support included; no additional license fee expected in this quote.",
+      "status": "current",
+      "evidenceType": "quote scope",
+      "sources": [
+        "F1.2"
+      ],
+      "sourceDates": {
+        "F1.2": "2026-09-24"
+      }
+    },
+    {
+      "id": "disruption",
+      "scope": "First-week training and cutover for each option",
+      "statement": "A 48 staff-hours, B 12 staff-hours; estimates remain unchanged and real disruption is not measured.",
+      "status": "current",
+      "evidenceType": "estimate",
+      "sources": [
+        "M1.3",
+        "U1.1"
+      ],
+      "sourceDates": {
+        "M1.3": "2026-09-21",
+        "U1.1": "2026-09-26"
+      }
+    },
+    {
+      "id": "old-rollback-status",
+      "scope": "Both options",
+      "statement": "Rollback initially untested; now replaced by rehearsal measurements.",
+      "status": "superseded",
+      "evidenceType": "prior test status",
+      "sources": [
+        "M1.4",
+        "T1.1",
+        "T1.2"
+      ],
+      "sourceDates": {
+        "M1.4": "2026-09-21",
+        "T1.1": "2026-09-26",
+        "T1.2": "2026-09-26"
+      },
+      "replacedBy": [
+        "A-rollback",
+        "B-rollback"
+      ]
+    },
+    {
+      "id": "A-rollback",
+      "scope": "Intended A configuration, 60 synthetic staff sessions",
+      "statement": "18-minute rehearsal; all sessions restored; exceeds the 15-minute gate.",
+      "status": "current",
+      "evidenceType": "measured rehearsal",
+      "sources": [
+        "T1.1",
+        "T1.3"
+      ],
+      "sourceDates": {
+        "T1.1": "2026-09-26",
+        "T1.3": "2026-09-26"
+      }
+    },
+    {
+      "id": "B-rollback",
+      "scope": "Intended B configuration, 12 synthetic staff sessions",
+      "statement": "11-minute rehearsal; all sessions restored; within the 15-minute gate.",
+      "status": "current",
+      "evidenceType": "measured rehearsal",
+      "sources": [
+        "T1.2",
+        "T1.3"
+      ],
+      "sourceDates": {
+        "T1.2": "2026-09-26",
+        "T1.3": "2026-09-26"
+      }
+    },
+    {
+      "id": "production-rollback",
+      "scope": "Actual production, both options",
+      "statement": "Production rollback duration and rehearsal representativeness are not established.",
+      "status": "unknown",
+      "evidenceType": "missing measurement",
+      "sources": [
+        "T1.3"
+      ],
+      "sourceDates": {
+        "T1.3": "2026-09-26"
+      }
+    },
+    {
+      "id": "start-date",
+      "scope": "Proposed rollout start only",
+      "statement": "October 1 remains a proposal, not an accepted start date.",
+      "status": "current",
+      "evidenceType": "proposal",
+      "sources": [
+        "M1.4",
+        "U1.2"
+      ],
+      "sourceDates": {
+        "M1.4": "2026-09-21",
+        "U1.2": "2026-09-26"
+      }
+    },
+    {
+      "id": "coverage-readiness",
+      "scope": "Support coverage on proposed October 1 date",
+      "statement": "Unconfirmed; Operations can answer, but no individual has accepted the question.",
+      "status": "unknown",
+      "evidenceType": "missing confirmation",
+      "sources": [
+        "U1.2"
+      ],
+      "sourceDates": {
+        "U1.2": "2026-09-26"
+      }
+    },
+    {
+      "id": "A-optimization",
+      "scope": "Potential future A rollback performance",
+      "statement": "A developer suggests 10 minutes after optimization, but no rehearsal result or approved change substantiates it. It does not replace the 18-minute measurement.",
+      "status": "unknown",
+      "evidenceType": "unverified estimate",
+      "sources": [
+        "U1.3",
+        "T1.1"
+      ],
+      "sourceDates": {
+        "U1.3": "2026-09-26",
+        "T1.1": "2026-09-26"
+      }
+    }
+  ],
+  "conflictAssessment": "No unresolved contradiction between equally current measurements is documented. The old price and untested status are superseded; the 10-minute suggestion is an unverified future estimate, not a competing measured result."
+}

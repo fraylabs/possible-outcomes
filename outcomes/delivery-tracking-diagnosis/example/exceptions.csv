@@ -1,0 +1,3 @@
+shipment_id,reason
+F,missing timestamps; do not infer status
+H,conflicting records; reconcile source

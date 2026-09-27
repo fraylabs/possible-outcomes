@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 4,
+  "slug": "meeting-decisions-followthrough",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-27T00:00:00Z",
+  "author": {
+    "name": "Fray Labs",
+    "url": "https://github.com/fraylabs"
+  },
+  "models": [
+    {
+      "provider": "OpenAI",
+      "model": "GPT-6 Astra",
+      "role": "authorship"
+    },
+    {
+      "provider": "OpenAI",
+      "model": "GPT-6 Astra",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "An assistant that can read supplied text documents",
+    "A transcript or meeting notes with speaker names and stable line IDs",
+    "Any authoritative follow-up corrections and permission to share the records"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "inputs": [
+    {
+      "type": "document",
+      "src": "source-bundle.md",
+      "label": "Synthetic source records",
+      "format": "markdown"
+    }
+  ],
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "follow-through.md",
+      "label": "Worked example output",
+      "format": "markdown"
+    },
+    {
+      "type": "data",
+      "src": "evidence-index.json",
+      "label": "Worked example evidence index",
+      "format": "json"
+    }
+  ],
+  "preview": {
+    "description": "Convert a messy transcript and follow-up correction into a source-linked decision log and action draft without inventing owners, dates, or approval."
+  }
+}

@@ -1,0 +1,7 @@
+scenario,queue,new_minutes,backlog_minutes,total_minutes,status
+base,email,1200,240,1440,known
+base,chat,1440,0,1440,known
+stress,email,1980.00,264.0,2244.00,known
+stress,chat,2376.00,0.0,2376.00,known
+base,specialist,,,,unknown: missing handling time
+stress,specialist,,,,unknown: missing handling time

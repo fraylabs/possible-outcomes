@@ -5,6 +5,11 @@
     "url": "https://github.com/fraylabs/possible-outcomes"
   },
   "outcomes": [
+    { "slug": "delivery-tracking-diagnosis", "url": "./outcomes/delivery-tracking-diagnosis/outcome.json" },
+    { "slug": "support-demand-capacity-plan", "url": "./outcomes/support-demand-capacity-plan/outcome.json" },
+    { "slug": "source-backed-decision-brief", "url": "./outcomes/source-backed-decision-brief/outcome.json" },
+    { "slug": "meeting-decisions-followthrough", "url": "./outcomes/meeting-decisions-followthrough/outcome.json" },
+    { "slug": "interactive-process-training", "url": "./outcomes/interactive-process-training/outcome.json" },
     { "slug": "glass-and-gold-mosaic-film", "url": "./outcomes/glass-and-gold-mosaic-film/outcome.json" },
     { "slug": "digital-photo-frame", "url": "./outcomes/digital-photo-frame/outcome.json" },
     { "slug": "functional-hardware-prototype", "url": "./outcomes/functional-hardware-prototype/outcome.json" },
