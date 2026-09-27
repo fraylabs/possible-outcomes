@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 4,
+  "slug": "inside-robot-hand",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-24T01:11:58+00:00",
+  "author": {
+    "name": "H",
+    "url": "https://x.com/thermalpastor"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Opus 5.5 (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "A coding assistant and a WebGL-capable browser. The creator also provides a live interactive demo."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "other",
+      "src": "https://zerotimedrift.github.io/inside-the-hand/",
+      "label": "Open the interactive robot hand"
+    },
+    {
+      "type": "other",
+      "src": "https://x.com/thermalpastor/status/2102928996900200562",
+      "label": "Full creator video and disclosed prompt"
+    }
+  ],
+  "preview": {
+    "description": "Open a robot hand to explore its motors and gearboxes, then compare how gear ratios affect motion.",
+    "video": {
+      "src": "media/preview.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Interactive actuator explainer by H / thermalpastor. Short excerpt of the creator’s Opus 5.5 demo."
+    }
+  }
+}

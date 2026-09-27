@@ -1,6 +1,36 @@
 # Opus 5.5: see the result, copy the prompt
 
-Five creator demos with the prompts they disclosed. Model attribution is creator-reported; these are not independent Possible model tests.
+Ten creator demos with the prompts they disclosed. Model attribution is creator-reported; these are not independent Possible model tests.
+
+## [Rainy Neon Cyberpunk City](outcomes/neon-cyberpunk-city/outcome.md)
+
+[![Rainy Neon Cyberpunk City](outcomes/neon-cyberpunk-city/media/poster.jpg)](https://x.com/0xPD33/status/2102454871899443432)
+
+[Copy the prompt](outcomes/neon-cyberpunk-city/prompt.md) · [Preview excerpt](outcomes/neon-cyberpunk-city/media/preview.mp4) · [Full creator demo](https://x.com/0xPD33/status/2102454871899443432)
+
+## [One-File Mini Golf](outcomes/one-file-mini-golf/outcome.md)
+
+[![One-File Mini Golf](outcomes/one-file-mini-golf/media/poster.jpg)](https://x.com/hunterjreid/status/2102718456026325132)
+
+[Copy the prompt](outcomes/one-file-mini-golf/prompt.md) · [Preview excerpt](outcomes/one-file-mini-golf/media/preview.mp4) · [Full creator demo](https://x.com/hunterjreid/status/2102718456026325132)
+
+## [Feed a Cursor-Following Monster](outcomes/cursor-monster-pet/outcome.md)
+
+[![Feed a Cursor-Following Monster](outcomes/cursor-monster-pet/media/poster.jpg)](https://x.com/noclipepe/status/2102673625060966830)
+
+[Copy the prompt](outcomes/cursor-monster-pet/prompt.md) · [Preview excerpt](outcomes/cursor-monster-pet/media/preview.mp4) · [Full creator demo](https://x.com/noclipepe/status/2102673625060966830)
+
+## [3D Rocket Launch](outcomes/three-dimensional-rocket-launch/outcome.md)
+
+[![3D Rocket Launch](outcomes/three-dimensional-rocket-launch/media/poster.jpg)](https://x.com/bridgebench/status/2102476831031017581)
+
+[Copy the prompt](outcomes/three-dimensional-rocket-launch/prompt.md) · [Preview excerpt](outcomes/three-dimensional-rocket-launch/media/preview.mp4) · [Full creator demo](https://x.com/bridgebench/status/2102476831031017581)
+
+## [Inside a Robot Hand](outcomes/inside-robot-hand/outcome.md)
+
+[![Inside a Robot Hand](outcomes/inside-robot-hand/media/poster.jpg)](https://x.com/thermalpastor/status/2102928996900200562)
+
+[Copy the prompt](outcomes/inside-robot-hand/prompt.md) · [Preview excerpt](outcomes/inside-robot-hand/media/preview.mp4) · [Full creator demo](https://x.com/thermalpastor/status/2102928996900200562)
 
 ## [Neon Fluid Playground](outcomes/neon-fluid-simulation/outcome.md)
 

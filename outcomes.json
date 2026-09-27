@@ -5,6 +5,11 @@
     "url": "https://github.com/fraylabs/possible-outcomes"
   },
   "outcomes": [
+    { "slug": "neon-cyberpunk-city", "url": "./outcomes/neon-cyberpunk-city/outcome.json" },
+    { "slug": "one-file-mini-golf", "url": "./outcomes/one-file-mini-golf/outcome.json" },
+    { "slug": "cursor-monster-pet", "url": "./outcomes/cursor-monster-pet/outcome.json" },
+    { "slug": "three-dimensional-rocket-launch", "url": "./outcomes/three-dimensional-rocket-launch/outcome.json" },
+    { "slug": "inside-robot-hand", "url": "./outcomes/inside-robot-hand/outcome.json" },
     { "slug": "neon-fluid-simulation", "url": "./outcomes/neon-fluid-simulation/outcome.json" },
     { "slug": "rube-goldberg-machine", "url": "./outcomes/rube-goldberg-machine/outcome.json" },
     { "slug": "sunset-pirate-ship", "url": "./outcomes/sunset-pirate-ship/outcome.json" },

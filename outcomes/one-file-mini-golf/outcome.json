@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 4,
+  "slug": "one-file-mini-golf",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-23T11:15:21+00:00",
+  "author": {
+    "name": "Hunter",
+    "url": "https://x.com/hunterjreid"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Opus 5.5 (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "A coding assistant that can save an HTML file and a browser to run it."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "other",
+      "src": "https://x.com/hunterjreid/status/2102718456026325132",
+      "label": "Full creator video and disclosed prompt"
+    }
+  ],
+  "preview": {
+    "description": "Putt across a bright miniature course with a power meter, obstacles and a tiny course map.",
+    "video": {
+      "src": "media/preview.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Comparison excerpt: Opus 5.5 TOP; GPT-6 Sol BOTTOM. By Hunter."
+    }
+  }
+}

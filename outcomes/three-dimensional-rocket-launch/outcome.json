@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 4,
+  "slug": "three-dimensional-rocket-launch",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-22T19:15:13+00:00",
+  "author": {
+    "name": "Bridgebench",
+    "url": "https://x.com/bridgebench"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Opus 5.5 (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "A coding assistant and a browser capable of rendering the generated 3D scene."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "other",
+      "src": "https://x.com/bridgebench/status/2102476831031017581",
+      "label": "Full creator video and disclosed prompt"
+    }
+  ],
+  "preview": {
+    "description": "Start with a launchpad and watch a rocket lift away from its tower in a short 3D scene.",
+    "video": {
+      "src": "media/preview.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Comparison excerpt: Opus 5.5 UPPER LEFT; other panels show GPT-6 Luna, GPT-6 Sol and Grok 4.7. By Bridgebench."
+    }
+  }
+}

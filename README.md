@@ -23,7 +23,7 @@ The `use` command prints the reusable prompt. Review it before giving it to an a
 
 ## Opus 5.5 demos
 
-[See five creator demos and copy their prompts](OPUS-DEMOS.md): neon fluid, a Rube Goldberg machine, a sunset pirate ship, motion design and an explorable pagoda. Each links the original creator and records creator-reported model provenance.
+[See ten creator demos and copy their prompts](OPUS-DEMOS.md): neon cities, mini golf, a cursor-following pet, a rocket launch, an interactive robot hand, fluid simulation, a Rube Goldberg machine, a sunset pirate ship, motion design and an explorable pagoda. Each links the original creator and records creator-reported model provenance.
 
 ## License
 

@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 4,
+  "slug": "cursor-monster-pet",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-09-23T08:17:12+00:00",
+  "author": {
+    "name": "noclipepe",
+    "url": "https://x.com/noclipepe"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Opus 5.5 (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "A coding assistant and a browser with pointer input."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "other",
+      "src": "https://x.com/noclipepe/status/2102673625060966830",
+      "label": "Full creator video and disclosed prompt"
+    }
+  ],
+  "preview": {
+    "description": "A round purple pet watches the pointer and reacts to snacks with animated eyes and expressions.",
+    "video": {
+      "src": "media/preview.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Comparison excerpt: Opus 5.5 UPPER LEFT; other panels show Grok 4.7, GPT-6 Luna and GPT-6 Sol. By noclipepe."
+    }
+  }
+}
