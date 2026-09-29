@@ -383,6 +383,9 @@
         "title": "Inspect integration and known defects",
         "instructions": "Review the named motion, retained failed/incomplete Burr checks and publication review. Repair hinge, display, USB-C, parity and portability defects before treating this as buildable hardware; physical function remains untested."
       }
-    ]
+    ],
+    "provenance": {
+      "method": "reconstructed"
+    }
   }
 }

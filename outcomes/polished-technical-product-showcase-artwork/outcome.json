@@ -90,6 +90,9 @@
         "title": "Review at two sizes",
         "instructions": "Inspect the full-size image and its small showcase-card presentation as documented in the Outcome. Treat the inspection scene as a visual metaphor, not evidence of CAD accuracy."
       }
-    ]
+    ],
+    "provenance": {
+      "method": "reconstructed"
+    }
   }
 }

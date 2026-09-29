@@ -149,6 +149,9 @@
         "title": "Keep export and listening review separate",
         "instructions": "Preserve the untouched official WAV beside any listening master; check clipping, silence and transitions. The published preview states that final human listening acceptance is pending."
       }
-    ]
+    ],
+    "provenance": {
+      "method": "reconstructed"
+    }
   }
 }

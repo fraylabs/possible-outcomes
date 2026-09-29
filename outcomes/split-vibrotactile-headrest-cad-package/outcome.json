@@ -192,6 +192,9 @@
         "title": "Keep the physical boundary",
         "instructions": "The report validates geometry only. Printing, received-part fit, load, vibration retention, temperature and human-use suitability still need physical validation."
       }
-    ]
+    ],
+    "provenance": {
+      "method": "reconstructed"
+    }
   }
 }

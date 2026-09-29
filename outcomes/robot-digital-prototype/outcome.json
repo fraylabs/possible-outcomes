@@ -141,6 +141,9 @@
         "title": "Inspect the exports",
         "instructions": "Follow the prompt checks for link count, solids, spacing and reopening. The existing preview demonstrates inspectable geometry, not locomotion, strength or physical performance."
       }
-    ]
+    ],
+    "provenance": {
+      "method": "reconstructed"
+    }
   }
 }

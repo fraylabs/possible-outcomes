@@ -110,6 +110,9 @@
         "title": "Evaluate the policy",
         "instructions": "Use the supported inference path for a 16-second nominal rollout and 32-environment perturbation battery; compare the published metrics and preview. Stability is demonstrated in simulation; exact phrase identity and physical transfer are not proven."
       }
-    ]
+    ],
+    "provenance": {
+      "method": "reconstructed"
+    }
   }
 }

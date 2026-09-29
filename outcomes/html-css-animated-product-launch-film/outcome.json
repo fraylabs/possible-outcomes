@@ -124,6 +124,9 @@
         "title": "Render and review",
         "instructions": "Render a 55-second 1920×1080 film at 30 fps with mixed stereo sound. Follow the prompt’s complete-playback review for legibility, pacing and audio. The published MP4 is the result reference; no additional historical prompts are recorded here."
       }
-    ]
+    ],
+    "provenance": {
+      "method": "reconstructed"
+    }
   }
 }

@@ -287,6 +287,9 @@
         "title": "Review the known repair",
         "instructions": "Read the publication review: the assembly guide’s spring guide pegs are missing from the source. Keep the result repair-required and run the physical test plan before any use; geometry does not establish a load rating."
       }
-    ]
+    ],
+    "provenance": {
+      "method": "reconstructed"
+    }
   }
 }

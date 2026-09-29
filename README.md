@@ -14,11 +14,11 @@ The root [`outcomes.json`](./outcomes.json) is the machine-readable publisher in
 
 ## Use with Possible
 
-Use CLI 0.4.0 or newer for manifests containing the optional `recipe` field. The older primary Product/Skill parsing issue in CLI 0.3.0 was fixed in 0.3.1; recipe support is a separate addition.
+Use CLI 0.5.0 or newer for manifests containing the optional `recipe` field. The older primary Product/Skill parsing issue in CLI 0.3.0 was fixed in 0.3.1; recipe support began in 0.4.0; explicit reconstructed-origin labels require 0.5.0.
 
 ```shell
-npx https://github.com/fraylabs/possible/releases/download/v0.4.0/fraylabs-possible-0.4.0.tgz add fraylabs/possible-outcomes
-npx https://github.com/fraylabs/possible/releases/download/v0.4.0/fraylabs-possible-0.4.0.tgz use fraylabs/possible-outcomes@digital-photo-frame
+npx https://github.com/fraylabs/possible/releases/download/v0.5.0/fraylabs-possible-0.5.0.tgz add fraylabs/possible-outcomes
+npx https://github.com/fraylabs/possible/releases/download/v0.5.0/fraylabs-possible-0.5.0.tgz use fraylabs/possible-outcomes@digital-photo-frame
 ```
 
 The `use` command provides the reusable instructions for an agent. Review the recipe, original prompt and stated limits before running it; access to referenced tools and services is still required.
@@ -31,4 +31,4 @@ The `use` command provides the reusable instructions for an agent. Review the re
 
 Fray-authored code and text are available under the MIT License. Curated creator prompts and demo media retain their original ownership and are excluded from that grant; see linked sources and each media/NOTICE.md. Referenced third-party Products and Skills retain their respective ownership and licenses.
 
-CLI 0.4.0 is currently distributed through the verified GitHub release package used above. The npm registry remains on 0.3.1; use the release package for these optional recipes.
+CLI 0.5.0 is currently distributed through the verified GitHub release package used above. The npm registry remains on 0.3.1; use the release package for these optional recipes.

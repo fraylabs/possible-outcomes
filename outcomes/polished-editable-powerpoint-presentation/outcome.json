@@ -89,6 +89,9 @@
         "title": "Review the deck",
         "instructions": "Check arithmetic, units, consistency, clipping and editability against the prompt. The published slide images are visual references; they do not independently prove every object in the original deck is editable."
       }
-    ]
+    ],
+    "provenance": {
+      "method": "reconstructed"
+    }
   }
 }
