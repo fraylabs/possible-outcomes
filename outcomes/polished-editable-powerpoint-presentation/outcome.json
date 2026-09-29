@@ -50,5 +50,45 @@
         "caption": "A bounded next-gate recommendation"
       }
     ]
+  },
+  "recipe": {
+    "agent": {
+      "name": "Codex"
+    },
+    "skills": [
+      {
+        "repository": "MiniMax-AI/skills",
+        "lastReviewedCommit": "60aaae52bb2af8162732751a4332f62a5fef518b",
+        "directory": "skills/pptx-generator"
+      }
+    ],
+    "references": [
+      {
+        "kind": "document",
+        "label": "Published brief and result",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/polished-editable-powerpoint-presentation/outcome.md",
+        "purpose": "Existing result context and its stated limits."
+      },
+      {
+        "kind": "document",
+        "label": "Recorded execution prompt",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/polished-editable-powerpoint-presentation/prompt.md",
+        "purpose": "Original reusable prompt; preserved unchanged."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Frame the decision",
+        "instructions": "Reconstructed workflow from the published prompt and available result artifacts; this is not a recorded sequence of agent turns. Use only the six-slide brief and supplied illustrative solar inputs. Derive the 5.8-year simple payback; leave unspecified assumptions as TBD."
+      },
+      {
+        "title": "Build editable slides",
+        "instructions": "Use the pinned PowerPoint skill to implement the six ordered communication jobs with native text, shapes, diagrams, metrics, table and speaker notes."
+      },
+      {
+        "title": "Review the deck",
+        "instructions": "Check arithmetic, units, consistency, clipping and editability against the prompt. The published slide images are visual references; they do not independently prove every object in the original deck is editable."
+      }
+    ]
   }
 }

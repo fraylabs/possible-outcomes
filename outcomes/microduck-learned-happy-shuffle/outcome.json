@@ -54,5 +54,62 @@
       "poster": "media/happy-shuffle-poster.jpg",
       "caption": "Two consecutive eight-second phrases from the final simulated policy. Physical-hardware transfer has not been tested."
     }
+  },
+  "recipe": {
+    "agent": {
+      "name": "Codex"
+    },
+    "references": [
+      {
+        "kind": "document",
+        "label": "Published brief and result",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/microduck-learned-happy-shuffle/outcome.md",
+        "purpose": "Existing result context and its stated limits."
+      },
+      {
+        "kind": "document",
+        "label": "Recorded execution prompt",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/microduck-learned-happy-shuffle/prompt.md",
+        "purpose": "Original reusable prompt; preserved unchanged."
+      },
+      {
+        "kind": "document",
+        "label": "metrics.json",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/microduck-learned-happy-shuffle/artifacts/metrics.json",
+        "purpose": "Published evidence used to reconstruct the ordered workflow."
+      }
+    ],
+    "tools": [
+      {
+        "name": "microduck_rl",
+        "purpose": "Register and train the Happy Shuffle reinforcement-learning task in the official MicroDuck stack."
+      },
+      {
+        "name": "Hugging Face Jobs",
+        "purpose": "Run the recorded CUDA smoke, training and evaluation jobs within the original approved compute cap."
+      },
+      {
+        "name": "MuJoCo",
+        "purpose": "Evaluate nominal and perturbed simulated rollouts; physical-hardware transfer remains untested."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Register the learned task",
+        "instructions": "Reconstructed workflow from the published prompt and available result artifacts; this is not a recorded sequence of agent turns. Follow the run report’s phase command, state-based rewards, termination costs and inherited observation contract. Use reinforcement learning rather than scripted joint animation."
+      },
+      {
+        "title": "Test before training",
+        "instructions": "Run the local configuration and repository tests, then the 64-environment, five-iteration CUDA smoke gate. Obtain your own compute authorization and credentials before reproducing paid jobs."
+      },
+      {
+        "title": "Train and export",
+        "instructions": "The recorded final run used 4,096 environments and 3,500 PPO iterations on A10G, followed by supported ONNX export. Preserve checkpoints without exposing credentials or private repositories."
+      },
+      {
+        "title": "Evaluate the policy",
+        "instructions": "Use the supported inference path for a 16-second nominal rollout and 32-environment perturbation battery; compare the published metrics and preview. Stability is demonstrated in simulation; exact phrase identity and physical transfer are not proven."
+      }
+    ]
   }
 }

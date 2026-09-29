@@ -211,5 +211,82 @@
         }
       ]
     }
+  },
+  "recipe": {
+    "agent": {
+      "name": "Codex"
+    },
+    "skills": [
+      {
+        "repository": "fraylabs/burr",
+        "lastReviewedCommit": "3a1b8ebf17e178b28c6d65f67ad04fc97f009a55",
+        "directory": "skills/burr"
+      },
+      {
+        "repository": "earthtojake/text-to-cad",
+        "lastReviewedCommit": "fc4f7069fb31c131a55f1ecd334b505f031f486b",
+        "directory": "skills/cad"
+      }
+    ],
+    "references": [
+      {
+        "kind": "document",
+        "label": "Published brief and result",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/fold-flat-travel-hanger/outcome.md",
+        "purpose": "Existing result context and its stated limits."
+      },
+      {
+        "kind": "document",
+        "label": "Recorded execution prompt",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/fold-flat-travel-hanger/prompt.md",
+        "purpose": "Original reusable prompt; preserved unchanged."
+      },
+      {
+        "kind": "document",
+        "label": "RUN_REPORT.md",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/fold-flat-travel-hanger/artifacts/docs/RUN_REPORT.md",
+        "purpose": "Published evidence used to reconstruct the ordered workflow."
+      },
+      {
+        "kind": "document",
+        "label": "PUBLICATION_REVIEW.md",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/fold-flat-travel-hanger/artifacts/docs/PUBLICATION_REVIEW.md",
+        "purpose": "Published evidence used to reconstruct the ordered workflow."
+      },
+      {
+        "kind": "document",
+        "label": "LIMITS_AND_TEST_PLAN.md",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/fold-flat-travel-hanger/artifacts/docs/LIMITS_AND_TEST_PLAN.md",
+        "purpose": "Published evidence used to reconstruct the ordered workflow."
+      }
+    ],
+    "tools": [
+      {
+        "name": "Burr",
+        "purpose": "Inspect the portable project, named fold motion and retained interference results."
+      },
+      {
+        "name": "CAD provider",
+        "purpose": "Generate parametric parts and validate exact STEP geometry across the five fold poses."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Start the documented cleanroom run",
+        "instructions": "Reconstructed workflow from the published prompt and available result artifacts; this is not a recorded sequence of agent turns. Give an isolated Codex agent the unchanged prompt, pinned Burr and routed CAD skills, and an empty workspace, as recorded in the run report."
+      },
+      {
+        "title": "Build the mechanism and motion",
+        "instructions": "Generate the five printable parts, purchased-hardware envelopes, fold poses and engaged/released lock details, then configure the named Fold hanger motion."
+      },
+      {
+        "title": "Keep both validation results",
+        "instructions": "Check all final CAD targets and pairwise STEP intersections in five poses. Preserve Burr’s failed/incomplete interference results alongside the exact geometry evidence."
+      },
+      {
+        "title": "Review the known repair",
+        "instructions": "Read the publication review: the assembly guide’s spring guide pegs are missing from the source. Keep the result repair-required and run the physical test plan before any use; geometry does not establish a load rating."
+      }
+    ]
   }
 }

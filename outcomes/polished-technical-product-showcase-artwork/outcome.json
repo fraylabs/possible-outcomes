@@ -45,5 +45,51 @@
         "cover": true
       }
     ]
+  },
+  "recipe": {
+    "agent": {
+      "name": "Codex"
+    },
+    "skills": [
+      {
+        "repository": "openai/skills",
+        "lastReviewedCommit": "49f948faa9258a0c61caceaf225e179651397431",
+        "directory": "skills/.system/imagegen"
+      }
+    ],
+    "references": [
+      {
+        "kind": "document",
+        "label": "Published brief and result",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/polished-technical-product-showcase-artwork/outcome.md",
+        "purpose": "Existing result context and its stated limits."
+      },
+      {
+        "kind": "document",
+        "label": "Recorded execution prompt",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/polished-technical-product-showcase-artwork/prompt.md",
+        "purpose": "Original reusable prompt; preserved unchanged."
+      }
+    ],
+    "tools": [
+      {
+        "name": "Codex image generation",
+        "purpose": "Generate the original editorial artwork using the image-generation capability required by the manifest."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Set the visual brief",
+        "instructions": "Reconstructed workflow from the published prompt and available result artifacts; this is not a recorded sequence of agent turns. Use the recorded prompt for one fictional machined component, one orange inspection plane, restrained inspection marks and generous off-white negative space."
+      },
+      {
+        "title": "Generate the artwork",
+        "instructions": "Use the pinned image-generation skill and the recorded prompt. Keep logos, UI, text, fake dimensions and customer geometry out of the image."
+      },
+      {
+        "title": "Review at two sizes",
+        "instructions": "Inspect the full-size image and its small showcase-card presentation as documented in the Outcome. Treat the inspection scene as a visual metaphor, not evidence of CAD accuracy."
+      }
+    ]
   }
 }

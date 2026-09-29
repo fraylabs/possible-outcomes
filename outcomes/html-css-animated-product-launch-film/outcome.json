@@ -60,5 +60,70 @@
       "poster": "media/possible-launch-film-poster.jpg",
       "caption": "Possible launch film — from a world of unknown Codex capabilities to one outcome you can run."
     }
+  },
+  "recipe": {
+    "agent": {
+      "name": "Codex"
+    },
+    "skills": [
+      {
+        "repository": "heygen-com/hyperframes",
+        "lastReviewedCommit": "b08cefea631b2c13697b6cb31075bf5a9b7c738d",
+        "directory": "skills/hyperframes"
+      },
+      {
+        "repository": "coreyhaines31/marketingskills",
+        "lastReviewedCommit": "67264763cb107d61749f418d081c56e5bcbc0209",
+        "directory": "skills/copywriting"
+      },
+      {
+        "repository": "andreaskonopka/humanizer",
+        "lastReviewedCommit": "862609a2caf3cadb63b9bef78576e6f5a1ed4e19",
+        "directory": "skills/humanizer"
+      },
+      {
+        "repository": "vanities/toaster-strudel",
+        "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
+        "directory": "skills/skills/strudel-compose"
+      }
+    ],
+    "references": [
+      {
+        "kind": "document",
+        "label": "Published brief and result",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/html-css-animated-product-launch-film/outcome.md",
+        "purpose": "Existing result context and its stated limits."
+      },
+      {
+        "kind": "document",
+        "label": "Recorded execution prompt",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/html-css-animated-product-launch-film/prompt.md",
+        "purpose": "Original reusable prompt; preserved unchanged."
+      }
+    ],
+    "tools": [
+      {
+        "name": "Hyperframes",
+        "purpose": "Create and render the HTML/CSS film requested in the published prompt."
+      },
+      {
+        "name": "Strudel",
+        "purpose": "Compose the original Garden Window soundtrack requested in the published prompt."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Arrange the six story beats",
+        "instructions": "Reconstructed workflow from the published prompt and available result artifacts; this is not a recorded sequence of agent turns. Use the recorded launch-film prompt’s ordered story and editorial palette, ending on Possible and the original soundtrack reveal."
+      },
+      {
+        "title": "Build motion and soundtrack",
+        "instructions": "Use the pinned Hyperframes, copywriting, humanizer and Strudel skills to produce editable film source and the restrained Garden Window instrumental."
+      },
+      {
+        "title": "Render and review",
+        "instructions": "Render a 55-second 1920×1080 film at 30 fps with mixed stereo sound. Follow the prompt’s complete-playback review for legibility, pacing and audio. The published MP4 is the result reference; no additional historical prompts are recorded here."
+      }
+    ]
   }
 }

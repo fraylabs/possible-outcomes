@@ -278,5 +278,111 @@
         }
       ]
     }
+  },
+  "recipe": {
+    "agent": {
+      "name": "Codex"
+    },
+    "skills": [
+      {
+        "repository": "fraylabs/burr",
+        "lastReviewedCommit": "3a1b8ebf17e178b28c6d65f67ad04fc97f009a55",
+        "directory": "skills/burr"
+      },
+      {
+        "repository": "earthtojake/text-to-cad",
+        "lastReviewedCommit": "fc4f7069fb31c131a55f1ecd334b505f031f486b",
+        "directory": "skills/cad"
+      },
+      {
+        "repository": "American-Embedded/kistack",
+        "lastReviewedCommit": "c5a25d1d0af7ae811666cab41d7952f41e310575",
+        "directory": "skills/schematic"
+      },
+      {
+        "repository": "American-Embedded/kistack",
+        "lastReviewedCommit": "c5a25d1d0af7ae811666cab41d7952f41e310575",
+        "directory": "skills/pcb"
+      },
+      {
+        "repository": "American-Embedded/kistack",
+        "lastReviewedCommit": "c5a25d1d0af7ae811666cab41d7952f41e310575",
+        "directory": "skills/bom"
+      },
+      {
+        "repository": "American-Embedded/kistack",
+        "lastReviewedCommit": "c5a25d1d0af7ae811666cab41d7952f41e310575",
+        "directory": "skills/export"
+      },
+      {
+        "repository": "American-Embedded/kistack",
+        "lastReviewedCommit": "c5a25d1d0af7ae811666cab41d7952f41e310575",
+        "directory": "skills/firmware"
+      }
+    ],
+    "references": [
+      {
+        "kind": "document",
+        "label": "Published brief and result",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/digital-photo-frame/outcome.md",
+        "purpose": "Existing result context and its stated limits."
+      },
+      {
+        "kind": "document",
+        "label": "Recorded execution prompt",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/digital-photo-frame/prompt.md",
+        "purpose": "Original reusable prompt; preserved unchanged."
+      },
+      {
+        "kind": "document",
+        "label": "RUN_REPORT.md",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/digital-photo-frame/artifacts/docs/RUN_REPORT.md",
+        "purpose": "Published evidence used to reconstruct the ordered workflow."
+      },
+      {
+        "kind": "document",
+        "label": "PUBLICATION_REVIEW.md",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/digital-photo-frame/artifacts/docs/PUBLICATION_REVIEW.md",
+        "purpose": "Published evidence used to reconstruct the ordered workflow."
+      },
+      {
+        "kind": "document",
+        "label": "INTERFACE_CONTROL.md",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/digital-photo-frame/artifacts/docs/INTERFACE_CONTROL.md",
+        "purpose": "Published evidence used to reconstruct the ordered workflow."
+      }
+    ],
+    "tools": [
+      {
+        "name": "Burr",
+        "purpose": "Inspect the integrated enclosure and named easel-stand motion with retained check results."
+      },
+      {
+        "name": "CAD provider",
+        "purpose": "Generate and validate the parametric enclosure and stand STEP models."
+      },
+      {
+        "name": "KiCad",
+        "purpose": "Inspect the schematic, four-layer PCB source, ERC and failed DRC/parity evidence."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Start the documented cleanroom run",
+        "instructions": "Reconstructed workflow from the published prompt and available result artifacts; this is not a recorded sequence of agent turns. Give an isolated Codex agent the unchanged prompt, pinned Burr, CAD and KiStack skills, and an empty workspace, as recorded in the run report."
+      },
+      {
+        "title": "Create mechanical and electrical sources",
+        "instructions": "Model the enclosure and folding stand; generate exact-part schematic and PCB source with shared mechanical/electrical interfaces, BOM and assembly documentation."
+      },
+      {
+        "title": "Apply the fabrication gate",
+        "instructions": "Run CAD validation, ERC, DRC and parity checks. The saved project passes mechanical validation and ERC but fails DRC/parity; withhold populated PCB STEP and fabrication outputs and label the conservative board envelope."
+      },
+      {
+        "title": "Inspect integration and known defects",
+        "instructions": "Review the named motion, retained failed/incomplete Burr checks and publication review. Repair hinge, display, USB-C, parity and portability defects before treating this as buildable hardware; physical function remains untested."
+      }
+    ]
   }
 }

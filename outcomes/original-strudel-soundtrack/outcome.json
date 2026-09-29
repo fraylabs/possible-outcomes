@@ -74,5 +74,81 @@
       "poster": "media/lantern-rain-cover.png",
       "caption": "A 30-second audio-backed preview of the lift and resolution; final human listening acceptance is pending."
     }
+  },
+  "recipe": {
+    "agent": {
+      "name": "Codex"
+    },
+    "skills": [
+      {
+        "repository": "vanities/toaster-strudel",
+        "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
+        "directory": "skills/skills/strudel-compose"
+      },
+      {
+        "repository": "vanities/toaster-strudel",
+        "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
+        "directory": "skills/skills/strudel-emotion"
+      },
+      {
+        "repository": "vanities/toaster-strudel",
+        "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
+        "directory": "skills/skills/strudel-arrangement"
+      },
+      {
+        "repository": "vanities/toaster-strudel",
+        "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
+        "directory": "skills/skills/strudel-melody"
+      },
+      {
+        "repository": "vanities/toaster-strudel",
+        "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
+        "directory": "skills/skills/strudel-sound-design"
+      },
+      {
+        "repository": "vanities/toaster-strudel",
+        "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
+        "directory": "skills/skills/strudel-mixing"
+      },
+      {
+        "repository": "vanities/toaster-strudel",
+        "lastReviewedCommit": "1b53c590b1d84e9eff2904cdd29dae1e719c7014",
+        "directory": "skills/skills/strudel-test"
+      }
+    ],
+    "references": [
+      {
+        "kind": "document",
+        "label": "Published brief and result",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/original-strudel-soundtrack/outcome.md",
+        "purpose": "Existing result context and its stated limits."
+      },
+      {
+        "kind": "document",
+        "label": "Recorded execution prompt",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/original-strudel-soundtrack/prompt.md",
+        "purpose": "Original reusable prompt; preserved unchanged."
+      }
+    ],
+    "tools": [
+      {
+        "name": "Strudel",
+        "purpose": "Compose, play and export the original soundtrack through the official runtime specified by the published prompt."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Compose the six-section miniature",
+        "instructions": "Reconstructed workflow from the published prompt and available result artifacts; this is not a recorded sequence of agent turns. Use the recorded Lantern Rain prompt to create the original 80-second form with synthesized warm chords, mallets, sparse rain and restrained pulse."
+      },
+      {
+        "title": "Run the pinned runtime",
+        "instructions": "Follow the prompt’s Strudel revision ebc25467c0f117a7e7b9b11378e21cac94d730fd, locked dependency installation and local playback instructions. Repair runtime errors and export using its WAV interface."
+      },
+      {
+        "title": "Keep export and listening review separate",
+        "instructions": "Preserve the untouched official WAV beside any listening master; check clipping, silence and transitions. The published preview states that final human listening acceptance is pending."
+      }
+    ]
   }
 }

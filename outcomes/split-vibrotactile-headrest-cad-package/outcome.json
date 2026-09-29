@@ -107,5 +107,91 @@
         "caption": "Internal actuator-spine layout crossing the shell seam"
       }
     ]
+  },
+  "recipe": {
+    "agent": {
+      "name": "Codex"
+    },
+    "skills": [
+      {
+        "repository": "earthtojake/text-to-cad",
+        "lastReviewedCommit": "fdbb4b4fb62d95ae298cfe9a46fdc7092bdaf423",
+        "directory": "skills/cad"
+      },
+      {
+        "repository": "earthtojake/text-to-cad",
+        "lastReviewedCommit": "fdbb4b4fb62d95ae298cfe9a46fdc7092bdaf423",
+        "directory": "skills/step-parts"
+      },
+      {
+        "repository": "earthtojake/text-to-cad",
+        "lastReviewedCommit": "fdbb4b4fb62d95ae298cfe9a46fdc7092bdaf423",
+        "directory": "skills/cad-viewer"
+      }
+    ],
+    "references": [
+      {
+        "kind": "document",
+        "label": "Published brief and result",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/split-vibrotactile-headrest-cad-package/outcome.md",
+        "purpose": "Existing result context and its stated limits."
+      },
+      {
+        "kind": "document",
+        "label": "Recorded execution prompt",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/split-vibrotactile-headrest-cad-package/prompt.md",
+        "purpose": "Original reusable prompt; preserved unchanged."
+      },
+      {
+        "kind": "document",
+        "label": "validation-report.md",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/split-vibrotactile-headrest-cad-package/artifacts/validation-report.md",
+        "purpose": "Published evidence used to reconstruct the ordered workflow."
+      },
+      {
+        "kind": "document",
+        "label": "bom.md",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/split-vibrotactile-headrest-cad-package/artifacts/bom.md",
+        "purpose": "Published evidence used to reconstruct the ordered workflow."
+      },
+      {
+        "kind": "document",
+        "label": "print-guide.md",
+        "url": "https://github.com/fraylabs/possible-outcomes/blob/42080459c0401d3055c3b04f9dafb087ec0be4d8/outcomes/split-vibrotactile-headrest-cad-package/artifacts/print-guide.md",
+        "purpose": "Published evidence used to reconstruct the ordered workflow."
+      }
+    ],
+    "tools": [
+      {
+        "name": "build123d",
+        "purpose": "Create the parametric Python CAD source included in the published package."
+      },
+      {
+        "name": "CAD inspection tools",
+        "purpose": "Inspect STEP topology, part bounds and deterministic joint geometry."
+      },
+      {
+        "name": "CAD Viewer",
+        "purpose": "Inspect assembly snapshots and exported models as requested in the published prompt."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Model the split enclosure",
+        "instructions": "Reconstructed workflow from the published prompt and available result artifacts; this is not a recorded sequence of agent turns. Use the recorded dimensions, off-centre seam, printed pins, structural spine and underside panel. Represent the actuator and sensor as labelled reference envelopes."
+      },
+      {
+        "title": "Export the manufacturing package",
+        "instructions": "Generate the assembly and individual parts as STEP plus printable STL/3MF, with editable source, BOM and assembly guidance."
+      },
+      {
+        "title": "Verify digital geometry",
+        "instructions": "Use the validation report to check body and printer-bed bounds, seam gap, connected solids, spanning fasteners, pin clearance and actuator clearance; inspect assembled and exploded views."
+      },
+      {
+        "title": "Keep the physical boundary",
+        "instructions": "The report validates geometry only. Printing, received-part fit, load, vibration retention, temperature and human-use suitability still need physical validation."
+      }
+    ]
   }
 }
