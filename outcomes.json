@@ -5,26 +5,97 @@
     "url": "https://github.com/fraylabs/possible-outcomes"
   },
   "outcomes": [
-    { "slug": "neon-cyberpunk-city", "url": "./outcomes/neon-cyberpunk-city/outcome.json" },
-    { "slug": "one-file-mini-golf", "url": "./outcomes/one-file-mini-golf/outcome.json" },
-    { "slug": "cursor-monster-pet", "url": "./outcomes/cursor-monster-pet/outcome.json" },
-    { "slug": "three-dimensional-rocket-launch", "url": "./outcomes/three-dimensional-rocket-launch/outcome.json" },
-    { "slug": "inside-robot-hand", "url": "./outcomes/inside-robot-hand/outcome.json" },
-    { "slug": "neon-fluid-simulation", "url": "./outcomes/neon-fluid-simulation/outcome.json" },
-    { "slug": "rube-goldberg-machine", "url": "./outcomes/rube-goldberg-machine/outcome.json" },
-    { "slug": "sunset-pirate-ship", "url": "./outcomes/sunset-pirate-ship/outcome.json" },
-    { "slug": "kinetic-motion-design-reel", "url": "./outcomes/kinetic-motion-design-reel/outcome.json" },
-    { "slug": "navigable-3d-pagoda", "url": "./outcomes/navigable-3d-pagoda/outcome.json" },
-    { "slug": "glass-and-gold-mosaic-film", "url": "./outcomes/glass-and-gold-mosaic-film/outcome.json" },
-    { "slug": "digital-photo-frame", "url": "./outcomes/digital-photo-frame/outcome.json" },
-    { "slug": "functional-hardware-prototype", "url": "./outcomes/functional-hardware-prototype/outcome.json" },
-    { "slug": "fold-flat-travel-hanger", "url": "./outcomes/fold-flat-travel-hanger/outcome.json" },
-    { "slug": "html-css-animated-product-launch-film", "url": "./outcomes/html-css-animated-product-launch-film/outcome.json" },
-    { "slug": "microduck-learned-happy-shuffle", "url": "./outcomes/microduck-learned-happy-shuffle/outcome.json" },
-    { "slug": "original-strudel-soundtrack", "url": "./outcomes/original-strudel-soundtrack/outcome.json" },
-    { "slug": "polished-editable-powerpoint-presentation", "url": "./outcomes/polished-editable-powerpoint-presentation/outcome.json" },
-    { "slug": "polished-technical-product-showcase-artwork", "url": "./outcomes/polished-technical-product-showcase-artwork/outcome.json" },
-    { "slug": "robot-digital-prototype", "url": "./outcomes/robot-digital-prototype/outcome.json" },
-    { "slug": "split-vibrotactile-headrest-cad-package", "url": "./outcomes/split-vibrotactile-headrest-cad-package/outcome.json" }
+    {
+      "slug": "flow-field-poster-maker",
+      "url": "./outcomes/flow-field-poster-maker/outcome.json"
+    },
+    {
+      "slug": "falling-sand-sandbox",
+      "url": "./outcomes/falling-sand-sandbox/outcome.json"
+    },
+    {
+      "slug": "neon-cyberpunk-city",
+      "url": "./outcomes/neon-cyberpunk-city/outcome.json"
+    },
+    {
+      "slug": "one-file-mini-golf",
+      "url": "./outcomes/one-file-mini-golf/outcome.json"
+    },
+    {
+      "slug": "cursor-monster-pet",
+      "url": "./outcomes/cursor-monster-pet/outcome.json"
+    },
+    {
+      "slug": "three-dimensional-rocket-launch",
+      "url": "./outcomes/three-dimensional-rocket-launch/outcome.json"
+    },
+    {
+      "slug": "inside-robot-hand",
+      "url": "./outcomes/inside-robot-hand/outcome.json"
+    },
+    {
+      "slug": "neon-fluid-simulation",
+      "url": "./outcomes/neon-fluid-simulation/outcome.json"
+    },
+    {
+      "slug": "rube-goldberg-machine",
+      "url": "./outcomes/rube-goldberg-machine/outcome.json"
+    },
+    {
+      "slug": "sunset-pirate-ship",
+      "url": "./outcomes/sunset-pirate-ship/outcome.json"
+    },
+    {
+      "slug": "kinetic-motion-design-reel",
+      "url": "./outcomes/kinetic-motion-design-reel/outcome.json"
+    },
+    {
+      "slug": "navigable-3d-pagoda",
+      "url": "./outcomes/navigable-3d-pagoda/outcome.json"
+    },
+    {
+      "slug": "glass-and-gold-mosaic-film",
+      "url": "./outcomes/glass-and-gold-mosaic-film/outcome.json"
+    },
+    {
+      "slug": "digital-photo-frame",
+      "url": "./outcomes/digital-photo-frame/outcome.json"
+    },
+    {
+      "slug": "functional-hardware-prototype",
+      "url": "./outcomes/functional-hardware-prototype/outcome.json"
+    },
+    {
+      "slug": "fold-flat-travel-hanger",
+      "url": "./outcomes/fold-flat-travel-hanger/outcome.json"
+    },
+    {
+      "slug": "html-css-animated-product-launch-film",
+      "url": "./outcomes/html-css-animated-product-launch-film/outcome.json"
+    },
+    {
+      "slug": "microduck-learned-happy-shuffle",
+      "url": "./outcomes/microduck-learned-happy-shuffle/outcome.json"
+    },
+    {
+      "slug": "original-strudel-soundtrack",
+      "url": "./outcomes/original-strudel-soundtrack/outcome.json"
+    },
+    {
+      "slug": "polished-editable-powerpoint-presentation",
+      "url": "./outcomes/polished-editable-powerpoint-presentation/outcome.json"
+    },
+    {
+      "slug": "polished-technical-product-showcase-artwork",
+      "url": "./outcomes/polished-technical-product-showcase-artwork/outcome.json"
+    },
+    {
+      "slug": "robot-digital-prototype",
+      "url": "./outcomes/robot-digital-prototype/outcome.json"
+    },
+    {
+      "slug": "split-vibrotactile-headrest-cad-package",
+      "url": "./outcomes/split-vibrotactile-headrest-cad-package/outcome.json"
+    }
   ]
 }

@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Flow Field Poster</title>
+<style>
+  :root {
+    --panel: #121214;
+    --line: #26262b;
+    --text: #e8e6e1;
+    --muted: #8a8890;
+    --accent: #f0d9a8;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; }
+  body {
+    display: flex;
+    background: #1c1c20;
+    color: var(--text);
+    font: 12px/1.4 ui-sans-serif, -apple-system, "Helvetica Neue", Arial, sans-serif;
+    overflow: hidden;
+  }
+  aside {
+    width: 252px;
+    flex: none;
+    height: 100%;
+    overflow-y: auto;
+    background: var(--panel);
+    border-right: 1px solid var(--line);
+    padding: 18px 16px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  h1 {
+    margin: 0;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+  }
+  h1 span { color: var(--muted); font-weight: 400; }
+  .group { display: flex; flex-direction: column; gap: 7px; }
+  .label {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-size: 10px;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+  }
+  .label output { color: var(--text); font-variant-numeric: tabular-nums; letter-spacing: 0; }
+  .row { display: flex; gap: 6px; }
+  input[type=number] {
+    flex: 1;
+    min-width: 0;
+    background: #1b1b1f;
+    border: 1px solid var(--line);
+    color: var(--text);
+    border-radius: 6px;
+    padding: 7px 8px;
+    font: inherit;
+    font-variant-numeric: tabular-nums;
+  }
+  input[type=number]:focus { outline: none; border-color: #4a4a52; }
+  input[type=range] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 18px;
+    background: transparent;
+    margin: 0;
+  }
+  input[type=range]::-webkit-slider-runnable-track { height: 2px; background: #33333a; border-radius: 2px; }
+  input[type=range]::-moz-range-track { height: 2px; background: #33333a; border-radius: 2px; }
+  input[type=range]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 12px; height: 12px; margin-top: -5px;
+    border-radius: 50%; background: var(--text); border: none;
+  }
+  input[type=range]::-moz-range-thumb { width: 12px; height: 12px; border-radius: 50%; background: var(--text); border: none; }
+  button {
+    background: #1f1f24;
+    border: 1px solid var(--line);
+    color: var(--text);
+    border-radius: 6px;
+    padding: 7px 10px;
+    font: inherit;
+    cursor: pointer;
+    transition: background .15s, border-color .15s;
+  }
+  button:hover { background: #2a2a30; border-color: #3a3a42; }
+  button:disabled { opacity: .5; cursor: progress; }
+  button.primary { background: var(--accent); color: #1a1712; border-color: var(--accent); font-weight: 600; }
+  button.primary:hover { background: #f6e4bd; }
+  .palettes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+  .swatch {
+    padding: 0;
+    height: 46px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 6px;
+    border: 1px solid var(--line);
+  }
+  .swatch .dots { position: absolute; left: 7px; right: 7px; top: 9px; display: flex; gap: 3px; }
+  .swatch .dots i { flex: 1; height: 14px; border-radius: 2px; }
+  .swatch .name {
+    position: absolute; left: 0; right: 0; bottom: 4px;
+    font-size: 9px; letter-spacing: .06em; text-align: center;
+  }
+  .swatch.active { outline: 2px solid var(--accent); outline-offset: 1px; }
+  .checks { display: flex; gap: 14px; color: var(--muted); }
+  .checks label { display: flex; align-items: center; gap: 6px; cursor: pointer; }
+  .checks input { accent-color: var(--accent); margin: 0; }
+  .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: auto; }
+  .actions .wide { grid-column: span 2; }
+  .progress { height: 2px; background: #26262b; border-radius: 2px; overflow: hidden; }
+  .progress div { height: 100%; width: 0; background: var(--accent); }
+  .status { color: var(--muted); font-size: 11px; min-height: 16px; }
+  .hint { color: #5d5b63; font-size: 10px; }
+  kbd { font: inherit; color: var(--muted); }
+  main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    padding: 28px;
+  }
+  main { position: relative; }
+  canvas {
+    display: block;
+    box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 18px 50px rgba(0,0,0,.45);
+  }
+  #sheet {
+    position: absolute;
+    inset: 0;
+    background: #1c1c20;
+    display: flex;
+    flex-direction: column;
+    padding: 18px 24px 24px;
+    gap: 14px;
+  }
+  #sheet[hidden] { display: none; }
+  .sheet-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 11px;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+  }
+  .sheet-head em { color: var(--muted); font-style: normal; letter-spacing: .04em; text-transform: none; }
+  .sheet-grid {
+    flex: 1;
+    min-height: 0;
+    display: grid;
+    gap: 16px;
+    justify-content: center;
+    align-content: center;
+  }
+  .thumb {
+    padding: 0;
+    background: none;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+    transition: transform .15s;
+  }
+  .thumb:hover { background: none; transform: translateY(-3px); }
+  .thumb canvas { box-shadow: 0 1px 2px rgba(0,0,0,.4), 0 10px 26px rgba(0,0,0,.4); }
+  .thumb:hover canvas { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .thumb span { height: 14px; color: var(--muted); font: 10px ui-monospace, "SF Mono", Menlo, monospace; }
+  @media (max-width: 720px) {
+    body { flex-direction: column; overflow: auto; }
+    aside { width: 100%; height: auto; border-right: none; border-bottom: 1px solid var(--line); }
+    main { padding: 16px; }
+  }
+</style>
+</head>
+<body>
+<aside>
+  <h1>Flow Field <span>Poster</span></h1>
+
+  <div class="group">
+    <div class="label">Seed</div>
+    <div class="row">
+      <input id="seed" type="number" min="0" max="999999999" step="1">
+      <button id="shuffle" title="Shuffle seed (S)">Shuffle</button>
+    </div>
+  </div>
+
+  <div class="group">
+    <div class="label">Particles <output id="countOut"></output></div>
+    <input id="count" type="range" min="500" max="12000" step="100">
+  </div>
+
+  <div class="group">
+    <div class="label">Noise scale <output id="scaleOut"></output></div>
+    <input id="scale" type="range" min="0.4" max="8" step="0.1">
+  </div>
+
+  <div class="group">
+    <div class="label">Swirl <output id="swirlOut"></output></div>
+    <input id="swirl" type="range" min="0.1" max="3" step="0.05">
+  </div>
+
+  <div class="group">
+    <div class="label">Line width <output id="widthOut"></output></div>
+    <input id="width" type="range" min="0.2" max="3" step="0.05">
+  </div>
+
+  <div class="group">
+    <div class="label">Palette</div>
+    <div class="palettes" id="palettes"></div>
+  </div>
+
+  <div class="checks">
+    <label><input id="margin" type="checkbox"> Margin</label>
+    <label><input id="caption" type="checkbox"> Caption</label>
+    <label><input id="grain" type="checkbox"> Grain</label>
+  </div>
+
+  <div class="actions">
+    <button id="redraw" title="Redraw (R)">Redraw</button>
+    <button id="copy" title="Copy shareable link">Copy link</button>
+    <button id="contact" class="wide" title="Contact sheet of nine random seeds (C)">Contact sheet</button>
+    <button id="export" class="primary wide" title="Export PNG (E)">Export PNG · 3×</button>
+  </div>
+
+  <div class="group">
+    <div class="progress"><div id="bar"></div></div>
+    <div class="status" id="status"></div>
+    <div class="hint"><kbd>R</kbd> redraw · <kbd>S</kbd> shuffle · <kbd>C</kbd> sheet · <kbd>E</kbd> export</div>
+  </div>
+</aside>
+
+<main id="stage">
+  <canvas id="c"></canvas>
+  <div id="sheet" hidden>
+    <div class="sheet-head">
+      <span>Contact sheet <em>· click a poster to open it</em></span>
+      <div class="row">
+        <button id="sheetShuffle" title="Nine new seeds">New seeds</button>
+        <button id="sheetClose" title="Close (Esc)">Close</button>
+      </div>
+    </div>
+    <div class="sheet-grid" id="sheetGrid"></div>
+  </div>
+</main>
+
+<script>
+(() => {
+  'use strict';
+
+  // ---------- constants ----------
+  const RATIO = Math.SQRT2;            // A-series: height = width * sqrt(2)
+  const BASE_W = 800;                  // logical poster width in px
+  const STEPS = 480;                   // fixed simulation length -> reproducible
+  const STEPS_PER_FRAME = 4;           // ~2s of live animation at 60fps
+  const SPEED = 0.0016;                // step length in poster-width units
+  const TAU = Math.PI * 2;
+
+  const PALETTES = {
+    paper:  { name: 'Paper & Ink', bg: '#f1ebdf', fg: '#2a2622', inks: ['#1d1a17', '#2b2621', '#3d342c'], alpha: 0.11, blend: 'source-over' },
+    riso:   { name: 'Risograph',   bg: '#f5f0e6', fg: '#3a3530', inks: ['#ff48b0', '#0078bf', '#00a95c', '#ff6c2f'], alpha: 0.13, blend: 'multiply' },
+    ocean:  { name: 'Ocean',       bg: '#06202b', fg: '#9fc9cf', inks: ['#1b6f8a', '#2fa3bd', '#8fd8dc', '#e9f5f2'], alpha: 0.10, blend: 'source-over' },
+    sunset: { name: 'Sunset',      bg: '#fbefe2', fg: '#4a2340', inks: ['#3d1a4a', '#b5305a', '#ef6f4b', '#f5ad48'], alpha: 0.12, blend: 'multiply' },
+    mono:   { name: 'Mono',        bg: '#ffffff', fg: '#111111', inks: ['#000000'], alpha: 0.08, blend: 'source-over' },
+    neon:   { name: 'Neon',        bg: '#07070b', fg: '#8a86a0', inks: ['#ff2bd6', '#2bf3ff', '#b6ff2b', '#7a5cff'], alpha: 0.07, blend: 'lighter' },
+  };
+
+  const DEFAULTS = { seed: 1729, count: 4000, scale: 2.2, swirl: 1, width: 0.7, palette: 'paper', margin: true, caption: true, grain: true };
+  const RANGES = {
+    seed:  [0, 999999999, 1],
+    count: [500, 12000, 100],
+    scale: [0.4, 8, 0.1],
+    swirl: [0.1, 3, 0.05],
+    width: [0.2, 3, 0.05],
+  };
+
+  // ---------- seeded RNG ----------
+  function mulberry32(a) {
+    return function () {
+      a |= 0; a = a + 0x6D2B79F5 | 0;
+      let t = Math.imul(a ^ a >>> 15, 1 | a);
+      t = t + Math.imul(t ^ t >>> 7, 61 | t) ^ t;
+      return ((t ^ t >>> 14) >>> 0) / 4294967296;
+    };
+  }
+
+  // ---------- 2D simplex noise (seeded) ----------
+  const F2 = 0.5 * (Math.sqrt(3) - 1);
+  const G2 = (3 - Math.sqrt(3)) / 6;
+  const GRAD = new Float64Array([1, 1, -1, 1, 1, -1, -1, -1, 1, 0, -1, 0, 0, 1, 0, -1]);
+
+  function makeNoise(rand) {
+    const p = new Uint8Array(256);
+    for (let i = 0; i < 256; i++) p[i] = i;
+    for (let i = 255; i > 0; i--) {
+      const j = Math.floor(rand() * (i + 1));
+      const t = p[i]; p[i] = p[j]; p[j] = t;
+    }
+    const perm = new Uint8Array(512);
+    for (let i = 0; i < 512; i++) perm[i] = p[i & 255];
+
+    return function noise(xin, yin) {
+      const s = (xin + yin) * F2;
+      const i = Math.floor(xin + s);
+      const j = Math.floor(yin + s);
+      const t = (i + j) * G2;
+      const x0 = xin - (i - t);
+      const y0 = yin - (j - t);
+      const i1 = x0 > y0 ? 1 : 0;
+      const j1 = 1 - i1;
+      const x1 = x0 - i1 + G2, y1 = y0 - j1 + G2;
+      const x2 = x0 - 1 + 2 * G2, y2 = y0 - 1 + 2 * G2;
+      const ii = i & 255, jj = j & 255;
+      let n = 0, tt, g;
+
+      tt = 0.5 - x0 * x0 - y0 * y0;
+      if (tt > 0) { g = (perm[ii + perm[jj]] & 7) * 2; tt *= tt; n += tt * tt * (GRAD[g] * x0 + GRAD[g + 1] * y0); }
+      tt = 0.5 - x1 * x1 - y1 * y1;
+      if (tt > 0) { g = (perm[ii + i1 + perm[jj + j1]] & 7) * 2; tt *= tt; n += tt * tt * (GRAD[g] * x1 + GRAD[g + 1] * y1); }
+      tt = 0.5 - x2 * x2 - y2 * y2;
+      if (tt > 0) { g = (perm[ii + 1 + perm[jj + 1]] & 7) * 2; tt *= tt; n += tt * tt * (GRAD[g] * x2 + GRAD[g + 1] * y2); }
+
+      return 70 * n; // roughly [-1, 1]
+    };
+  }
+
+  // ---------- simulation ----------
+  // Everything lives in normalized coordinates (x in [0,1], y in [0,sqrt2]),
+  // so the same params give the same drawing at any output resolution.
+  function createSim(P) {
+    const pal = PALETTES[P.palette];
+    const K = pal.inks.length;
+    const rand = mulberry32(P.seed);
+    const flowA = makeNoise(rand);
+    const flowB = makeNoise(rand);
+    const colorN = makeNoise(rand);
+    const offset = rand() * TAU;
+    const z = P.scale;
+    const swirl = P.swirl * Math.PI;
+    const N = P.count;
+
+    const x = new Float64Array(N);
+    const y = new Float64Array(N);
+    const life = new Int32Array(N);
+    const col = new Uint8Array(N);
+
+    function spawn(i) {
+      const px = rand(), py = rand() * RATIO;
+      x[i] = px; y[i] = py;
+      life[i] = 40 + Math.floor(rand() * 220);
+      const t = (colorN(px * 1.3 + 17, py * 1.3 - 9) * 1.25 + 1) / 2 + (rand() - 0.5) * 0.3;
+      col[i] = Math.min(K - 1, Math.max(0, Math.floor(t * K)));
+    }
+    for (let i = 0; i < N; i++) spawn(i);
+
+    return {
+      step(ctx, S) {
+        const paths = [];
+        for (let k = 0; k < K; k++) paths.push(new Path2D());
+        for (let i = 0; i < N; i++) {
+          const ox = x[i], oy = y[i];
+          const sx = ox * z, sy = oy * z;
+          const a = offset + (flowA(sx, sy) + 0.35 * flowB(sx * 2.3 + 5.2, sy * 2.3 - 3.1)) * swirl;
+          const nx = ox + Math.cos(a) * SPEED;
+          const ny = oy + Math.sin(a) * SPEED;
+          const path = paths[col[i]];
+          path.moveTo(ox * S, oy * S);
+          path.lineTo(nx * S, ny * S);
+          x[i] = nx; y[i] = ny;
+          if (--life[i] <= 0 || nx < -0.02 || nx > 1.02 || ny < -0.02 || ny > RATIO + 0.02) spawn(i);
+        }
+        for (let k = 0; k < K; k++) {
+          ctx.strokeStyle = pal.inks[k];
+          ctx.stroke(paths[k]);
+        }
+      },
+    };
+  }
+
+  // ---------- poster frame ----------
+  function frameRect(P) {
+    if (!P.margin) return [0, 0, 1, RATIO];
+    const m = 0.065;
+    const bottom = P.caption ? 0.11 : m;
+    return [m, m, 1 - 2 * m, RATIO - m - bottom];
+  }
+
+  function beginPoster(ctx, S, P) {
+    const pal = PALETTES[P.palette];
+    const W = ctx.canvas.width, H = ctx.canvas.height;
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.globalAlpha = 1;
+    ctx.fillStyle = pal.bg;
+    ctx.fillRect(0, 0, W, H);
+
+    if (P.margin && P.caption) {
+      const [fx, fy, fw, fh] = frameRect(P);
+      const base = (fy + fh) * S + 0.045 * S;
+      ctx.fillStyle = pal.fg;
+      ctx.font = `500 ${0.0135 * S}px ui-monospace, "SF Mono", Menlo, monospace`;
+      ctx.textBaseline = 'alphabetic';
+      ctx.textAlign = 'left';
+      ctx.fillText(`FLOW FIELD  № ${P.seed}`, fx * S, base);
+      ctx.textAlign = 'right';
+      ctx.globalAlpha = 0.65;
+      ctx.fillText(`${pal.name.toUpperCase()}  ·  n ${P.count}  ·  z ${P.scale.toFixed(1)}  ·  s ${P.swirl.toFixed(2)}  ·  w ${P.width.toFixed(2)}`, (fx + fw) * S, base);
+      ctx.globalAlpha = 1;
+    }
+
+    const [fx, fy, fw, fh] = frameRect(P);
+    ctx.save();
+    ctx.beginPath();
+    ctx.rect(fx * S, fy * S, fw * S, fh * S);
+    ctx.clip();
+    ctx.globalCompositeOperation = pal.blend;
+    ctx.globalAlpha = pal.alpha;
+    ctx.lineWidth = P.width * (S / BASE_W);
+    ctx.lineCap = 'round';
+  }
+
+  function endPoster(ctx) {
+    ctx.restore();
+  }
+
+  // ---------- paper grain overlay ----------
+  // Built once at the logical poster size, then stretched over any output size,
+  // so the texture sits at the same scale on screen and in the 3x export.
+  // Each texel is black or white with alpha = |offset|, so it darkens and
+  // lightens around any background colour (even pure white or black).
+  let grainCanvas = null;
+  function getGrain() {
+    if (grainCanvas) return grainCanvas;
+    const w = BASE_W, h = Math.round(BASE_W * RATIO);
+    const c = document.createElement('canvas');
+    c.width = w; c.height = h;
+    const g = c.getContext('2d');
+    const img = g.createImageData(w, h);
+    const d = img.data;
+    const r = mulberry32(0x2545f491);
+    const blot = makeNoise(r);
+    for (let y = 0, o = 0; y < h; y++) {
+      for (let x = 0; x < w; x++, o += 4) {
+        const v = (r() - 0.5) * 0.2 + (blot(x / 110, y / 110) * 0.6 + blot(x / 26, y / 26) * 0.4) * 0.07;
+        const c8 = v < 0 ? 0 : 255;
+        d[o] = d[o + 1] = d[o + 2] = c8;
+        d[o + 3] = Math.min(255, Math.abs(v) * 255);
+      }
+    }
+    g.putImageData(img, 0, 0);
+    // Fibres
+    g.lineWidth = 0.6;
+    g.lineCap = 'round';
+    for (let i = 0; i < 900; i++) {
+      const x = r() * w, y = r() * h;
+      const a = r() * TAU, len = 4 + r() * 14, bend = (r() - 0.5) * 8;
+      g.strokeStyle = r() < 0.6 ? 'rgba(0,0,0,0.07)' : 'rgba(255,255,255,0.09)';
+      g.beginPath();
+      g.moveTo(x, y);
+      g.quadraticCurveTo(
+        x + Math.cos(a) * len / 2 - Math.sin(a) * bend, y + Math.sin(a) * len / 2 + Math.cos(a) * bend,
+        x + Math.cos(a) * len, y + Math.sin(a) * len);
+      g.stroke();
+    }
+    grainCanvas = c;
+    return c;
+  }
+
+  function applyGrain(ctx) {
+    ctx.save();
+    ctx.globalCompositeOperation = 'source-over';
+    ctx.globalAlpha = 1;
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+    ctx.drawImage(getGrain(), 0, 0, ctx.canvas.width, ctx.canvas.height);
+    ctx.restore();
+  }
+
+  // Renders a full poster in time-sliced chunks (export, contact sheet).
+  function renderChunked(c, S, params, cancelled, onProgress) {
+    return new Promise(resolve => {
+      const cx = c.getContext('2d');
+      const sim = createSim(params);
+      beginPoster(cx, S, params);
+      let s = 0;
+      (function chunk() {
+        if (cancelled()) { resolve(false); return; }
+        const until = performance.now() + 24;
+        while (s < STEPS && performance.now() < until) { sim.step(cx, S); s++; }
+        if (onProgress) onProgress(s / STEPS);
+        if (s < STEPS) { setTimeout(chunk, 0); return; }
+        endPoster(cx);
+        if (params.grain) applyGrain(cx);
+        resolve(true);
+      })();
+    });
+  }
+
+  // ---------- state & URL hash ----------
+  const P = { ...DEFAULTS };
+
+  function clampParam(key, v) {
+    const [lo, hi, st] = RANGES[key];
+    v = Math.min(hi, Math.max(lo, v));
+    return Math.round(v / st) * st;
+  }
+
+  function readHash() {
+    const h = new URLSearchParams(location.hash.slice(1));
+    const num = (k, key) => {
+      if (!h.has(k)) return;
+      const v = parseFloat(h.get(k));
+      if (Number.isFinite(v)) P[key] = clampParam(key, v);
+    };
+    num('seed', 'seed'); num('n', 'count'); num('z', 'scale'); num('s', 'swirl'); num('w', 'width');
+    if (h.has('p') && PALETTES[h.get('p')]) P.palette = h.get('p');
+    if (h.has('m')) P.margin = h.get('m') !== '0';
+    if (h.has('c')) P.caption = h.get('c') !== '0';
+    if (h.has('g')) P.grain = h.get('g') !== '0';
+    P.seed = Math.round(P.seed);
+    P.scale = +P.scale.toFixed(2); P.swirl = +P.swirl.toFixed(2); P.width = +P.width.toFixed(2);
+  }
+
+  function hashString() {
+    return '#' + new URLSearchParams({
+      seed: P.seed, n: P.count, z: P.scale, s: P.swirl, w: P.width,
+      p: P.palette, m: P.margin ? 1 : 0, c: P.caption ? 1 : 0, g: P.grain ? 1 : 0,
+    }).toString();
+  }
+
+  function writeHash() {
+    const h = hashString();
+    if (location.hash !== h) history.replaceState(null, '', h);
+  }
+
+  // ---------- UI ----------
+  const $ = id => document.getElementById(id);
+  const canvas = $('c');
+  const ctx = canvas.getContext('2d');
+  const statusEl = $('status');
+  const bar = $('bar');
+  const sliders = {
+    count: v => v.toLocaleString(),
+    scale: v => v.toFixed(1),
+    swirl: v => v.toFixed(2),
+    width: v => v.toFixed(2),
+  };
+
+  const palWrap = $('palettes');
+  for (const [key, pal] of Object.entries(PALETTES)) {
+    const b = document.createElement('button');
+    b.className = 'swatch';
+    b.dataset.key = key;
+    b.title = pal.name;
+    b.style.background = pal.bg;
+    b.innerHTML = `<div class="dots">${pal.inks.map(c => `<i style="background:${c}"></i>`).join('')}</div>` +
+                  `<div class="name" style="color:${pal.fg}">${pal.name}</div>`;
+    b.addEventListener('click', () => { P.palette = key; syncUI(); changed(); });
+    palWrap.appendChild(b);
+  }
+
+  function syncUI() {
+    $('seed').value = P.seed;
+    for (const k of Object.keys(sliders)) {
+      $(k).value = P[k];
+      $(k + 'Out').textContent = sliders[k](P[k]);
+    }
+    $('margin').checked = P.margin;
+    $('caption').checked = P.caption;
+    $('caption').disabled = !P.margin;
+    $('grain').checked = P.grain;
+    for (const b of palWrap.children) b.classList.toggle('active', b.dataset.key === P.palette);
+  }
+
+  let pending = 0;
+  function changed() {
+    writeHash();
+    // Coalesce rapid slider input into one redraw per frame.
+    cancelAnimationFrame(pending);
+    pending = requestAnimationFrame(() => {
+      redraw();
+      if (!sheet.hidden) renderSheet();
+    });
+  }
+
+  for (const k of Object.keys(sliders)) {
+    $(k).addEventListener('input', e => {
+      P[k] = +parseFloat(e.target.value).toFixed(2);
+      $(k + 'Out').textContent = sliders[k](P[k]);
+      changed();
+    });
+  }
+  $('seed').addEventListener('change', e => {
+    const v = parseInt(e.target.value, 10);
+    P.seed = Number.isFinite(v) ? clampParam('seed', v) : DEFAULTS.seed;
+    syncUI(); changed();
+  });
+  $('margin').addEventListener('change', e => { P.margin = e.target.checked; syncUI(); changed(); });
+  $('caption').addEventListener('change', e => { P.caption = e.target.checked; changed(); });
+  $('grain').addEventListener('change', e => { P.grain = e.target.checked; changed(); });
+
+  function shuffle() {
+    P.seed = Math.floor(Math.random() * 1e9);
+    syncUI(); changed();
+  }
+  $('shuffle').addEventListener('click', shuffle);
+  $('redraw').addEventListener('click', redraw);
+  $('export').addEventListener('click', exportPNG);
+  $('copy').addEventListener('click', async () => {
+    writeHash();
+    try {
+      await navigator.clipboard.writeText(location.href);
+      setStatus('Link copied');
+    } catch {
+      setStatus('Copy the URL from the address bar');
+    }
+  });
+
+  window.addEventListener('keydown', e => {
+    if (e.metaKey || e.ctrlKey || e.altKey || e.target.tagName === 'INPUT' && e.target.type === 'number') return;
+    const k = e.key.toLowerCase();
+    if (k === 'r') redraw();
+    else if (k === 's') shuffle();
+    else if (k === 'e') exportPNG();
+    else if (k === 'c') sheet.hidden ? openSheet() : closeSheet();
+    else if (k === 'escape' && !sheet.hidden) closeSheet();
+  });
+
+  window.addEventListener('hashchange', () => {
+    if (location.hash === hashString()) return;
+    readHash(); syncUI(); redraw();
+  });
+
+  function setStatus(t) { statusEl.textContent = t; }
+
+  // ---------- layout ----------
+  function fitCanvas() {
+    const stage = $('stage');
+    const cs = getComputedStyle(stage);
+    const aw = stage.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+    const ah = window.innerWidth <= 720
+      ? Infinity
+      : stage.clientHeight - parseFloat(cs.paddingTop) - parseFloat(cs.paddingBottom);
+    const w = Math.max(120, Math.min(aw, ah / RATIO));
+    canvas.style.width = Math.floor(w) + 'px';
+    canvas.style.height = Math.floor(w * RATIO) + 'px';
+    if (!sheet.hidden) layoutSheet();
+  }
+  window.addEventListener('resize', fitCanvas);
+
+  // ---------- contact sheet ----------
+  const sheet = $('sheet');
+  const sheetGrid = $('sheetGrid');
+  const SHEET_GAP = 16, LABEL_H = 20;
+  let sheetSeeds = [];
+  let sheetJob = 0;
+
+  function sheetCellWidth() {
+    const aw = sheetGrid.clientWidth, ah = sheetGrid.clientHeight;
+    return Math.max(60, Math.floor(Math.min(
+      (aw - 2 * SHEET_GAP) / 3,
+      ((ah - 2 * SHEET_GAP) / 3 - LABEL_H) / RATIO)));
+  }
+
+  function layoutSheet() {
+    const w = sheetCellWidth();
+    sheetGrid.style.gridTemplateColumns = `repeat(3, ${w}px)`;
+    for (const c of sheetGrid.querySelectorAll('canvas')) {
+      c.style.width = w + 'px';
+      c.style.height = Math.floor(w * RATIO) + 'px';
+    }
+  }
+
+  async function renderSheet() {
+    const id = ++sheetJob;
+    const pal = PALETTES[P.palette];
+    sheetGrid.innerHTML = '';
+    const cells = sheetSeeds.map(seed => {
+      const b = document.createElement('button');
+      b.className = 'thumb';
+      b.title = `Open seed ${seed}`;
+      const c = document.createElement('canvas');
+      c.style.background = pal.bg;
+      const label = document.createElement('span');
+      label.textContent = `№ ${seed}`;
+      b.append(c, label);
+      b.addEventListener('click', () => {
+        P.seed = seed;
+        closeSheet();
+        syncUI();
+        changed();
+      });
+      sheetGrid.appendChild(b);
+      return c;
+    });
+    layoutSheet();
+    const dpr = Math.min(2, Math.max(1, window.devicePixelRatio || 1));
+    const S = Math.min(480, Math.round(sheetCellWidth() * dpr));
+    const params = { ...P };
+    for (let i = 0; i < cells.length; i++) {
+      if (id !== sheetJob) return;
+      setStatus(`Contact sheet ${i + 1} / ${cells.length}…`);
+      cells[i].width = S;
+      cells[i].height = Math.round(S * RATIO);
+      const ok = await renderChunked(cells[i], S, { ...params, seed: sheetSeeds[i] }, () => id !== sheetJob);
+      if (!ok) return;
+    }
+    setStatus('Contact sheet ready');
+  }
+
+  function openSheet(newSeeds = true) {
+    if (newSeeds || !sheetSeeds.length) {
+      sheetSeeds = Array.from({ length: 9 }, () => Math.floor(Math.random() * 1e9));
+    }
+    sheet.hidden = false;
+    renderSheet();
+  }
+
+  function closeSheet() {
+    sheet.hidden = true;
+    sheetJob++;
+  }
+
+  $('contact').addEventListener('click', () => openSheet());
+  $('sheetShuffle').addEventListener('click', () => openSheet(true));
+  $('sheetClose').addEventListener('click', closeSheet);
+
+  // ---------- live drawing ----------
+  let job = 0;
+  function redraw() {
+    const id = ++job;
+    const dpr = Math.min(2, Math.max(1, window.devicePixelRatio || 1));
+    const S = Math.round(BASE_W * dpr);
+    canvas.width = S;                       // also resets context state
+    canvas.height = Math.round(S * RATIO);
+    const params = { ...P };
+    const sim = createSim(params);
+    beginPoster(ctx, S, params);
+    let s = 0;
+    setStatus('Drawing…');
+    const t0 = performance.now();
+    (function frame() {
+      if (id !== job) return;
+      for (let k = 0; k < STEPS_PER_FRAME && s < STEPS; k++, s++) sim.step(ctx, S);
+      bar.style.width = (s / STEPS * 100) + '%';
+      if (s < STEPS) requestAnimationFrame(frame);
+      else {
+        endPoster(ctx);
+        if (params.grain) applyGrain(ctx);
+        setStatus(`Done in ${((performance.now() - t0) / 1000).toFixed(1)}s · ${(params.count * STEPS / 1e6).toFixed(1)}M segments`);
+      }
+    })();
+  }
+
+  // ---------- export ----------
+  let exporting = false;
+  function exportPNG() {
+    if (exporting) return;
+    exporting = true;
+    const btn = $('export');
+    btn.disabled = true;
+    const params = { ...P };
+    const S = BASE_W * 3;
+    const off = document.createElement('canvas');
+    off.width = S;
+    off.height = Math.round(S * RATIO);
+    renderChunked(off, S, params, () => false, p => {
+      btn.textContent = `Rendering ${Math.round(p * 100)}%`;
+    }).then(() => {
+      btn.textContent = 'Encoding…';
+      off.toBlob(blob => {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = `flowfield-${params.palette}-${params.seed}.png`;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+        btn.textContent = 'Export PNG · 3×';
+        btn.disabled = false;
+        exporting = false;
+        setStatus(`Exported ${off.width}×${off.height}`);
+      }, 'image/png');
+    });
+  }
+
+  // ---------- boot ----------
+  readHash();
+  syncUI();
+  writeHash();
+  fitCanvas();
+  redraw();
+})();
+</script>
+</body>
+</html>

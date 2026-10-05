@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<title>Falling Sand</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body {
+    margin: 0; height: 100%; background: #0b0b10; color: #ddd;
+    font: 14px/1.2 system-ui, -apple-system, "Segoe UI", sans-serif;
+    overflow: hidden; user-select: none; -webkit-user-select: none;
+  }
+  body { display: flex; flex-direction: column; }
+  #stage {
+    flex: 1; min-height: 0; display: flex; align-items: center; justify-content: center;
+    position: relative;
+  }
+  canvas {
+    image-rendering: pixelated; image-rendering: crisp-edges;
+    background: #0e0e14; touch-action: none; cursor: none;
+    box-shadow: 0 0 0 1px #24242e, 0 8px 30px rgba(0,0,0,.5);
+  }
+  #cursor {
+    position: absolute; pointer-events: none; border: 1px solid rgba(255,255,255,.7);
+    border-radius: 50%; transform: translate(-50%, -50%); display: none;
+    box-shadow: 0 0 0 1px rgba(0,0,0,.5);
+  }
+  #bar {
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px;
+    padding: 10px 12px calc(10px + env(safe-area-inset-bottom)); background: #15151d;
+    border-top: 1px solid #24242e;
+  }
+  .group { display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: center; }
+  .sep { width: 1px; height: 28px; background: #2c2c38; margin: 0 4px; }
+  button {
+    font: inherit; color: #ddd; background: #22222c; border: 1px solid #33333f;
+    border-radius: 8px; padding: 7px 11px; cursor: pointer; display: flex; align-items: center; gap: 6px;
+  }
+  button:hover { background: #2a2a36; }
+  button.active { border-color: #e8e8f0; background: #30303e; color: #fff; }
+  .sw { width: 14px; height: 14px; border-radius: 3px; box-shadow: inset 0 0 0 1px rgba(255,255,255,.15); }
+  label { display: flex; align-items: center; gap: 8px; color: #aaa; }
+  input[type=range] { width: 110px; accent-color: #d9b46a; }
+  #size { width: 2ch; text-align: right; color: #ddd; }
+  #fps { color: #666; font-size: 12px; min-width: 6ch; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="c"></canvas>
+  <div id="cursor"></div>
+</div>
+<div id="bar">
+  <div class="group" id="palette"></div>
+  <div class="sep"></div>
+  <label>Brush <input id="brush" type="range" min="1" max="20" value="4"><span id="size">4</span></label>
+  <div class="sep"></div>
+  <div class="group">
+    <button id="pause">Pause</button>
+    <button id="clear">Clear</button>
+    <button id="seed">Seed</button>
+    <span id="fps"></span>
+  </div>
+</div>
+
+<script>
+(() => {
+  'use strict';
+
+  // ---- Grid ---------------------------------------------------------------
+  const W = 240, H = 160, N = W * H;
+  const EMPTY = 0, SAND = 1, WATER = 2, STONE = 3, WOOD = 4, PLANT = 5, FIRE = 6, SMOKE = 7, LAVA = 8, STEAM = 9;
+
+  const type  = new Uint8Array(N);
+  const shade = new Uint8Array(N);   // per-cell colour variation, 0..63
+  const life  = new Uint8Array(N);   // fire / smoke lifetime
+  const stamp = new Uint8Array(N);   // last tick a cell was moved into
+  let tick = 0;
+
+  // xorshift32 — much faster than Math.random in the hot loop
+  let seed = (Date.now() ^ 0x9e3779b9) >>> 0 || 1;
+  function rnd() {
+    seed ^= seed << 13; seed ^= seed >>> 17; seed ^= seed << 5;
+    return (seed >>> 0) / 4294967296;
+  }
+  function rint(n) { return (rnd() * n) | 0; }
+
+  // ---- Colours ------------------------------------------------------------
+  const BG = [14, 14, 20];
+  const BASE = {
+    [SAND]:  [222, 189, 118],
+    [WATER]: [ 38, 104, 214],
+    [STONE]: [118, 118, 128],
+    [WOOD]:  [112,  72,  40],
+    [PLANT]: [ 58, 168,  62],
+  };
+  const pack = (r, g, b) => (255 << 24) | (b << 16) | (g << 8) | r;
+  const clamp = v => v < 0 ? 0 : v > 255 ? 255 : v | 0;
+
+  // Static elements: lookup by (type << 6) | shade
+  const colorTab = new Uint32Array(16 * 64);
+  for (let t = 0; t < 16; t++) {
+    for (let s = 0; s < 64; s++) {
+      const b = BASE[t];
+      if (!b) { colorTab[t << 6 | s] = pack(...BG); continue; }
+      const k = 0.82 + (s / 63) * 0.32;
+      colorTab[t << 6 | s] = pack(clamp(b[0] * k), clamp(b[1] * k), clamp(b[2] * k));
+    }
+  }
+  // Fire: gradient by heat 0..63 (deep red -> orange -> yellow-white)
+  const fireTab = new Uint32Array(64);
+  const fireStops = [[0, 120, 20, 10], [20, 210, 60, 15], [40, 255, 140, 30], [56, 255, 220, 90], [63, 255, 250, 200]];
+  for (let h = 0; h < 64; h++) {
+    let a = fireStops[0], b = fireStops[fireStops.length - 1];
+    for (let j = 0; j < fireStops.length - 1; j++) {
+      if (h >= fireStops[j][0] && h <= fireStops[j + 1][0]) { a = fireStops[j]; b = fireStops[j + 1]; break; }
+    }
+    const f = (h - a[0]) / Math.max(1, b[0] - a[0]);
+    fireTab[h] = pack(clamp(a[1] + (b[1] - a[1]) * f), clamp(a[2] + (b[2] - a[2]) * f), clamp(a[3] + (b[3] - a[3]) * f));
+  }
+  // Smoke: blend toward background as life runs out; 4 shade bands for texture
+  const smokeTab = new Uint32Array(256 * 4);
+  for (let l = 0; l < 256; l++) {
+    const a = Math.min(1, l / 90) * 0.75;
+    for (let s = 0; s < 4; s++) {
+      const g = 92 + s * 10;
+      smokeTab[l << 2 | s] = pack(clamp(BG[0] + (g - BG[0]) * a), clamp(BG[1] + (g - BG[1]) * a), clamp(BG[2] + (g + 6 - BG[2]) * a));
+    }
+  }
+  // Lava: dark red crust through to bright orange; cells re-roll their shade to shimmer
+  const lavaTab = new Uint32Array(64);
+  for (let s = 0; s < 64; s++) {
+    const f = s / 63;
+    lavaTab[s] = pack(clamp(170 + 85 * f), clamp(30 + 110 * f * f), clamp(10 + 20 * f));
+  }
+  // Steam: pale translucent white-blue
+  const steamTab = new Uint32Array(4);
+  for (let s = 0; s < 4; s++) {
+    const a = 0.45 + s * 0.06;
+    steamTab[s] = pack(clamp(BG[0] + (205 - BG[0]) * a), clamp(BG[1] + (215 - BG[1]) * a), clamp(BG[2] + (230 - BG[2]) * a));
+  }
+
+  // ---- Cell helpers -------------------------------------------------------
+  function set(i, t) {
+    type[i] = t;
+    shade[i] = rint(64);
+    life[i] = t === FIRE ? 30 + rint(40) : t === SMOKE ? 80 + rint(100) : t === STEAM ? 120 + rint(120) : 0;
+    stamp[i] = tick;
+  }
+  function swap(i, j) {
+    const t = type[i], s = shade[i], l = life[i];
+    type[i] = type[j]; shade[i] = shade[j]; life[i] = life[j];
+    type[j] = t; shade[j] = s; life[j] = l;
+    stamp[i] = tick; stamp[j] = tick;
+  }
+  const isGas = t => t === EMPTY || t === SMOKE || t === STEAM;
+
+  // ---- Element rules ------------------------------------------------------
+  function updateSand(x, y, i) {
+    if (y === H - 1) return;
+    const b = i + W, bt = type[b];
+    if (isGas(bt) || (bt === WATER && rnd() < 0.6)) { swap(i, b); return; }
+    const d = rnd() < 0.5 ? -1 : 1;
+    for (let k = 0; k < 2; k++) {
+      const dx = k ? -d : d, nx = x + dx;
+      if (nx < 0 || nx >= W) continue;
+      const j = b + dx, jt = type[j];
+      if (isGas(jt) || (jt === WATER && rnd() < 0.4)) { swap(i, j); return; }
+    }
+  }
+
+  function updateWater(x, y, i) {
+    if (y < H - 1) {
+      const b = i + W;
+      if (isGas(type[b])) { swap(i, b); return; }
+      const d = rnd() < 0.5 ? -1 : 1;
+      for (let k = 0; k < 2; k++) {
+        const dx = k ? -d : d, nx = x + dx;
+        if (nx >= 0 && nx < W && isGas(type[b + dx]) && isGas(type[i + dx])) { swap(i, b + dx); return; }
+      }
+    }
+    // Flow sideways: slide up to 5 cells, stopping early over a drop.
+    const d = rnd() < 0.5 ? -1 : 1;
+    for (let k = 0; k < 2; k++) {
+      const dx = k ? -d : d;
+      let target = -1;
+      for (let s = 1; s <= 5; s++) {
+        const nx = x + dx * s;
+        if (nx < 0 || nx >= W) break;
+        const j = i + dx * s;
+        if (!isGas(type[j])) break;
+        target = j;
+        if (y < H - 1 && isGas(type[j + W])) break;
+      }
+      if (target >= 0) { swap(i, target); return; }
+    }
+  }
+
+  function updatePlant(x, y, i) {
+    if (rnd() > 0.012) return;
+    const dir = rint(4);
+    const nx = x + (dir === 0 ? -1 : dir === 1 ? 1 : 0);
+    const ny = y + (dir === 2 ? -1 : dir === 3 ? 1 : 0);
+    if (nx < 0 || nx >= W || ny < 0 || ny >= H) return;
+    const j = ny * W + nx;
+    if (type[j] === WATER) set(j, PLANT);
+  }
+
+  function updateFire(x, y, i) {
+    // Ignite / get doused by neighbours
+    for (let dy = -1; dy <= 1; dy++) {
+      const ny = y + dy;
+      if (ny < 0 || ny >= H) continue;
+      for (let dx = -1; dx <= 1; dx++) {
+        if (!dx && !dy) continue;
+        const nx = x + dx;
+        if (nx < 0 || nx >= W) continue;
+        const j = ny * W + nx, t = type[j];
+        if (t === WATER) {
+          set(i, SMOKE); life[i] = 40 + rint(40);
+          if (rnd() < 0.15) { set(j, SMOKE); life[j] = 40 + rint(40); }
+          return;
+        }
+        if (t === WOOD && rnd() < 0.012) { set(j, FIRE); life[j] = 90 + rint(120); }
+        else if (t === PLANT && rnd() < 0.06) { set(j, FIRE); life[j] = 25 + rint(30); }
+      }
+    }
+    // Flicker upward as short-lived flame tongues
+    if (y > 0 && life[i] > 6 && rnd() < 0.12) {
+      const dx = rint(3) - 1, nx = x + dx;
+      if (nx >= 0 && nx < W) {
+        const j = i - W + dx;
+        if (type[j] === EMPTY) { set(j, FIRE); life[j] = life[i] >> 2; }
+        else if (type[j] === SMOKE) { /* leave it */ }
+      }
+    }
+    // Give off smoke
+    if (y > 0 && rnd() < 0.04) {
+      const j = i - W;
+      if (type[j] === EMPTY) set(j, SMOKE);
+    }
+    if (--life[i] === 0) {
+      if (rnd() < 0.35) set(i, SMOKE); else type[i] = EMPTY;
+    }
+  }
+
+  function updateSmoke(x, y, i) {
+    if (life[i] <= 1) { type[i] = EMPTY; life[i] = 0; return; }
+    life[i]--;
+    const r = rnd();
+    if (r < 0.15) return; // linger a bit
+    if (y > 0) {
+      const u = i - W;
+      if (r < 0.65 && type[u] === EMPTY) { swap(i, u); return; }
+      const dx = rnd() < 0.5 ? -1 : 1, nx = x + dx;
+      if (nx >= 0 && nx < W && type[u + dx] === EMPTY) { swap(i, u + dx); return; }
+    } else if (rnd() < 0.1) {
+      life[i] = Math.min(life[i], 10); // disperse along the ceiling
+    }
+    const dx = rnd() < 0.5 ? -1 : 1, nx = x + dx;
+    if (nx >= 0 && nx < W && type[i + dx] === EMPTY) swap(i, i + dx);
+  }
+
+  function updateLava(x, y, i) {
+    // React with neighbours: quench in water, ignite fuel
+    for (let dy = -1; dy <= 1; dy++) {
+      const ny = y + dy;
+      if (ny < 0 || ny >= H) continue;
+      for (let dx = -1; dx <= 1; dx++) {
+        if (!dx && !dy) continue;
+        const nx = x + dx;
+        if (nx < 0 || nx >= W) continue;
+        const j = ny * W + nx, t = type[j];
+        if (t === WATER) { set(j, STEAM); set(i, STONE); return; }
+        if (t === WOOD && rnd() < 0.03) { set(j, FIRE); life[j] = 90 + rint(120); }
+        else if (t === PLANT && rnd() < 0.1) { set(j, FIRE); life[j] = 25 + rint(30); }
+      }
+    }
+    if (rnd() < 0.04) shade[i] = rint(64);
+    if (y > 0 && type[i - W] === EMPTY && rnd() < 0.002) set(i - W, SMOKE);
+
+    // Flow like a thick liquid: moves only some ticks, one cell sideways at most
+    if (rnd() < 0.5) return;
+    if (y < H - 1) {
+      const b = i + W;
+      if (isGas(type[b])) { swap(i, b); return; }
+      const dx = rnd() < 0.5 ? -1 : 1, nx = x + dx;
+      if (nx >= 0 && nx < W && isGas(type[b + dx]) && isGas(type[i + dx])) { swap(i, b + dx); return; }
+    }
+    if (rnd() < 0.3) {
+      const dx = rnd() < 0.5 ? -1 : 1, nx = x + dx;
+      if (nx >= 0 && nx < W && isGas(type[i + dx])) swap(i, i + dx);
+    }
+  }
+
+  function updateSteam(x, y, i) {
+    // Condense back into water near the top, or eventually wherever it's trapped
+    if (--life[i] === 0 || (y < 24 && rnd() < 0.03)) { set(i, WATER); return; }
+    if (y > 0) {
+      const u = i - W;
+      if (rnd() < 0.8 && type[u] === EMPTY) { swap(i, u); return; }
+      const dx = rnd() < 0.5 ? -1 : 1, nx = x + dx;
+      if (nx >= 0 && nx < W && type[u + dx] === EMPTY) { swap(i, u + dx); return; }
+    }
+    const dx = rnd() < 0.5 ? -1 : 1, nx = x + dx;
+    if (nx >= 0 && nx < W && type[i + dx] === EMPTY) swap(i, i + dx);
+  }
+
+  function step() {
+    tick = (tick % 255) + 1;
+    const ltr = (tick & 1) === 1;  // alternate scan direction each frame to avoid sideways bias
+    for (let y = H - 1; y >= 0; y--) {
+      const row = y * W;
+      for (let k = 0; k < W; k++) {
+        const x = ltr ? k : W - 1 - k;
+        const i = row + x;
+        const t = type[i];
+        if (t === EMPTY || t === STONE || t === WOOD || stamp[i] === tick) continue;
+        switch (t) {
+          case SAND:  updateSand(x, y, i); break;
+          case WATER: updateWater(x, y, i); break;
+          case PLANT: updatePlant(x, y, i); break;
+          case FIRE:  updateFire(x, y, i); break;
+          case SMOKE: updateSmoke(x, y, i); break;
+          case LAVA:  updateLava(x, y, i); break;
+          case STEAM: updateSteam(x, y, i); break;
+        }
+      }
+    }
+  }
+
+  // ---- Rendering ----------------------------------------------------------
+  const canvas = document.getElementById('c');
+  canvas.width = W; canvas.height = H;
+  const ctx = canvas.getContext('2d');
+  const img = ctx.createImageData(W, H);
+  const px = new Uint32Array(img.data.buffer);
+
+  function render() {
+    for (let i = 0; i < N; i++) {
+      const t = type[i];
+      if (t === FIRE) {
+        let h = (life[i] >> 1) + 18 + rint(14);
+        px[i] = fireTab[h > 63 ? 63 : h];
+      } else if (t === SMOKE) {
+        px[i] = smokeTab[life[i] << 2 | (shade[i] & 3)];
+      } else if (t === LAVA) {
+        px[i] = lavaTab[shade[i]];
+      } else if (t === STEAM) {
+        px[i] = steamTab[shade[i] & 3];
+      } else {
+        px[i] = colorTab[t << 6 | shade[i]];
+      }
+    }
+    ctx.putImageData(img, 0, 0);
+  }
+
+  // ---- Layout -------------------------------------------------------------
+  const stage = document.getElementById('stage');
+  let scale = 1;
+  function layout() {
+    const aw = stage.clientWidth - 16, ah = stage.clientHeight - 16;
+    let s = Math.min(aw / W, ah / H);
+    if (s >= 2) s = Math.floor(s);   // integer scale when there's room, for perfectly even pixels
+    scale = Math.max(0.5, s);
+    canvas.style.width = (W * scale) + 'px';
+    canvas.style.height = (H * scale) + 'px';
+    updateCursorSize();
+  }
+  window.addEventListener('resize', layout);
+
+  // ---- UI -----------------------------------------------------------------
+  const ELEMENTS = [
+    { id: SAND,  name: 'Sand',  key: '1' },
+    { id: WATER, name: 'Water', key: '2' },
+    { id: STONE, name: 'Stone', key: '3' },
+    { id: WOOD,  name: 'Wood',  key: '4' },
+    { id: PLANT, name: 'Plant', key: '5' },
+    { id: FIRE,  name: 'Fire',  key: '6' },
+    { id: SMOKE, name: 'Smoke', key: '7' },
+    { id: LAVA,  name: 'Lava',  key: '8' },
+    { id: STEAM, name: 'Steam', key: '9' },
+    { id: EMPTY, name: 'Eraser', key: '0' },
+  ];
+  const cssOf = c => `rgb(${c & 255},${(c >> 8) & 255},${(c >> 16) & 255})`;
+  const swatch = id =>
+    id === FIRE ? cssOf(fireTab[48]) :
+    id === SMOKE ? cssOf(smokeTab[200 << 2 | 2]) :
+    id === LAVA ? cssOf(lavaTab[40]) :
+    id === STEAM ? cssOf(steamTab[3]) :
+    id === EMPTY ? 'repeating-linear-gradient(45deg,#444 0 3px,#222 3px 6px)' :
+    cssOf(colorTab[id << 6 | 32]);
+
+  let current = SAND;
+  const palette = document.getElementById('palette');
+  const buttons = new Map();
+  for (const el of ELEMENTS) {
+    const b = document.createElement('button');
+    b.innerHTML = `<span class="sw" style="background:${swatch(el.id)}"></span>${el.name}`;
+    b.title = `${el.name} (${el.key})`;
+    b.onclick = () => select(el.id);
+    palette.appendChild(b);
+    buttons.set(el.id, b);
+  }
+  function select(id) {
+    current = id;
+    for (const [k, b] of buttons) b.classList.toggle('active', k === id);
+  }
+  select(SAND);
+
+  const brush = document.getElementById('brush');
+  const sizeLabel = document.getElementById('size');
+  brush.oninput = () => { sizeLabel.textContent = brush.value; updateCursorSize(); };
+
+  let paused = false;
+  const pauseBtn = document.getElementById('pause');
+  function togglePause() {
+    paused = !paused;
+    pauseBtn.textContent = paused ? 'Play' : 'Pause';
+    pauseBtn.classList.toggle('active', paused);
+  }
+  pauseBtn.onclick = togglePause;
+
+  function clearAll() { type.fill(0); life.fill(0); emitters = []; }
+  document.getElementById('clear').onclick = clearAll;
+  document.getElementById('seed').onclick = seedScene;
+
+  window.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT' && e.key !== ' ') return;
+    const el = ELEMENTS.find(el => el.key === e.key);
+    if (el) select(el.id);
+    else if (e.key === ' ') { e.preventDefault(); togglePause(); }
+    else if (e.key === '[') { brush.value = +brush.value - 1; brush.oninput(); }
+    else if (e.key === ']') { brush.value = +brush.value + 1; brush.oninput(); }
+  });
+
+  // ---- Painting -----------------------------------------------------------
+  const cursor = document.getElementById('cursor');
+  function updateCursorSize() {
+    const d = (brush.value * 2 - 1) * scale;
+    cursor.style.width = cursor.style.height = Math.max(4, d) + 'px';
+  }
+
+  function paintAt(cx, cy, el) {
+    const r = +brush.value - 1;
+    const r2 = r * r + r;
+    const granular = el === SAND || el === WATER || el === FIRE || el === SMOKE || el === LAVA || el === STEAM;
+    for (let dy = -r; dy <= r; dy++) {
+      const y = cy + dy;
+      if (y < 0 || y >= H) continue;
+      for (let dx = -r; dx <= r; dx++) {
+        if (dx * dx + dy * dy > r2) continue;
+        const x = cx + dx;
+        if (x < 0 || x >= W) continue;
+        const i = y * W + x, t = type[i];
+        if (el === EMPTY) { type[i] = EMPTY; life[i] = 0; continue; }
+        if (granular && rnd() < 0.45 && r > 0) continue;
+        if (el === FIRE) {
+          if (t === EMPTY || t === SMOKE || t === WOOD || t === PLANT) set(i, FIRE);
+        } else if (isGas(t)) {
+          set(i, el);
+        }
+      }
+    }
+  }
+
+  function paintLine(x0, y0, x1, y1, el) {
+    const dx = x1 - x0, dy = y1 - y0;
+    const steps = Math.max(1, Math.ceil(Math.max(Math.abs(dx), Math.abs(dy)) / Math.max(1, brush.value / 2)));
+    for (let s = 0; s <= steps; s++) {
+      paintAt(Math.round(x0 + dx * s / steps), Math.round(y0 + dy * s / steps), el);
+    }
+  }
+
+  const pointer = { down: false, x: 0, y: 0, lx: 0, ly: 0, erase: false, id: null };
+  function toGrid(e) {
+    const r = canvas.getBoundingClientRect();
+    return [Math.floor((e.clientX - r.left) / r.width * W), Math.floor((e.clientY - r.top) / r.height * H)];
+  }
+  function moveCursor(e) {
+    const r = stage.getBoundingClientRect();
+    cursor.style.left = (e.clientX - r.left) + 'px';
+    cursor.style.top = (e.clientY - r.top) + 'px';
+  }
+  canvas.addEventListener('contextmenu', e => e.preventDefault());
+  canvas.addEventListener('pointerdown', e => {
+    if (pointer.down) return;
+    canvas.setPointerCapture(e.pointerId);
+    pointer.down = true; pointer.id = e.pointerId;
+    pointer.erase = e.button === 2;
+    [pointer.x, pointer.y] = toGrid(e);
+    pointer.lx = pointer.x; pointer.ly = pointer.y;
+    paintAt(pointer.x, pointer.y, pointer.erase ? EMPTY : current);
+    moveCursor(e);
+  });
+  canvas.addEventListener('pointermove', e => {
+    moveCursor(e);
+    cursor.style.display = e.pointerType === 'mouse' ? 'block' : 'none';
+    if (!pointer.down || e.pointerId !== pointer.id) return;
+    [pointer.x, pointer.y] = toGrid(e);
+  });
+  const up = e => { if (e.pointerId === pointer.id) { pointer.down = false; pointer.id = null; } };
+  canvas.addEventListener('pointerup', up);
+  canvas.addEventListener('pointercancel', up);
+  canvas.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') cursor.style.display = 'none'; });
+
+  // Applied once per frame, so holding still keeps pouring.
+  function applyPointer() {
+    if (!pointer.down) return;
+    paintLine(pointer.lx, pointer.ly, pointer.x, pointer.y, pointer.erase ? EMPTY : current);
+    pointer.lx = pointer.x; pointer.ly = pointer.y;
+  }
+
+  // ---- Demo scene ---------------------------------------------------------
+  // Emitters keep pouring an element from a fixed spot for a limited number of ticks.
+  let emitters = [];
+  function runEmitters() {
+    for (const e of emitters) {
+      if (e.ticks <= 0) continue;
+      e.ticks--;
+      for (let k = 0; k < e.w; k++) {
+        const i = e.y * W + e.x + k;
+        if (rnd() < e.rate && isGas(type[i])) set(i, e.type);
+      }
+    }
+    emitters = emitters.filter(e => e.ticks > 0);
+  }
+
+  function fillRect(x0, y0, x1, y1, t, p = 1) {
+    for (let y = Math.max(0, y0); y <= Math.min(H - 1, y1); y++)
+      for (let x = Math.max(0, x0); x <= Math.min(W - 1, x1); x++)
+        if (rnd() < p) set(y * W + x, t);
+  }
+  function fillCircle(cx, cy, r, t, p = 1) {
+    for (let y = cy - r; y <= cy + r; y++)
+      for (let x = cx - r; x <= cx + r; x++)
+        if (x >= 0 && x < W && y >= 0 && y < H && (x - cx) ** 2 + (y - cy) ** 2 <= r * r && rnd() < p)
+          set(y * W + x, t);
+  }
+
+  function fillLine(x0, y0, x1, y1, w, t) {
+    const n = Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0), 1);
+    for (let s = 0; s <= n; s++) {
+      const x = Math.round(x0 + (x1 - x0) * s / n), y = Math.round(y0 + (y1 - y0) * s / n);
+      fillRect(x, y, x + w - 1, y + w - 1, t);
+    }
+  }
+
+  function seedScene() {
+    clearAll();
+    const FLOOR = 152;
+
+    // Rolling stone ground, flat under the basin
+    for (let x = 0; x < W; x++) {
+      const top = x >= 6 && x <= 101 ? FLOOR
+        : FLOOR + Math.round(Math.sin(x * 0.13) * 1.2 + Math.sin(x * 0.37 + 1) * 0.8);
+      fillRect(x, top, x, H - 1, STONE);
+    }
+
+    // Stone basin on the left: rough walls, sandy bed, water, swaying plants
+    for (let y = 108; y < FLOOR; y++) {
+      const j = rint(2);
+      fillRect(6 - j, y, 9, y, STONE);
+      fillRect(98, y, 101 + j, y, STONE);
+    }
+    fillRect(10, 116, 97, FLOOR - 1, WATER);
+    for (let x = 10; x <= 97; x++) {
+      const top = 147 + Math.round(Math.sin(x * 0.21) * 1.5 + Math.sin(x * 0.6) * 0.8);
+      fillRect(x, top, x, FLOOR - 1, SAND);
+    }
+    for (const [x0, h, ph] of [[18, 22, 0], [29, 14, 2], [41, 27, 1], [55, 18, 4], [67, 24, 3], [80, 12, 5], [90, 20, 2]]) {
+      for (let k = 0; k < h; k++) {
+        const x = x0 + Math.round(Math.sin(k * 0.3 + ph) * 1.6), y = 148 - k;
+        fillRect(x, y, x + (k < h * 0.6 ? 1 : 0), y, PLANT);
+        if (k > 3 && k % 6 === ph % 6) {                       // a leaf off to one side
+          const d = k % 12 < 6 ? -1 : 1;
+          fillLine(x + d, y, x + d * 3, y - 2, 1, PLANT);
+        }
+      }
+    }
+
+    // Sand stream from the top, with a pile already building beneath it
+    const SX = 120;
+    for (let x = SX - 18; x <= SX + 19; x++) {
+      const h = 17 - Math.abs(x - SX - 0.5) + rint(2);
+      if (h > 0) fillRect(x, FLOOR - Math.round(h), x, FLOOR + 2, SAND);
+    }
+    fillRect(SX, 0, SX + 1, FLOOR - 18, SAND, 0.35);
+    emitters.push({ x: SX, y: 0, w: 2, type: SAND, rate: 0.35, ticks: 2700 });
+
+    // Right wall with a stone ledge bracketed out from it
+    for (let y = 26; y < H; y++) fillRect(234 + rint(2), y, W - 1, y, STONE);
+    for (let r = 0; r < 12; r++) {
+      const y = 100 + r;
+      fillRect(146 + Math.max(0, r - 5) * 13 + rint(2), y, 235, y, STONE);
+    }
+
+    // Overhanging rock in the top-right corner, where lava seeps out
+    for (let y = 0; y <= 16; y++) fillRect(206 + y * 2 - rint(2), y, W - 1, y, STONE);
+
+    // Wooden tree on the ledge, with roots creeping toward the lava's landing spot
+    const TX = 184;
+    fillRect(TX, 62, TX + 3, 99, WOOD);
+    fillLine(TX - 4, 99, TX - 1, 95, 2, WOOD);
+    fillLine(TX + 7, 99, TX + 4, 95, 2, WOOD);
+    fillLine(TX + 4, 99, TX + 30, 99, 1, WOOD);
+    fillLine(TX + 4, 98, TX + 18, 98, 1, WOOD);
+    fillLine(TX - 1, 99, TX - 14, 99, 1, WOOD);
+    fillLine(TX + 3, 80, TX + 19, 66, 2, WOOD);
+    fillLine(TX, 86, TX - 15, 72, 2, WOOD);
+    fillLine(TX, 72, TX - 9, 60, 2, WOOD);
+    fillLine(TX + 3, 70, TX + 10, 56, 2, WOOD);
+    for (const [cx, cy, r] of [[186, 50, 15], [169, 61, 9], [204, 60, 10], [196, 41, 9], [175, 44, 9], [160, 70, 6]])
+      fillCircle(cx, cy, r, PLANT, 0.92);
+
+    // Lava dripping from under the overhang onto the ledge, a small pool already there
+    const LX = 225;
+    for (let x = 219; x <= 233; x++) {
+      const h = 4 - Math.floor(Math.abs(x - 228) / 2.5);
+      if (h > 0) fillRect(x, 100 - h, x, 99, LAVA);
+    }
+    for (const y of [16, 17, 34, 35, 58, 77, 78]) set(y * W + LX, LAVA);
+    emitters.push({ x: LX, y: 11, w: 2, type: LAVA, rate: 0.06, ticks: 7200 });
+  }
+
+  // ---- Main loop (fixed 60Hz simulation step) -----------------------------
+  const STEP = 1000 / 60;
+  let acc = 0, last = performance.now();
+  let frames = 0, fpsTime = last;
+  const fpsEl = document.getElementById('fps');
+
+  function frame(now) {
+    let dt = now - last; last = now;
+    if (dt > 100) dt = STEP;  // tab was hidden; don't try to catch up
+    acc += dt;
+    let steps = 0;
+    while (acc >= STEP && steps < 3) {
+      applyPointer();
+      if (!paused) { runEmitters(); step(); }
+      acc -= STEP; steps++;
+    }
+    if (steps === 3) acc = 0;
+    if (steps) render();
+
+    frames++;
+    if (now - fpsTime >= 500) {
+      fpsEl.textContent = Math.round(frames * 1000 / (now - fpsTime)) + ' fps';
+      frames = 0; fpsTime = now;
+    }
+    requestAnimationFrame(frame);
+  }
+
+  layout();
+  seedScene();
+  render();
+  requestAnimationFrame(frame);
+})();
+</script>
+</body>
+</html>

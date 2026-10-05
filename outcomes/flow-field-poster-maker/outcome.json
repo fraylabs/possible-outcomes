@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 4,
+  "slug": "flow-field-poster-maker",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-10-05T06:01:41+00:00",
+  "author": {
+    "name": "Possible",
+    "url": "https://possible.sh"
+  },
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "agent": "Claude Code",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code, or another coding agent that can write files",
+    "A web browser to open index.html"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "recipe": {
+    "provenance": {
+      "method": "recorded",
+      "source": "claude-code",
+      "reviewedAt": "2026-10-05T08:18:07.584Z",
+      "reviewDigest": "c5d13c3f023d95862cbb8dfded4dd2a62aa7ffddf5f878377fcbdd09a35d3ceb",
+      "files": [
+        {
+          "path": "artifacts/index.html",
+          "size": 27665,
+          "sha256": "5353d953c43c4ea7b0f0bf5819ee4ddbe2b377f0801b379783601702d13d690a"
+        },
+        {
+          "path": "media/poster.png",
+          "size": 919787,
+          "sha256": "f7f25ab1fab4a9c73d15cb8073ad90952ee4f863284e46c62a7ed3bf1aebdff1"
+        },
+        {
+          "path": "media/preview.mp4",
+          "size": 2998548,
+          "sha256": "a19fe6dba07dbc689105ddded17feecc3e0f18ff002692a83b90bcb03bca2cce"
+        }
+      ]
+    },
+    "notes": [
+      "Recorded from a local session; privacy redactions and creator edits may change the wording.",
+      "Tool outputs and file contents were omitted. Unknown ingredients are not inferred.",
+      "Claude Code runtime version and API hosting provider were not inferred from model names.",
+      "Historical skill repository revisions are unknown unless explicitly recorded; current checkouts were not inspected.",
+      "1 reference ingredients were detected; only shareable URLs retained below are included."
+    ],
+    "agent": {
+      "name": "Claude Code"
+    },
+    "tools": [
+      {
+        "name": "Write",
+        "purpose": "Create index.html in one pass from the first prompt."
+      },
+      {
+        "name": "Edit",
+        "purpose": "Add the contact sheet and grain texture to index.html."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Build the poster maker in one HTML file",
+        "instructions": "Describe the generative system, the controls, the palettes, export and shareable URLs in one prompt.",
+        "prompt": "Make a generative flow-field poster maker as one self-contained index.html, no libraries. Thousands of particles follow a smooth noise field (write your own simplex or Perlin noise) and leave thin translucent trails that build up into an ink-like drawing on a portrait canvas in A-series proportions. Controls in a slim side panel: seed (with a shuffle button), particle count, noise scale, curl or swirl strength, line width, and a palette picker with about six good palettes (paper and ink, risograph, ocean, sunset, mono, neon on black). Drawing animates live and stops by itself after a few seconds. Add Redraw, and Export PNG at 3x resolution. Put the seed and parameters in the URL hash so a poster can be shared and reproduced exactly."
+      },
+      {
+        "title": "Add a contact sheet and paper grain",
+        "instructions": "Browse many seeds at once and add texture that carries through to the export.",
+        "prompt": "Looks great. Add a Contact Sheet button: it renders a 3x3 grid of small previews using the current settings with nine random seeds, and clicking one loads that seed full size. Also add an optional paper-grain texture toggle that is applied on top in the PNG export too."
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "type": "source",
+      "src": "artifacts/index.html",
+      "label": "The generated poster maker (single HTML file, open it in a browser)",
+      "format": "html"
+    }
+  ],
+  "preview": {
+    "description": "Generative flow-field posters drawn live by thousands of particles, with six palettes, a contact sheet of seeds, shareable URLs and 3x PNG export.",
+    "video": {
+      "src": "media/preview.mp4",
+      "poster": "media/poster.png",
+      "caption": "The generated page running in Chrome: a palette switch, the contact sheet, loading a seed, then the neon palette. Screen recording by Possible."
+    }
+  }
+}

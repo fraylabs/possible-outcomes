@@ -1,0 +1,115 @@
+{
+  "schemaVersion": 4,
+  "slug": "falling-sand-sandbox",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-10-05T05:50:30+00:00",
+  "author": {
+    "name": "Possible",
+    "url": "https://possible.sh"
+  },
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "agent": "Claude Code",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code, or another coding agent that can write files",
+    "A web browser to open index.html"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "recipe": {
+    "provenance": {
+      "method": "recorded",
+      "source": "claude-code",
+      "reviewedAt": "2026-10-05T08:18:07.305Z",
+      "reviewDigest": "a8218b15f4393d34f13f8515322bd7bd3a30587e90d02b81458e9da69cc2ddf3",
+      "files": [
+        {
+          "path": "artifacts/index.html",
+          "size": 25352,
+          "sha256": "6d6cc9a2b5a64a1f4923041f9a936657f5b7a7941ce80b394f9063e03a868b31"
+        },
+        {
+          "path": "media/poster.png",
+          "size": 318811,
+          "sha256": "d4460775dccc0e44ed0fdb8e5f65481d9e828996d36eabcc0a2978d32760d8ef"
+        },
+        {
+          "path": "media/preview.mp4",
+          "size": 1084117,
+          "sha256": "02f07d47a186dec80f50ed3812264be57c804a33a5e785829b23e38cb2d28b01"
+        }
+      ]
+    },
+    "notes": [
+      "Recorded from a local session; privacy redactions and creator edits may change the wording.",
+      "Tool outputs and file contents were omitted. Unknown ingredients are not inferred.",
+      "Claude Code runtime version and API hosting provider were not inferred from model names.",
+      "Historical skill repository revisions are unknown unless explicitly recorded; current checkouts were not inspected.",
+      "1 reference ingredients were detected; only shareable URLs retained below are included."
+    ],
+    "agent": {
+      "name": "Claude Code"
+    },
+    "tools": [
+      {
+        "name": "Write",
+        "purpose": "Create index.html in one pass from the first prompt."
+      },
+      {
+        "name": "Edit",
+        "purpose": "Apply each follow-up change to index.html."
+      },
+      {
+        "name": "Grep",
+        "purpose": "Find the relevant code in index.html before editing."
+      },
+      {
+        "name": "Read",
+        "purpose": "Re-read index.html before editing it."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Build the sandbox in one HTML file",
+        "instructions": "Ask for the whole game in one self-contained file: elements, behaviours, controls, grid size and rendering approach.",
+        "prompt": "Build a falling-sand sandbox game as a single self-contained index.html: no libraries, no build step, it should just open in a browser. Elements: sand, water, stone, wood, plant, fire, smoke, and an eraser. Sand piles up and slides off slopes, water flows sideways and levels out, fire burns wood and plants and gives off smoke that rises and fades, and plants slowly grow into adjacent water. Paint with mouse or touch, with an element palette along the bottom and a brush-size slider. Simulate on a fixed grid of about 240x160 cells, render it to a canvas through ImageData, and scale it up with crisp pixels. Keep it smooth at 60fps. Give every element a little per-cell colour variation so it looks textured. Add Pause, Clear, and a Seed button that drops a small demo scene."
+      },
+      {
+        "title": "Add lava and steam, and remove the drift",
+        "instructions": "Add a new element with interactions, and fix the left-right bias in the simulation scan.",
+        "prompt": "Works nicely. Two changes: add lava, which flows slowly, sets wood and plants on fire, turns water it touches into steam (a new gas that rises and condenses back into water near the top) and cools into stone where it meets water. And alternate the horizontal scan direction every frame so sand piles and water don't drift to one side."
+      },
+      {
+        "title": "Make the demo scene screenshot-ready",
+        "instructions": "Describe the scene that loads on first open, so the result looks good the moment it opens.",
+        "prompt": "Now make the Seed scene look good as a screenshot: a stone basin of water with plants growing in it, a wooden tree on a stone ledge, a stream of sand pouring from the top, and lava dripping from one corner onto the ledge so the tree slowly catches fire. Load that scene automatically on first open."
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "type": "source",
+      "src": "artifacts/index.html",
+      "label": "The generated game (single HTML file, open it in a browser)",
+      "format": "html"
+    }
+  ],
+  "preview": {
+    "description": "A pixel falling-sand sandbox in one HTML file: sand, water, stone, wood, plants, fire, smoke, lava and steam you can paint with the mouse.",
+    "video": {
+      "src": "media/preview.mp4",
+      "poster": "media/poster.png",
+      "caption": "The built-in demo scene running in Chrome, with a few strokes of water painted onto the lava. Screen recording by Possible."
+    }
+  }
+}
