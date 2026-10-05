@@ -1,0 +1,209 @@
+{
+  "schemaVersion": 4,
+  "slug": "slithering-robot-snake-prototype",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-07-21T20:55:00+08:00",
+  "author": {
+    "name": "Possible",
+    "url": "https://possible.sh"
+  },
+  "models": [
+    {
+      "provider": "openai",
+      "model": "gpt-5.6-sol",
+      "agent": "Codex",
+      "role": "execution"
+    },
+    {
+      "provider": "openai",
+      "model": "gpt-5.6",
+      "agent": "Codex",
+      "role": "execution"
+    }
+  ],
+  "requirements": [],
+  "primary": {
+    "kind": "skill",
+    "repository": "earthtojake/text-to-cad",
+    "lastReviewedCommit": "fdbb4b4fb62d95ae298cfe9a46fdc7092bdaf423",
+    "directory": "skills/cad"
+  },
+  "recipe": {
+    "provenance": {
+      "method": "recorded",
+      "source": "codex",
+      "reviewedAt": "2026-10-05T08:26:08.978Z",
+      "reviewDigest": "eb6f244de09ab3870846f623f91f32fd82384dfdf67507204bd7bfb02fd061e8",
+      "files": [
+        {
+          "path": "media/cad-iso.png",
+          "size": 1478260,
+          "sha256": "dd26304b9e811e58586c6216a7063aff3731a0f0c39f371051c0fb0ba2e6c19e"
+        },
+        {
+          "path": "media/cad-top.png",
+          "size": 1372735,
+          "sha256": "76bafed285bf3e29e680099cf6d199c9281b81d8b5c3162caafb1696c39d1dde"
+        },
+        {
+          "path": "media/hero.mp4",
+          "size": 839645,
+          "sha256": "0d979b57680070f3d4a92cc77e4f94d0071a1ff79edc53d1097d9f7506e3d783"
+        },
+        {
+          "path": "media/poster.jpg",
+          "size": 74144,
+          "sha256": "717fd458e854870f5454aae10e3ea49244ba9a86839d430b9337d7f8bb43068c"
+        },
+        {
+          "path": "media/robot-snake.glb",
+          "size": 146388,
+          "sha256": "23877bcbca50d7d392aad8599b97384d7821086225d9a48aa1863e8838ca913f"
+        }
+      ]
+    },
+    "notes": [
+      "Tool outputs and file contents were omitted. Unknown ingredients are not inferred.",
+      "User prompts came from response items; recognized harness instruction envelopes were omitted.",
+      "Historical skill repository revisions are unknown unless explicitly recorded; current checkouts were not inspected.",
+      "8 reference ingredients were detected; only shareable URLs retained below are included.",
+      "21 skill loads were detected; only complete, shareable repository and version coordinates retained below are included.",
+      "The answers were given by a scripted test run of the $possible skill, not typed live. The agent ran under Codex with file, shell and web tools; four helper agents built parts of the project in parallel."
+    ],
+    "agent": {
+      "name": "Codex"
+    },
+    "tools": [
+      {
+        "name": "MuJoCo",
+        "purpose": "Physics simulation of slithering and obstacle avoidance.",
+        "url": "https://mujoco.org"
+      },
+      {
+        "name": "NumPy",
+        "purpose": "Gait and controller maths in the simulation scripts."
+      },
+      {
+        "name": "pytest",
+        "purpose": "Ran the 12 tests covering geometry, joints, gait and obstacle clearance."
+      },
+      {
+        "name": "Web search",
+        "purpose": "Looked up MuJoCo XML details (rangefinder sensors, contact and actuator settings, rendering)."
+      },
+      {
+        "name": "Image viewer",
+        "purpose": "Inspected rendered CAD snapshots and simulation frames."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Ask $possible for a robot snake",
+        "instructions": "Invoke the $possible skill with the idea. It asks a few questions before preparing the build.",
+        "prompt": "$possible\n\nI want to make a robot snake."
+      },
+      {
+        "title": "Say what it should do",
+        "instructions": "Say what it should do",
+        "prompt": "I want it to slither convincingly and navigate around obstacles on its own."
+      },
+      {
+        "title": "Describe the environment",
+        "instructions": "Describe the environment",
+        "prompt": "A smooth indoor floor.\n\nContinue from my previous answer."
+      },
+      {
+        "title": "Say where you are starting from",
+        "instructions": "Say where you are starting from",
+        "prompt": "I am starting from scratch. I only have the idea."
+      },
+      {
+        "title": "Choose the result you want",
+        "instructions": "Answer its last question and accept the pack it proposes. The agent then builds the CAD, robot description, simulation and tests.",
+        "prompt": "A convincing digital prototype I can inspect and simulate now, with a clear path toward fabricating it later.\n\nYes, proceed with this pack."
+      }
+    ],
+    "skills": [
+      {
+        "repository": "earthtojake/text-to-cad",
+        "directory": "skills/cad",
+        "lastReviewedCommit": "fdbb4b4fb62d95ae298cfe9a46fdc7092bdaf423"
+      },
+      {
+        "repository": "earthtojake/text-to-cad",
+        "directory": "skills/step-parts",
+        "lastReviewedCommit": "fdbb4b4fb62d95ae298cfe9a46fdc7092bdaf423"
+      },
+      {
+        "repository": "earthtojake/text-to-cad",
+        "directory": "skills/cad-viewer",
+        "lastReviewedCommit": "fdbb4b4fb62d95ae298cfe9a46fdc7092bdaf423"
+      },
+      {
+        "repository": "arpitg1304/robotics-agent-skills",
+        "directory": "skills/robotics-design-patterns",
+        "lastReviewedCommit": "54f7b578f3dc269d29c0beb623b3f2611fd3a430"
+      },
+      {
+        "repository": "arpitg1304/robotics-agent-skills",
+        "directory": "skills/robotics-testing",
+        "lastReviewedCommit": "54f7b578f3dc269d29c0beb623b3f2611fd3a430"
+      }
+    ]
+  },
+  "secondary": [
+    {
+      "kind": "skill",
+      "repository": "earthtojake/text-to-cad",
+      "lastReviewedCommit": "fdbb4b4fb62d95ae298cfe9a46fdc7092bdaf423",
+      "directory": "skills/step-parts"
+    },
+    {
+      "kind": "skill",
+      "repository": "earthtojake/text-to-cad",
+      "lastReviewedCommit": "fdbb4b4fb62d95ae298cfe9a46fdc7092bdaf423",
+      "directory": "skills/cad-viewer"
+    },
+    {
+      "kind": "skill",
+      "repository": "arpitg1304/robotics-agent-skills",
+      "lastReviewedCommit": "54f7b578f3dc269d29c0beb623b3f2611fd3a430",
+      "directory": "skills/robotics-design-patterns"
+    },
+    {
+      "kind": "skill",
+      "repository": "arpitg1304/robotics-agent-skills",
+      "lastReviewedCommit": "54f7b578f3dc269d29c0beb623b3f2611fd3a430",
+      "directory": "skills/robotics-testing"
+    }
+  ],
+  "preview": {
+    "description": "A ten-link robot snake that slithers in a MuJoCo simulation and steers around an obstacle on its own, with an inspectable 3D model.",
+    "video": {
+      "src": "media/hero.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "MuJoCo simulation, 190 simulated seconds shown in 18: lateral undulation, a range-triggered detour around a cylinder, and rejoining the route with no contact. Propulsion uses a simulated surrogate."
+    },
+    "images": [
+      {
+        "src": "media/cad-iso.png",
+        "alt": "Isometric view of the ten-link robot snake CAD model",
+        "caption": "Ten links, nine yaw joints",
+        "cover": false
+      },
+      {
+        "src": "media/cad-top.png",
+        "alt": "Top view of the robot snake CAD model",
+        "caption": "Top view"
+      }
+    ],
+    "cad": {
+      "preview": "media/robot-snake.glb",
+      "poster": "media/cad-iso.png",
+      "caption": "Rotate the assembly in your browser."
+    }
+  }
+}

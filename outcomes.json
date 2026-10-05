@@ -6,6 +6,10 @@
   },
   "outcomes": [
     {
+      "slug": "slithering-robot-snake-prototype",
+      "url": "./outcomes/slithering-robot-snake-prototype/outcome.json"
+    },
+    {
       "slug": "flow-field-poster-maker",
       "url": "./outcomes/flow-field-poster-maker/outcome.json"
     },
