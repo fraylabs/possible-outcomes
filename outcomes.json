@@ -6,6 +6,10 @@
   },
   "outcomes": [
     {
+      "slug": "upping-my-pdoom-music-video",
+      "url": "./outcomes/upping-my-pdoom-music-video/outcome.json"
+    },
+    {
       "slug": "slithering-robot-snake-prototype",
       "url": "./outcomes/slithering-robot-snake-prototype/outcome.json"
     },
