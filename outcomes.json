@@ -6,6 +6,14 @@
   },
   "outcomes": [
     {
+      "slug": "ant-colony-sandbox",
+      "url": "./outcomes/ant-colony-sandbox/outcome.json"
+    },
+    {
+      "slug": "possible-agents-launch-kit",
+      "url": "./outcomes/possible-agents-launch-kit/outcome.json"
+    },
+    {
       "slug": "upping-my-pdoom-music-video",
       "url": "./outcomes/upping-my-pdoom-music-video/outcome.json"
     },

@@ -1,0 +1,117 @@
+{
+  "schemaVersion": 4,
+  "slug": "ant-colony-sandbox",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-10-16T06:55:00+00:00",
+  "author": {
+    "name": "Possible",
+    "url": "https://possible.sh"
+  },
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "agent": "Claude Code",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code, or another coding agent that can write files and run a headless browser",
+    "A web browser to open index.html"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "recipe": {
+    "provenance": {
+      "method": "recorded",
+      "source": "claude-code",
+      "reviewedAt": "2026-10-17T08:52:39.066Z",
+      "reviewDigest": "ce2abb696558e67acb3367e0f684d1cce374699fa25bbbd6a7fe1beb3b8b65eb",
+      "files": [
+        {
+          "path": "artifacts/index.html",
+          "size": 24537,
+          "sha256": "39a86d570d7f5bab34cdddab5242bf1b8b6d651d483e1a9301eab880939b275d"
+        },
+        {
+          "path": "media/poster.png",
+          "size": 681791,
+          "sha256": "da4db5277202d03bce43169ccef6a9453c7a7ce4f2b0496250dbd3a9be1546b3"
+        },
+        {
+          "path": "media/preview.mp4",
+          "size": 2342526,
+          "sha256": "b348a8d2393378abd4d8afa561b2a7b9a92197e33fdfe07d68a34bd6596c449d"
+        }
+      ]
+    },
+    "notes": [
+      "Recorded from a local session; privacy redactions and creator edits may change the wording.",
+      "Tool outputs and file contents were omitted. Unknown ingredients are not inferred.",
+      "Claude Code runtime version and API hosting provider were not inferred from model names.",
+      "Historical skill repository revisions are unknown unless explicitly recorded; current checkouts were not inspected.",
+      "8 reference ingredients were detected; only shareable URLs retained below are included."
+    ],
+    "agent": {
+      "name": "Claude Code"
+    },
+    "tools": [
+      {
+        "name": "Write",
+        "purpose": "Create index.html, the guide and the play-test scripts."
+      },
+      {
+        "name": "Read",
+        "purpose": "Re-read the game and test reports between fixes."
+      },
+      {
+        "name": "Monitor",
+        "purpose": "Watch the remote play-test run until it finished."
+      },
+      {
+        "name": "TaskStop",
+        "purpose": "Stop a background job that was no longer needed."
+      },
+      {
+        "name": "ToolSearch",
+        "purpose": "Load the job tool used to report the result."
+      },
+      {
+        "name": "Possible job runner",
+        "purpose": "Receive the brief, run headless play-tests on a remote machine and hand back the result."
+      },
+      {
+        "name": "ffmpeg",
+        "purpose": "Encode the gameplay preview video."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Hire Browser Game Maker with a three-part brief",
+        "instructions": "Fill in the agent's brief: what it should be, how it should look and feel, and the controls. The agent built, play-tested and recorded it without follow-ups.",
+        "prompt": "What should it be? An ant colony toy: ants leave the nest, wander, find food the player drops, and carry it home along pheromone trails that fade over time. The player can drop food, place walls and erase.\n\nHow should it look and feel? Warm, earthy palette on a dark soil background, trails glowing faintly, smooth at 60fps, a nice starting scene with a nest and a couple of food piles on first open.\n\nControls and devices: Mouse and touch."
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "type": "source",
+      "src": "artifacts/index.html",
+      "label": "The generated toy (single HTML file, open it in a browser)",
+      "format": "html"
+    }
+  ],
+  "preview": {
+    "description": "An ant colony toy in one HTML file: ants find the food you drop and carry it home along glowing pheromone trails; draw walls to reroute them.",
+    "video": {
+      "src": "media/preview.mp4",
+      "poster": "media/poster.png",
+      "caption": "Trails forming, food dropped and a wall drawn. Recorded headlessly by the agent."
+    }
+  }
+}

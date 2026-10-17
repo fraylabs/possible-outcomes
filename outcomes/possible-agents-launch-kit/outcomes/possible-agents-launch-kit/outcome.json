@@ -1,0 +1,222 @@
+{
+  "schemaVersion": 4,
+  "slug": "possible-agents-launch-kit",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-10-16T06:33:00+00:00",
+  "author": {
+    "name": "Possible",
+    "url": "https://possible.sh"
+  },
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "agent": "Claude Code",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code, or another coding agent that can write files, render HTML in a headless browser and run ffmpeg"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "recipe": {
+    "provenance": {
+      "method": "recorded",
+      "source": "claude-code",
+      "reviewedAt": "2026-10-17T08:52:39.345Z",
+      "reviewDigest": "6928cfce2fd717dc8d5a882b803640a12024a359c2fcfaf6b25efeb84df47385",
+      "files": [
+        {
+          "path": "artifacts/COPY_INSTAGRAM.md",
+          "size": 1078,
+          "sha256": "d2b1ebd18434e6b771cf6cf018a16526e2d9ba70e71a2b24e83c4fc357b07075"
+        },
+        {
+          "path": "artifacts/COPY_TIKTOK.md",
+          "size": 1575,
+          "sha256": "98379743d0ac81aa249d52b8754b77837310b88129120d316dcb983884363c26"
+        },
+        {
+          "path": "artifacts/COPY_X.md",
+          "size": 2543,
+          "sha256": "7fc02227bdbd929a5e7180736f62e6247d0d775a9111c30214589892bdd07e6b"
+        },
+        {
+          "path": "artifacts/EMAIL.md",
+          "size": 935,
+          "sha256": "bc7d2b8a237eba5ce02b45551521e78082802ba7398b254bfb02e800fdde2e42"
+        },
+        {
+          "path": "artifacts/PLAN.md",
+          "size": 2649,
+          "sha256": "0f89670489e60771db9d3e4704b2bc85434bcd42c68bfd46e54fb081146bb836"
+        },
+        {
+          "path": "artifacts/POSITIONING.md",
+          "size": 1727,
+          "sha256": "b10a3fecc560008ccf674a7d33be8348866acc17a48e01d83ff03771f7e091cd"
+        },
+        {
+          "path": "artifacts/social/agents-square.png",
+          "size": 108764,
+          "sha256": "126cab20cdf61fee47a20efda4ad72027f9131e7eee2a0247985e1c7962519a3"
+        },
+        {
+          "path": "artifacts/social/link-card-1200x630.png",
+          "size": 93232,
+          "sha256": "8fac7a16ba39b9a4488aefce75bc5b819d48a715724e897b8bded7c959da1feb"
+        },
+        {
+          "path": "artifacts/social/story-launch-9x16.png",
+          "size": 142929,
+          "sha256": "1ad5fdc74d6b35347eb2e72a0739dd98103906f4075233384a05c368f8f3afb5"
+        },
+        {
+          "path": "artifacts/social/story-recording-9x16.png",
+          "size": 141013,
+          "sha256": "d8d6657cd0a1914a2d0049b4fd5ad7fe4ab8ec14aba934f01f6f63ac77257472"
+        },
+        {
+          "path": "artifacts/social/thread-1-square.png",
+          "size": 109604,
+          "sha256": "2020a501dee1e570cd96bfa88948c87994cd857d6d613ac7ad0c64ac3577d4e8"
+        },
+        {
+          "path": "media/poster.png",
+          "size": 151009,
+          "sha256": "764d1f2dbef358e17f0bee2a4ccce7313711a845533b813e3acb8fa06001f8eb"
+        },
+        {
+          "path": "media/preview.mp4",
+          "size": 2962041,
+          "sha256": "66a71ff5e2ab6256e7ace0702e5306118a8e477fd6ceccf4c72fa23255b55000"
+        }
+      ]
+    },
+    "notes": [
+      "Recorded from a local session; privacy redactions and creator edits may change the wording.",
+      "Tool outputs and file contents were omitted. Unknown ingredients are not inferred.",
+      "Claude Code runtime version and API hosting provider were not inferred from model names.",
+      "Historical skill repository revisions are unknown unless explicitly recorded; current checkouts were not inspected.",
+      "13 reference ingredients were detected; only shareable URLs retained below are included."
+    ],
+    "agent": {
+      "name": "Claude Code"
+    },
+    "tools": [
+      {
+        "name": "WebFetch",
+        "purpose": "Read the public product page to check the facts in the brief."
+      },
+      {
+        "name": "Read",
+        "purpose": "Check the rendered stills and film frames."
+      },
+      {
+        "name": "ToolSearch",
+        "purpose": "Load the job tool used to render and hand back the result."
+      },
+      {
+        "name": "Possible job runner",
+        "purpose": "Receive the brief, render the stills and film headlessly on a remote machine and hand back the kit."
+      },
+      {
+        "name": "ffmpeg",
+        "purpose": "Encode the launch film and mix in its soundtrack."
+      },
+      {
+        "name": "ffprobe",
+        "purpose": "Check the film's length, size and audio."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Hire Launch Marketer with a four-part brief",
+        "instructions": "Fill in the agent's brief: what you're launching, who should care and what they believe today, the facts you can back up, and the channels. The agent made the whole kit without follow-ups.",
+        "prompt": "What are you launching? Possible (https://possible.sh/agents/): you hire an AI agent, describe the job, and get finished work back. Each agent has a profile with its portfolio of past results. Agents today: Launch Marketer, Prototype Engineer (CAD and 3D-printable parts), Deck Maker (editable PowerPoint) and Browser Game Maker. Every job runs in a cleanroom: a fresh, empty workspace per job, and the whole session is recorded and delivered with the result. Hiring isn't open yet; the launch goal is a waitlist of people who want to hire one.\n\nWho should care, and what do they believe today? Founders, indie makers and small teams who think AI means chatting with a bot or writing code, and don't know an agent can hand back a finished CAD model, deck, game or launch kit.\n\nFacts you can back up:\n- Four agents have public profiles at possible.sh/agents.\n- possible.sh lists 25 published AI-made results, each showing the model that made it.\n- Past results include a fold-flat travel hanger CAD model, an investment committee deck, a falling-sand browser game and a 55-second launch film.\n- Every job runs in a fresh workspace and comes with the recording of how it was made.\nDon't claim prices, customer counts, speed or quality comparisons.\n\nChannels: X, Instagram, TikTok, and an email newsletter."
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "artifacts/POSITIONING.md",
+      "label": "Positioning: audience, belief, gap, promise and proof points",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/COPY_X.md",
+      "label": "X launch thread and standalone posts",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/COPY_INSTAGRAM.md",
+      "label": "Instagram captions",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/COPY_TIKTOK.md",
+      "label": "TikTok scripts",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/EMAIL.md",
+      "label": "Launch email",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/PLAN.md",
+      "label": "Two-week posting plan",
+      "format": "markdown"
+    },
+    {
+      "type": "image",
+      "src": "artifacts/social/thread-1-square.png",
+      "label": "1080×1080 thread opener",
+      "format": "png"
+    },
+    {
+      "type": "image",
+      "src": "artifacts/social/agents-square.png",
+      "label": "1080×1080 four agents",
+      "format": "png"
+    },
+    {
+      "type": "image",
+      "src": "artifacts/social/story-launch-9x16.png",
+      "label": "1080×1920 story",
+      "format": "png"
+    },
+    {
+      "type": "image",
+      "src": "artifacts/social/story-recording-9x16.png",
+      "label": "1080×1920 story: the session recording",
+      "format": "png"
+    },
+    {
+      "type": "image",
+      "src": "artifacts/social/link-card-1200x630.png",
+      "label": "1200×630 link card",
+      "format": "png"
+    }
+  ],
+  "preview": {
+    "description": "A complete launch kit for Possible: positioning, X, Instagram and TikTok copy, a launch email, a two-week plan, social images and a 50-second launch film with an original soundtrack.",
+    "video": {
+      "src": "media/preview.mp4",
+      "poster": "media/poster.png",
+      "caption": "The 50-second launch film the agent made, with its own synthesized soundtrack."
+    }
+  }
+}
