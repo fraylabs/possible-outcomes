@@ -6,6 +6,14 @@
   },
   "outcomes": [
     {
+      "slug": "bakery-central-kitchen-deck",
+      "url": "./outcomes/bakery-central-kitchen-deck/outcome.json"
+    },
+    {
+      "slug": "two-angle-phone-stand",
+      "url": "./outcomes/two-angle-phone-stand/outcome.json"
+    },
+    {
       "slug": "ant-colony-sandbox",
       "url": "./outcomes/ant-colony-sandbox/outcome.json"
     },

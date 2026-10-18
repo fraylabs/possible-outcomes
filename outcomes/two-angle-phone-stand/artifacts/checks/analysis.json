@@ -1,0 +1,343 @@
+{
+ "assumptions": {
+  "mu": 0.3,
+  "tap_direction": "normal to screen, into the screen",
+  "phones": [
+   "large 80x168x11, 240 g",
+   "small 65x140x7, 140 g"
+  ],
+  "mass_cases": {
+   "100% infill": 1.0,
+   "est. 50% of solid mass": 0.5
+  }
+ },
+ "cases": [
+  {
+   "position": "video",
+   "angle": 70.0,
+   "phone": "large 80x168x11, 240 g",
+   "mass_case": "100% infill",
+   "total_mass_g": 481.7,
+   "cg_y_mm": 48.1,
+   "cg_inside_footprint": true,
+   "taps": [
+    {
+     "tap_at_frac_of_phone_height": 0.25,
+     "tap_height_above_desk": 73.6,
+     "tip_back_force_N": 3.78,
+     "slide_force_N_mu0.3": 1.69,
+     "mu_needed_for_1N_tap": 0.19
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.5,
+     "tap_height_above_desk": 113.0,
+     "tip_back_force_N": 2.05,
+     "slide_force_N_mu0.3": 1.69,
+     "mu_needed_for_1N_tap": 0.19
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.75,
+     "tap_height_above_desk": 152.5,
+     "tip_back_force_N": 1.41,
+     "slide_force_N_mu0.3": 1.69,
+     "mu_needed_for_1N_tap": 0.19
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.95,
+     "tap_height_above_desk": 184.1,
+     "tip_back_force_N": 1.12,
+     "slide_force_N_mu0.3": 1.69,
+     "mu_needed_for_1N_tap": 0.19
+    }
+   ]
+  },
+  {
+   "position": "video",
+   "angle": 70.0,
+   "phone": "large 80x168x11, 240 g",
+   "mass_case": "est. 50% of solid mass",
+   "total_mass_g": 360.9,
+   "cg_y_mm": 49.1,
+   "cg_inside_footprint": true,
+   "taps": [
+    {
+     "tap_at_frac_of_phone_height": 0.25,
+     "tap_height_above_desk": 73.6,
+     "tip_back_force_N": 2.76,
+     "slide_force_N_mu0.3": 1.27,
+     "mu_needed_for_1N_tap": 0.24
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.5,
+     "tap_height_above_desk": 113.0,
+     "tip_back_force_N": 1.5,
+     "slide_force_N_mu0.3": 1.27,
+     "mu_needed_for_1N_tap": 0.24
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.75,
+     "tap_height_above_desk": 152.5,
+     "tip_back_force_N": 1.03,
+     "slide_force_N_mu0.3": 1.27,
+     "mu_needed_for_1N_tap": 0.24
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.95,
+     "tap_height_above_desk": 184.1,
+     "tip_back_force_N": 0.82,
+     "slide_force_N_mu0.3": 1.27,
+     "mu_needed_for_1N_tap": 0.24
+    }
+   ]
+  },
+  {
+   "position": "video",
+   "angle": 70.0,
+   "phone": "small 65x140x7, 140 g",
+   "mass_case": "100% infill",
+   "total_mass_g": 381.7,
+   "cg_y_mm": 46.3,
+   "cg_inside_footprint": true,
+   "taps": [
+    {
+     "tap_at_frac_of_phone_height": 0.25,
+     "tap_height_above_desk": 65.6,
+     "tip_back_force_N": 3.65,
+     "slide_force_N_mu0.3": 1.34,
+     "mu_needed_for_1N_tap": 0.23
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.5,
+     "tap_height_above_desk": 98.5,
+     "tip_back_force_N": 2.01,
+     "slide_force_N_mu0.3": 1.34,
+     "mu_needed_for_1N_tap": 0.23
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.75,
+     "tap_height_above_desk": 131.4,
+     "tip_back_force_N": 1.38,
+     "slide_force_N_mu0.3": 1.34,
+     "mu_needed_for_1N_tap": 0.23
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.95,
+     "tap_height_above_desk": 157.7,
+     "tip_back_force_N": 1.11,
+     "slide_force_N_mu0.3": 1.34,
+     "mu_needed_for_1N_tap": 0.23
+    }
+   ]
+  },
+  {
+   "position": "video",
+   "angle": 70.0,
+   "phone": "small 65x140x7, 140 g",
+   "mass_case": "est. 50% of solid mass",
+   "total_mass_g": 260.9,
+   "cg_y_mm": 46.8,
+   "cg_inside_footprint": true,
+   "taps": [
+    {
+     "tap_at_frac_of_phone_height": 0.25,
+     "tap_height_above_desk": 65.6,
+     "tip_back_force_N": 2.46,
+     "slide_force_N_mu0.3": 0.92,
+     "mu_needed_for_1N_tap": 0.32
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.5,
+     "tap_height_above_desk": 98.5,
+     "tip_back_force_N": 1.35,
+     "slide_force_N_mu0.3": 0.92,
+     "mu_needed_for_1N_tap": 0.32
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.75,
+     "tap_height_above_desk": 131.4,
+     "tip_back_force_N": 0.93,
+     "slide_force_N_mu0.3": 0.92,
+     "mu_needed_for_1N_tap": 0.32
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.95,
+     "tap_height_above_desk": 157.7,
+     "tip_back_force_N": 0.75,
+     "slide_force_N_mu0.3": 0.92,
+     "mu_needed_for_1N_tap": 0.32
+    }
+   ]
+  },
+  {
+   "position": "reading",
+   "angle": 55.0,
+   "phone": "large 80x168x11, 240 g",
+   "mass_case": "100% infill",
+   "total_mass_g": 481.7,
+   "cg_y_mm": 52.5,
+   "cg_inside_footprint": true,
+   "taps": [
+    {
+     "tap_at_frac_of_phone_height": 0.25,
+     "tap_height_above_desk": 71.5,
+     "tip_back_force_N": 6.3,
+     "slide_force_N_mu0.3": 2.19,
+     "mu_needed_for_1N_tap": 0.15
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.5,
+     "tap_height_above_desk": 105.9,
+     "tip_back_force_N": 2.44,
+     "slide_force_N_mu0.3": 2.19,
+     "mu_needed_for_1N_tap": 0.15
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.75,
+     "tap_height_above_desk": 140.3,
+     "tip_back_force_N": 1.52,
+     "slide_force_N_mu0.3": 2.19,
+     "mu_needed_for_1N_tap": 0.15
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.95,
+     "tap_height_above_desk": 167.8,
+     "tip_back_force_N": 1.16,
+     "slide_force_N_mu0.3": 2.19,
+     "mu_needed_for_1N_tap": 0.15
+    }
+   ]
+  },
+  {
+   "position": "reading",
+   "angle": 55.0,
+   "phone": "large 80x168x11, 240 g",
+   "mass_case": "est. 50% of solid mass",
+   "total_mass_g": 360.9,
+   "cg_y_mm": 55.3,
+   "cg_inside_footprint": true,
+   "taps": [
+    {
+     "tap_at_frac_of_phone_height": 0.25,
+     "tap_height_above_desk": 71.5,
+     "tip_back_force_N": 4.35,
+     "slide_force_N_mu0.3": 1.64,
+     "mu_needed_for_1N_tap": 0.2
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.5,
+     "tap_height_above_desk": 105.9,
+     "tip_back_force_N": 1.69,
+     "slide_force_N_mu0.3": 1.64,
+     "mu_needed_for_1N_tap": 0.2
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.75,
+     "tap_height_above_desk": 140.3,
+     "tip_back_force_N": 1.05,
+     "slide_force_N_mu0.3": 1.64,
+     "mu_needed_for_1N_tap": 0.2
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.95,
+     "tap_height_above_desk": 167.8,
+     "tip_back_force_N": 0.8,
+     "slide_force_N_mu0.3": 1.64,
+     "mu_needed_for_1N_tap": 0.2
+    }
+   ]
+  },
+  {
+   "position": "reading",
+   "angle": 55.0,
+   "phone": "small 65x140x7, 140 g",
+   "mass_case": "100% infill",
+   "total_mass_g": 381.7,
+   "cg_y_mm": 48.0,
+   "cg_inside_footprint": true,
+   "taps": [
+    {
+     "tap_at_frac_of_phone_height": 0.25,
+     "tap_height_above_desk": 63.5,
+     "tip_back_force_N": 7.64,
+     "slide_force_N_mu0.3": 1.74,
+     "mu_needed_for_1N_tap": 0.19
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.5,
+     "tap_height_above_desk": 92.1,
+     "tip_back_force_N": 2.74,
+     "slide_force_N_mu0.3": 1.74,
+     "mu_needed_for_1N_tap": 0.19
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.75,
+     "tap_height_above_desk": 120.8,
+     "tip_back_force_N": 1.67,
+     "slide_force_N_mu0.3": 1.74,
+     "mu_needed_for_1N_tap": 0.19
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.95,
+     "tap_height_above_desk": 143.7,
+     "tip_back_force_N": 1.27,
+     "slide_force_N_mu0.3": 1.74,
+     "mu_needed_for_1N_tap": 0.19
+    }
+   ]
+  },
+  {
+   "position": "reading",
+   "angle": 55.0,
+   "phone": "small 65x140x7, 140 g",
+   "mass_case": "est. 50% of solid mass",
+   "total_mass_g": 260.9,
+   "cg_y_mm": 49.7,
+   "cg_inside_footprint": true,
+   "taps": [
+    {
+     "tap_at_frac_of_phone_height": 0.25,
+     "tap_height_above_desk": 63.5,
+     "tip_back_force_N": 4.99,
+     "slide_force_N_mu0.3": 1.19,
+     "mu_needed_for_1N_tap": 0.26
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.5,
+     "tap_height_above_desk": 92.1,
+     "tip_back_force_N": 1.79,
+     "slide_force_N_mu0.3": 1.19,
+     "mu_needed_for_1N_tap": 0.26
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.75,
+     "tap_height_above_desk": 120.8,
+     "tip_back_force_N": 1.09,
+     "slide_force_N_mu0.3": 1.19,
+     "mu_needed_for_1N_tap": 0.26
+    },
+    {
+     "tap_at_frac_of_phone_height": 0.95,
+     "tap_height_above_desk": 143.7,
+     "tip_back_force_N": 0.83,
+     "slide_force_N_mu0.3": 1.19,
+     "mu_needed_for_1N_tap": 0.26
+    }
+   ]
+  }
+ ],
+ "tongue_root": {
+  "moment_Nmm": 437.3,
+  "section_modulus_mm3": 300.0,
+  "bending_stress_MPa": 1.46,
+  "note": "hand calc, full-width tongue, load in the print layer plane; not a strength claim"
+ },
+ "ledge_root": {
+  "force_N": 3.93,
+  "moment_Nmm": 24.6,
+  "bending_stress_MPa": 0.057
+ },
+ "masses_g_100pct": {
+  "base": 184.3,
+  "cradle": 57.4
+ }
+}

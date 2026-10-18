@@ -1,0 +1,230 @@
+{
+  "schemaVersion": 4,
+  "slug": "bakery-central-kitchen-deck",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-10-17T05:10:00+00:00",
+  "author": {
+    "name": "Possible",
+    "url": "https://possible.sh"
+  },
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "agent": "Claude Code",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code, or another coding agent that can write files and run Python",
+    "python-pptx",
+    "PowerPoint, Keynote or LibreOffice to open and edit the .pptx"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "recipe": {
+    "provenance": {
+      "method": "recorded",
+      "source": "claude-code",
+      "reviewedAt": "2026-10-18T20:06:00.646Z",
+      "reviewDigest": "8c5cf376bbe95ed509827911f968d197759933795144c688eb61a7ff6ff8363c",
+      "files": [
+        {
+          "path": "artifacts/NOTES.md",
+          "size": 3289,
+          "sha256": "30547312c12d3c8b4ef77515888152af3c7f226aa2f98891a6c7f7d38cc25aed"
+        },
+        {
+          "path": "artifacts/hearth-and-grain-central-kitchen.pptx",
+          "size": 70473,
+          "sha256": "111a179b9df2883177782f5331d03955899625937c8bebf2a09eed2b15d8ae71"
+        },
+        {
+          "path": "media/slide-1.png",
+          "size": 61213,
+          "sha256": "a5d8b1c52c7a4ec0829a4ffd700c26b7cad4d441521ae2bb973b1ea5a7d03e23"
+        },
+        {
+          "path": "media/slide-2.png",
+          "size": 84344,
+          "sha256": "bf5b336a9b6f6287bbdd7b748e3fb2e5bd79e057ab2478d849edb2637bf46151"
+        },
+        {
+          "path": "media/slide-3.png",
+          "size": 69039,
+          "sha256": "1e2937b18f56d4f52e24b39a5fcfc4130b53436ac01f8a8436f76e206a6fd8ae"
+        },
+        {
+          "path": "media/slide-4.png",
+          "size": 90098,
+          "sha256": "f0b0c678cbecff445a5bc37cd4e0f48bb3014f7729bc0e930894d13ddcc61537"
+        },
+        {
+          "path": "media/slide-5.png",
+          "size": 86384,
+          "sha256": "bd10b988922eea5ee5fbeaff8cb300d46e598d052e7192ab4d1c33a23f4fdb57"
+        },
+        {
+          "path": "media/slide-6.png",
+          "size": 68116,
+          "sha256": "24dadbda45944874d05c1ca87840d4051bd9f499a35b03c1d6691e167e315b3b"
+        },
+        {
+          "path": "media/slide-7.png",
+          "size": 62419,
+          "sha256": "b5810267ddde7d5c3df5a97f8262767be803ca365611d1d2f29d0395ed7068a1"
+        },
+        {
+          "path": "media/slide-8.png",
+          "size": 78347,
+          "sha256": "aa1029527a6e858161686f19e22629357b9046dce8088ab63be9e187a3f1eaff"
+        }
+      ]
+    },
+    "notes": [
+      "Recorded from a local session; privacy redactions and creator edits may change the wording.",
+      "Tool outputs and file contents were omitted. Unknown ingredients are not inferred.",
+      "Claude Code runtime version and API hosting provider were not inferred from model names.",
+      "Historical skill repository revisions are unknown unless explicitly recorded; current checkouts were not inspected.",
+      "14 reference ingredients were detected; only shareable URLs retained below are included."
+    ],
+    "agent": {
+      "name": "Claude Code"
+    },
+    "tools": [
+      {
+        "name": "python-pptx",
+        "purpose": "Build every slide, table and chart as native, editable PowerPoint objects."
+      },
+      {
+        "name": "venv",
+        "purpose": "Create an isolated Python environment to install python-pptx."
+      },
+      {
+        "name": "Write",
+        "purpose": "Write the deck build script and the deck notes."
+      },
+      {
+        "name": "Read",
+        "purpose": "Check the rendered slide previews between fixes."
+      },
+      {
+        "name": "Monitor",
+        "purpose": "Watch the remote preview render until it finished."
+      },
+      {
+        "name": "ToolSearch",
+        "purpose": "Load the job tool used to render previews and report the result."
+      },
+      {
+        "name": "Possible job runner",
+        "purpose": "Receive the brief, render the slide previews with LibreOffice on a remote machine and hand back the result."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Hire Deck Maker with a three-part brief",
+        "instructions": "Fill in the agent's brief: who the deck is for and what they should decide, the facts and numbers to use, and the length and look. The agent built, previewed and checked the deck without follow-ups.",
+        "prompt": "Who is it for, and what should they decide? The owners' board of Hearth & Grain, a five-shop neighbourhood bakery chain, deciding whether to open a sixth shop with a central kitchen that supplies all six.\n\nThe facts and numbers to use (an illustrative scenario, not a real company):\n- Today: 5 shops, revenue SGD 4.2M/yr, 11% operating margin, each shop bakes on site.\n- Proposal: a central kitchen (SGD 650k fit-out) plus a sixth shop (SGD 280k), opening in 9 months.\n- Central baking cuts ingredient waste from 9% to 5% and frees 1.5 baker roles per shop.\n- Expected: revenue SGD 5.3M/yr in year 2, margin 14%; payback 26 months.\n- Main risks: delivery logistics before 6am, loss of \"baked here\" appeal, a 3-month dip during changeover.\n- Recommendation: approve, with a 2-shop pilot of central supply first.\n\nLength and look: eight slides, warm and simple: flour-white background, deep brown text, one wheat-gold accent. Editable charts."
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "artifacts/hearth-and-grain-central-kitchen.pptx",
+      "label": "The editable 8-slide deck (PowerPoint, with speaker notes)",
+      "format": "pptx"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/NOTES.md",
+      "label": "Deck notes: slide plan, derived arithmetic, assumptions and TBDs",
+      "format": "markdown"
+    },
+    {
+      "type": "image",
+      "src": "media/slide-1.png",
+      "label": "Slide 1: cover",
+      "format": "png"
+    },
+    {
+      "type": "image",
+      "src": "media/slide-2.png",
+      "label": "Slide 2: decision requested",
+      "format": "png"
+    },
+    {
+      "type": "image",
+      "src": "media/slide-3.png",
+      "label": "Slide 3: today vs proposal",
+      "format": "png"
+    },
+    {
+      "type": "image",
+      "src": "media/slide-4.png",
+      "label": "Slide 4: operating model",
+      "format": "png"
+    },
+    {
+      "type": "image",
+      "src": "media/slide-5.png",
+      "label": "Slide 5: investment and payback",
+      "format": "png"
+    },
+    {
+      "type": "image",
+      "src": "media/slide-6.png",
+      "label": "Slide 6: plan",
+      "format": "png"
+    },
+    {
+      "type": "image",
+      "src": "media/slide-7.png",
+      "label": "Slide 7: risks",
+      "format": "png"
+    },
+    {
+      "type": "image",
+      "src": "media/slide-8.png",
+      "label": "Slide 8: decision",
+      "format": "png"
+    }
+  ],
+  "preview": {
+    "description": "An eight-slide, fully editable board deck for an illustrative bakery chain deciding on a sixth shop and a central kitchen. It flags that the brief's 26-month payback doesn't match its own profit figures.",
+    "images": [
+      {
+        "src": "media/slide-3.png",
+        "alt": "Slide comparing today and year 2 in a table, with an editable bar chart of operating profit rising from SGD 462k to SGD 742k",
+        "caption": "Today vs proposal: table plus an editable chart",
+        "cover": true
+      },
+      {
+        "src": "media/slide-1.png",
+        "alt": "Cover slide in deep brown on flour white with a wheat-gold accent bar: Sixth shop and central kitchen, decision to approve the investment",
+        "caption": "Cover: the decision and the recommendation"
+      },
+      {
+        "src": "media/slide-4.png",
+        "alt": "Diagram of one central kitchen supplying six shops before 6am, with ingredient waste falling from 9% to 5% and 1.5 baker roles freed per shop",
+        "caption": "Operating model as a native diagram"
+      },
+      {
+        "src": "media/slide-5.png",
+        "alt": "Investment bar chart totalling SGD 930k beside a payback check table showing about 40 months from the profit figures against the stated 26 months",
+        "caption": "The payback check: the brief says 26 months, its own figures give about 40"
+      },
+      {
+        "src": "media/slide-7.png",
+        "alt": "Table of three risks from the brief with what each affects, what the pilot can show and thresholds marked TBD",
+        "caption": "Risks, with missing thresholds marked TBD"
+      }
+    ]
+  }
+}

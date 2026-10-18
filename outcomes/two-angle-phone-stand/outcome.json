@@ -1,0 +1,336 @@
+{
+  "schemaVersion": 4,
+  "slug": "two-angle-phone-stand",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-10-17T05:22:00+00:00",
+  "author": {
+    "name": "Possible",
+    "url": "https://possible.sh"
+  },
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "agent": "Claude Code",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code, or another coding agent that can write files and run Python",
+    "CadQuery, trimesh and matplotlib to rebuild, check and render the model",
+    "A CAD viewer for the STEP files and a slicer for the STL files"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "recipe": {
+    "provenance": {
+      "method": "recorded",
+      "source": "claude-code",
+      "reviewedAt": "2026-10-18T20:06:00.809Z",
+      "reviewDigest": "b0e207d58332410fe99a03b7bbf663db00c63323cd29458080fdaeaa8a3d23fc",
+      "files": [
+        {
+          "path": "artifacts/REPORT.md",
+          "size": 12212,
+          "sha256": "80bf50a19f772a0bb895c7c58ccaa1a61ebaffec1d6ea78581cc49a0a8a3ea5d"
+        },
+        {
+          "path": "artifacts/checks/analysis.json",
+          "size": 8467,
+          "sha256": "c6c69a55c6d778439058d3c7a2b7b07cdbaf7ef13c374ae0f44460cbae77b3a9"
+        },
+        {
+          "path": "artifacts/phone-stand-cad-source.zip",
+          "size": 11188,
+          "sha256": "df73f8f090382034b362d92863f3ded98e7f7bf98542f1dda1ef825d33a569b5"
+        },
+        {
+          "path": "artifacts/phone-stand-check-results.zip",
+          "size": 3221,
+          "sha256": "ddcc70f4840ef702fb1e4866c6d5a1d37bae65d484564fcc8dbcc8a8cac0249e"
+        },
+        {
+          "path": "artifacts/step/PhoneStand_assembled_reading.step",
+          "size": 258847,
+          "sha256": "3875cff8d585ec48aeb843f5bc9cd37407b3e94a3e7ee9d00b627c795a5fecb9"
+        },
+        {
+          "path": "artifacts/step/PhoneStand_assembled_video.step",
+          "size": 258891,
+          "sha256": "aed97d44878d6e75091171f2eff390200e7940ef442cde65fb4feed4789c1ccd"
+        },
+        {
+          "path": "artifacts/step/PhoneStand_exploded.step",
+          "size": 259007,
+          "sha256": "a8bbdffb507a8c2b510e29d96fc630a3e17eaaee29e3661bfa9eb0fdc2fa97e6"
+        },
+        {
+          "path": "artifacts/step/SB-01_Base.step",
+          "size": 182091,
+          "sha256": "b0638c106c154d8e4fb63c165ec593d74dd2bf7008adccfb7eb80e8a777e6a0c"
+        },
+        {
+          "path": "artifacts/step/SB-02_Cradle.step",
+          "size": 68754,
+          "sha256": "d5605781e05d67857660ac9ec25d1afcdeaa86c749f9ac04d5423107f8a34bd4"
+        },
+        {
+          "path": "artifacts/stl/SB-01_Base_print.stl",
+          "size": 75884,
+          "sha256": "54f1dffbc647c03c3f705bce4943e570dfc184a1872a40baea3eaa904a161800"
+        },
+        {
+          "path": "artifacts/stl/SB-02_Cradle_print.stl",
+          "size": 28484,
+          "sha256": "493cdd4cca06ae23f3ca2635972ffa7bc555bf4b1838bd391a55bdc28080b292"
+        },
+        {
+          "path": "media/assembled_reading.png",
+          "size": 630897,
+          "sha256": "8f9f6e4537cf1e7856e6420cc89a762c05853878c933bad513031b05b23df8ba"
+        },
+        {
+          "path": "media/assembled_video.png",
+          "size": 565447,
+          "sha256": "42af767412f2b6252eae70a05e524080311f2078157b31587b50c5ea64d5d62a"
+        },
+        {
+          "path": "media/base_top.png",
+          "size": 620198,
+          "sha256": "e2a27d432350b5493c3a54f4bcda079b58118cb6f07cf5463bfc9522a726d26e"
+        },
+        {
+          "path": "media/base_under.png",
+          "size": 553596,
+          "sha256": "9a000b5d0ef99ef651d4cdedaca7ad94713001b6fb525134085b5ed601e716d4"
+        },
+        {
+          "path": "media/exploded.png",
+          "size": 506039,
+          "sha256": "11ea30ab37ab68bad97c545f6b657fc571167c13c03c43e8798b211084ec1ee4"
+        },
+        {
+          "path": "media/in_use_reading.png",
+          "size": 485376,
+          "sha256": "ccd8445d769a130226887e9cbf0e7c784951c8695d1e5d181e8cf44a2fe54150"
+        },
+        {
+          "path": "media/in_use_video.png",
+          "size": 419917,
+          "sha256": "377a672cce17585fe29a337a24943d5c63a1af2dd6110b1d7c182d8b7c2aece0"
+        },
+        {
+          "path": "media/side_reading.png",
+          "size": 129160,
+          "sha256": "a1261459fd64a5ea62f846c34566384e7d210d134aaeddae7cf988cae7fa65de"
+        },
+        {
+          "path": "media/side_video.png",
+          "size": 109387,
+          "sha256": "392a8a41358070816755a512ce142470d06a18553d7b86c58d4ec90fdc544f6f"
+        }
+      ]
+    },
+    "notes": [
+      "Recorded from a local session; privacy redactions and creator edits may change the wording.",
+      "Tool outputs and file contents were omitted. Unknown ingredients are not inferred.",
+      "Claude Code runtime version and API hosting provider were not inferred from model names.",
+      "Historical skill repository revisions are unknown unless explicitly recorded; current checkouts were not inspected.",
+      "11 reference ingredients were detected; only shareable URLs retained below are included."
+    ],
+    "agent": {
+      "name": "Claude Code"
+    },
+    "tools": [
+      {
+        "name": "CadQuery",
+        "purpose": "Model both parts parametrically and export the STEP and STL files."
+      },
+      {
+        "name": "trimesh",
+        "purpose": "Check interference, phone and plug clearances, watertightness and overhangs on the meshes."
+      },
+      {
+        "name": "matplotlib",
+        "purpose": "Render the assembled, side, exploded and base views."
+      },
+      {
+        "name": "Write",
+        "purpose": "Write the parametric model, the check and statics scripts and the report."
+      },
+      {
+        "name": "Read",
+        "purpose": "Check the renders and check results between fixes."
+      },
+      {
+        "name": "ToolSearch",
+        "purpose": "Load the job tool used to run the build and report the result."
+      },
+      {
+        "name": "Possible job runner",
+        "purpose": "Receive the brief, run the CAD build, checks and renders on a remote machine and hand back the result."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Hire Prototype Engineer with a three-part brief",
+        "instructions": "Fill in the agent's brief: what it should be, the sizes, loads and limits, and how it will be made. The agent designed, checked and documented the part without follow-ups.",
+        "prompt": "What should it be? A desk phone stand that holds a phone at two viewing angles (for video calls and for reading), with a slot so the charging cable can stay plugged in.\n\nSizes, loads and limits: fits phones 65–80 mm wide and up to 11 mm thick, including in a case; stays put when tapping the screen; footprint under 90 × 90 mm.\n\nHow will it be made? FDM printing in PLA on a 220 mm bed, without supports, and no screws or glue."
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "artifacts/REPORT.md",
+      "label": "Pre-build report: targets, dimensions, print setup, checks, statics, limits and the physical tests still needed",
+      "format": "markdown"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/step/PhoneStand_assembled_video.step",
+      "label": "Assembly in the video-call position (70°)",
+      "format": "STEP"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/step/PhoneStand_assembled_reading.step",
+      "label": "Assembly in the reading position (55°)",
+      "format": "STEP"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/step/PhoneStand_exploded.step",
+      "label": "Exploded assembly",
+      "format": "STEP"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/step/SB-01_Base.step",
+      "label": "SB-01 Base part",
+      "format": "STEP"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/step/SB-02_Cradle.step",
+      "label": "SB-02 Cradle part",
+      "format": "STEP"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/stl/SB-01_Base_print.stl",
+      "label": "SB-01 Base, print-oriented STL",
+      "format": "STL"
+    },
+    {
+      "type": "cad",
+      "src": "artifacts/stl/SB-02_Cradle_print.stl",
+      "label": "SB-02 Cradle, print-oriented STL",
+      "format": "STL"
+    },
+    {
+      "type": "archive",
+      "src": "artifacts/phone-stand-cad-source.zip",
+      "label": "Editable parametric CadQuery source: named dimensions, model, exports and checks, statics, renders and the build script",
+      "format": "ZIP"
+    },
+    {
+      "type": "archive",
+      "src": "artifacts/phone-stand-check-results.zip",
+      "label": "Geometry check results (50 of 50 passed) and the build and check log",
+      "format": "ZIP"
+    },
+    {
+      "type": "data",
+      "src": "artifacts/checks/analysis.json",
+      "label": "Tap-stability calculation results",
+      "format": "JSON"
+    },
+    {
+      "type": "image",
+      "src": "media/assembled_reading.png",
+      "label": "Assembled, reading position",
+      "format": "png"
+    },
+    {
+      "type": "image",
+      "src": "media/side_reading.png",
+      "label": "Side view, reading position",
+      "format": "png"
+    },
+    {
+      "type": "image",
+      "src": "media/in_use_reading.png",
+      "label": "Reading position with phone and plug envelopes",
+      "format": "png"
+    },
+    {
+      "type": "image",
+      "src": "media/base_under.png",
+      "label": "Base underside with the cable channel",
+      "format": "png"
+    }
+  ],
+  "preview": {
+    "description": "A two-part, screwless, support-free PLA phone stand with video-call and reading angles and a cable slot, delivered as editable CadQuery source, STEP and STL files, and a report that is honest that nothing has been printed yet.",
+    "images": [
+      {
+        "src": "media/assembled_video.png",
+        "alt": "Render of the two-part stand: an orange L-shaped cradle seated at 70 degrees in a blue square base with a central cable notch",
+        "caption": "Assembled in the video-call position (70°)",
+        "cover": true
+      },
+      {
+        "src": "media/in_use_video.png",
+        "alt": "Render of the stand holding a grey 80 by 168 by 11 mm phone envelope, with a red charging-plug keep-out passing through the cable slot",
+        "caption": "Largest phone envelope and the charging plug keep-out, clear of the parts"
+      },
+      {
+        "src": "media/side_video.png",
+        "alt": "True side view of the stand at the video-call angle with the phone envelope resting on the ledge",
+        "caption": "Side view at 70°"
+      },
+      {
+        "src": "media/exploded.png",
+        "alt": "Exploded render with the cradle lifted out of the base along its tongue",
+        "caption": "Change angle by lifting the cradle out and dropping it into the other socket"
+      },
+      {
+        "src": "media/base_top.png",
+        "alt": "Top view of the blue base showing the front 55 degree socket, the rear 70 degree socket and the cable notch",
+        "caption": "Base: two angled sockets and a cable notch, 88 × 88 mm"
+      }
+    ],
+    "cad": {
+      "poster": "media/assembled_video.png",
+      "caption": "Download the STEP assemblies and parts, or the print-oriented STLs. Digital pre-build only: nothing has been printed or tested.",
+      "downloads": [
+        {
+          "src": "artifacts/step/PhoneStand_assembled_video.step",
+          "format": "step",
+          "label": "Download assembly, video position"
+        },
+        {
+          "src": "artifacts/step/PhoneStand_assembled_reading.step",
+          "format": "step",
+          "label": "Download assembly, reading position"
+        },
+        {
+          "src": "artifacts/stl/SB-01_Base_print.stl",
+          "format": "stl",
+          "label": "Download base STL"
+        },
+        {
+          "src": "artifacts/stl/SB-02_Cradle_print.stl",
+          "format": "stl",
+          "label": "Download cradle STL"
+        }
+      ]
+    }
+  }
+}
