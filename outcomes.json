@@ -6,6 +6,10 @@
   },
   "outcomes": [
     {
+      "slug": "agentmail-teardown-for-actas",
+      "url": "./outcomes/agentmail-teardown-for-actas/outcome.json"
+    },
+    {
       "slug": "bakery-central-kitchen-deck",
       "url": "./outcomes/bakery-central-kitchen-deck/outcome.json"
     },

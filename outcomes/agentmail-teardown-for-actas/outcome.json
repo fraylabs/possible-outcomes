@@ -1,0 +1,102 @@
+{
+  "schemaVersion": 4,
+  "slug": "agentmail-teardown-for-actas",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-10-19T08:30:00+00:00",
+  "author": {
+    "name": "Possible",
+    "url": "https://possible.sh"
+  },
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "agent": "Claude Code",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code, or another coding agent that can run Node.js, fetch public web pages and write files",
+    "Node.js (to run the reverse-engineer-marketing CLI built from its public source)"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "recipe": {
+    "provenance": {
+      "method": "recorded",
+      "source": "claude-code",
+      "reviewedAt": "2026-10-19T08:12:03.760Z",
+      "reviewDigest": "894cc0c08d44ca07121aaa843ed889247b94eedc0a6074be8a0858544081546e",
+      "files": [
+        {
+          "path": "artifacts/evidence.json",
+          "size": 41320,
+          "sha256": "18a1de4bb7397034fc3faf9a53cafe02382508318af689b1f617c29f736be2d7"
+        },
+        {
+          "path": "artifacts/report.md",
+          "size": 17925,
+          "sha256": "d3d8020c330c0b7bc5aa9daa7b35727bf971058665550b38132b48db06a46e9c"
+        }
+      ]
+    },
+    "notes": [
+      "Recorded from a local session; privacy redactions and creator edits may change the wording.",
+      "Tool outputs and file contents were omitted. Unknown ingredients are not inferred.",
+      "Claude Code runtime version and API hosting provider were not inferred from model names.",
+      "Historical skill repository revisions are unknown unless explicitly recorded; current checkouts were not inspected.",
+      "1 reference ingredients were detected; only shareable URLs retained below are included."
+    ],
+    "agent": {
+      "name": "Claude Code"
+    },
+    "tools": [
+      {
+        "name": "Bash",
+        "purpose": "Run the reverse-engineer-marketing CLI, fetch public pages with curl and check citations."
+      },
+      {
+        "name": "Read",
+        "purpose": "Read the REM harness files and playbooks before writing the report."
+      },
+      {
+        "name": "Write",
+        "purpose": "Write the report, the evidence bundle and the run notes."
+      },
+      {
+        "name": "ToolSearch",
+        "purpose": "Load the job tool used to hand back the result."
+      },
+      {
+        "name": "mcp__t3-code__turnless",
+        "purpose": "Receive the brief and hand back the result."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Hire Competitor Analyst with a three-part brief",
+        "instructions": "Fill in the agent's brief: the competitor, your product and who you sell to, and the decision you want to make. The agent collected public evidence, checked the citations and wrote the teardown and the playbook.",
+        "prompt": "Competitor: agentmail.to\n\nOur product: actas.dev. It gives each AI agent its own identity: an email inbox on your domain, a vault for passwords and API keys, and authenticator (2FA) codes, with per-folder grants and an activity log. One plan, US$12/month or US$120/year. We sell to developers building browser and coding agents.\n\nDecision: which of AgentMail's channels and moves we should copy first. We have almost no marketing budget and no audience yet."
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "artifacts/report.md",
+      "label": "The teardown report: how AgentMail gets customers, them vs you, and a ranked playbook for ActAs",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/evidence.json",
+      "label": "The evidence bundle: every fact in the report cites an entry here (E1 to E36) with its URL and fetch time",
+      "format": "json"
+    }
+  ]
+}

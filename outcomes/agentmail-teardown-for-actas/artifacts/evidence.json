@@ -1,0 +1,1328 @@
+{
+ "target": {
+  "input": "agentmail.to",
+  "kind": "website",
+  "url": "https://agentmail.to",
+  "domain": "agentmail.to",
+  "brand": "AgentMail"
+ },
+ "customer": "actas.dev",
+ "generatedAt": "2026-10-19T04:32:22.047Z",
+ "harness": {
+  "version": "3",
+  "sha": "1c4c1f16bb36"
+ },
+ "scorecard": [
+  {
+   "channel": "paid_meta",
+   "status": "likely",
+   "strength": 1,
+   "signal": "Meta Pixel installed (no ad-library confirmation)",
+   "evidence": [
+    "E3"
+   ]
+  },
+  {
+   "channel": "paid_google",
+   "status": "likely",
+   "strength": 1,
+   "signal": "Google Ads conversion tag installed (no ad-library confirmation)",
+   "evidence": [
+    "E3"
+   ]
+  },
+  {
+   "channel": "paid_linkedin",
+   "status": "likely",
+   "strength": 1,
+   "signal": "LinkedIn Insight Tag installed (no ad-library confirmation)",
+   "evidence": [
+    "E3"
+   ]
+  },
+  {
+   "channel": "paid_reddit",
+   "status": "likely",
+   "strength": 1,
+   "signal": "Reddit Pixel installed (no ad-library confirmation)",
+   "evidence": [
+    "E3"
+   ]
+  },
+  {
+   "channel": "paid_tiktok",
+   "status": "likely",
+   "strength": 1,
+   "signal": "TikTok Pixel installed (no ad-library confirmation)",
+   "evidence": [
+    "E3"
+   ]
+  },
+  {
+   "channel": "paid_apple",
+   "status": "unknown",
+   "strength": 0,
+   "signal": "No iOS app found for this company, so Apple Search Ads were not checked",
+   "evidence": [
+    "E3"
+   ]
+  },
+  {
+   "channel": "organic_tiktok",
+   "status": "unknown",
+   "strength": 0,
+   "signal": "No account linked from the site",
+   "evidence": []
+  },
+  {
+   "channel": "organic_instagram",
+   "status": "unknown",
+   "strength": 0,
+   "signal": "No account linked from the site",
+   "evidence": []
+  },
+  {
+   "channel": "organic_youtube",
+   "status": "unknown",
+   "strength": 0,
+   "signal": "No account linked from the site",
+   "evidence": []
+  },
+  {
+   "channel": "organic_x",
+   "status": "unknown",
+   "strength": 0,
+   "signal": "Account found but SCRAPECREATORS_API_KEY not set — no stats",
+   "evidence": []
+  },
+  {
+   "channel": "organic_linkedin",
+   "status": "unknown",
+   "strength": 0,
+   "signal": "Account found but SCRAPECREATORS_API_KEY not set — no stats",
+   "evidence": []
+  },
+  {
+   "channel": "seo",
+   "status": "active",
+   "strength": 2,
+   "signal": "592 indexed URLs, 2 programmatic families, 187 content updates/90d",
+   "evidence": [
+    "E10"
+   ]
+  },
+  {
+   "channel": "geo",
+   "status": "active",
+   "strength": 1,
+   "signal": "llms.txt published",
+   "evidence": [
+    "E11"
+   ]
+  },
+  {
+   "channel": "founder_led",
+   "status": "unknown",
+   "strength": 0,
+   "signal": "Founders: Browser Use (audience not checked)",
+   "evidence": [
+    "E7"
+   ]
+  },
+  {
+   "channel": "reddit_marketing",
+   "status": "likely",
+   "strength": 1,
+   "signal": "SCRAPECREATORS_API_KEY not set — Reddit not checked",
+   "evidence": [
+    "E3"
+   ]
+  },
+  {
+   "channel": "community",
+   "status": "unknown",
+   "strength": 0,
+   "signal": "SCRAPECREATORS_API_KEY not set — Reddit/Product Hunt skipped",
+   "evidence": []
+  },
+  {
+   "channel": "launches",
+   "status": "active",
+   "strength": 2,
+   "signal": "Hacker News: 3 submissions, best 121 points, has Show HN launch",
+   "evidence": [
+    "E8"
+   ]
+  },
+  {
+   "channel": "app_store",
+   "status": "none",
+   "strength": 0,
+   "signal": "No App Store / Play app found",
+   "evidence": []
+  },
+  {
+   "channel": "lifecycle",
+   "status": "unknown",
+   "strength": 0,
+   "signal": "No email tool visible client-side (most run server-side)",
+   "evidence": [
+    "E4"
+   ]
+  },
+  {
+   "channel": "affiliate",
+   "status": "none",
+   "strength": 0,
+   "signal": "No affiliate program found",
+   "evidence": [
+    "E4"
+   ]
+  },
+  {
+   "channel": "sales_led",
+   "status": "active",
+   "strength": 1,
+   "signal": "contact-sales tier",
+   "evidence": [
+    "E6",
+    "E4"
+   ]
+  }
+ ],
+ "evidence": [
+  {
+   "id": "E1",
+   "observedAt": "2026-10-19T04:32:19.637Z",
+   "source": "website",
+   "kind": "observation",
+   "title": "Homepage positioning: \"Email Inboxes for AI Agents\"",
+   "url": "https://www.agentmail.to/",
+   "data": {
+    "title": "AgentMail | Email Inbox API for AI Agents",
+    "metaDescription": "AgentMail is the first email provider built for AI agents. Real inboxes via API: create, send, receive, and search email. Free tier, no credit card required.",
+    "h1": [
+     "Email Inboxes for AI Agents"
+    ],
+    "h2": [
+     "It's not AI for your email. It's email for your AI.",
+     "Works with your agent stack",
+     "Use Cases",
+     "Sign in to Acme",
+     "Trusted by developers and enterprises alike",
+     "Built for scale.",
+     "Frequently asked questions.",
+     "Get started in seconds"
+    ],
+    "ctas": [
+     "Start for free",
+     "Install skill",
+     "Subscribe"
+    ],
+    "lang": "en",
+    "wordCount": 3742,
+    "socialProof": [
+     "Trusted by developers and enterprises alikeTeams around the world use A"
+    ],
+    "jsonLdTypes": [
+     "Organization",
+     "ImageObject",
+     "ContactPoint",
+     "WebSite",
+     "SearchAction",
+     "EntryPoint",
+     "WebPage",
+     "SoftwareApplication",
+     "Offer"
+    ]
+   }
+  },
+  {
+   "id": "E2",
+   "observedAt": "2026-10-19T04:32:19.638Z",
+   "source": "website",
+   "kind": "observation",
+   "title": "Linked channels: discord, github, x, linkedin",
+   "url": "https://www.agentmail.to/",
+   "data": {
+    "socials": {
+     "discord": "discord.gg/ZYN7f7KPjS",
+     "github": "agentmail-to",
+     "x": "agentmail",
+     "linkedin": "agentmailto"
+    },
+    "people": [],
+    "appStoreIds": [],
+    "playIds": []
+   }
+  },
+  {
+   "id": "E3",
+   "observedAt": "2026-10-19T04:32:19.752Z",
+   "source": "tracking",
+   "kind": "observation",
+   "title": "Ad/attribution pixels: X (Twitter) Pixel, Meta Pixel, Google Ads conversion tag, TikTok Pixel, LinkedIn Insight Tag, Reddit Pixel, Pinterest Tag, Snap Pixel, Quora Pixel, Google Floodlight / DV360",
+   "url": "https://www.agentmail.to/",
+   "data": {
+    "pixels": [
+     {
+      "id": "x_pixel",
+      "name": "X (Twitter) Pixel",
+      "category": "ads_pixel",
+      "implies": "paid_x",
+      "ids": [],
+      "foundIn": [
+       "page",
+       "GTM-P4JSK69N"
+      ]
+     },
+     {
+      "id": "meta_pixel",
+      "name": "Meta Pixel",
+      "category": "ads_pixel",
+      "implies": "paid_meta",
+      "ids": [],
+      "foundIn": [
+       "GTM-P4JSK69N"
+      ]
+     },
+     {
+      "id": "google_ads",
+      "name": "Google Ads conversion tag",
+      "category": "ads_pixel",
+      "implies": "paid_google",
+      "ids": [
+       "AW-18175082927"
+      ],
+      "foundIn": [
+       "GTM-P4JSK69N"
+      ]
+     },
+     {
+      "id": "tiktok_pixel",
+      "name": "TikTok Pixel",
+      "category": "ads_pixel",
+      "implies": "paid_tiktok",
+      "ids": [],
+      "foundIn": [
+       "GTM-P4JSK69N"
+      ]
+     },
+     {
+      "id": "linkedin_insight",
+      "name": "LinkedIn Insight Tag",
+      "category": "ads_pixel",
+      "implies": "paid_linkedin",
+      "ids": [],
+      "foundIn": [
+       "GTM-P4JSK69N"
+      ]
+     },
+     {
+      "id": "reddit_pixel",
+      "name": "Reddit Pixel",
+      "category": "ads_pixel",
+      "implies": "paid_reddit",
+      "ids": [],
+      "foundIn": [
+       "GTM-P4JSK69N"
+      ]
+     },
+     {
+      "id": "pinterest_tag",
+      "name": "Pinterest Tag",
+      "category": "ads_pixel",
+      "implies": "paid_pinterest",
+      "ids": [],
+      "foundIn": [
+       "GTM-P4JSK69N"
+      ]
+     },
+     {
+      "id": "snap_pixel",
+      "name": "Snap Pixel",
+      "category": "ads_pixel",
+      "implies": "paid_snapchat",
+      "ids": [],
+      "foundIn": [
+       "GTM-P4JSK69N"
+      ]
+     },
+     {
+      "id": "quora_pixel",
+      "name": "Quora Pixel",
+      "category": "ads_pixel",
+      "implies": "paid_quora",
+      "ids": [],
+      "foundIn": [
+       "GTM-P4JSK69N"
+      ]
+     },
+     {
+      "id": "google_dv360",
+      "name": "Google Floodlight / DV360",
+      "category": "ads_pixel",
+      "implies": "paid_programmatic",
+      "ids": [],
+      "foundIn": [
+       "GTM-P4JSK69N"
+      ]
+     }
+    ],
+    "gtmContainersScanned": [
+     "GTM-P4JSK69N"
+    ]
+   }
+  },
+  {
+   "id": "E4",
+   "observedAt": "2026-10-19T04:32:19.752Z",
+   "source": "tracking",
+   "kind": "observation",
+   "title": "Marketing stack: Google Tag Manager, Next.js",
+   "url": "https://www.agentmail.to/",
+   "data": {
+    "byCategory": {
+     "tag_manager": [
+      "Google Tag Manager (GTM-P4JSK69N)"
+     ],
+     "site_builder": [
+      "Next.js"
+     ]
+    },
+    "tags": [
+     {
+      "id": "gtm",
+      "name": "Google Tag Manager",
+      "category": "tag_manager",
+      "ids": [
+       "GTM-P4JSK69N"
+      ],
+      "foundIn": [
+       "page"
+      ]
+     },
+     {
+      "id": "nextjs",
+      "name": "Next.js",
+      "category": "site_builder",
+      "ids": [],
+      "foundIn": [
+       "page"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "E5",
+   "observedAt": "2026-10-19T04:32:19.752Z",
+   "source": "website",
+   "kind": "observation",
+   "title": "Key pages found: blog, pricing, customers, careers",
+   "url": "https://www.agentmail.to/",
+   "data": {
+    "blog": "https://www.agentmail.to/blog/agentmail-seed-launch",
+    "pricing": "https://www.agentmail.to/pricing",
+    "customers": "https://www.agentmail.to/customers",
+    "careers": "https://www.agentmail.to/careers"
+   }
+  },
+  {
+   "id": "E6",
+   "observedAt": "2026-10-19T04:32:19.798Z",
+   "source": "website",
+   "kind": "derivation",
+   "title": "Monetization: free plan · free trial · prices $6, $2/mo, $20/mo, $0/mo · per seat · usage/credits · sales-assisted tier",
+   "url": "https://www.agentmail.to/pricing",
+   "data": {
+    "prices": [
+     "$6",
+     "$2/mo",
+     "$20/mo",
+     "$0/mo",
+     "$200/mo",
+     "$19.20/year",
+     "$5/mo",
+     "$48/year"
+    ],
+    "freePlan": true,
+    "freeTrial": true,
+    "moneyBack": false,
+    "contactSales": true,
+    "perSeat": true,
+    "annualDiscount": false,
+    "lifetimeDeal": false,
+    "usageBased": true,
+    "pricingPageFound": true
+   }
+  },
+  {
+   "id": "E7",
+   "observedAt": "2026-10-19T04:32:20.200Z",
+   "source": "founders",
+   "kind": "observation",
+   "title": "Founders/leaders: Browser Use (Co-founder and CEO) [weak match]",
+   "url": "https://www.google.com/search?q=%22AgentMail%22%20founder",
+   "data": [
+    {
+     "name": "Browser Use",
+     "confidence": "low",
+     "score": 1,
+     "sources": [
+      "website_text"
+     ],
+     "evidenceUrls": [
+      "https://www.agentmail.to/"
+     ],
+     "role": "Co-founder and CEO"
+    }
+   ]
+  },
+  {
+   "id": "E8",
+   "observedAt": "2026-10-19T04:32:20.893Z",
+   "source": "hackernews",
+   "kind": "observation",
+   "title": "Hacker News: 3 submissions, best 121 points, has Show HN launch",
+   "url": "https://hn.algolia.com/?query=agentmail.to",
+   "data": [
+    {
+     "title": "Show HN: AgentMail – Email infra for AI agents",
+     "points": 121,
+     "comments": 70,
+     "date": "2025-07-31",
+     "showHN": true,
+     "url": "https://news.ycombinator.com/item?id=44745820"
+    },
+    {
+     "title": "We Do Not Build for Humans",
+     "points": 3,
+     "comments": 0,
+     "date": "2026-06-21",
+     "showHN": false,
+     "url": "https://news.ycombinator.com/item?id=48617605"
+    },
+    {
+     "title": "Agent.email: A Landing Page for Agents",
+     "points": 1,
+     "comments": 0,
+     "date": "2026-03-16",
+     "showHN": false,
+     "url": "https://news.ycombinator.com/item?id=47404293"
+    }
+   ]
+  },
+  {
+   "id": "E9",
+   "observedAt": "2026-10-19T04:32:21.786Z",
+   "source": "wayback",
+   "kind": "observation",
+   "title": "Homepage history: first archived 2025-03-21, 19 monthly snapshots",
+   "url": "https://web.archive.org/web/*/agentmail.to",
+   "data": {
+    "firstSeen": "20250321224118",
+    "monthlySnapshots": 19,
+    "history": [
+     {
+      "date": "2025-03-21",
+      "title": "AgentMail | The Email Provider for AI Agents",
+      "h1": "AgentMail",
+      "description": "Create powerful AI agents now with email capabilities. AgentMail is the first dedicated email infrastructure built for autonomous agents.",
+      "ctas": [
+       "Join the Discord",
+       "Join the waitlist",
+       "Take the first step",
+       "See how to integrate"
+      ]
+     },
+     {
+      "date": "2025-10-01",
+      "title": "AgentMail | The Email Provider for AI Agents",
+      "h1": "AgentMail",
+      "description": "Create powerful AI agents now with email capabilities. AgentMail is the first dedicated email infrastructure built for autonomous agents.",
+      "ctas": [
+       "Get Started",
+       "Join Now"
+      ]
+     },
+     {
+      "date": "2026-04-03",
+      "title": "AgentMail | Email Inbox API for AI Agents",
+      "h1": "Email Inboxes for AI Agents",
+      "description": "AgentMail gives AI agents real email inboxes. Create, send, receive, and search messages via REST API — built for autonomous agents and agentic workflows.",
+      "ctas": [
+       "Start for free"
+      ]
+     },
+     {
+      "date": "2026-10-11",
+      "title": "AgentMail | Email Inbox API for AI Agents",
+      "h1": "Email Inboxes for AI Agents",
+      "description": "AgentMail is the first email provider built for AI agents. Real inboxes via API: create, send, receive, and search email. Free tier, no credit card required.",
+      "ctas": [
+       "Start for free",
+       "Install skill",
+       "Subscribe"
+      ]
+     }
+    ]
+   }
+  },
+  {
+   "id": "E10",
+   "observedAt": "2026-10-19T04:32:22.044Z",
+   "source": "seo",
+   "kind": "derivation",
+   "title": "Sitemap: 592 URLs, 2 programmatic page families, 187 content updates in 90d",
+   "url": "https://www.agentmail.to/sitemap.xml",
+   "data": {
+    "totalUrls": 592,
+    "sections": [
+     {
+      "path": "https://www.agentmail.to/docs",
+      "count": 330,
+      "examples": [
+       "https://www.agentmail.to/docs/welcome",
+       "https://www.agentmail.to/docs/introduction",
+       "https://www.agentmail.to/docs/quickstart",
+       "https://www.agentmail.to/docs/inboxes"
+      ],
+      "programmatic": true,
+      "freshLast90d": 330
+     },
+     {
+      "path": "https://www.agentmail.to/blog",
+      "count": 211,
+      "examples": [
+       "https://www.agentmail.to/blog/introducing-domain-connect",
+       "https://www.agentmail.to/blog/introducing-agentmail-calendar",
+       "https://www.agentmail.to/blog/email-from-the-command-line-for-agents",
+       "https://www.agentmail.to/blog/email-address-per-user-at-signup"
+      ],
+      "programmatic": true,
+      "freshLast90d": 187
+     },
+     {
+      "path": "https://www.agentmail.to/use-case",
+      "count": 21,
+      "examples": [
+       "https://www.agentmail.to/use-case/ai-agents-for-recruiting",
+       "https://www.agentmail.to/use-case/ai-agents-for-customer-support",
+       "https://www.agentmail.to/use-case/ai-agent-that-sends-emails",
+       "https://www.agentmail.to/use-case/ai-agent-that-follows-up-automatically"
+      ],
+      "programmatic": false,
+      "freshLast90d": 21
+     },
+     {
+      "path": "https://www.agentmail.to/build",
+      "count": 12,
+      "examples": [
+       "https://www.agentmail.to/build/claude-code",
+       "https://www.agentmail.to/build/codex",
+       "https://www.agentmail.to/build/cursor",
+       "https://www.agentmail.to/build/devin"
+      ],
+      "programmatic": false,
+      "freshLast90d": 12
+     },
+     {
+      "path": "/(root pages)",
+      "count": 11,
+      "examples": [
+       "https://www.agentmail.to/build",
+       "https://www.agentmail.to/enterprise",
+       "https://www.agentmail.to/pricing",
+       "https://www.agentmail.to/blog"
+      ],
+      "programmatic": false,
+      "freshLast90d": 11
+     },
+     {
+      "path": "https://www.agentmail.to/legal",
+      "count": 5,
+      "examples": [
+       "https://www.agentmail.to/legal/privacy",
+       "https://www.agentmail.to/legal/terms",
+       "https://www.agentmail.to/legal/copyright",
+       "https://www.agentmail.to/legal/soc2"
+      ],
+      "programmatic": false,
+      "freshLast90d": 5
+     },
+     {
+      "path": "/",
+      "count": 1,
+      "examples": [
+       "/"
+      ],
+      "programmatic": false,
+      "freshLast90d": 1
+     },
+     {
+      "path": "https://www.agentmail.to/evals",
+      "count": 1,
+      "examples": [
+       "https://www.agentmail.to/evals/report"
+      ],
+      "programmatic": false,
+      "freshLast90d": 1
+     }
+    ],
+    "locales": [],
+    "patterns": {
+     "comparison": 19,
+     "alternatives": 1,
+     "integrations": 16,
+     "templates": 0,
+     "tools": 0,
+     "glossary": 7,
+     "useCases": 21,
+     "locations": 0,
+     "howTo": 6,
+     "listicles": 24
+    },
+    "blogPostsLast30d": 127,
+    "blogPostsLast90d": 187,
+    "sitemapsRead": [
+     "https://www.agentmail.to/sitemap.xml",
+     "https://www.agentmail.to/blog/info/sitemap.xml",
+     "https://www.agentmail.to/docs/sitemap.xml"
+    ]
+   }
+  },
+  {
+   "id": "E11",
+   "observedAt": "2026-10-19T04:32:22.044Z",
+   "source": "seo",
+   "kind": "observation",
+   "title": "AI-search stance: has llms.txt; no AI bots blocked",
+   "url": "https://agentmail.to/robots.txt",
+   "data": {
+    "robots": {
+     "sitemaps": [
+      "https://www.agentmail.to/sitemap.xml",
+      "https://www.agentmail.to/blog/info/sitemap.xml",
+      "https://www.agentmail.to/docs/sitemap.xml"
+     ],
+     "aiBots": {
+      "GPTBot": "allowed",
+      "OAI-SearchBot": "allowed",
+      "ChatGPT-User": "allowed",
+      "ClaudeBot": "allowed",
+      "Claude-SearchBot": "unspecified",
+      "PerplexityBot": "allowed",
+      "Google-Extended": "allowed",
+      "CCBot": "unspecified",
+      "Applebot-Extended": "allowed",
+      "Bytespider": "unspecified"
+     },
+     "disallowCount": 9
+    },
+    "llmsTxt": "# AgentMail: Email for AI Agents\n#\n# AgentMail is the first email provider built for AI agents.\n# The free tier includes 3 inboxes and 3,000 emails per month,\n# no credit card required. Sign-up works for agents (API below)\n# and humans (https://console.agentmail.to).\n#\n# If you are an AI agent and need email, follow these steps in order:\n#\n# Step 0: Check if AGENTMAIL_API_KEY is already set in your environment.\n#         If it is, skip to \"Connect\" below. You're ready to go.\n#\n# Step 1: If you do NOT have an API key, sign up by calling:\n#\n#         curl -X POST https://api.agentmail.to/v0/agent/sign-up \n#           -H \"Content-Type: application/json\" \n#           -d '{\"human_email\": \"YOUR_DEVELOPERS_EMAIL\", \"username\": \"YOUR_AGENT_NAME\"}'\n#\n#         This returns an api_key, inbox_id, and organization_id.\n#         The human_email must NOT already be registered with AgentMail,\n#         or sign-up will fail. An OTP will be sent to that email.\n#\n#         Then verify with the OTP:\n#\n#         curl -X POST https://api.agentmail.to/v0/agent/verify \n#           [Authorization header example omitted]\n#           -H \"Content-Type: application/json\" \n#           -d '{\"otp_code\": \"CODE_FROM_EMAIL\"}'\n#\n# Step 2: If sign-up fails (e.g. the email is already registered), ask your\n#         developer to generate an API key from https://console.agentmail.to\n#         and set it as AGENTMAIL_API_KEY in your environment.\n#\n# Step 3 (Connect): You now have two ways to use AgentMail — p"
+   }
+  },
+  {
+   "id": "E12",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "website",
+   "kind": "observation",
+   "title": "Pricing tiers: Free $0 (3 inboxes, 3,000 emails/mo, no card), Developer $20/mo (10 inboxes, 10k emails, 10 domains), Startup $200/mo (150 inboxes), Enterprise custom; add-ons $2/mo per inbox, domain or 1,000 emails; yearly -20%",
+   "url": "https://www.agentmail.to/pricing",
+   "data": {
+    "free": {
+     "price": "$0/month",
+     "inboxes": 3,
+     "emailsPerMonth": 3000,
+     "emailsPerDay": 100,
+     "storageGB": 3,
+     "note": "No credit card required"
+    },
+    "developer": {
+     "price": "$20/month",
+     "inboxes": 10,
+     "emailsPerMonth": 10000,
+     "customDomains": 10,
+     "seats": 2
+    },
+    "startup": {
+     "price": "$200/month",
+     "inboxes": 150,
+     "customDomains": 150,
+     "seats": 10,
+     "soc2Report": true
+    },
+    "enterprise": [
+     "White-label",
+     "EU region",
+     "BYO cloud",
+     "Dedicated IPs",
+     "OIDC/SAML SSO",
+     "Contact sales"
+    ],
+    "addOns": {
+     "inbox": "$2/mo",
+     "domain": "$2/mo",
+     "per1000Emails": "$2/mo",
+     "seat": "$5/mo"
+    },
+    "yearlyDiscount": "20%",
+    "featureRow": "No \"Sent via AgentMail\" footer (listed as a paid-tier feature)",
+    "support": "Discord community (free), email, Slack channel"
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E13",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "website",
+   "kind": "observation",
+   "title": "Homepage detail: 'Backed by Y Combinator'; live inbox demo; 'Install skill' / 'Agent self-signup' tabs for Claude Code, Hermes, OpenClaw, Codex, Cursor, Grok; use case 'Browser Agents: Extract 2FA Codes'; 11 named testimonials incl. Garry Tan (YC) and Magnus Muller (Browser Use); '100M+ emails delivered'; FAQ says CarEdge runs 25,000+ inboxes",
+   "url": "https://www.agentmail.to/",
+   "data": {
+    "hero": "Email Inboxes for AI Agents",
+    "sub": "It gives agents their own email inboxes, like Gmail does for humans.",
+    "newProductBanner": "AgentID — A sign-in button for AI agents.",
+    "integrationTabs": [
+     "Claude Code",
+     "Hermes",
+     "OpenClaw",
+     "Codex",
+     "Cursor",
+     "Grok"
+    ],
+    "useCaseBrowserAgents": "Extract 2FA Codes — Enable browser agents to sign up for services by extracting OTP codes from email.",
+    "testimonials": [
+     "Garrett Scott, CEO Pipedream Labs",
+     "Garry Tan, CEO Y Combinator: \"It's a no brainer, agents into email. Everyone is going to be using AgentMail.\"",
+     "Will Marquis, Pancake",
+     "Ben Yu, AgentCard at Alchemy",
+     "Magnus Muller, Co-founder and CEO, Browser Use",
+     "Austin Xu, Junior",
+     "Johnny Heo, General Intelligence",
+     "Diego Zurbaran, Lanesurf (YC S25)",
+     "Gus Levinson, Balance",
+     "Cole Dermott, Locus"
+    ],
+    "stats": "100M+ Emails delivered",
+    "faqScale": "CarEdge runs 25,000+ inboxes on AgentMail handling millions of messages.",
+    "footerNav": [
+     "Compare",
+     "Use cases",
+     "Evals",
+     "AgentID",
+     "Agent Armor",
+     "Newsletter (weekly)"
+    ]
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E14",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "seo",
+   "kind": "observation",
+   "title": "llms.txt (27.7 KB) gives agents step-by-step self-signup: POST https://api.agentmail.to/v0/agent/sign-up with human_email + username returns api_key, inbox_id, organization_id; OTP sent to the human",
+   "url": "https://www.agentmail.to/llms.txt",
+   "data": {
+    "opening": "If you are an AI agent and need email, follow these steps in order",
+    "step1": "curl -X POST https://api.agentmail.to/v0/agent/sign-up ... returns an api_key, inbox_id, and organization_id"
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E15",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "website",
+   "kind": "observation",
+   "title": "Seed launch post (Haakam Aujla, Mar 10 2026): $6M seed led by General Catalyst with YC, Paul Graham, Dharmesh Shah, Paul Copplestone, Karim Atiyeh; 'As reported by TechCrunch'; 'Autonomous agents have started signing up for AgentMail on their own, finding us through web search'",
+   "url": "https://www.agentmail.to/blog/agentmail-seed-launch",
+   "data": {
+    "author": "Haakam Aujla",
+    "date": "2026-03-10",
+    "round": "$6M seed, General Catalyst lead",
+    "press": "TechCrunch",
+    "quote": "Autonomous agents have started signing up for AgentMail on their own, finding us through web search, navigating to our site, and creating their own inboxes without a developer in the loop.",
+    "claim": "Thousands of humans use AgentMail to power millions of agents."
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E16",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "website",
+   "kind": "observation",
+   "title": "Customers page: 13 stories incl. Opendoor (Sep 19 2026), Lanesurf, AgentCard by Alchemy ('~70% increase in agentic transactions post-integration'), Junior, Locus, Eragon, DoAnything, Pancake, Browser Use",
+   "url": "https://www.agentmail.to/customers",
+   "data": {
+    "storyCount": 13,
+    "examples": [
+     "Opendoor 2026-09-19",
+     "Lanesurf 2026-07-27",
+     "AgentCard by Alchemy 2026-07-16: every AgentCard agent gets an AgentMail inbox by default",
+     "Junior 2026-06-21",
+     "Locus 2026-06-19",
+     "Browser Use 2026-06-10"
+    ]
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E17",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "website",
+   "kind": "observation",
+   "title": "Browser Use story (Jun 10 2026): 'Every Browser Use Cloud session now ships with its own AgentMail inbox' — zero config, no API key; problem framed as browser agents stalling at OTP/magic link/2FA",
+   "url": "https://www.agentmail.to/blog/how-browser-use-gives-every-browser-agent-its-own-inbox",
+   "data": {
+    "quote": "Every Browser Use Cloud session is pre-loaded with its own AgentMail inbox. Zero config, no API key.",
+    "problem": "Browser agents get stuck the moment a site asks them to check an email, signup confirmations, OTP codes, magic links, 2FA, password resets."
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E18",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "website",
+   "kind": "observation",
+   "title": "https://www.agentmail.to/build/claude-code: official Claude Code plugin (hosted MCP + bundled skills, one command), skill-only option, 'agent builder' that returns a working template",
+   "url": "https://www.agentmail.to/build/claude-code",
+   "data": {
+    "h1": "Give Claude Code its own inbox",
+    "plugin": "installs from github.com/agentmail-to/agentmail-plugins",
+    "builder": "Describe what you want and it gives you a working template in seconds"
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E19",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "seo",
+   "kind": "observation",
+   "title": "Sitemap page list: 12 https://www.agentmail.to/build/{agent} pages (claude-code, codex, cursor, devin, hermes, dots, grokbot, lovable, muse, openclaw, replit, vercel); comparison posts agentmail-vs-{mailgun, postmark, gmail-api, nylas, sendgrid, resend, amazon-ses, building-yourself}, cloudflare-vs-agentmail, agentmail-alternatives; 21 https://www.agentmail.to/use-case pages",
+   "url": "https://www.agentmail.to/sitemap.xml",
+   "data": {
+    "build": [
+     "claude-code",
+     "codex",
+     "cursor",
+     "devin",
+     "hermes",
+     "dots",
+     "grokbot",
+     "lovable",
+     "muse",
+     "openclaw",
+     "replit",
+     "vercel"
+    ],
+    "comparisons": [
+     "agentmail-vs-mailgun",
+     "agentmail-vs-postmark",
+     "agentmail-vs-gmail-api",
+     "agentmail-vs-nylas",
+     "agentmail-vs-sendgrid",
+     "agentmail-vs-resend",
+     "agentmail-vs-amazon-ses",
+     "agentmail-vs-building-yourself",
+     "cloudflare-vs-agentmail",
+     "mailtrap-vs-resend-vs-agentmail",
+     "agentmail-alternatives",
+     "ai-agent-authentication-platforms-compared-2026"
+    ]
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E20",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "seo",
+   "kind": "observation",
+   "title": "Second blog sitemap: 100 URLs under https://www.agentmail.to/blog/info/blog/solution-recommendation/ — question-shaped pages (e.g. 'which-email-apis-offer-an-mcp-server-for-ai-agents', 'give-your-mastra-agents-a-real-inbox-with-agentmail')",
+   "url": "https://www.agentmail.to/blog/info/sitemap.xml",
+   "data": {
+    "count": 100,
+    "examples": [
+     "email-infrastructure-for-hundreds-of-ai-agents-sending-at-once",
+     "email-apis-with-eu-data-residency-for-ai-agents-what-actually-qualifies",
+     "which-email-apis-offer-an-mcp-server-for-ai-agents-2fa0d9"
+    ]
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E21",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "website",
+   "kind": "observation",
+   "title": "AgentID page: OpenID Connect provider 'Sign in with AgentID'; free for apps; copy-paste prompt for a coding agent ('run npx @agentmail/agentid-cli init'); 5 explainer posts dated Oct 1 2026",
+   "url": "https://www.agentmail.to/agentid",
+   "data": {
+    "faq": "AgentID is an OpenID Connect provider from AgentMail that lets an AI agent sign into any app with its own verified email address... It is free for apps to add.",
+    "prompt": "Add AgentID sign-in to this project. Read https://www.agentid.com/llms-full.txt ... then run `npx @agentmail/agentid-cli init`"
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E22",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "website",
+   "kind": "observation",
+   "title": "Agent Armor page: beta, 'Request beta access'; screens inbound mail for prompt injection ('Would a model be steered?')",
+   "url": "https://www.agentmail.to/agent-armor",
+   "data": {
+    "status": "Beta",
+    "cta": "Request beta access"
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E23",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "website",
+   "kind": "observation",
+   "title": "Evals page 'How good are LLMs at using agentic tools?' in collaboration with Scope: model×harness benchmark on AgentMail's own API (tasks incl. 'Extract confirmation code', 'Process signup confirmations')",
+   "url": "https://www.agentmail.to/evals",
+   "data": {
+    "partner": "Scope",
+    "format": "leaderboard by model and harness, with/without docs"
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E24",
+   "observedAt": "2026-10-19T04:40:00Z",
+   "source": "website",
+   "kind": "observation",
+   "title": "2FA/OTP post (Sep 30 2026) covers emailed codes and AgentID; text says SMS codes and CAPTCHAs are 'a different problem'. Checked page text for 'authenticator', 'TOTP', 'vault', 'password manager', 0 matches for '1Password' (same 0 on homepage and pricing)",
+   "url": "https://www.agentmail.to/blog/when-your-ai-agent-hits-2fa-or-an-email-otp",
+   "data": {
+    "title": "What Happens When Your AI Agent Hits 2FA or an Email OTP?",
+    "matches": {
+     "totp_or_authenticator": 0,
+     "vault_or_pw_manager": 0
+    }
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E25",
+   "observedAt": "2026-10-19T04:40:00Z",
+   "source": "website",
+   "kind": "observation",
+   "title": "'AI Agent Authentication Platforms Compared (2026)' (Sep 15 2026, updated Oct 15): compares Auth0, Entra Agent ID, WorkOS auth.md, Arcade, Nango, Descope, Stytch, AgentID. ActAs not mentioned (searched all 14 fetched AgentMail pages for 'actas': 0 matches)",
+   "url": "https://www.agentmail.to/blog/ai-agent-authentication-platforms-compared-2026",
+   "data": {
+    "vendors": [
+     "Auth0 for AI Agents",
+     "Microsoft Entra Agent ID",
+     "WorkOS auth.md",
+     "Arcade",
+     "Nango",
+     "Descope",
+     "Stytch",
+     "AgentID"
+    ]
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E26",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "website",
+   "kind": "observation",
+   "title": "AgentMail alternatives post: 'AgentMail does not rank for its own alternatives query, which is part of why this page exists.'",
+   "url": "https://www.agentmail.to/blog/agentmail-alternatives",
+   "data": {
+    "quote": "AgentMail does not rank for its own alternatives query, which is part of why this page exists."
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E27",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "hackernews",
+   "kind": "observation",
+   "title": "Show HN text (2025-07-31, 121 points, 70 comments) by Haakam21: 'we're Haakam, Michael, and Adi'; origin story: building on Gmail was a struggle (rate limits, OAuth, Pub/Sub)",
+   "url": "https://news.ycombinator.com/item?id=44745820",
+   "data": {
+    "by": "Haakam21",
+    "founders": [
+     "Haakam",
+     "Michael",
+     "Adi"
+    ],
+    "score": 121,
+    "descendants": 70
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E28",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "github",
+   "kind": "observation",
+   "title": "GitHub org agentmail-to: 40 public repos; top stars agentmail-toolkit 111, agentmail-python 74, agentmail-mcp 69, agentmail-examples 42, agentmail-node 41, agentmail-cli 41, agentmail-plugins 35, agentmail-skills 25; most pushed Oct 2026",
+   "url": "https://api.github.com/orgs/agentmail-to/repos?per_page=100",
+   "data": {
+    "repos": 40,
+    "top": {
+     "agentmail-toolkit": 111,
+     "agentmail-python": 74,
+     "agentmail-mcp": 69,
+     "agentmail-examples": 42,
+     "agentmail-node": 41,
+     "agentmail-cli": 41,
+     "agentmail-plugins": 35,
+     "agentmail-skills": 25
+    }
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E29",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "registry",
+   "kind": "observation",
+   "title": "npm 'agentmail': 989,332 downloads 2026-09-17 to 2026-10-16; '@agentmail/agentid-cli': 620",
+   "url": "https://api.npmjs.org/downloads/point/last-month/agentmail",
+   "data": {
+    "agentmail": 989332,
+    "@agentmail/agentid-cli": 620,
+    "window": "2026-09-17..2026-10-16"
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E30",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "registry",
+   "kind": "observation",
+   "title": "PyPI 'agentmail': 1,406,613 downloads last month, 455,327 last week",
+   "url": "https://pypistats.org/api/packages/agentmail/recent",
+   "data": {
+    "last_month": 1406613,
+    "last_week": 455327,
+    "last_day": 29779
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E31",
+   "observedAt": "2026-10-19T04:33:00Z",
+   "source": "community",
+   "kind": "observation",
+   "title": "Product Hunt product page: 'AgentMail: Email Inboxes for AI Agents', 5.0 from 5 reviews, 435 followers",
+   "url": "https://www.producthunt.com/products/agentmail",
+   "data": {
+    "rating": 5.0,
+    "reviews": 5,
+    "followers": 435
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E32",
+   "observedAt": "2026-10-19T04:40:00Z",
+   "source": "customer_site",
+   "kind": "observation",
+   "title": "actas.dev homepage HTML: client-rendered SPA (empty #root, noscript text); title 'ActAs — persistent identity, email and scoped access for AI agents'; meta description ends 'Early build.'; no analytics or ad tags found in HTML or JS bundle; no social links in bundle",
+   "url": "https://actas.dev/",
+   "data": {
+    "title": "ActAs — persistent identity, email and scoped access for AI agents",
+    "meta": "Give each AI agent a persistent identity with its own email address on your domain, saved accounts and revocable, scoped access. Early build.",
+    "tracking": "none found (searched for gtag, GTM, fbq, posthog, plausible, clarity, segment)",
+    "socialLinks": "none found"
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E33",
+   "observedAt": "2026-10-19T04:40:00Z",
+   "source": "customer_site",
+   "kind": "observation",
+   "title": "actas.dev landing copy (from the site's JS bundle): hero 'Its own email, logins and 2FA codes. Issued in its name, revocable from your desk.'; problem 'Agents stall at “check your email.”'; comparison table vs 'Inbox-only API'; recorded PyPI signup→verify→login replay; 'Limits you should know about' (not independently audited, no MFA sign-in); one plan 'Everything included'; sign in by email link, then subscribe to Pro",
+   "url": "https://actas.dev/assets/index-B7-ImqJp.js",
+   "data": {
+    "hero": "Its own email, logins and 2FA codes. Issued in its name, revocable from your desk.",
+    "problem": "Agents stall at “check your email.”",
+    "vsInboxOnly": "An inbox-only API solves the first email. Then the agent still needs somewhere safe for the password, the 2FA seed and the API key, and you still need a way to scope and revoke it. ActAs puts all of that under one identity.",
+    "worksWith": "Claude Code, Codex, or your own agent",
+    "demo": "A recorded PyPI run: signup with its own ActAs address, email verification through its inbox, then a fresh-session login with the saved credential.",
+    "limits": "ActAs has not been independently audited, and does not yet offer multi-factor sign-in.",
+    "price": "ActAs Pro: US$12/month or US$120/year, plus applicable tax.",
+    "planLimits": {
+     "identities": 10,
+     "incomingEmailsPerMonth": 5000,
+     "customDomains": 1
+    },
+    "freeTier": "none found; creation requires an active Pro subscription",
+    "cliInstall": "npm install -g ./actas-cli.tgz (downloaded package, not a public registry name)"
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E34",
+   "observedAt": "2026-10-19T04:40:00Z",
+   "source": "customer_site",
+   "kind": "observation",
+   "title": "actas.dev/llms.txt: one Pro plan required to create identities/inboxes; documents handoffs API and CLI; says 'Both SES and retained AgentMail inboxes can be read'; sending only from verified SES inbox; 'External website compatibility remains under evaluation'",
+   "url": "https://actas.dev/llms.txt",
+   "data": {
+    "quote": "one Pro plan; an active subscription is required to create identities, inboxes, accounts and connections",
+    "agentmail": "Both SES and retained AgentMail inboxes can be read."
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E35",
+   "observedAt": "2026-10-19T04:40:00Z",
+   "source": "customer_site",
+   "kind": "observation",
+   "title": "actas.dev sitemap lists 3 URLs (/, /pricing, /docs); robots.txt allows all bots except /app, /api/, /sign-in, /sign-up; /openapi.json is public (9.3 KB)",
+   "url": "https://actas.dev/sitemap.xml",
+   "data": {
+    "urls": [
+     "/",
+     "/pricing",
+     "/docs"
+    ]
+   },
+   "fetchedBy": "analyst"
+  },
+  {
+   "id": "E36",
+   "observedAt": "2026-10-19T04:40:00Z",
+   "source": "hackernews",
+   "kind": "observation",
+   "title": "Hacker News (Algolia) search for URL 'actas.dev': 0 submissions",
+   "url": "https://hn.algolia.com/api/v1/search?query=actas.dev&restrictSearchableAttributes=url",
+   "data": {
+    "hits": 0
+   },
+   "fetchedBy": "analyst"
+  }
+ ],
+ "unknowns": [
+  {
+   "channel": "paid_tiktok",
+   "reason": "TikTok has no global ad library API; check the EU library / Creative Center by hand (TikTok pixel presence is reported under tracking)",
+   "manualCheck": "https://library.tiktok.com/ads?region=all&adv_name=AgentMail"
+  },
+  {
+   "channel": "paid_reddit",
+   "reason": "Reddit's ad library was shut down; Reddit pixel presence (tracking) is the only signal",
+   "manualCheck": "https://www.reddit.com/search/?q=AgentMail"
+  },
+  {
+   "channel": "paid_meta",
+   "reason": "SCRAPECREATORS_API_KEY not set",
+   "manualCheck": "https://www.facebook.com/ads/library/?active_status=active&ad_type=all&country=ALL&q=AgentMail&search_type=keyword_unordered"
+  },
+  {
+   "channel": "paid_google",
+   "reason": "SCRAPECREATORS_API_KEY not set",
+   "manualCheck": "https://adstransparency.google.com/?region=anywhere&domain=agentmail.to"
+  },
+  {
+   "channel": "paid_linkedin",
+   "reason": "SCRAPECREATORS_API_KEY not set",
+   "manualCheck": "https://www.linkedin.com/ad-library/search?accountOwner=AgentMail"
+  },
+  {
+   "channel": "organic_tiktok",
+   "reason": "No account linked from the site"
+  },
+  {
+   "channel": "organic_instagram",
+   "reason": "No account linked from the site"
+  },
+  {
+   "channel": "organic_youtube",
+   "reason": "No account linked from the site"
+  },
+  {
+   "channel": "organic_x",
+   "reason": "Account found but SCRAPECREATORS_API_KEY not set — no stats",
+   "manualCheck": "https://x.com/agentmail"
+  },
+  {
+   "channel": "organic_linkedin",
+   "reason": "Account found but SCRAPECREATORS_API_KEY not set — no stats",
+   "manualCheck": "https://www.linkedin.com/company/agentmailto"
+  },
+  {
+   "channel": "community",
+   "reason": "SCRAPECREATORS_API_KEY not set — Reddit/Product Hunt skipped",
+   "manualCheck": "https://www.reddit.com/search/?q=agentmail.to"
+  },
+  {
+   "channel": "reddit_marketing",
+   "reason": "SCRAPECREATORS_API_KEY not set — Reddit not checked",
+   "manualCheck": "https://www.reddit.com/search/?q=AgentMail"
+  },
+  {
+   "channel": "founder_led",
+   "reason": "SCRAPECREATORS_API_KEY not set — founder names from free sources only; audience/posting not checked",
+   "manualCheck": "https://www.google.com/search?q=%22AgentMail%22%20founder%20site%3Alinkedin.com%2Fin"
+  },
+  {
+   "channel": "paid_apple",
+   "reason": "No iOS app found for this company, so Apple Search Ads were not checked",
+   "manualCheck": "https://adrepository.apple.com/"
+  }
+ ],
+ "sources": [
+  {
+   "source": "website",
+   "status": "ok",
+   "ms": 609
+  },
+  {
+   "source": "paid",
+   "status": "ok",
+   "ms": 2
+  },
+  {
+   "source": "social",
+   "status": "ok",
+   "ms": 1
+  },
+  {
+   "source": "community",
+   "status": "ok",
+   "ms": 1
+  },
+  {
+   "source": "founders",
+   "status": "ok",
+   "ms": 399
+  },
+  {
+   "source": "appstore",
+   "status": "ok",
+   "ms": 626
+  },
+  {
+   "source": "apple_ads",
+   "status": "ok",
+   "ms": 1
+  },
+  {
+   "source": "hackernews",
+   "status": "ok",
+   "ms": 467
+  },
+  {
+   "source": "wayback",
+   "status": "ok",
+   "ms": 1987
+  },
+  {
+   "source": "seo",
+   "status": "ok",
+   "ms": 2245
+  }
+ ]
+}
