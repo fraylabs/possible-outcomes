@@ -1,0 +1,134 @@
+[
+  {
+    "id": "E1",
+    "url": "https://www.granola.ai/",
+    "fetchedAt": "2026-10-21T03:04:29.017189+00:00",
+    "type": "observation",
+    "status": 200,
+    "resolvedUrl": "https://www.granola.ai/",
+    "summary": "Homepage positions an AI notepad without a meeting bot, with private-by-default notes, optional sharing and device-audio capture."
+  },
+  {
+    "id": "E2",
+    "url": "https://www.granola.ai/pricing",
+    "fetchedAt": "2026-10-21T03:04:29.031484+00:00",
+    "type": "observation",
+    "status": 200,
+    "resolvedUrl": "https://www.granola.ai/pricing",
+    "summary": "Pricing page offers a free Basic entry and paid Business/Enterprise choices. History, integrations and administration distinguish tiers; public testimonials also appear."
+  },
+  {
+    "id": "E3",
+    "url": "https://www.granola.ai/blog/announcement",
+    "fetchedAt": "2026-10-21T03:04:29.084901+00:00",
+    "type": "observation",
+    "status": 200,
+    "resolvedUrl": "https://www.granola.ai/blog/announcement",
+    "summary": "Initial launch post identifies Chris Pedregal as cofounder and CEO and describes AI enhancing a person’s own meeting notes."
+  },
+  {
+    "id": "E4",
+    "url": "https://www.granola.ai/blog/series-a",
+    "fetchedAt": "2026-10-21T03:04:29.085134+00:00",
+    "type": "observation",
+    "status": 200,
+    "resolvedUrl": "https://www.granola.ai/blog/series-a",
+    "summary": "Series A post gives the company’s account of adoption by leaders and spread within teams. Its growth and retention claims are company-reported, not independently verified."
+  },
+  {
+    "id": "E5",
+    "url": "https://www.granola.ai/blog/two-dot-zero",
+    "fetchedAt": "2026-10-21T03:04:29.085287+00:00",
+    "type": "observation",
+    "status": 200,
+    "resolvedUrl": "https://www.granola.ai/blog/two-dot-zero",
+    "summary": "Team launch describes shared folders, note links and the ability to query meeting context together."
+  },
+  {
+    "id": "E6",
+    "url": "https://www.granola.ai/blog/series-c",
+    "fetchedAt": "2026-10-21T03:04:29.178491+00:00",
+    "type": "observation",
+    "status": 200,
+    "resolvedUrl": "https://www.granola.ai/blog/series-c",
+    "summary": "Later Spaces/API announcement describes controlled team context, personal and enterprise APIs, updated MCP support and organization controls."
+  },
+  {
+    "id": "E7",
+    "url": "https://www.granola.ai/blog/customer-call-analysis-meeting-notes",
+    "fetchedAt": "2026-10-21T03:04:29.178711+00:00",
+    "type": "observation",
+    "status": 200,
+    "resolvedUrl": "https://www.granola.ai/blog/customer-call-analysis-meeting-notes",
+    "summary": "Public guide explains analyzing recurring customer-call themes and using folder-level queries for professional workflows."
+  },
+  {
+    "id": "E8",
+    "url": "https://www.granola.ai/robots.txt",
+    "fetchedAt": "2026-10-21T03:04:29.282920+00:00",
+    "type": "observation",
+    "status": 200,
+    "resolvedUrl": "https://www.granola.ai/robots.txt",
+    "summary": "Robots text advertises the public sitemap."
+  },
+  {
+    "id": "E9",
+    "url": "https://www.granola.ai/sitemap.xml",
+    "fetchedAt": "2026-10-21T03:04:29.286976+00:00",
+    "type": "observation",
+    "status": 200,
+    "resolvedUrl": "https://www.granola.ai/sitemap.xml",
+    "summary": "Public XML sitemap lists product and content pages."
+  },
+  {
+    "id": "E10",
+    "url": "https://www.granola.ai/llms.txt",
+    "fetchedAt": "2026-10-21T03:04:29.297531+00:00",
+    "type": "observation",
+    "status": 200,
+    "resolvedUrl": "https://www.granola.ai/llms.txt",
+    "summary": "Public llms text resource describes product information and related public resources."
+  },
+  {
+    "id": "E11",
+    "type": "scope-and-unknowns",
+    "recordedAt": "2026-10-21T03:07:12.426539+00:00",
+    "summary": "Brief assumptions: hypothetical prelaunch founder in the competitor category, no audience or marketing budget, no live product URL. No paid keys, logins, contact or ad-library audit. No systematic founder/social/Reddit/launch check or numeric search-volume measurement. Strength scores are analyst evidence ratings, not traffic estimates. Proposed playbook counts are experiments, not observed competitor performance. Full homepage archive unavailable."
+  },
+  {
+    "url": "https://www.granola.ai/sitemap.xml",
+    "observedAt": "2026-10-21T03:06:57.114Z",
+    "source": "seo",
+    "kind": "derivation",
+    "title": "Sitemap: 358 URLs, 1 programmatic page families, 268 content updates in 90d",
+    "id": "E20",
+    "interpretation": "Counts are collected sitemap URLs and lastmod signals, not verified Google indexation or editorial publication dates."
+  },
+  {
+    "url": "https://hn.algolia.com/?query=granola.ai",
+    "observedAt": "2026-10-21T03:06:57.498Z",
+    "source": "hackernews",
+    "kind": "observation",
+    "title": "Hacker News: 13 submissions, best 460 points",
+    "id": "E21",
+    "interpretation": "Domain-search sample includes submissions and discussion, not only official launches; brand relevance and customer conversion not established."
+  },
+  {
+    "url": "https://www.granola.ai/",
+    "observedAt": "2026-10-21T03:06:56.680Z",
+    "source": "tracking",
+    "kind": "observation",
+    "title": "Ad/attribution pixels: AppsFlyer",
+    "id": "E22",
+    "interpretation": "Tag detection shows instrumentation, not live ads or spend."
+  },
+  {
+    "url": "https://web.archive.org/web/*/granola.ai",
+    "observedAt": "2026-10-21T03:07:04.167Z",
+    "source": "wayback",
+    "kind": "observation",
+    "title": "Homepage history: first archived 2024-09-25, 26 monthly snapshots",
+    "id": "E23",
+    "interpretation": "Snapshot availability is not evidence of historical page copy; old domain ownership may differ."
+  }
+]

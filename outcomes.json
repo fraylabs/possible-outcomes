@@ -6,6 +6,18 @@
   },
   "outcomes": [
     {
+      "slug": "how-granola-gets-customers",
+      "url": "./outcomes/how-granola-gets-customers/outcome.json"
+    },
+    {
+      "slug": "how-cursor-gets-customers",
+      "url": "./outcomes/how-cursor-gets-customers/outcome.json"
+    },
+    {
+      "slug": "how-lovable-gets-customers",
+      "url": "./outcomes/how-lovable-gets-customers/outcome.json"
+    },
+    {
       "slug": "agentmail-teardown-for-actas",
       "url": "./outcomes/agentmail-teardown-for-actas/outcome.json"
     },

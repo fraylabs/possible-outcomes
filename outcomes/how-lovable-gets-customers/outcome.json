@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 4,
+  "slug": "how-lovable-gets-customers",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-10-21T03:07:00Z",
+  "author": {
+    "name": "Possible",
+    "url": "https://possible.sh"
+  },
+  "models": [
+    {
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "agent": "Codex",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "A coding agent that can run Node.js, fetch public pages and write files",
+    "Node.js and the public reverse-engineer-marketing source"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "openai/codex"
+  },
+  "recipe": {
+    "provenance": {
+      "method": "recorded",
+      "source": "codex",
+      "reviewedAt": "2026-10-21T03:09:09.394Z",
+      "reviewDigest": "18da8e7e850c58ebbb77f1a8cfc90412e4f0ebca063f0485158a7f1b33cb670c",
+      "files": [
+        {
+          "path": "artifacts/NOTES.md",
+          "size": 2391,
+          "sha256": "6e225918dfbf1b6e0f9d2cc59df293a9f44e6446421d5ea5826b48f0f3bd65e4"
+        },
+        {
+          "path": "artifacts/evidence.json",
+          "size": 4878,
+          "sha256": "1bec4e904832c4c5ecfa294bb0ba46973e581fbc9e43c99a5419b183653075b6"
+        },
+        {
+          "path": "artifacts/report.md",
+          "size": 9809,
+          "sha256": "82106a9d863cfdd810a21168c47b85e754cff4841819b49f80243dea6e675c5e"
+        }
+      ]
+    },
+    "agent": {
+      "name": "Codex"
+    },
+    "tools": [
+      {
+        "name": "Node.js",
+        "purpose": "Build and run REM from source, capture the completed session and validate citations."
+      },
+      {
+        "name": "Public web fetch",
+        "purpose": "Inspect public competitor pages and fill evidence gaps without login."
+      }
+    ],
+    "notes": [
+      "One completed analyst run covers three reports. The recipe and brief were edited for reuse.",
+      "Capture uses an isolated actual session excerpt; inherited parent history and session identifiers were omitted.",
+      "Public report claims cite evidence; hypotheses and missing sources are labeled."
+    ],
+    "steps": [
+      {
+        "title": "Brief Competitor Analyst",
+        "instructions": "Describe the competitor, your product and the first-channel decision. Replace the hypothetical founder assumptions with your actual product and URL.",
+        "prompt": "Competitor: Lovable.\n\nYou are the founder building an AI app builder for independent consultants, with no audience or marketing budget. This is a hypothetical prelaunch product; there is no public prototype URL to fetch.\n\nDecision: which customer acquisition channel should you copy first? Use only public evidence, label inferences and unknowns, compare the funnel fairly, and finish with 5–10 ranked moves with first steps and numbers to watch."
+      },
+      {
+        "title": "Collect public evidence and write the report",
+        "instructions": "Build REM from its public source, run doctor and a JSON collection without AI API use, read the harness and channel playbooks, fetch missing public pages, write the teardown and ranked playbook, and check every citation."
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "artifacts/report.md",
+      "label": "How Lovable gets customers: complete teardown and ranked founder playbook",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/evidence.json",
+      "label": "Public evidence with fetch dates and scope limitations",
+      "format": "json"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/NOTES.md",
+      "label": "Run notes, source availability and privacy edits",
+      "format": "markdown"
+    }
+  ]
+}

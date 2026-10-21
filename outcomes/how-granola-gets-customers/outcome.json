@@ -1,0 +1,103 @@
+{
+  "schemaVersion": 4,
+  "slug": "how-granola-gets-customers",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-10-21T03:07:00Z",
+  "author": {
+    "name": "Possible",
+    "url": "https://possible.sh"
+  },
+  "models": [
+    {
+      "provider": "openai",
+      "model": "gpt-6.1-sol",
+      "agent": "Codex",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "A coding agent that can run Node.js, fetch public pages and write files",
+    "Node.js and the public reverse-engineer-marketing source"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "openai/codex"
+  },
+  "recipe": {
+    "provenance": {
+      "method": "recorded",
+      "source": "codex",
+      "reviewedAt": "2026-10-21T03:09:36.288Z",
+      "reviewDigest": "f12555d8385cb1d4e04a8fe959f259b827f9b616a8a6e1a9e22b1508f89f3afc",
+      "files": [
+        {
+          "path": "artifacts/NOTES.md",
+          "size": 2645,
+          "sha256": "24227331deba484f73ebbabe8cbaf6735e6dc59db4f16cc3062d4aa31f54f127"
+        },
+        {
+          "path": "artifacts/evidence.json",
+          "size": 5746,
+          "sha256": "e8f8dc9f0bc21669a8ec84fc421d107b212cadf1e06a1956a6ec3b8d69b8d54f"
+        },
+        {
+          "path": "artifacts/report.md",
+          "size": 10714,
+          "sha256": "71d38f0ad07b955b021c7951cb481462d9b5ed2e2b895eaef8de716505e49ee5"
+        }
+      ]
+    },
+    "agent": {
+      "name": "Codex"
+    },
+    "tools": [
+      {
+        "name": "Node.js",
+        "purpose": "Build and run REM from source, capture the completed session and validate citations."
+      },
+      {
+        "name": "Public web fetch",
+        "purpose": "Inspect public competitor pages and fill evidence gaps without login."
+      }
+    ],
+    "notes": [
+      "One completed analyst run covers three reports. The recipe and brief were edited for reuse.",
+      "Capture uses an isolated actual session excerpt; inherited parent history and session identifiers were omitted.",
+      "Public report claims cite evidence; hypotheses and missing sources are labeled."
+    ],
+    "steps": [
+      {
+        "title": "Brief Competitor Analyst",
+        "instructions": "Describe the competitor, your product and the first-channel decision. Replace the hypothetical founder assumptions with your actual product and URL.",
+        "prompt": "Competitor: Granola.\n\nYou are the founder building a meeting assistant for small consulting teams, with no audience or marketing budget. This is a hypothetical prelaunch product; there is no public prototype URL to fetch.\n\nDecision: which customer acquisition channel should you copy first? Use only public evidence, label inferences and unknowns, compare the funnel fairly, and finish with 5–10 ranked moves with first steps and numbers to watch."
+      },
+      {
+        "title": "Collect public evidence and write the report",
+        "instructions": "Build REM from its public source, run doctor and a JSON collection without AI API use, read the harness and channel playbooks, fetch missing public pages, write the teardown and ranked playbook, and check every citation."
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "artifacts/report.md",
+      "label": "How Granola gets customers: complete teardown and ranked founder playbook",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/evidence.json",
+      "label": "Public evidence with fetch dates and scope limitations",
+      "format": "json"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/NOTES.md",
+      "label": "Run notes, source availability and privacy edits",
+      "format": "markdown"
+    }
+  ]
+}
