@@ -1,0 +1,53 @@
+{
+  "schemaVersion": 4,
+  "slug": "leviathan-anime-short-threejs",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-11-04T14:27:18+00:00",
+  "author": {
+    "name": "Movez",
+    "url": "https://x.com/0xMovez"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Claude Fable 5.5 (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code with a shell, ideally running parallel agent teams; Node 18+, Google Chrome and FFmpeg to render.",
+    "Hours, not minutes: the creator reports under 3 hours with 8 agent teams."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "source",
+      "src": "https://github.com/0xCodez/leviathan",
+      "label": "Full source code (MIT), with the production bible CONTRACT.md"
+    },
+    {
+      "type": "document",
+      "src": "https://x.com/0xMovez/status/2117987052419428576",
+      "label": "Creator’s post with the film"
+    },
+    {
+      "type": "document",
+      "src": "https://x.com/0xMovez/status/2117987057599402312",
+      "label": "Creator’s reply with the prompt"
+    }
+  ],
+  "preview": {
+    "description": "An 83-second 2D-anime-style kaiju short, 39 shots and 1,992 frames rendered entirely in three.js code with cel shading, painted backgrounds and a synthesized score, delivered as one offline HTML file.",
+    "video": {
+      "src": "media/demo.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Original film by Movez; creator reports Claude Fable 5.5."
+    }
+  }
+}
