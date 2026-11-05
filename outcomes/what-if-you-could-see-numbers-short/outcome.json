@@ -33,7 +33,7 @@
     }
   ],
   "preview": {
-    "description": "A 29-second flat-vector \"What if you could see everyone's ___?\" episode: a glowing number above every head, counters that roll, a red X on every wrong guess and a twist, every frame drawn in code with a lo-fi beat made in numpy.",
+    "description": "A 29-second flat-vector \"What if you could see everyone's ...?\" episode: a glowing number above every head, counters that roll, a red X on every wrong guess and a twist, every frame drawn in code with a lo-fi beat made in numpy.",
     "video": {
       "src": "media/demo.mp4",
       "poster": "media/poster.jpg",
