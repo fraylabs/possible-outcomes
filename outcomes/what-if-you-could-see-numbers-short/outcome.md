@@ -1,6 +1,6 @@
 # What If You Could See Everyone's Number
 
-A 29-second "What if you could see everyone's ___?" episode in flat vector style. A glowing number floats above every head, and the counters roll as the story turns: the rich-looking person has the worst number, the poor-looking one the best, and a twist at the end. Every frame is drawn in code on an HTML canvas, and the lo-fi beat and sound effects are made in numpy. No image, video or voice model.
+A 29-second "What if you could see everyone's ...?" episode in flat vector style. A glowing number floats above every head, and the counters roll as the story turns: the rich-looking person has the worst number, the poor-looking one the best, and a twist at the end. Every frame is drawn in code on an HTML canvas, and the lo-fi beat and sound effects are made in numpy. No image, video or voice model.
 
 ## Try it
 
