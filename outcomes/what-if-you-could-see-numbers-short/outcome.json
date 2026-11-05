@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 4,
+  "slug": "what-if-you-could-see-numbers-short",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-11-04T20:39:04+00:00",
+  "author": {
+    "name": "Singh",
+    "url": "https://x.com/singhscales"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Claude Opus (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Coding agent with a shell; Python 3, Playwright with Chromium, FFmpeg and numpy (the prompt installs what's missing).",
+    "No voice and no paid services: the sound is made in code."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "https://x.com/singhscales/status/2118080613026873567",
+      "label": "Creator’s post with the video and prompt"
+    }
+  ],
+  "preview": {
+    "description": "A 29-second flat-vector \"What if you could see everyone's ___?\" episode: a glowing number above every head, counters that roll, a red X on every wrong guess and a twist, every frame drawn in code with a lo-fi beat made in numpy.",
+    "video": {
+      "src": "media/demo.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Original episode by Singh; creator reports Claude Opus."
+    }
+  }
+}

@@ -168,6 +168,10 @@
     {
       "slug": "leviathan-anime-short-threejs",
       "url": "./outcomes/leviathan-anime-short-threejs/outcome.json"
+    },
+    {
+      "slug": "what-if-you-could-see-numbers-short",
+      "url": "./outcomes/what-if-you-could-see-numbers-short/outcome.json"
     }
   ]
 }
