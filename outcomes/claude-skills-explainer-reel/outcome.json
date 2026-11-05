@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 4,
+  "slug": "claude-skills-explainer-reel",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-11-01T00:10:34+00:00",
+  "author": {
+    "name": "Theo",
+    "url": "https://x.com/theoxmotion"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Claude via Claude Code (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code on Windows, Mac or Linux; the first run installs its free tools (Python, FFmpeg, a local Kokoro voice). ElevenLabs is optional."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "https://theoxmotion.blue-hippodraco.workers.dev/r/explainer-reel-studio/",
+      "label": "Theo's free guide page"
+    },
+    {
+      "type": "other",
+      "src": "https://x.com/theoxmotion/status/2116684286837330374",
+      "label": "Creator's post"
+    }
+  ],
+  "preview": {
+    "description": "A 50-second lecture-style explainer reel: a lip-synced cartoon teacher, slides and a typing terminal that land on the spoken word, captions that build, and a loop back to the first frame.",
+    "video": {
+      "src": "media/demo.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Example by Theo, made with this guide."
+    }
+  }
+}

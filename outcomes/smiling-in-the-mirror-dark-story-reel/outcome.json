@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 4,
+  "slug": "smiling-in-the-mirror-dark-story-reel",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-11-03T19:17:23+00:00",
+  "author": {
+    "name": "Theo",
+    "url": "https://x.com/theoxmotion"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Claude via Claude Code (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code on Windows, Mac or Linux; the first run installs its free tools (Python, FFmpeg, a local Kokoro voice). ElevenLabs is optional."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "https://theoxmotion.blue-hippodraco.workers.dev/r/dark-story-reels/",
+      "label": "Theo's free skill page"
+    },
+    {
+      "type": "other",
+      "src": "https://x.com/theoxmotion/status/2117697667451208143",
+      "label": "Creator's post"
+    }
+  ],
+  "preview": {
+    "description": "A 63-second creepy \"He did X\" story reel in fast greyscale sketches, written, drawn and voiced by the skill, with word-by-word captions and a sound bed made in code.",
+    "video": {
+      "src": "media/demo.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Example by Theo, made with this skill."
+    }
+  }
+}

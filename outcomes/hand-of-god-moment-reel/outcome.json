@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 4,
+  "slug": "hand-of-god-moment-reel",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-11-03T07:36:31+00:00",
+  "author": {
+    "name": "Theo",
+    "url": "https://x.com/theoxmotion"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Claude via Claude Code (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code on Windows, Mac or Linux; the first run installs its free tools (Python, FFmpeg, a local Kokoro voice). ElevenLabs is optional."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "https://theoxmotion.blue-hippodraco.workers.dev/r/moment-reel/",
+      "label": "Theo's free skill page"
+    },
+    {
+      "type": "other",
+      "src": "https://x.com/theoxmotion/status/2117521287153160216",
+      "label": "Creator's post"
+    }
+  ],
+  "preview": {
+    "description": "A 48-second flat 2D cartoon story reel of Maradona's Hand of God, 1986: every fact checked first, comic freezes, a TV replay with an arrow, a voice-over and word-timed captions.",
+    "video": {
+      "src": "media/demo.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Example by Theo, made with this skill."
+    }
+  }
+}

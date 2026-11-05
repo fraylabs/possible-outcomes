@@ -140,6 +140,30 @@
     {
       "slug": "what-if-roblox-story-short",
       "url": "./outcomes/what-if-roblox-story-short/outcome.json"
+    },
+    {
+      "slug": "hand-of-god-moment-reel",
+      "url": "./outcomes/hand-of-god-moment-reel/outcome.json"
+    },
+    {
+      "slug": "smiling-in-the-mirror-dark-story-reel",
+      "url": "./outcomes/smiling-in-the-mirror-dark-story-reel/outcome.json"
+    },
+    {
+      "slug": "cloud-weighs-100-elephants-science-short",
+      "url": "./outcomes/cloud-weighs-100-elephants-science-short/outcome.json"
+    },
+    {
+      "slug": "under-the-river-survival-story",
+      "url": "./outcomes/under-the-river-survival-story/outcome.json"
+    },
+    {
+      "slug": "hole-in-your-yard-becomes-a-pond",
+      "url": "./outcomes/hole-in-your-yard-becomes-a-pond/outcome.json"
+    },
+    {
+      "slug": "claude-skills-explainer-reel",
+      "url": "./outcomes/claude-skills-explainer-reel/outcome.json"
     }
   ]
 }

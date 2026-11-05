@@ -1,0 +1,42 @@
+{
+  "schemaVersion": 4,
+  "slug": "cloud-weighs-100-elephants-science-short",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-11-04T00:00:00+00:00",
+  "author": {
+    "name": "Theo",
+    "url": "https://x.com/theoxmotion"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Claude via Claude Code (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code on Windows, Mac or Linux; the first run installs its free tools (Python, FFmpeg, a local Kokoro voice). ElevenLabs is optional."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "https://theoxmotion.blue-hippodraco.workers.dev/r/science-shorts-studio/",
+      "label": "Theo's free skill page"
+    }
+  ],
+  "preview": {
+    "description": "A 56-second animated science Short in the flat-vector explainer style: the claim on a title card, a chain of checked facts drawn as pictures, and big numbers turned into everyday things.",
+    "video": {
+      "src": "media/demo.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Example by Theo, made with this skill."
+    }
+  }
+}
