@@ -1,6 +1,6 @@
 # How a Hole in Your Yard Becomes a Pond
 
-A 60-75 second "How a hole in your yard becomes ___" 3D Short: a house and lawn over a block of soil cut open like a cake, built step by step in Blender with a calm narrator.
+A 60-75 second "How a hole in your yard becomes a ..." 3D Short: a house and lawn over a block of soil cut open like a cake, built step by step in Blender with a calm narrator.
 
 ## Try it
 
