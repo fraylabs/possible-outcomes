@@ -184,6 +184,10 @@
     {
       "slug": "tiny-workers-inside-a-machine-blender-short",
       "url": "./outcomes/tiny-workers-inside-a-machine-blender-short/outcome.json"
+    },
+    {
+      "slug": "agentic-video-editing-rules-loop",
+      "url": "./outcomes/agentic-video-editing-rules-loop/outcome.json"
     }
   ]
 }

@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 4,
+  "slug": "agentic-video-editing-rules-loop",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-10-28T14:29:17+00:00",
+  "author": {
+    "name": "Lad",
+    "url": "https://x.com/ladprofit"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Claude (creator-reported)",
+      "agent": "Claude Code",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code with ffmpeg and Whisper installed (the guide has Claude install them for you); all free.",
+    "A talking-head video you've already edited by hand, and DaVinci Resolve (free) to import the FCPXML timeline."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "https://x.com/ladprofit/status/2115450836398882941",
+      "label": "Creator’s full guide: Agentic Video Editing"
+    },
+    {
+      "type": "document",
+      "src": "https://x.com/ladprofit/status/2118351185241686446",
+      "label": "Creator’s true-crime ad edited by Claude Code"
+    }
+  ],
+  "preview": {
+    "description": "Claude Code cuts a talking-head video on Whisper word timestamps, removes pauses over 0.45 s without clipping words, exports an FCPXML timeline for DaVinci Resolve, and saves every note you give it to rules.md so the next edit starts closer to your taste."
+  }
+}
