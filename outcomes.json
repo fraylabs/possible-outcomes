@@ -172,6 +172,10 @@
     {
       "slug": "what-if-you-could-see-numbers-short",
       "url": "./outcomes/what-if-you-could-see-numbers-short/outcome.json"
+    },
+    {
+      "slug": "ricksclips-style-cartoon-short",
+      "url": "./outcomes/ricksclips-style-cartoon-short/outcome.json"
     }
   ]
 }

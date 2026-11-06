@@ -1,0 +1,43 @@
+{
+  "schemaVersion": 4,
+  "slug": "ricksclips-style-cartoon-short",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-11-05T15:00:58+00:00",
+  "author": {
+    "name": "trey",
+    "url": "https://x.com/treyscalez"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Claude Opus 5.5 (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Coding agent with a shell; Node with Playwright and Chromium, three.js r160, Python 3 with numpy and Pillow, and FFmpeg with rubberband (the prompt sets them up).",
+    "Your own voiceover recording. The prompt writes the script and tips if you don't have one; ElevenLabs is optional."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "https://x.com/treyscalez/status/2118357912624005300",
+      "label": "Creator’s post with the video and prompt"
+    }
+  ],
+  "preview": {
+    "description": "A 34-second vertical narrated cartoon short in the viral ricksclips style: flat bean-shaped characters on canvas cards inside an inked toon three.js world, timed to a voiceover, with code-made music and sound effects.",
+    "video": {
+      "src": "media/demo.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Original short by trey; creator reports Claude Opus 5.5."
+    }
+  }
+}
