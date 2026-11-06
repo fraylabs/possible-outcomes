@@ -1,0 +1,58 @@
+{
+  "schemaVersion": 4,
+  "slug": "image-first-page-redesign-codex",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-11-05T13:00:01+00:00",
+  "author": {
+    "name": "Vox",
+    "url": "https://x.com/Voxyz_ai"
+  },
+  "models": [
+    {
+      "provider": "OpenAI",
+      "model": "Images 2.6 / gpt-image-2.6 (creator-reported; draws the design)",
+      "agent": "Codex",
+      "role": "execution"
+    },
+    {
+      "provider": "OpenAI",
+      "model": "Sol or Astra (creator-reported; implements the design)",
+      "agent": "Codex",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Codex with its built-in image generation, run on a page or project you want redesigned.",
+    "Optional, for Claude Code: Codex installed so Opus can call codex exec, or an OpenAI API key for the Images API (the bulk script needs OPENAI_API_KEY, and image calls cost API credit)."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "openai/codex"
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "https://x.com/Voxyz_ai/status/2118327475294097710",
+      "label": "Creator’s post with the prompt"
+    },
+    {
+      "type": "document",
+      "src": "https://x.com/Voxyz_ai/status/2118327476250407164",
+      "label": "Creator’s follow-up with the bulk image script prompt"
+    }
+  ],
+  "preview": {
+    "description": "A one-line Codex prompt for better-looking pages and games: an image model draws the redesign first, then the coding model implements what it drew. Includes a Claude Code prompt for a bulk image script.",
+    "images": [
+      {
+        "src": "media/image-first-flow.png",
+        "alt": "Diagram comparing direct coding (prompt, Sol or Astra writes code, then you see the design) with image-first (prompt, Images 2.6 drafts and refines the design, Sol or Astra implements it, then the page or game)",
+        "caption": "The creator's diagram: draw the design first, then code it",
+        "cover": true
+      }
+    ]
+  }
+}

@@ -188,6 +188,10 @@
     {
       "slug": "agentic-video-editing-rules-loop",
       "url": "./outcomes/agentic-video-editing-rules-loop/outcome.json"
+    },
+    {
+      "slug": "image-first-page-redesign-codex",
+      "url": "./outcomes/image-first-page-redesign-codex/outcome.json"
     }
   ]
 }
