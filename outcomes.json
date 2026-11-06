@@ -176,6 +176,10 @@
     {
       "slug": "ricksclips-style-cartoon-short",
       "url": "./outcomes/ricksclips-style-cartoon-short/outcome.json"
+    },
+    {
+      "slug": "escape-seedance-animated-short-workflow",
+      "url": "./outcomes/escape-seedance-animated-short-workflow/outcome.json"
     }
   ]
 }

@@ -1,0 +1,65 @@
+{
+  "schemaVersion": 4,
+  "slug": "escape-seedance-animated-short-workflow",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-11-05T12:20:06+00:00",
+  "author": {
+    "name": "Eian",
+    "url": "https://x.com/EianLu"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Claude (creator-reported; director, story, prompts, review, edit)",
+      "agent": "Claude Code",
+      "role": "execution"
+    },
+    {
+      "provider": "OpenAI",
+      "model": "Codex image generation (creator-reported; character sheets and first/last frames)",
+      "agent": "Codex",
+      "role": "execution"
+    },
+    {
+      "provider": "ByteDance",
+      "model": "Seedance 2.0 mini or 2.5 (creator-reported; frames to video)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code as the director, with Codex installed for images; FFmpeg and Python for the edit.",
+    "A Volcengine (Volcano Ark) account and ARK_API_KEY for Seedance, paid per second of video: about ¥0.5/s for 2.0 mini or ¥1.5/s for 2.5 at 720p, per the prompt."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "https://x.com/EianLu/status/2118317430665613741",
+      "label": "Creator’s article with the full workflow (Chinese)"
+    },
+    {
+      "type": "document",
+      "src": "https://x.com/EianLu/status/2117580488567406794",
+      "label": "Creator’s post with the film"
+    },
+    {
+      "type": "document",
+      "src": "https://x.com/EianLu/status/2118528649700028612",
+      "label": "Creator’s post: this film was made to test the workflow"
+    }
+  ],
+  "preview": {
+    "description": "Escape, a 138-second hand-drawn-style 2D animated short: Claude Code directs, Codex paints every shot's first and last frames, Seedance animates them in 5-second clips, and Claude edits with code. 20+ clips, one reshoot.",
+    "video": {
+      "src": "media/demo.mp4",
+      "poster": "media/poster.jpg",
+      "caption": "Escape by Eian, made with this workflow."
+    }
+  }
+}
