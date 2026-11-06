@@ -1,4 +1,4 @@
-<!-- Eian 的完整工作流提示词，按文章顺序。每一段在对应步骤发给 Claude Code（或 Codex）。 -->
+Eian 的完整工作流提示词，按文章顺序。每一段在对应步骤发给 Claude Code（或 Codex）。
 
 ## 0. 总导演设定（做视频前先发给 Claude/Codex）
 
