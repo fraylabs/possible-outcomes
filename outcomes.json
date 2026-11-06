@@ -180,6 +180,10 @@
     {
       "slug": "escape-seedance-animated-short-workflow",
       "url": "./outcomes/escape-seedance-animated-short-workflow/outcome.json"
+    },
+    {
+      "slug": "tiny-workers-inside-a-machine-blender-short",
+      "url": "./outcomes/tiny-workers-inside-a-machine-blender-short/outcome.json"
     }
   ]
 }

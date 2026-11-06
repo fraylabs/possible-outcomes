@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 4,
+  "slug": "tiny-workers-inside-a-machine-blender-short",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-11-05T23:52:40+00:00",
+  "author": {
+    "name": "ZEUS",
+    "url": "https://x.com/zeuuss_01"
+  },
+  "models": [
+    {
+      "provider": "Anthropic",
+      "model": "Claude (creator-reported)",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Blender, run from a Python script the agent writes; no downloaded assets.",
+    "A PC with a decent GPU to render 1080x1920 at 30 fps (the creator suggests asking Claude first whether yours can handle it)."
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "https://x.com/zeuuss_01/status/2118491721445126476",
+      "label": "Creator’s post with the prompt"
+    }
+  ],
+  "preview": {
+    "description": "A 35-45 second vertical 3D short made in Blender from Python: someone presses the button on an everyday machine, the camera dives inside, and a team of tiny capybara workers sketches, paints, dries and delivers the result by hand."
+  }
+}
