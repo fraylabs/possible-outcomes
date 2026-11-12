@@ -118,17 +118,13 @@
         "purpose": "Watch the remote preview render until it finished."
       },
       {
-        "name": "ToolSearch",
-        "purpose": "Load the job tool used to render previews and report the result."
-      },
-      {
         "name": "Possible job runner",
         "purpose": "Receive the brief, render the slide previews with LibreOffice on a remote machine and hand back the result."
       }
     ],
     "steps": [
       {
-        "title": "Hire Deck Maker with a three-part brief",
+        "title": "Give Deck Maker a three-part brief",
         "instructions": "Fill in the agent's brief: who the deck is for and what they should decide, the facts and numbers to use, and the length and look. The agent built, previewed and checked the deck without follow-ups.",
         "prompt": "Who is it for, and what should they decide? The owners' board of Hearth & Grain, a five-shop neighbourhood bakery chain, deciding whether to open a sixth shop with a central kitchen that supplies all six.\n\nThe facts and numbers to use (an illustrative scenario, not a real company):\n- Today: 5 shops, revenue SGD 4.2M/yr, 11% operating margin, each shop bakes on site.\n- Proposal: a central kitchen (SGD 650k fit-out) plus a sixth shop (SGD 280k), opening in 9 months.\n- Central baking cuts ingredient waste from 9% to 5% and frees 1.5 baker roles per shop.\n- Expected: revenue SGD 5.3M/yr in year 2, margin 14%; payback 26 months.\n- Main risks: delivery logistics before 6am, loss of \"baked here\" appeal, a 3-month dip during changeover.\n- Recommendation: approve, with a 2-shop pilot of central supply first.\n\nLength and look: eight slides, warm and simple: flour-white background, deep brown text, one wheat-gold accent. Editable charts."
       }

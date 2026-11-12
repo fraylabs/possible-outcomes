@@ -175,7 +175,7 @@
     {
       "type": "document",
       "src": "artifacts/docs/RUN_REPORT.md",
-      "label": "Cleanroom and independent review report",
+      "label": "Run and independent review report",
       "format": "Markdown"
     },
     {
@@ -368,7 +368,7 @@
     ],
     "steps": [
       {
-        "title": "Start the documented cleanroom run",
+        "title": "Start the documented run in a fresh workspace",
         "instructions": "Reconstructed workflow from the published prompt and available result artifacts; this is not a recorded sequence of agent turns. Give an isolated Codex agent the unchanged prompt, pinned Burr, CAD and KiStack skills, and an empty workspace, as recorded in the run report."
       },
       {

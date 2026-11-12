@@ -1,6 +1,6 @@
 # Positive-Locking Fold-Flat Travel Hanger
 
-This one-shot cleanroom result is a compact, parametric travel hanger with a linked positive-lock mechanism, five modeled fold poses, printable part exports, and a named Burr animation. It is published as a repair-required digital pre-build: the exact CAD evidence is strong, while Burr's tessellated interference result and every physical-performance claim remain unresolved.
+This one-shot result is a compact, parametric travel hanger with a linked positive-lock mechanism, five modeled fold poses, printable part exports, and a named Burr animation. It is published as a repair-required digital pre-build: the exact CAD evidence is strong, while Burr's tessellated interference result and every physical-performance claim remain unresolved.
 
 An isolated Codex agent received only the exact prompt in `prompt.md`, the Burr skill, its routed CAD provider, and an empty workspace. The parent agent did not supply an earlier hanger design or steer the run after it began.
 
@@ -30,4 +30,4 @@ No hanger was fabricated or physically tested. The geometry does not prove a 3 k
 
 Publication review also found that the generated assembly guide tells the builder to fit two compression springs over guide pegs, but the generated lock-bar source contains no guide pegs. The spring-loaded return and folded-retention assembly therefore cannot be built as documented. This source-level defect is preserved rather than silently repaired so the outcome remains an authentic one-shot result; see `artifacts/docs/PUBLICATION_REVIEW.md`.
 
-Extract the project archive, change into the extracted project root, and run `burr .`. Its sources and validation receipts remain editable and inspectable. The downloadable archive's motion configuration was migrated after the cleanroom run to Burr 0.34's single-source joint format; its CAD, original report, and validation receipts remain unchanged.
+Extract the project archive, change into the extracted project root, and run `burr .`. Its sources and validation receipts remain editable and inspectable. The downloadable archive's motion configuration was migrated after the run to Burr 0.34's single-source joint format; its CAD, original report, and validation receipts remain unchanged.

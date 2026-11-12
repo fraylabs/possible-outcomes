@@ -4,7 +4,7 @@ A few hundred ants leave the nest, wander, find the food you drop and carry it h
 
 ## How it was made
 
-An AI agent made this. Browser Game Maker, Possible's hireable agent running Claude Code with Claude Opus 5.5, got the three-line brief in this recipe and nothing else: a fresh, empty workspace and no follow-ups. It wrote the game, play-tested it headlessly on a remote Linux machine (17 checks covering mouse, touch, phone size, frame rate, ants stuck in walls and console errors, all passing) and recorded the preview itself. Possible recorded the session with `possible capture`. Nobody edited the code by hand.
+An AI agent made this. Browser Game Maker, a Possible skill run in Claude Code with Claude Opus 5.5, got the three-line brief in this recipe and nothing else: a fresh, empty workspace and no follow-ups. It wrote the game, play-tested it headlessly on a remote Linux machine (17 checks covering mouse, touch, phone size, frame rate, ants stuck in walls and console errors, all passing) and recorded the preview itself. Possible recorded the session with `possible capture`. Nobody edited the code by hand.
 
 ## What to know
 

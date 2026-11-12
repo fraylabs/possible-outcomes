@@ -67,19 +67,11 @@
       {
         "name": "Write",
         "purpose": "Write the report, the evidence bundle and the run notes."
-      },
-      {
-        "name": "ToolSearch",
-        "purpose": "Load the job tool used to hand back the result."
-      },
-      {
-        "name": "mcp__t3-code__turnless",
-        "purpose": "Receive the brief and hand back the result."
       }
     ],
     "steps": [
       {
-        "title": "Hire Competitor Analyst with a three-part brief",
+        "title": "Give Competitor Analyst a three-part brief",
         "instructions": "Fill in the agent's brief: the competitor, your product and who you sell to, and the decision you want to make. The agent collected public evidence, checked the citations and wrote the teardown and the playbook.",
         "prompt": "Competitor: agentmail.to\n\nOur product: actas.dev. It gives each AI agent its own identity: an email inbox on your domain, a vault for passwords and API keys, and authenticator (2FA) codes, with per-folder grants and an activity log. One plan, US$12/month or US$120/year. We sell to developers building browser and coding agents.\n\nDecision: which of AgentMail's channels and moves we should copy first. We have almost no marketing budget and no audience yet."
       }

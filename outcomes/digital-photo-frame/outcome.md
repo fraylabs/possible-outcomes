@@ -1,6 +1,6 @@
 # Seven-Inch Digital Photo Frame Pre-Build
 
-This one-shot cleanroom result combines a parametric enclosure, folding easel stand, exact-part KiCad schematic and four-layer PCB source, shared mechanical/electrical interfaces, and a named Burr motion in one inspectable project. It is published as an incomplete, repair-required digital pre-build because the PCB does not pass DRC/parity and the populated board could not truthfully be integrated.
+This one-shot result combines a parametric enclosure, folding easel stand, exact-part KiCad schematic and four-layer PCB source, shared mechanical/electrical interfaces, and a named Burr motion in one inspectable project. It is published as an incomplete, repair-required digital pre-build because the PCB does not pass DRC/parity and the populated board could not truthfully be integrated.
 
 An isolated Codex agent received only the exact prompt in `prompt.md`, the Burr skill, its routed CAD provider, the referenced KiStack skills, and an empty workspace. It did not see the hanger run, and the parent agent did not steer it after execution began.
 
@@ -30,4 +30,4 @@ This project does not claim working display operation, correct routing, fabricat
 
 Publication review identified additional source-level blockers: the stand barrel has no hinge-pin bore and is offset from the chassis hinge axis; the stated display mounting-hole pattern exceeds the stated display envelope; the USB-C sink does not detect or limit itself to the source-advertised current; schematic-to-PCB footprint parity is not fail-closed; and the electronics generator contains host-specific KiCad and Python paths. These defects are preserved rather than silently repaired so the outcome remains an authentic one-shot result; see `artifacts/docs/PUBLICATION_REVIEW.md`.
 
-Extract the project archive, change into the extracted project root, and run `burr .`. The electronics sources can be inspected with KiCad 10.0.6 or a compatible release. The downloadable archive's motion configuration was migrated after the cleanroom run to Burr 0.34's single-source joint format; its CAD, original report, and validation receipts remain unchanged.
+Extract the project archive, change into the extracted project root, and run `burr .`. The electronics sources can be inspected with KiCad 10.0.6 or a compatible release. The downloadable archive's motion configuration was migrated after the run to Burr 0.34's single-source joint format; its CAD, original report, and validation receipts remain unchanged.
