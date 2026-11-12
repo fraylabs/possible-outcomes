@@ -135,7 +135,7 @@
     "description": "A 58-second 9:16 launch film for possible.sh made entirely in code: big type on the beat, four real results, the nine skills and the price, with a score made in code.",
     "video": {
       "src": "media/preview.mp4",
-      "poster": "media/poster.png",
+      "poster": "media/poster-15s.png",
       "caption": "The finished film, exactly as the skill delivered it."
     }
   }
