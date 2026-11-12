@@ -1,0 +1,132 @@
+{
+  "schemaVersion": 4,
+  "slug": "a-river-did-this-grand-canyon",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-11-12T15:00:00+00:00",
+  "author": {
+    "name": "Possible",
+    "url": "https://possible.sh"
+  },
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "agent": "Claude Code",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code with the Procedural Film Maker skill",
+    "Python 3 with numpy, scipy, numba and moderngl (OpenGL), and ffmpeg; no browser needed"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "artifacts/ROUNDS.md",
+      "label": "Each scoring round, what it found and the fix",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/BAR.md",
+      "label": "The bar the stills were scored against",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/GUIDE.md",
+      "label": "How to run it and where to change shots, light and music",
+      "format": "markdown"
+    },
+    {
+      "type": "image",
+      "src": "artifacts/contact-sheet.png",
+      "label": "One frame every 6 seconds",
+      "format": "png"
+    }
+  ],
+  "preview": {
+    "description": "A 57-second 9:16 film of the Grand Canyon being cut, made entirely in code: terrain, water, light and sound, with every fact on screen.",
+    "video": {
+      "src": "media/preview.mp4",
+      "poster": "media/poster.png",
+      "caption": "The finished film, scaled down for the web; nothing else changed."
+    }
+  },
+  "recipe": {
+    "provenance": {
+      "method": "reconstructed"
+    },
+    "notes": [
+      "Rebuilt by Possible from the session log: every step prompt is the exact message sent; tool outputs are omitted.",
+      "Two restarts were the machine's, not the skill's."
+    ],
+    "agent": {
+      "name": "Claude Code"
+    },
+    "tools": [
+      {
+        "name": "Skill",
+        "purpose": "Load the Procedural Film Maker skill."
+      },
+      {
+        "name": "Agent",
+        "purpose": "Fresh reviewers scored each round's stills."
+      },
+      {
+        "name": "numpy",
+        "purpose": "Build and erode the terrain, make the sound."
+      },
+      {
+        "name": "scipy",
+        "purpose": "Shape the terrain and the sound."
+      },
+      {
+        "name": "moderngl",
+        "purpose": "Run the GLSL shaders on the GPU."
+      },
+      {
+        "name": "GLSL",
+        "purpose": "Ray-march the water, trees and sky for each frame."
+      },
+      {
+        "name": "ffmpeg",
+        "purpose": "Encode the film."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Fill in the skill's brief",
+        "instructions": "BRIEF.md in an empty folder that holds only the skill. These are the facts and the end line the film had to use.",
+        "prompt": "# Brief for the Procedural Film Maker\n\n## What place should it build?\n\nThe Grand Canyon, and the big story of it told in under a minute: a flat plateau, then a river cutting down through it over about five to six million years until it is a mile deep. Show the layered red and tan rock walls, the Colorado River at the bottom, the plateau rim. The film should feel like time-lapse of millions of years: the canyon deepening as we watch.\n\nFacts to put on screen (check them against a good source): about a mile (1.8 km) deep, about 277 miles (446 km) long, carved mostly by the Colorado River in about 5 to 6 million years, while the rocks in the walls are far older, up to nearly 2 billion years at the bottom.\n\n## Reference photos or a mood (optional)\n\nNo photos. Warm low sunlight, deep shadows in the canyon, not grey.\n\n## The film: length, aspect, pacing, music\n\n45 to 60 seconds, vertical 9:16 for X and phones. The claim in big words on screen in the very first second (for example \"A river did this.\"), and every fact also shown as words on screen, because most people watch with the sound off. Calm wind and water sounds and an epic score made in code, nothing bought. It must end on this one line on screen, exactly: \"Email, logins and 2FA codes for each of your AI agents. actas.dev\"\n"
+      },
+      {
+        "title": "Start the skill",
+        "instructions": "The one message that started the run. The agent worked, rendered and checked everything on the same laptop.",
+        "prompt": "Use the procedural-film-maker skill on BRIEF.md."
+      },
+      {
+        "title": "Restart after a machine restart",
+        "instructions": "The machine running the session restarted mid-render. Nothing in the project changed.",
+        "prompt": "Your last command was killed (exit 137) when the machine running this session restarted. Nothing else changed. Carry on."
+      },
+      {
+        "title": "Restart after a second machine restart",
+        "instructions": "The preview it had started finished while the session was down.",
+        "prompt": "The preview render finished: it wrote out/preview_540_round4.mp4 (log in out/cache/preview.log). Carry on."
+      },
+      {
+        "title": "Answer the agent's question",
+        "instructions": "After four rounds with scores far below its bar, the agent asked: render now, keep iterating, or both. The answer chose render now, and fixed one number.",
+        "prompt": "Thanks, I watched the preview and it works for me. Go with option 1: render the final 1080x1920 film now and say in your notes that it's below the photoreal bar. One fix first: the card 'Today it is about a mile deep (1.8 km)' mixes two facts. A mile is about 1.6 km, and 1.8 km is the deepest point. Make it say 'about a mile deep (1.6 km)'. Render on this machine as you have been."
+      }
+    ]
+  }
+}

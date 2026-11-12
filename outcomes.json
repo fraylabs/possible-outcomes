@@ -10,6 +10,10 @@
       "url": "./outcomes/possible-launch-film/outcome.json"
     },
     {
+      "slug": "a-river-did-this-grand-canyon",
+      "url": "./outcomes/a-river-did-this-grand-canyon/outcome.json"
+    },
+    {
       "slug": "how-granola-gets-customers",
       "url": "./outcomes/how-granola-gets-customers/outcome.json"
     },
