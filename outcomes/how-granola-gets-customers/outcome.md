@@ -127,6 +127,6 @@ Your playbook is ranked by expected impact per effort; counts below are proposed
 
 - [E23: Homepage history: first archived 2024-09-25, 26 monthly snapshots](https://web.archive.org/web/*/granola.ai)
 
-## How this outcome was made
+## How this result was made
 
-Possible’s Competitor Analyst instructions guided a Codex agent using GPT-6.1 Sol. One run researched these three products, built REM from source on Linux, read its harness, fetched public pages, checked citations and wrote the reports. The recipe was edited for reuse from a completed isolated session excerpt. No logins, contact, paid data keys or spend were used. This brief describes a hypothetical founder; the comparison should be rerun against your actual product.
+Possible’s Competitor Analyst instructions guided a Codex agent using GPT-6.1 Sol. One run researched these three products, built REM from source on Linux, read its harness, fetched public pages, checked citations and wrote the reports. The prompt was edited for reuse from a completed isolated session excerpt. No logins, contact, paid data keys or spend were used. This brief describes a hypothetical founder; the comparison should be rerun against your actual product.

@@ -4,7 +4,7 @@ A desk phone stand in two printed parts with no screws or glue: a solid 88 × 88
 
 ## How it was made
 
-An AI agent made this. Prototype Engineer, a Possible skill run in Claude Code with Claude Opus 5.5, got the brief in this recipe and nothing else: a fresh, empty workspace and no follow-ups. It wrote a parametric CadQuery model, then built, checked and rendered it on a remote Linux machine. The final build passed all 50 of its geometry checks: valid solids, no interference in either position, three phone sizes and a charging plug clear of the parts, footprint, bed size and overhangs. It dropped an earlier hinged-kickstand concept after its own statics showed the hinge would lift under a large phone. Possible recorded the session with `possible capture`. Nobody edited the model by hand.
+An AI agent made this. Prototype Engineer, a Possible skill run in Claude Code with Claude Opus 5.5, got the brief shown here and nothing else: a fresh, empty workspace and no follow-ups. It wrote a parametric CadQuery model, then built, checked and rendered it on a remote Linux machine. The final build passed all 50 of its geometry checks: valid solids, no interference in either position, three phone sizes and a charging plug clear of the parts, footprint, bed size and overhangs. It dropped an earlier hinged-kickstand concept after its own statics showed the hinge would lift under a large phone. Possible recorded the session with `possible capture`. Nobody edited the model by hand.
 
 ## What to know
 

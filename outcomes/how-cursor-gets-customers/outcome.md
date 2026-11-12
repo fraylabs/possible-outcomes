@@ -54,13 +54,13 @@ No systematic Reddit check was performed. Brand recommendations, founder partici
 
 REM found domain-related Hacker News submissions. This is a public discovery surface, but its sample includes discussion beyond official launches and supplies no conversion attribution. [E21]
 
-The community hub explicitly invites participation in meetups, cafes, hackathons and workshops, with examples from different cities. Likely practice with peers can help a coding tool become a routine. Neither attendance claims in curated posts nor the existence of events proves incremental acquisition. Product Hunt outcomes and launch conversion remain unknown. [E3, E9]
+The community hub explicitly invites participation in meetups, cafes, hackathons and workshops, with examples from different cities. Likely practice with peers can help a coding tool become a routine. Neither attendance claims in curated posts nor the existence of events proves incremental acquisition. Product Hunt results and launch conversion remain unknown. [E3, E9]
 
 ## Funnel & monetization
 
 The current pricing page exposes a free starting plan alongside individual, team and enterprise choices. The homepage leads with agent use and getting started; organizational buying has a contact path. Likely this separates hands-on evaluation from procurement needs. Pricing is a dated snapshot and this report avoids treating an older plan name or rate as current. [E1, E2]
 
-The NAB article is an example of enterprise proof built around a named organization and specific work. Its claimed outcomes are vendor-reported, with no independent causal attribution established in this run. [E4]
+The NAB article is an example of enterprise proof built around a named organization and specific work. Its claimed results are vendor-reported, with no independent causal attribution established in this run. [E4]
 
 ## Positioning over time
 
@@ -97,7 +97,7 @@ Your playbook is ranked by expected impact per effort for a small founder; exper
 
 - Ads, spend, channel conversion and retention: unknown; public libraries and your own cohort analytics are follow-up checks. [E9]
 - Search-demand volume and ranking contribution: unknown; no paid keyword data or unverifiable search-volume claim is used. [E9]
-- Social cadence, founder audience, Reddit and launch outcomes: not systematically checked. Review public sources before choosing one as the first channel. [E9]
+- Social cadence, founder audience, Reddit and launch results: not systematically checked. Review public sources before choosing one as the first channel. [E9]
 - Your own site could not be fetched because the brief is hypothetical and supplies no URL. Rerun with the actual funnel before making a competitive performance claim. [E9]
 
 ## Evidence sources
@@ -105,7 +105,7 @@ Your playbook is ranked by expected impact per effort for a small founder; exper
 - [E1: Homepage presents a software-building coding agent, interactive workflow demonstrations and start/download actions.](https://cursor.com/)
 - [E2: Pricing page exposes a free entry alongside individual, team and enterprise choices and a contact-sales route. Rates and features are a dated snapshot.](https://cursor.com/pricing)
 - [E3: Community hub invites participation in meetups, cafes, hackathons and workshops. Curated embedded posts show examples of local events.](https://cursor.com/community)
-- [E4: Vendor-published National Australia Bank story describes adoption and workflow outcomes at a named enterprise. It is not independently verified causal evidence.](https://cursor.com/blog/nab)
+- [E4: Vendor-published National Australia Bank story describes adoption and workflow results at a named enterprise. It is not independently verified causal evidence.](https://cursor.com/blog/nab)
 - [E5: Customer topic archive links repeated named-company stories and concrete workflows.](https://cursor.com/blog/topic/customers)
 - [E6: Robots permits general public crawling and restricts various application, settings and documentation paths.](https://cursor.com/robots.txt)
 - [E7: Public XML sitemap lists product and content pages.](https://cursor.com/sitemap.xml)
@@ -115,6 +115,6 @@ Your playbook is ranked by expected impact per effort for a small founder; exper
 - [E22: Ad/attribution pixels: Meta Pixel, Google Ads conversion tag, TikTok Pixel, LinkedIn Insight Tag, Reddit Pixel, Snap Pixel, Google Floodlight / DV360](https://cursor.com)
 - [E23: Homepage history: first archived 1996-11-01, 180 monthly snapshots](https://web.archive.org/web/*/cursor.com)
 
-## How this outcome was made
+## How this result was made
 
-Possible’s Competitor Analyst instructions guided a Codex agent using GPT-6.1 Sol. One run researched these three products, built REM from source on Linux, read its harness, fetched public pages, checked citations and wrote the reports. The recipe was edited for reuse from a completed isolated session excerpt. No logins, contact, paid data keys or spend were used. This brief describes a hypothetical founder; the comparison should be rerun against your actual product.
+Possible’s Competitor Analyst instructions guided a Codex agent using GPT-6.1 Sol. One run researched these three products, built REM from source on Linux, read its harness, fetched public pages, checked citations and wrote the reports. The prompt was edited for reuse from a completed isolated session excerpt. No logins, contact, paid data keys or spend were used. This brief describes a hypothetical founder; the comparison should be rerun against your actual product.

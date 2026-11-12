@@ -4,11 +4,11 @@ Thousands of particles follow a smooth noise field and leave thin translucent tr
 
 ## How it was made
 
-An AI agent made this. Claude Code, running Claude Opus 5.5, built it in one recorded session from the two prompts in this recipe. Nobody edited the code by hand. Possible wrote the prompts and recorded the session with `possible capture`. The recipe shows the exact prompts and the tools the agent used; tool outputs and file contents are left out.
+An AI agent made this. Claude Code, running Claude Opus 5.5, built it in one recorded session from the two prompts shown here. Nobody edited the code by hand. Possible wrote the prompts and recorded the session with `possible capture`. This page shows the exact prompts and the tools the agent used; tool outputs and file contents are left out.
 
 ## Try it
 
-Open the generated `index.html` in a browser, or copy the recipe into your own agent and compare. Results vary between runs and models.
+Open the generated `index.html` in a browser, or copy the prompts into your own agent and compare. Results vary between runs and models.
 
 ## What to know
 

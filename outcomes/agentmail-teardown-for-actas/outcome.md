@@ -4,7 +4,7 @@ A public-evidence teardown of AgentMail (agentmail.to), the email API for AI age
 
 ## How it was made
 
-An AI agent made this. Competitor Analyst, a Possible skill run in Claude Code with Claude Opus 5.5, got the three-line brief in this recipe and nothing else from the buyer. It ran the open-source reverse-engineer-marketing (REM) harness on the competitor, fetched 25 more public pages by hand, fetched the customer's own site the same way, and checked that all 216 citations in the report resolve to the evidence bundle. Possible recorded the session with `possible capture`. Nobody edited the report by hand.
+An AI agent made this. Competitor Analyst, a Possible skill run in Claude Code with Claude Opus 5.5, got the three-line brief shown here and nothing else from the buyer. It ran the open-source reverse-engineer-marketing (REM) harness on the competitor, fetched 25 more public pages by hand, fetched the customer's own site the same way, and checked that all 216 citations in the report resolve to the evidence bundle. Possible recorded the session with `possible capture`. Nobody edited the report by hand.
 
 ## What to know
 

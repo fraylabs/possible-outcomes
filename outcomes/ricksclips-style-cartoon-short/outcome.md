@@ -12,6 +12,6 @@ By [trey](https://x.com/treyscalez). [See the original post](https://x.com/treys
 
 ## What to know
 
-You need a voiceover; the creator says that and Claude are all it takes, with $0 spent on images or video. We haven't run the prompt ourselves. The style follows the ricksclips channel; this Outcome isn't affiliated with it, and the prompt asks for an original story, characters and jokes, never a shot-for-shot copy.
+You need a voiceover; the creator says that and Claude are all it takes, with $0 spent on images or video. We haven't run the prompt ourselves. The style follows the ricksclips channel; this result isn't affiliated with it, and the prompt asks for an original story, characters and jokes, never a shot-for-shot copy.
 
 **Model provenance:** Claude Opus 5.5 is reported by the creator. Possible verified the source pairing and media presentation, not an independent generation. The preview is the creator's video at 720p, copied without re-encoding. Creator media is excluded from the repository's MIT license; the original post remains linked.

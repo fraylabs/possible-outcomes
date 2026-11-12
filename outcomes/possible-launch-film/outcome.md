@@ -4,7 +4,7 @@ A 58-second vertical launch film for possible.sh, made entirely in code. The cla
 
 ## How it was made
 
-The Motion Designer skill, run in Claude Code with Claude Opus 5.5, got the brief in this recipe and nothing else. It planned the film as states, drew every frame with Pillow, made the music with NumPy and SciPy, and had fresh reviewers score contact sheets for three rounds. It measured brand colour, timing and loudness in the source frames and again in the encoded file. Its own checks caught a missing colour tag in the first encode, and it fixed that. Nobody edited the film by hand.
+The Motion Designer skill, run in Claude Code with Claude Opus 5.5, got the brief shown here and nothing else. It planned the film as states, drew every frame with Pillow, made the music with NumPy and SciPy, and had fresh reviewers score contact sheets for three rounds. It measured brand colour, timing and loudness in the source frames and again in the encoded file. Its own checks caught a missing colour tag in the first encode, and it fixed that. Nobody edited the film by hand.
 
 Recorded: made by the Motion Designer skill in a clean folder holding only the skill and a brief, 12 November 2026.
 

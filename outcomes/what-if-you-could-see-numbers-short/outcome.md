@@ -12,6 +12,6 @@ By [Singh](https://x.com/singhscales). [See the original post](https://x.com/sin
 
 ## What to know
 
-The creator says it cost $0 and that every frame is code. We haven't run the prompt ourselves or inspected his source. The style follows the popular "What If You Could See" channels; this Outcome isn't affiliated with any of them, and the prompt bans their logos.
+The creator says it cost $0 and that every frame is code. We haven't run the prompt ourselves or inspected his source. The style follows the popular "What If You Could See" channels; this result isn't affiliated with any of them, and the prompt bans their logos.
 
 **Model provenance:** Claude Opus is reported by the creator, with no version given. Possible verified the source pairing and media presentation, not an independent generation. The preview is the creator's video, copied without re-encoding. Creator media is excluded from the repository's MIT license; the original post remains linked.

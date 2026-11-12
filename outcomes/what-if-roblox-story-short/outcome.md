@@ -12,6 +12,6 @@ By [Finn](https://x.com/finnardley). [See the original post](https://x.com/finna
 
 ## What to know
 
-The creator says he recreated the format with Claude Opus for $0, in full code. We haven't run the prompt ourselves or inspected his source. Roblox is a trademark of its owner; this Outcome isn't affiliated with or endorsed by Roblox, and the prompt bans real logos and real creators' characters.
+The creator says he recreated the format with Claude Opus for $0, in full code. We haven't run the prompt ourselves or inspected his source. Roblox is a trademark of its owner; this result isn't affiliated with or endorsed by Roblox, and the prompt bans real logos and real creators' characters.
 
 **Model provenance:** Claude Opus is reported by the creator, with no version given. Possible verified the source pairing and media presentation, not an independent generation. The preview is a re-encoded copy of the creator's video, smaller for playback. Creator media is excluded from the repository's MIT license; the original post remains linked.

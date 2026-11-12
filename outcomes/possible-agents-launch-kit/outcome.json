@@ -30,7 +30,7 @@
       "method": "recorded",
       "source": "claude-code",
       "reviewedAt": "2026-10-17T08:52:39.345Z",
-      "reviewDigest": "e0c328a1a92d590bf9a727dcf292ae613d543f4992aa421daedbd5d52994113e",
+      "reviewDigest": "8dba45240b81e3c5f392b2bc8cc323ac5a3a09601bb921bbeddd73887bb0d14d",
       "files": [
         {
           "path": "artifacts/COPY_INSTAGRAM.md",

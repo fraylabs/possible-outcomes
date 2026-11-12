@@ -4,7 +4,7 @@ Everything needed to launch a product on social and email, made from one brief: 
 
 ## How it was made
 
-An AI agent made this. Launch Marketer, a Possible skill run in Claude Code with Claude Opus 5.5, got the brief in this recipe and nothing else: a fresh, empty workspace and no follow-ups. It designed the images and film in HTML and CSS, rendered them headlessly on a remote Linux machine and encoded the film with ffmpeg. Possible recorded the session with `possible capture`. Nobody edited the output by hand.
+An AI agent made this. Launch Marketer, a Possible skill run in Claude Code with Claude Opus 5.5, got the brief shown here and nothing else: a fresh, empty workspace and no follow-ups. It designed the images and film in HTML and CSS, rendered them headlessly on a remote Linux machine and encoded the film with ffmpeg. Possible recorded the session with `possible capture`. Nobody edited the output by hand.
 
 ## What to know
 

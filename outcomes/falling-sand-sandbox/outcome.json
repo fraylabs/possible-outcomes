@@ -31,7 +31,7 @@
       "method": "recorded",
       "source": "claude-code",
       "reviewedAt": "2026-10-05T08:18:07.305Z",
-      "reviewDigest": "a8218b15f4393d34f13f8515322bd7bd3a30587e90d02b81458e9da69cc2ddf3",
+      "reviewDigest": "c3a22ae51444f6e60c2a2c8cb93b6a8377702fa457e5ef0eb458aafc2dfd2155",
       "files": [
         {
           "path": "artifacts/index.html",

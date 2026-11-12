@@ -12,4 +12,4 @@ The prompt asks Claude to remake an earlier version of the video ([original post
 
 ## What to know
 
-The recipe below is reconstructed from the creator's prompt and posts, not a recorded session. Model and tools are creator-reported; Possible did not rerun it. The prompt refers to the creator's own folders, skills and API keys, so you need your own equivalents. The preview is a 20-second excerpt of the creator's video; watch the full video at the original post.
+The prompt below is reconstructed from the creator's prompt and posts, not a recorded session. Model and tools are creator-reported; Possible did not rerun it. The prompt refers to the creator's own folders, skills and API keys, so you need your own equivalents. The preview is a 20-second excerpt of the creator's video; watch the full video at the original post.

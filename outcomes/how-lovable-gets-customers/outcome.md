@@ -94,7 +94,7 @@ Your playbook, ranked by expected impact per effort for this brief; numbers are 
 
 - Paid activity and spend: unknown; inspect public ad libraries before drawing conclusions. [E9]
 - Search volume, rankings and traffic contribution: not measured; use first-party search performance after shipping these pages. No numeric search-demand claim is made here. [E9]
-- Founder/social reach, Reddit activity and launch outcomes: not measured; public profile and discussion review is a follow-up, without login. [E9]
+- Founder/social reach, Reddit activity and launch results: not measured; public profile and discussion review is a follow-up, without login. [E9]
 - Your own funnel cannot be fetched because this brief describes a hypothetical prototype with no URL; replace the assumptions and rerun against your live site. [E9]
 
 ## Evidence sources
@@ -111,6 +111,6 @@ Your playbook, ranked by expected impact per effort for this brief; numbers are 
 - [E21: Hacker News: 54 submissions, best 167 points, has Show HN launch](https://hn.algolia.com/?query=lovable.dev)
 - [E23: Homepage history: first archived 2021-12-16, 34 monthly snapshots](https://web.archive.org/web/*/lovable.dev)
 
-## How this outcome was made
+## How this result was made
 
-Possible’s Competitor Analyst instructions guided a Codex agent using GPT-6.1 Sol. One run researched these three products, built REM from source on Linux, read its harness, fetched public pages, checked citations and wrote the reports. The recipe was edited for reuse from a completed isolated session excerpt. No logins, contact, paid data keys or spend were used. This brief describes a hypothetical founder; the comparison should be rerun against your actual product.
+Possible’s Competitor Analyst instructions guided a Codex agent using GPT-6.1 Sol. One run researched these three products, built REM from source on Linux, read its harness, fetched public pages, checked citations and wrote the reports. The prompt was edited for reuse from a completed isolated session excerpt. No logins, contact, paid data keys or spend were used. This brief describes a hypothetical founder; the comparison should be rerun against your actual product.

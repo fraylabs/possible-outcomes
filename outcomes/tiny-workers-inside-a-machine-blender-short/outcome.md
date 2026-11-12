@@ -12,6 +12,6 @@ By [ZEUS](https://x.com/zeuuss_01). [See the original post](https://x.com/zeuuss
 
 ## What to know
 
-The prompt recreates the style of a popular Instagram account of 3D shorts; the video in the creator's post is that account's reel, not an output of this prompt, so we don't show it here. We haven't run the prompt ourselves. Rendering needs a capable GPU. This Outcome isn't affiliated with that account or with Roblox, and the prompt asks for a story that is never a copy of an existing video.
+The prompt recreates the style of a popular Instagram account of 3D shorts; the video in the creator's post is that account's reel, not an output of this prompt, so we don't show it here. We haven't run the prompt ourselves. Rendering needs a capable GPU. This result isn't affiliated with that account or with Roblox, and the prompt asks for a story that is never a copy of an existing video.
 
 **Model provenance:** Claude is reported by the creator, with no version given. Possible verified the source pairing, not an independent generation. There is no preview media; the original post remains linked.

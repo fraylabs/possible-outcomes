@@ -32,7 +32,7 @@
       "method": "recorded",
       "source": "claude-code",
       "reviewedAt": "2026-10-18T20:06:00.646Z",
-      "reviewDigest": "64e1cdf2f2b2e756915318bb267af316bd492ea2fc5ebc104e1a3783e53f27b0",
+      "reviewDigest": "e3f49307e3ed5e905c710e7c1a0985782e2e9c83574214c4e92b2a506f6e2ece",
       "files": [
         {
           "path": "artifacts/NOTES.md",

@@ -4,7 +4,7 @@ An eight-slide board deck for Hearth & Grain, an illustrative five-shop bakery c
 
 ## How it was made
 
-An AI agent made this. Deck Maker, a Possible skill run in Claude Code with Claude Opus 5.5, got the brief in this recipe and nothing else: a fresh, empty workspace and no follow-ups. It built the deck with python-pptx, rendered slide previews with LibreOffice on a remote Linux machine, and fixed what it saw before handing it back. Possible recorded the session with `possible capture`. Nobody edited the deck by hand.
+An AI agent made this. Deck Maker, a Possible skill run in Claude Code with Claude Opus 5.5, got the brief shown here and nothing else: a fresh, empty workspace and no follow-ups. It built the deck with python-pptx, rendered slide previews with LibreOffice on a remote Linux machine, and fixed what it saw before handing it back. Possible recorded the session with `possible capture`. Nobody edited the deck by hand.
 
 ## What to know
 
