@@ -14,6 +14,10 @@
       "url": "./outcomes/a-river-did-this-grand-canyon/outcome.json"
     },
     {
+      "slug": "tacoma-narrows-bridge-lesson",
+      "url": "./outcomes/tacoma-narrows-bridge-lesson/outcome.json"
+    },
+    {
       "slug": "how-granola-gets-customers",
       "url": "./outcomes/how-granola-gets-customers/outcome.json"
     },

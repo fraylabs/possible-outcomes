@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 4,
+  "slug": "tacoma-narrows-bridge-lesson",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-11-12T16:00:00+00:00",
+  "author": {
+    "name": "Possible",
+    "url": "https://possible.sh"
+  },
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "agent": "Claude Code",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code with the Animated Shorts Maker skill",
+    "Node.js with Remotion and three.js (renders in headless Chrome), Python 3 with numpy, scipy, pyloudnorm and faster-whisper, ffmpeg, and the macOS say voice"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "artifacts/SCRIPT.md",
+      "label": "The script, with a source for every fact",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/ROUNDS.md",
+      "label": "Each scoring round, its scores and the fixes",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/STYLE_BIBLE.md",
+      "label": "The look, in numbers",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/CHECKS.md",
+      "label": "Every check on the shipped file, and the ones not run",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/GUIDE.md",
+      "label": "How to render it and where to change story, voice, colours, camera and music",
+      "format": "markdown"
+    },
+    {
+      "type": "image",
+      "src": "artifacts/contact-sheet.png",
+      "label": "One frame every 4 seconds",
+      "format": "png"
+    }
+  ],
+  "preview": {
+    "description": "A 59-second 9:16 cartoon lesson on the Tacoma Narrows Bridge collapse, made entirely in code: characters, 3D world, voice timing, sound and score.",
+    "video": {
+      "src": "media/preview.mp4",
+      "poster": "media/poster.png",
+      "caption": "The finished film, scaled down for the web; nothing else changed."
+    }
+  },
+  "recipe": {
+    "provenance": {
+      "method": "reconstructed"
+    },
+    "notes": [
+      "Rebuilt by Possible from the session log: every step prompt is the exact message sent; tool outputs are omitted."
+    ],
+    "agent": {
+      "name": "Claude Code"
+    },
+    "tools": [
+      {
+        "name": "Skill",
+        "purpose": "Load the Animated Shorts Maker skill."
+      },
+      {
+        "name": "Agent",
+        "purpose": "Fresh reviewers scored each round's stills."
+      },
+      {
+        "name": "Remotion",
+        "purpose": "Time every shot and render the frames."
+      },
+      {
+        "name": "three.js",
+        "purpose": "Build the 3D bridge, water and land."
+      },
+      {
+        "name": "say",
+        "purpose": "Speak the script in the Samantha voice."
+      },
+      {
+        "name": "faster-whisper",
+        "purpose": "Time each spoken word."
+      },
+      {
+        "name": "numpy",
+        "purpose": "Synthesize the effects and the score."
+      },
+      {
+        "name": "ffmpeg",
+        "purpose": "Mix, encode and check the film."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Fill in the skill's brief",
+        "instructions": "BRIEF.md in an empty folder that holds only the skill. These are the facts, the house rules and the end line the film had to use.",
+        "prompt": "# Brief for the Animated Shorts Maker\n\n## Story topic and the facts to cover\n\nA short lesson: why the Tacoma Narrows Bridge twisted itself apart on 7 November 1940, four months after it opened. A steady wind of about 40 mph, not a storm, set the deck twisting until it broke. Teach the one idea behind it (the wind fed the twisting, each twist made the next push stronger, often called flutter) with an everyday analogy. The only life lost was a dog, Tubby, left in a car on the bridge. What changed after: bridges are tested in wind tunnels before they're built. Check every fact against a good source.\n\nIt's for X (and maybe YouTube Shorts). It must end on this one line on screen, exactly: \"Email, logins and 2FA codes for each of your AI agents. actas.dev\"\n\n## Reference shorts you have the right to study, or a look to choose\n\nNo references. Pick a look.\n\n## Voice, language and house rules\n\nEnglish. I don't have a voice recording; use the Mac's built-in `say` voice (free) unless you have a better free option. Nothing paid. Many people watch with sound off, so put the main claim in words on screen in the first second and keep every point readable on screen as captions. 45 to 60 seconds, 9:16. Quiet music under the voice.\n\n## Open items (added by the Animated Shorts Maker, waiting for the buyer)\n\n1. Look: pick A, B or C (see below). No references, so the chosen look is written straight into STYLE_BIBLE.md.\n   - A. Storybook diorama: soft 1940s Pacific Northwest dawn, painted Canvas2D textures, thick warm-brown ink outlines, gentle tilt-shift blur, a muted teal/rust/cream palette.\n   - B. Bold flat toon: clean cel shading, black variable-width outlines, saturated sky blue/safety orange/deep green, crisp depth with little blur. Punchy and readable on small screens.\n   - C. Moody newsreel-toon: overcast grey-green sky, desaturated grade with one warm accent (Gertie's green girders, the red car), heavier fog and lens blur, a serious tone.\n2. Voice: Samantha (US, script runs 54.6 s) or Daniel (UK, 58.5 s; I'd speed it up to fit 60 s with the end card). Samples are in voice_tests/.\n3. Should the voice read the final actas.dev line, or should it be a silent on-screen card with music only? (The draft has it silent.)\n4. Script approval: SCRIPT.md.\n"
+      },
+      {
+        "title": "Start the skill",
+        "instructions": "The one message that started the run. The machine running the agent was not allowed to open a browser, so every render was handed off as a command.",
+        "prompt": "Use the animated-shorts-maker skill on BRIEF.md. One rule about my machine: nothing may launch a browser here (no Chrome, Chromium, Remotion render or Puppeteer run on this computer; installing packages is fine). Whenever you need anything rendered (stills, sheets or the final film), write the exact shell command to run from this folder into RENDER.md, say which output files you need back, and stop. I will run it unchanged on another machine and put the outputs back in the same paths."
+      },
+      {
+        "title": "Answer the agent's four questions",
+        "instructions": "It asked for a look (A, B or C), a voice, whether the end line is voiced or a silent card, and approval of SCRIPT.md.",
+        "prompt": "1. B, bold flat toon. 2. Samantha. 3. Silent card with music, text exactly as written. 4. Yes, the script is approved as written. Go ahead, and remember the rule about no browser on this machine: write the command in RENDER.md and stop when you need a render."
+      },
+      {
+        "title": "Return the round 1 stills",
+        "instructions": "Its RENDER.md command for round 1 was run unchanged on another machine and the output put back in place.",
+        "prompt": "The round 1 stills are back in stills/r1, with log.txt and timing.txt, rendered unchanged on the render machine (exit 0). Carry on."
+      },
+      {
+        "title": "Return the round 2 stills",
+        "instructions": "Its RENDER.md command for round 2 was run unchanged on another machine and the output put back in place.",
+        "prompt": "The round 2 stills are back in stills/r2, with log.txt and timing.txt, rendered unchanged on the render machine (exit 0). Carry on."
+      },
+      {
+        "title": "Return the round 3 stills",
+        "instructions": "Its RENDER.md command for round 3 was run unchanged on another machine and the output put back in place.",
+        "prompt": "The round 3 stills are back in stills/r3, with log.txt and timing.txt, rendered unchanged on the render machine (exit 0). Carry on."
+      },
+      {
+        "title": "Return the round 4 stills",
+        "instructions": "Its RENDER.md command for round 4 was run unchanged on another machine and the output put back in place.",
+        "prompt": "The round 4 stills rendered on my machine exactly as you asked. They're in stills/r4 (37 frames plus log.txt). Carry on from here as your skill says."
+      },
+      {
+        "title": "Return the round 5 stills",
+        "instructions": "Its RENDER.md command for round 5 was run unchanged on another machine and the output put back in place.",
+        "prompt": "Round 5 stills rendered on my machine exactly as you asked. They're in stills/r5 (37 frames plus log.txt and timing.txt). Carry on from here as your skill says."
+      },
+      {
+        "title": "Return the round 6 stills",
+        "instructions": "Its RENDER.md command for round 6 was run unchanged on another machine and the output put back in place.",
+        "prompt": "Round 6 stills rendered on my machine exactly as you asked. They're in stills/r6 (37 frames plus log.txt and timing.txt). Carry on from here as your skill says."
+      },
+      {
+        "title": "Return the final render",
+        "instructions": "Its final render command ran unchanged on another machine in 34 minutes. The agent then added the sound and checked every frame itself.",
+        "prompt": "Final render done on my machine with your command unchanged. out/video_silent.mp4, out/poster.png, out/render_log.txt and out/render_timing.txt are in place. Carry on as your skill says."
+      }
+    ]
+  }
+}
