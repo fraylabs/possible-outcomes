@@ -30,8 +30,8 @@
     "provenance": {
       "method": "recorded",
       "source": "codex",
-      "reviewedAt": "2026-10-21T03:09:09.394Z",
-      "reviewDigest": "73f441c6111329146537a64067f47789707440b12318c72b6077ad9350719a83",
+      "reviewedAt": "2026-11-12T16:53:02.459Z",
+      "reviewDigest": "1f89e1a37a0c89eb62ea16966ffdfd44de4a9c96380c30860b0d57cd3ae685b2",
       "files": [
         {
           "path": "artifacts/NOTES.md",
@@ -47,6 +47,11 @@
           "path": "artifacts/report.md",
           "size": 9809,
           "sha256": "82106a9d863cfdd810a21168c47b85e754cff4841819b49f80243dea6e675c5e"
+        },
+        {
+          "path": "media/report-first-page.png",
+          "size": 113578,
+          "sha256": "e0f5efedf34bfc401d8b0bf0d1a369686ac3b0573c8a54090397064cdad1a90b"
         }
       ]
     },
@@ -99,5 +104,15 @@
       "label": "Run notes, source availability and privacy edits",
       "format": "markdown"
     }
-  ]
+  ],
+  "preview": {
+    "images": [
+      {
+        "src": "media/report-first-page.png",
+        "alt": "The first page of the report.md the skill wrote: 'How Lovable gets customers', with its one-line verdict, TL;DR and channel scorecard",
+        "caption": "The first page of report.md, the file the skill delivered, set as a page. The full report and evidence are below.",
+        "cover": true
+      }
+    ]
+  }
 }

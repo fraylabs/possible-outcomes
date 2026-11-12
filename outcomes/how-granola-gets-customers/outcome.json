@@ -30,8 +30,8 @@
     "provenance": {
       "method": "recorded",
       "source": "codex",
-      "reviewedAt": "2026-10-21T03:09:36.288Z",
-      "reviewDigest": "810028a7a514f6118b6baa6fca7a8c381fdbcaee6bbdbf3b636481c0013233b1",
+      "reviewedAt": "2026-11-12T16:53:02.466Z",
+      "reviewDigest": "85f63b052ca4ad81d6e4f5a49f3428c18d5d76fddf009ac5ffc7a95871067a38",
       "files": [
         {
           "path": "artifacts/NOTES.md",
@@ -47,6 +47,11 @@
           "path": "artifacts/report.md",
           "size": 10714,
           "sha256": "71d38f0ad07b955b021c7951cb481462d9b5ed2e2b895eaef8de716505e49ee5"
+        },
+        {
+          "path": "media/report-first-page.png",
+          "size": 111722,
+          "sha256": "c6fb6498d7d3775283cd8bbf616eda14329b727180f8e34774d3cec5c449ac19"
         }
       ]
     },
@@ -99,5 +104,15 @@
       "label": "Run notes, source availability and privacy edits",
       "format": "markdown"
     }
-  ]
+  ],
+  "preview": {
+    "images": [
+      {
+        "src": "media/report-first-page.png",
+        "alt": "The first page of the report.md the skill wrote: 'How Granola gets customers', with its one-line verdict, TL;DR and channel scorecard",
+        "caption": "The first page of report.md, the file the skill delivered, set as a page. The full report and evidence are below.",
+        "cover": true
+      }
+    ]
+  }
 }

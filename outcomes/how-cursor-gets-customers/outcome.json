@@ -30,8 +30,8 @@
     "provenance": {
       "method": "recorded",
       "source": "codex",
-      "reviewedAt": "2026-10-21T03:09:09.664Z",
-      "reviewDigest": "f745a76b776d1847c7ff22d0847b4a80404e7c3e428a797e1a33ba632834cd2d",
+      "reviewedAt": "2026-11-12T16:53:02.463Z",
+      "reviewDigest": "69b915991602fad6df300d6b519c5619f3b894e460445126babe94575e3ac5d0",
       "files": [
         {
           "path": "artifacts/NOTES.md",
@@ -47,6 +47,11 @@
           "path": "artifacts/report.md",
           "size": 10152,
           "sha256": "ed8f0d0a3df4b3732f31afca740506f6c4277ca73b3afb985e49a861f08d8145"
+        },
+        {
+          "path": "media/report-first-page.png",
+          "size": 112531,
+          "sha256": "c211d270cc972683d8bff339ccddcbf7f634cff24fa0a4ad95b60edbaa549014"
         }
       ]
     },
@@ -99,5 +104,15 @@
       "label": "Run notes, source availability and privacy edits",
       "format": "markdown"
     }
-  ]
+  ],
+  "preview": {
+    "images": [
+      {
+        "src": "media/report-first-page.png",
+        "alt": "The first page of the report.md the skill wrote: 'How Cursor gets customers', with its one-line verdict, TL;DR and channel scorecard",
+        "caption": "The first page of report.md, the file the skill delivered, set as a page. The full report and evidence are below.",
+        "cover": true
+      }
+    ]
+  }
 }

@@ -30,8 +30,8 @@
     "provenance": {
       "method": "recorded",
       "source": "claude-code",
-      "reviewedAt": "2026-10-19T08:12:03.760Z",
-      "reviewDigest": "84559e453715a4213ac628c47cbd12b7b5e69d69db03d053831330d57bd85e3d",
+      "reviewedAt": "2026-11-12T16:53:02.453Z",
+      "reviewDigest": "d412aa798aec412233e7e668611c0f639108a932a886f905dd7e0bfa4985e739",
       "files": [
         {
           "path": "artifacts/evidence.json",
@@ -42,6 +42,11 @@
           "path": "artifacts/report.md",
           "size": 17925,
           "sha256": "d3d8020c330c0b7bc5aa9daa7b35727bf971058665550b38132b48db06a46e9c"
+        },
+        {
+          "path": "media/report-first-page.png",
+          "size": 171749,
+          "sha256": "882bea1713bdac616f88fcafbaaad87354f33b5116d204a8556fa58cf2be77ed"
         }
       ]
     },
@@ -90,5 +95,15 @@
       "label": "The evidence bundle: every fact in the report cites an entry here (E1 to E36) with its URL and fetch time",
       "format": "json"
     }
-  ]
+  ],
+  "preview": {
+    "images": [
+      {
+        "src": "media/report-first-page.png",
+        "alt": "The first page of the report.md the skill wrote: 'How AgentMail gets customers', with its one-line verdict, TL;DR and channel scorecard",
+        "caption": "The first page of report.md, the file the skill delivered, set as a page. The full report and evidence are below.",
+        "cover": true
+      }
+    ]
+  }
 }
