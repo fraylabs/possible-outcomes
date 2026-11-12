@@ -6,6 +6,10 @@
   },
   "outcomes": [
     {
+      "slug": "possible-launch-film",
+      "url": "./outcomes/possible-launch-film/outcome.json"
+    },
+    {
       "slug": "how-granola-gets-customers",
       "url": "./outcomes/how-granola-gets-customers/outcome.json"
     },

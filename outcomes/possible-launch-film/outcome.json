@@ -1,0 +1,142 @@
+{
+  "schemaVersion": 4,
+  "slug": "possible-launch-film",
+  "files": {
+    "about": "outcome.md",
+    "prompt": "prompt.md"
+  },
+  "authoredAt": "2026-11-12T13:40:00+00:00",
+  "author": {
+    "name": "Possible",
+    "url": "https://possible.sh"
+  },
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-opus-5-5",
+      "agent": "Claude Code",
+      "role": "execution"
+    }
+  ],
+  "requirements": [
+    "Claude Code with the Motion Designer skill",
+    "Python 3.9 or newer and ffmpeg to render; no browser needed"
+  ],
+  "primary": {
+    "kind": "product",
+    "id": "anthropic/claude"
+  },
+  "recipe": {
+    "provenance": {
+      "method": "reconstructed"
+    },
+    "notes": [
+      "Rebuilt by Possible from the session log: every step prompt is the exact message sent; tool outputs are omitted.",
+      "Render commands were run unchanged by the person giving the brief, and the files were put back in the same paths.",
+      "One hand-back message was stopped within a minute because its wording was unclear, and re-sent; only the re-sent version is shown."
+    ],
+    "agent": {
+      "name": "Claude Code"
+    },
+    "tools": [
+      {
+        "name": "Skill",
+        "purpose": "Load the Motion Designer skill."
+      },
+      {
+        "name": "Read",
+        "purpose": "Read the brief, the reference images, the review sheets and the check results."
+      },
+      {
+        "name": "Write",
+        "purpose": "Write the film source, STATES.md, the render script and the reports."
+      },
+      {
+        "name": "Agent",
+        "purpose": "Fresh reviewers scored each round's contact sheets."
+      },
+      {
+        "name": "PIL",
+        "purpose": "Draw every frame and the contact sheets."
+      },
+      {
+        "name": "numpy",
+        "purpose": "Make the music and sound, and measure colour."
+      },
+      {
+        "name": "scipy",
+        "purpose": "Shape the sound."
+      },
+      {
+        "name": "ffprobe",
+        "purpose": "Check the encoded film's streams and colour tags."
+      }
+    ],
+    "steps": [
+      {
+        "title": "Fill in the skill's brief",
+        "instructions": "BRIEF.md in an empty folder that holds only the skill. These are the exact facts the film may use.",
+        "prompt": "# Brief for the Motion Designer\n\n## What is the film for, and the facts: exact copy, logos, brand colours as hex\n\nA launch film for Possible (possible.sh): a site where you see real things AI agents made, with the exact prompt behind each one, and can buy the agents that make them. Exact copy you may use (use these words only, don't invent other claims):\n\n- \"See what AI can make.\"\n- \"Get the agents that make these.\"\n- \"Each one is a skill you download once and run in your own Claude Code or Codex.\"\n- \"US$19 each.\"\n- The nine agents: Animated Shorts Maker, Browser Game Maker, Competitor Analyst, Customer Profiler, Deck Maker, Launch Marketer, Motion Designer, Procedural Film Maker, Prototype Engineer.\n- Last line on screen, exactly: \"See what AI can make. possible.sh\"\n\nLogo: there is no image logo. The wordmark is the text \"possible.sh\" in Manrope ExtraBold (800) with tight letter spacing (-0.06em), \"possible\" in #201f1c and \".sh\" in #ed6a4b. ref/possible-og.png is our social card, for the look.\n\nBrand colours: background #faf7f1, text #201f1c, accent #ed6a4b, muted text #77716a, green #477a56.\n\n## References: films or styles to learn from\n\nKeynote-style launch films: big type, one idea per beat, confident pace.\n\n## Length, aspect and music\n\n45 to 60 seconds, 9:16 for X. The claim in big words on screen in the very first second, and every point on screen as words, because most people watch with the sound off. Music and sound made in code, nothing bought. Nothing paid."
+      },
+      {
+        "title": "Start the skill",
+        "instructions": "The one message that started the run. Rendering was asked to happen on another machine; the agent wrote each render command and stopped.",
+        "prompt": "Use the motion-designer skill on BRIEF.md. One rule about my machine: nothing may launch a browser here (no Chrome, Chromium, Remotion render or Puppeteer run on this computer; installing packages is fine). Whenever you need anything rendered (stills, sheets or the final film), write the exact shell command to run from this folder into RENDER.md, say which output files you need back, and stop. I will run it unchanged on another machine and put the outputs back in the same paths."
+      },
+      {
+        "title": "Hand back round 1 and four real results",
+        "instructions": "The round 1 review sheets came back, with stills of real results for the film to show.",
+        "prompt": "The round 1 outputs are back in place (out/sheets/round1_states.png, out/sheets/round1_transitions.png, out/round1_frame1.png, out/checks/round1.json, out/logs/round_1.log; out/audio/score.wav too). I've also put five real outputs from possible.sh in ./ref: falling-sand-sandbox.png and ant-colony-sandbox.png (Browser Game Maker), possible-agents-launch-kit.png (Launch Marketer), two-angle-phone-stand.png (Prototype Engineer) and bakery-deck.png (Deck Maker). Use them where \"make these\" needs something to point at. Keep the brand accent as it is. Carry on, and the same rule applies: whenever anything needs rendering, write the exact command into RENDER.md, list the files you need back, and stop."
+      },
+      {
+        "title": "Hand back round 2 and drop one image",
+        "instructions": "One supplied image carried old copy, so it was taken out.",
+        "prompt": "Round 2 outputs are back in place (out/sheets/round2_states.png, out/sheets/round2_transitions.png, out/round2_frame1.png, out/checks/round2.json, out/logs/round_2.log). One change from me: every launch-kit image carries old copy (\"hire\", \"Join the waitlist\") that we no longer use, so I've removed ref/possible-agents-launch-kit.png. Use the other four outputs only. The nine names in the brief, Launch Marketer included, stay as they are. Carry on to the end; same rule: write the exact render command into RENDER.md, list the files you need back, and stop."
+      },
+      {
+        "title": "Hand back round 3 and the first film",
+        "instructions": "The agent's own checks found two failures after encoding; it was asked to deal with them.",
+        "prompt": "Round 3 and the final render are back in place: out/sheets/round3_*.png, out/round3_frame1.png, out/checks/round3.json, out/checks/final.json, out/CHECKS.md, out/film.mp4, out/poster.png, out/logs/round_3.log, out/logs/final.log, plus out/source/ and out/audio/score.wav. I watched it and it looks good to me. CHECKS.md shows two FAILs after encode (brand colour ΔE 2.47, and output shift around 2 for each of the four images). Do your round 3 review and deal with those however you judge right. Then give me the final render command the same way and stop. If nothing needs re-rendering, just say the film is done."
+      },
+      {
+        "title": "Hand back the final encode",
+        "instructions": "Every check passed; the agent closed out.",
+        "prompt": "The final re-encode is back in place: out/film.mp4, out/poster.png, out/checks/final.json, out/CHECKS.md, out/logs/final.log and out/source/. Read it and close out."
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "type": "document",
+      "src": "artifacts/CHECKS.md",
+      "label": "Every measurement on the finished film and its result",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/ROUNDS.md",
+      "label": "Each review round, what it found and the fix",
+      "format": "markdown"
+    },
+    {
+      "type": "document",
+      "src": "artifacts/STATES.md",
+      "label": "The film planned as states before any code",
+      "format": "markdown"
+    },
+    {
+      "type": "image",
+      "src": "artifacts/contact-sheet-states.png",
+      "label": "Round 3 contact sheet",
+      "format": "png"
+    }
+  ],
+  "preview": {
+    "description": "A 58-second 9:16 launch film for possible.sh made entirely in code: big type on the beat, four real results, the nine skills and the price, with a score made in code.",
+    "video": {
+      "src": "media/preview.mp4",
+      "poster": "media/poster.png",
+      "caption": "The finished film, exactly as the skill delivered it."
+    }
+  }
+}
